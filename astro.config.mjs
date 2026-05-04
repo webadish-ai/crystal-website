@@ -23,6 +23,9 @@ export default defineConfig({
     sitemap(),
   ],
   vite: {
+    ssr: {
+      noExternal: ['gsap'],
+    },
     resolve: {
       alias: {
         '@': path.resolve('./src'),
