@@ -1,0 +1,37 @@
+{
+  "04 Store: Cold Storage & Warehousing": {
+    "Hero Page": {
+      "EYEBROW": "Cold storage & warehousing",
+      "HEADLINE": "Your product, in safe hands. Across India.",
+      "SUBHEADLINE": "Temperature-controlled warehousing built for the most demanding products: from frozen food and dairy to pharma and seafood.\nWorld-class infrastructure, WMS-enabled operations, and the certifications your supply chain requires.",
+      "CTA": "Check availability"
+    },
+    "S1 Temperature capabilities": {
+      "HEADLINE": "Every temperature. Every product.",
+      "Zone Temperature range Products": {
+        "Frozen": "-22°C to -18°C: Ice cream, frozen food, meat, seafood",
+        "Chilled": "0°C to +4°C: Dairy, butter, imported fruits, bakery",
+        "Controlled ambient": "+18°C to +25°C: Chocolates, confectionery, margarine",
+        "Ambient": "+25°C to +35°C: Sauces, biscuits, ready-to-eat, milk powder"
+      }
+    },
+    "S2 Our facilities": {
+      "HEADLINE": "Strategically located. Built to the highest standards.",
+      "BODY": "Crystal operates cold chain facilities across India, with locations in Kolkata, Bhubaneswar, Chennai, JNPT (Mumbai), Delhi, Mundra, Kochi, Vishakhapatnam, Dhulagarh, and more under development.\nAll facilities feature multiple temperature zones, WMS-enabled operations, and full power and refrigeration backup.",
+      "Kolkata, Dhulagarh": "State-of-the-art cold storage in West Bengal's primary food processing hub. Multiple temperature zones, 8 docks, blast freezing capability, and direct highway access.",
+      "Bhubaneswar, Khurda": "Odisha's most advanced cold storage facility, located in the food park. Multiple temperature zones, 10 docks, and full WMS operations."
+    },
+    "S3 Facility features": {
+      "WMS-enabled operations": "Barcode-driven putaway and picking. Granular stock management and real-time inventory visibility.",
+      "Multiple temperature zones": "Frozen, chilled, controlled ambient, and ambient: all under one roof.",
+      "100% power & refrigeration backup": "Generator backup and redundant refrigeration systems. Your product stays cold, regardless.",
+      "Handling services": "Loading, unloading, palletisation, wrapping, bulk-breaking, packing, kitting.",
+      "CCP monitoring": "Automated monitoring of critical control points: product temperature, shelf life, store temperature.",
+      "24-hour security": "CCTV surveillance, access control, and round-the-clock security."
+    },
+    "S4 Certifications": {
+      "BODY": "FSSC 22000 · ISO 22000 · ISO 9001:2015 · FSSAI · MPEDA · Export Inspection Council · Bureau Veritas · NCCD · Dept. of Agriculture, West Bengal",
+      "CTA": "Talk to us about your storage requirement"
+    }
+  }
+}

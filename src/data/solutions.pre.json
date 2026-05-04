@@ -1,0 +1,32 @@
+[
+  {
+    "title": "BUILD",
+    "desc": "We design, engineer, and operate cold chain infrastructure for your business. Built to your exact specification.",
+    "link": "EXPLORE INFRASTRUCTURE",
+    "href": "build"
+  },
+  {
+    "title": "STORE",
+    "desc": "Cold storage warehousing, 3PL operations, and portable cold storage containers.",
+    "link": "VIEW STORAGE",
+    "href": "store"
+  },
+  {
+    "title": "MOVE",
+    "desc": "Dedicated reefer fleet and pan-India cold transport network. Temperature-controlled, point-to-point.",
+    "link": "EXPLORE LOGISTICS",
+    "href": "move"
+  },
+  {
+    "title": "PROCESS",
+    "desc": "Blast freezing and fruits & vegetables processing: fast, compliant, and built for scale.",
+    "link": "VIEW PROCESSING",
+    "href": "process"
+  },
+  {
+    "title": "SOLVE",
+    "desc": "A cold chain problem that doesn't fit the standard mould? We'll design the solution.",
+    "link": "CONSULT ENGINEERING",
+    "href": "solve"
+  }
+]

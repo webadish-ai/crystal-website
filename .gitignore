@@ -1,0 +1,43 @@
+# build output
+dist/
+.astro/
+.netlify/
+
+# backup zips
+backups/
+*.zip
+
+# claude code settings
+.claude/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# admin panel — deployed separately on Render
+admin/
+
+# large files not needed in git (videos are in public/videos/)
+src/data/images/**/*.zip
+src/data/images/**/*.mp4
+src/assets/brand-data/*.mp4
+src/assets/brand-data/*.pdf
+src/assets/brand-data/*.PDF
+
+# backend data — never commit the database or generated files
+src/data/lp/

@@ -1,0 +1,136 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  description?: string
+  ogImage?: string
+}
+
+const {
+  title,
+  description = 'Crystal Group — India\'s end-to-end cold chain platform.',
+  ogImage = '/og-banner.png',
+} = Astro.props
+
+const canonicalURL = Astro.url
+const ogImageURL   = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).toString()
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:site_name" content="Crystal Group" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+  </head>
+  <body class="bg-primary overflow-x-hidden">
+    <slot />
+    <script is:inline>
+      if (window.parent !== window) {
+        // Real-time live data bridge
+        window.__CMS_LIVE__ = window.__CMS_LIVE__ || {}
+        window.addEventListener('message', function(e) {
+          if (!e.data || e.data.type !== 'cms-live-data') return
+          var slug = e.data.slug, data = e.data.data
+          window.__CMS_LIVE__[slug] = data
+          var slugSubs = window.__CMS_SUBS__ && window.__CMS_SUBS__[slug]
+          if (slugSubs) Object.values(slugSubs).forEach(function(fn) { fn(data) })
+        })
+
+        // Click-to-edit
+        var cmsActive = false
+        var style = document.createElement('style')
+        style.textContent = '.cms-hover-highlight{outline:2px solid rgba(250,194,18,0.7)!important;outline-offset:-2px;cursor:pointer!important;}'
+        document.head.appendChild(style)
+        function topSections() {
+          return Array.from(document.querySelectorAll('section')).filter(function(s) { return !s.parentElement.closest('section') })
+        }
+        var hovered = null
+        document.addEventListener('mouseover', function(e) {
+          if (hovered) { hovered.classList.remove('cms-hover-highlight'); hovered = null }
+          if (!cmsActive) return
+          var secs = topSections()
+          var target = e.target.closest('section')
+          var sec = target && !target.parentElement.closest('section') ? target : null
+          if (sec && secs.indexOf(sec) !== -1) { sec.classList.add('cms-hover-highlight'); hovered = sec }
+        }, { passive: true })
+        document.addEventListener('click', function(e) {
+          if (!cmsActive) return
+          var secs = topSections()
+          var target = e.target.closest('section')
+          var sec = target && !target.parentElement.closest('section') ? target : null
+          if (!sec || secs.indexOf(sec) === -1) return
+          window.parent.postMessage({ type: 'cms-click-section', index: secs.indexOf(sec) }, '*')
+        })
+        window.addEventListener('message', function(e) {
+          if (!e.data) return
+          if (e.data.type === 'cms-click-edit-active') {
+            cmsActive = !!e.data.enabled
+            if (!cmsActive) document.querySelectorAll('.cms-hover-highlight').forEach(function(el) { el.classList.remove('cms-hover-highlight') })
+          }
+          if (e.data.type === 'cms-scroll-to-section') {
+            var secs = topSections()
+            if (!secs.length) return
+            var idx = Math.min(e.data.index, secs.length - 1)
+            var top = secs[idx].getBoundingClientRect().top + window.scrollY
+            window.scrollTo(0, Math.max(0, top - 80))
+          }
+        })
+
+        var _h2c = null
+        function loadH2C() {
+          if (_h2c) return Promise.resolve(_h2c)
+          if (window.html2canvas) { _h2c = window.html2canvas; return Promise.resolve(_h2c) }
+          return new Promise(function(resolve, reject) {
+            var s = document.createElement('script')
+            s.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js'
+            s.onload = function() { _h2c = window.html2canvas; resolve(_h2c) }
+            s.onerror = reject
+            document.head.appendChild(s)
+          })
+        }
+        window.addEventListener('message', function(e) {
+          if (e.data && e.data.type === 'cms-screenshot-request') {
+            window.scrollTo(0, 0)
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                loadH2C().then(function(h2c) {
+                  return h2c(document.body, {
+                    scale: 0.3, useCORS: true, logging: false,
+                    x: 0, y: 0,
+                    width: window.innerWidth, height: window.innerHeight,
+                    windowWidth: window.innerWidth, windowHeight: window.innerHeight,
+                  })
+                }).then(function(canvas) {
+                  window.parent.postMessage({ type: 'cms-screenshot-data', dataUrl: canvas.toDataURL('image/jpeg', 0.75) }, '*')
+                }).catch(function() {
+                  window.parent.postMessage({ type: 'cms-screenshot-data', dataUrl: null }, '*')
+                })
+              })
+            })
+          }
+        })
+      }
+    </script>
+  </body>
+</html>

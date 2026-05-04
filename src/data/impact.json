@@ -1,0 +1,56 @@
+{
+    "page": {
+        "id": "impact_case_studies_blog",
+        "sections": [
+            {
+                "type": "hero",
+                "eyebrow": "Impact",
+                "headline": "Problems solved. Results that speak for themselves.",
+                "subheadline": "Crystal's work is measured in outcomes, not promises.\nHere's how we've helped India's most demanding businesses build, store, move, and process their cold chain."
+            },
+            {
+                "type": "case_studies",
+                "eyebrow": "Success Stories",
+                "items": [
+                    {
+                        "tag": "Build · Pharma",
+                        "title": "Pharma-grade warehouse at JNPT: from brief to live in 90 days",
+                        "challenge": "A leading pharmaceutical company needed a fully compliant cold storage and ambient warehouse at JNPT: bonded and non-bonded, pharma-grade, with CFR 21 monitoring. Timeline: 90 days from order to operations.",
+                        "solution": "Designed a 40,000 sqft facility with segregated bonded and non-bonded zones, cold and ambient areas, QC room, bond officer facilities, and a full office block. Sourced and installed double-deep racking, WMS hardware, and CFR 21-compliant temperature monitoring. Delivered on time, fully commissioned, audit-ready from day one.",
+                        "outcomes": "40,000 sqft delivered · 4 temperature zones · bonded & non-bonded · CFR 21 compliant · WMS-enabled · live in 90 days"
+                    },
+                    {
+                        "tag": "Build · Q-Commerce",
+                        "title": "Cold chain infrastructure for a leading quick commerce platform: 3 cities in 90 days",
+                        "challenge": "A fast-growing quick commerce platform needed standardised cold chain infrastructure across multiple cities, fast. Each site had to be SLA-ready from day one, built to the same specification, and operational before the platform launched in each market.",
+                        "solution": "Crystal designed a modular, replicable cold chain infrastructure template and deployed it across three cities in parallel. Standardised layouts, pre-approved vendors, and a central project control team ensured every site was delivered on time and to spec.",
+                        "outcomes": "3 cities · under 90 days per site · standardised infrastructure · SLA-ready from day one · replicable to 50+ cities"
+                    },
+                    {
+                        "tag": "Store · Frozen Food",
+                        "title": "Cold storage facility commissioned in 90 days for a leading frozen food manufacturer",
+                        "challenge": "A leading frozen food manufacturer needed a dedicated cold storage facility operational within 90 days. The brief covered design, build, commissioning, and full operations from day one, with no tolerance for delays.",
+                        "solution": "Crystal delivered end-to-end: site selection, facility design, construction, refrigeration commissioning, WMS deployment, and staff training. The facility went live within 90 days, fully operational and compliant.",
+                        "outcomes": "Delivered in 90 days · end-to-end execution · WMS-enabled · fully operational from day one"
+                    }
+                ]
+            },
+            {
+                "type": "blog",
+                "eyebrow": "Intelligence",
+                "topics_label": "Topics",
+                "headline": "Cold chain intelligence. From the people who build it.",
+                "themes": [
+                    "Cold chain for Q-commerce",
+                    "Pharma cold chain compliance",
+                    "F&V supply chain challenges",
+                    "Container cold storage guide",
+                    "Building a BTS cold chain",
+                    "India cold chain infrastructure",
+                    "Food safety certifications explained"
+                ],
+                "notes": "Blog content to be developed over time. Each post should be 600-1000 words, written from operational expertise. Target: one post per two weeks at launch, weekly once established."
+            }
+        ]
+    }
+}

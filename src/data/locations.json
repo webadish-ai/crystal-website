@@ -1,0 +1,43 @@
+[
+  {
+    "id": "mumbai-ho",
+    "name": "Mumbai",
+    "type": "Head Office",
+    "description": "Central command in Goregaon.",
+    "coordinates": [
+      72.8777,
+      19.076
+    ],
+    "isHO": true
+  },
+  {
+    "id": "navi-mumbai",
+    "name": "Navi Mumbai",
+    "type": "Logistics Facility",
+    "description": "Major container yard.",
+    "coordinates": [
+      73.0297,
+      19.033
+    ]
+  },
+  {
+    "id": "bhubaneshwar",
+    "name": "Bhubaneshwar",
+    "type": "Eastern Hub",
+    "description": "Serving industrial belt.",
+    "coordinates": [
+      85.8245,
+      20.2961
+    ]
+  },
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "type": "Gateway Facility",
+    "description": "Cross-border link.",
+    "coordinates": [
+      88.3639,
+      22.5726
+    ]
+  }
+]

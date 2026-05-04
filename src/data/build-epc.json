@@ -1,0 +1,24 @@
+{
+    "03 Build: Engineering, Procurement & Construction (EPC)": {
+        "Hero Page": {
+            "EYEBROW": "Cold chain EPC",
+            "HEADLINE": "We build it. You run it.",
+            "SUBHEADLINE": "You have the vision for your cold chain facility.\nCrystal has the engineering expertise, procurement network, and construction capability to build it, on time, on spec, and ready to operate.",
+            "CTA": "Discuss your project"
+        },
+        "S1 What is EPC?": {
+            "HEADLINE": "Full project delivery. From design to handover.",
+            "BODY": "Crystal's EPC service covers the complete lifecycle of cold chain construction: engineering design, equipment procurement, and construction management.\nWe deliver a fully commissioned facility and hand it over ready to operate.\nYou bring the operator; we bring the infrastructure."
+        },
+        "S2 Our EPC scope": {
+            "Engineering": "Cold room design, structural engineering, MEP, refrigeration system design, energy modelling. Built to GFSI, pharma GMP, and food safety standards.",
+            "Procurement": "Refrigeration equipment, racking systems, dock levellers, WMS hardware: sourced from approved vendors at competitive rates through our established procurement network.",
+            "Construction": "Civil construction, insulated panel installation, refrigeration commissioning, electrical and utility connections: project-managed end-to-end by Crystal.",
+            "Handover": "Digital HOTO, SOPs, staff training, systems documentation, and regulatory sign-off. Your facility is handed over fully commissioned and audit-ready."
+        },
+        "S3 Why Crystal for EPC": {
+            "BODY": "Crystal brings something most EPC contractors cannot: we've operated cold chain facilities ourselves.\nWe know what a 3am breakdown looks like, what an audit demands, and what a 10,000-pallet throughput day requires.\nThat operational knowledge is baked into every facility we build.",
+            "CTA": "Get in touch"
+        }
+    }
+}

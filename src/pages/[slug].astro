@@ -1,0 +1,47 @@
+---
+export const prerender = false
+
+import Layout from '../layouts/Layout.astro'
+import LandingLayout from '../layouts/LandingLayout.astro'
+import StoreProductTemplate from '../components/templates/StoreProductTemplate'
+import ServicePageTemplate from '../components/templates/ServicePageTemplate'
+import TextPageTemplate from '../components/templates/TextPageTemplate'
+import LandingConversionTemplate from '../components/templates/LandingConversionTemplate'
+
+const { slug } = Astro.params
+const API_BASE = import.meta.env.API_URL ?? 'http://localhost:4000'
+
+let data: any = null
+try {
+  const res = await fetch(`${API_BASE}/api/lp/public/${slug}`)
+  if (!res.ok) return Astro.redirect('/404', 404)
+  data = await res.json()
+} catch {
+  return Astro.redirect('/404', 404)
+}
+
+const template = data._template
+---
+
+{template === 'landing-conversion' ? (
+  <LandingLayout title={data._seo_title || data.meta_title || slug} description={data._seo_description || data.meta_description || ''}>
+    <LandingConversionTemplate client:load {...data} _lpSlug={slug} />
+  </LandingLayout>
+) : (
+  <Layout title={data._seo_title || data.hero_headline || data.headline || slug} description={data._seo_description || data.hero_subheadline || data.intro || ''}>
+    {template === 'store-product' && (
+      <StoreProductTemplate client:load {...data} _lpSlug={slug} />
+    )}
+    {template === 'service-page' && (
+      <ServicePageTemplate client:load {...data} _lpSlug={slug} />
+    )}
+    {template === 'text-page' && (
+      <TextPageTemplate client:load {...data} _lpSlug={slug} />
+    )}
+    {!template && (
+      <div class="min-h-screen flex items-center justify-center font-body text-secondary/40">
+        Unknown template type.
+      </div>
+    )}
+  </Layout>
+)}

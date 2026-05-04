@@ -1,0 +1,460 @@
+{
+  "homepage": {
+    "nav": {
+      "logo": "Crystal",
+      "company_description": "Cold Chain Solution Company",
+      "cta": "Talk to us",
+      "items": [
+        {
+          "name": "Home",
+          "href": "/"
+        },
+        {
+          "name": "Build",
+          "href": "/#solutions",
+          "subLinks": [
+            {
+              "name": "Build: BTS",
+              "desc": "Design, Build & Operate",
+              "href": "/build-bts"
+            },
+            {
+              "name": "Build: EPC",
+              "desc": "Engineering & Construction",
+              "href": "/build-epc"
+            }
+          ]
+        },
+        {
+          "name": "Store",
+          "href": "/#solutions",
+          "subLinks": [
+            {
+              "name": "Cold Storage",
+              "desc": "Temp-controlled warehousing",
+              "href": "/store-cold-storage"
+            },
+            {
+              "name": "3PL Management",
+              "desc": "Full supply chain outsourcing",
+              "href": "/store-3pl"
+            },
+            {
+              "name": "Portable Cold Storage",
+              "desc": "Containers & modular units",
+              "href": "/store-portable-cold-storage",
+              "nestedLinks": [
+                {
+                  "name": "Portable Cold Storage: Overview",
+                  "desc": "View all units & solutions",
+                  "href": "/store-portable-cold-storage"
+                },
+                {
+                  "name": "Reefer Containers",
+                  "desc": "Portable site cold storage",
+                  "href": "/store-reefer"
+                },
+                {
+                  "name": "Blast Freezers",
+                  "desc": "Rapid industrial freezing",
+                  "href": "/store-blast-freezer"
+                },
+                {
+                  "name": "Super Store",
+                  "desc": "High-volume modular rooms",
+                  "href": "/store-super-store"
+                },
+                {
+                  "name": "Super Freezer",
+                  "desc": "Ultra-low -70°C storage",
+                  "href": "/store-super-freezer"
+                },
+                {
+                  "name": "ISO Tanks",
+                  "desc": "Liquid cargo transport",
+                  "href": "/store-iso-tank"
+                },
+                {
+                  "name": "AMC & Spares",
+                  "desc": "24/7 maintenance support",
+                  "href": "/store-amc"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Move",
+          "href": "/move"
+        },
+        {
+          "name": "Process",
+          "href": "/process-fvp",
+          "subLinks": [
+            {
+              "name": "F&V Processing",
+              "desc": "Pre-cooling, sorting & packing",
+              "href": "/process-fvp"
+            },
+            {
+              "name": "Blast Freezing",
+              "desc": "Rapid industrial freezing services",
+              "href": "/process-bfs"
+            }
+          ]
+        },
+        {
+          "name": "Solve",
+          "href": "/solve"
+        },
+        {
+          "name": "Impact",
+          "href": "/impact"
+        },
+        {
+          "name": "About",
+          "href": "/about"
+        },
+        {
+          "name": "Careers",
+          "href": "/careers"
+        }
+      ]
+    },
+    "footer": {
+      "tagline": "Architecting India's cold chain future since 1962.",
+      "solutions_label": "Solutions",
+      "solutions_links": [
+        {
+          "label": "Build",
+          "href": "/build-bts"
+        },
+        {
+          "label": "Store",
+          "href": "/store-cold-storage"
+        },
+        {
+          "label": "Move",
+          "href": "/move"
+        },
+        {
+          "label": "Process",
+          "href": "/process-fvp"
+        },
+        {
+          "label": "Solve",
+          "href": "/solve"
+        }
+      ],
+      "company_label": "Company",
+      "company_links": [
+        {
+          "label": "About",
+          "href": "/about"
+        },
+        {
+          "label": "Network",
+          "href": "/#locations"
+        },
+        {
+          "label": "Impact",
+          "href": "/impact"
+        },
+        {
+          "label": "Careers",
+          "href": "/careers"
+        },
+        {
+          "label": "Contact",
+          "href": "/contact"
+        }
+      ],
+      "contact_label": "Contact",
+      "contact_office_label": "Mumbai",
+      "contact_inquiries_label": "Inquiries",
+      "contact_address": "501, Synergy Business Park,\nSahakar Wadi, Off Aarey Road,\nGoregaon East,\nMumbai, Maharashtra 400063",
+      "contact_kolkata_label": "Kolkata",
+      "contact_kolkata_address": "8B Middleton Street, Geetanjali,\nPark Street,\nKolkata, West Bengal 700071",
+      "contact_email": "marketing@crystalgroup.in",
+      "legal_links": [
+        {
+          "label": "Privacy Policy",
+          "href": "#"
+        },
+        {
+          "label": "Terms of Service",
+          "href": "#"
+        },
+        {
+          "label": "Cookie Policy",
+          "href": "#"
+        }
+      ],
+      "copyright": "Crystal Group. All rights reserved."
+    },
+    "sections": [
+      {
+        "id": "S1",
+        "name": "Hero",
+        "eyebrow": "India's end-to-end cold chain partner",
+        "headline": "Cold Chain, Redefined.",
+        "subheadline": "From warehouse design to refrigerated transport, portable cold storage to built-to-suit facilities: we engineer, operate, and deliver the complete cold chain.\nFor India's biggest brands, and the ones building next.",
+        "cta_primary": "Talk to Us",
+        "cta_secondary": "Explore Solutions"
+      },
+      {
+        "id": "S2",
+        "name": "Ambition Statement",
+        "eyebrow": "Our Philosophy",
+        "statement": "Where your production line ends, our cold chain begins."
+      },
+      {
+        "id": "S3",
+        "name": "Solutions Overview",
+        "eyebrow": "What we do",
+        "headline": "One partner. Every cold chain need.",
+        "subheadline": "Whether you need a single reefer container at your factory gate or a fully engineered cold chain across multiple cities, we have the infrastructure, the fleet, and the expertise to deliver it.",
+        "coming_soon_label": "Stay Tuned",
+        "solutions": [
+          {
+            "title": "Build",
+            "description": "We design, engineer, and operate cold chain infrastructure for your business. Built to your exact specification.",
+            "tags": [
+              "BTS",
+              "EPC"
+            ],
+            "cta": "Explore Infrastructure",
+            "href": "/build-bts"
+          },
+          {
+            "title": "Store",
+            "description": "Cold storage warehousing, 3PL operations, and portable cold storage containers: at our facilities or yours.",
+            "tags": [
+              "Warehousing",
+              "3PL",
+              "Containers"
+            ],
+            "cta": "View Storage",
+            "href": "/store-cold-storage"
+          },
+          {
+            "title": "Move",
+            "description": "Dedicated reefer fleet and pan-India cold transport network. Temperature-controlled, point-to-point.",
+            "tags": [
+              "FTL",
+              "PTL",
+              "Dedicated fleet"
+            ],
+            "cta": "Explore Logistics",
+            "href": "/move"
+          },
+          {
+            "title": "Process",
+            "description": "Blast freezing and fruits & vegetables processing: fast, compliant, and built for scale.",
+            "tags": [
+              "Blast freezing",
+              "F&V processing"
+            ],
+            "cta": "View Processing",
+            "href": "/process-fvp"
+          },
+          {
+            "title": "Solve",
+            "description": "A cold chain problem that doesn't fit the standard mould? Tell us what you need. We'll design the solution.",
+            "tags": [
+              "Custom cold chain solutions"
+            ],
+            "cta": "Consult Engineering",
+            "href": "/solve"
+          },
+          {
+            "title": "Coming soon",
+            "description": "New products and services in development. Crystal is always building what the cold chain needs next.",
+            "tags": [
+              "CrystalPulse",
+              "Cold Pods"
+            ],
+            "cta": "Stay Tuned",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "id": "S4",
+        "name": "End-to-End Journey",
+        "eyebrow": "The Crystal difference",
+        "headline": "We own the chain. Not just a link in it.",
+        "body": "Most cold chain operators handle one piece: a warehouse here, a truck there.\nCrystal covers the entire journey.\nOne partner, one point of accountability, zero gaps.",
+        "chain_label": "Chain diagram:",
+        "crystal_badge": "Crystal",
+        "chain_note": "Crystal-owned touchpoints highlighted. Sub-label shows which Crystal service handles each step.",
+        "chain": [
+          "Manufacturer / Supplier",
+          "Reefer Transport (Crystal Move)",
+          "Cold Storage (Crystal Store)",
+          "Processing (Crystal Process)",
+          "3PL & Dispatch (Crystal Store)",
+          "Market / Consumer"
+        ]
+      },
+      {
+        "id": "S5",
+        "name": "Clients",
+        "eyebrow": "Our Clients",
+        "headline": "Trusted by India's most demanding brands.",
+        "subheadline": "Architectured for Precision",
+        "body": "From global QSR giants to indigenous FMCG powerhouses, Crystal Group is the backbone of India's temperature-controlled supply chain.",
+        "cta": "Your Brand Next",
+        "clients": [
+          "KFC",
+          "Domino's",
+          "Amul",
+          "Britannia",
+          "ITC",
+          "Mondelez",
+          "Barry Callebaut",
+          "Reliance Fresh",
+          "Pizza Hut",
+          "IFB Agro",
+          "Omfed",
+          "Rollick",
+          "300+ more"
+        ]
+      },
+      {
+        "id": "S6",
+        "name": "Industries",
+        "eyebrow": "Industries we serve",
+        "headline": "Built for the sectors where cold chain failure is not an option.",
+        "industries": [
+          "Pharma",
+          "FMCG",
+          "Dairy",
+          "Seafood",
+          "Meat",
+          "Q-Commerce"
+        ]
+      },
+      {
+        "id": "S7",
+        "name": "Case Studies",
+        "eyebrow": "Impact",
+        "headline": "Problems solved. Results delivered.",
+        "view_label": "View",
+        "cases": [
+          {
+            "category": "Deploy",
+            "industry": "Pharma",
+            "title": "Rapid Deployment of 2×40-ft Reefer Containers for a Leading Pharma Company",
+            "details": [
+              "2 × 40-ft Reefer Units",
+              "Pharma Cold Chain",
+              "Rapid Deployment",
+              "Temperature Compliant"
+            ],
+            "link": "https://crystalgroup.in/rapid-deployment-of-2x40-ft-reefer-containers-for-a-leading-pharma-company/"
+          },
+          {
+            "category": "Build",
+            "industry": "Q-Commerce",
+            "title": "Cold chain infrastructure for a leading quick commerce platform",
+            "details": [
+              "3 cities in 90 days",
+              "SLA-ready from day one",
+              "Standardised across all sites",
+              "Scalable to 50 cities"
+            ]
+          },
+          {
+            "category": "Store",
+            "industry": "FMCG",
+            "title": "End-to-end 3PL operations for a major FMCG brand across Eastern India",
+            "details": [
+              "12,000 pallets",
+              "WMS-managed",
+              "ERP integrated",
+              "4 temperature zones"
+            ]
+          },
+          {
+            "category": "Process",
+            "industry": "Seafood",
+            "title": "Portable blast freezer deployed at seafood processing facility",
+            "details": [
+              "Operational in 7 days",
+              "10 MT/day",
+              "-40°C",
+              "Plug-and-play",
+              "No civil construction required"
+            ]
+          }
+        ],
+        "cta": "View all case studies"
+      },
+      {
+        "id": "S8",
+        "name": "Why Crystal",
+        "eyebrow": "Why Crystal",
+        "headline": "Platform, not patchwork.",
+        "body": "Most cold chain operations are held together by multiple vendors.\nCrystal replaces that complexity with a single, accountable partner: across infrastructure, storage, transport, and processing.",
+        "est_label": "Est. 1962",
+        "points": [
+          {
+            "stat": "Since 1962",
+            "title": "62 years of cold chain mastery",
+            "description": "Three generations. Founded 1962. In cold chain since 2000."
+          },
+          {
+            "stat": "Integrated",
+            "title": "End-to-end capability",
+            "description": "From a single container at your gate to a fully engineered multi-city cold chain."
+          },
+          {
+            "stat": "Certified",
+            "title": "Built for compliance",
+            "description": "FSSC 22000, ISO 22000, FSSAI, MPEDA, EIC and more."
+          },
+          {
+            "stat": "24/7 Ops",
+            "title": "Always operational",
+            "description": "100% power and refrigeration backup. 24x7 monitoring."
+          }
+        ],
+        "quote": {
+          "text": "We don't just provide cold chain. We engineer it: from the ground up, built around what each customer actually needs.",
+          "attribution": "Leadership, Crystal"
+        }
+      },
+      {
+        "id": "S9",
+        "name": "Certifications",
+        "label": "Certified & compliant",
+        "certifications": [
+          "FSSC 22000",
+          "ISO 22000",
+          "ISO 9001:2015",
+          "FSSAI",
+          "MPEDA",
+          "Export Inspection Council"
+        ]
+      },
+      {
+        "id": "S10",
+        "name": "Final CTA",
+        "eyebrow": "Ready to build your cold chain?",
+        "headline": "The cold chain partner India's best brands rely on.",
+        "body": "Tell us what you need: a warehouse, a fleet, a container, or a facility built from scratch.\nWe've solved it before. We'll solve it for you.",
+        "cta_primary": "Talk to us",
+        "cta_secondary": "Explore solutions"
+      },
+      {
+        "id": "S11",
+        "name": "Locations",
+        "eyebrow": "Network",
+        "headline": "Strategic Footholds.",
+        "body": "Positioned at India's most critical logistics crossroads.",
+        "cta": "Find Your Nearest Facility"
+      }
+    ]
+  }
+}

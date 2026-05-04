@@ -1,0 +1,23 @@
+{
+    "05 Store: 3PL & Supply Chain Management": {
+        "Hero Page": {
+            "EYEBROW": "3PL & supply chain management",
+            "HEADLINE": "Your supply chain. Managed by us.",
+            "SUBHEADLINE": "Beyond storage: Crystal manages your entire cold supply chain operation.\nOrder management, inventory control, ERP integration, dispatch, and stakeholder coordination.\nSo your team can focus on growth, not logistics.",
+            "CTA": "Talk to us"
+        },
+        "S1 3PL services": {
+            "Order management": "End-to-end order processing: inbound, storage, picking, packing, and outbound dispatch. Real-time order tracking and SLA management.",
+            "Stock management": "Live inventory visibility through WMS. Barcode-driven operations, FIFO/FEFO compliance, and automated low-stock alerts.",
+            "ERP & SAP integration": "Seamless integration with your ERP or SAP system. Crystal's WMS connects directly to your technology stack: no manual reconciliation.",
+            "Invoicing & documentation": "Accurate, timely documentation: GRNs, delivery challans, invoices, and compliance documentation. Audit-ready at all times.",
+            "Stakeholder management": "Crystal coordinates with your suppliers, transporters, and retail partners on your behalf. One point of contact for your entire cold supply chain.",
+            "Customer portal": "Online platform for placing and tracking orders, viewing live stock levels, and submitting feedback. Visibility at your fingertips."
+        },
+        "S2 Why outsource to Crystal": {
+            "HEADLINE": "We run it better. So you can grow faster.",
+            "BODY": "Crystal has been running cold supply chain operations for India's most demanding brands since 2000.\nWe have the WMS, the trained workforce, the compliance infrastructure, and the operational discipline to manage your cold chain to a higher standard than most in-house teams can, at a fraction of the fixed cost.",
+            "CTA": "Discuss your 3PL requirement"
+        }
+    }
+}

@@ -1,0 +1,590 @@
+---
+import { ClientRouter } from "astro:transitions";
+import "../styles/global.css";
+import Nav from "../components/core/Nav";
+import Footer from "../components/core/Footer";
+import ScrollToTop from "../components/core/ScrollToTop";
+import Preloader from "../components/core/Preloader";
+import seoData from "../data/seo.json";
+
+interface Props {
+	title: string;
+	description?: string;
+	ogImage?: string;
+	canonical?: string;
+	type?: 'website' | 'article';
+}
+
+const {
+	title: titleProp,
+	description: descriptionProp,
+	ogImage = "/og-banner.png",
+	canonical,
+	type = 'website',
+} = Astro.props;
+
+// Resolve seo.json key from current path — seo.json is the source of truth
+const pathToSeoKey: Record<string, string> = {
+	'store-cold-storage': 'store-colds',
+};
+const rawSlug = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '');
+const seoKey = pathToSeoKey[rawSlug] ?? (rawSlug === '' ? 'index' : rawSlug);
+const pageSeo = (seoData.pages as Record<string, { title: string; description: string }>)[seoKey];
+
+const title       = (pageSeo?.title)       || titleProp;
+const description = (pageSeo?.description) || descriptionProp
+	|| "India's end-to-end cold chain platform. Crystal Group builds, stores, moves, and processes temperature-sensitive goods for 300+ clients across pharma, FMCG, dairy, and quick commerce.";
+
+const canonicalURL = canonical ? new URL(canonical, Astro.site) : Astro.url;
+const ogImageURL = ogImage.startsWith('http') ? ogImage : new URL(ogImage, Astro.site).toString();
+
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Organization",
+	"name": "Crystal Group",
+	"url": "https://www.crystalgroup.in",
+	"logo": "https://www.crystalgroup.in/favicon.svg",
+	"description": "India's end-to-end cold chain platform — cold storage, refrigerated transport, blast freezing, and infrastructure, all under one roof.",
+	"foundingDate": "1962",
+	"areaServed": "IN",
+	"sameAs": [],
+	"contactPoint": {
+		"@type": "ContactPoint",
+		"contactType": "customer service",
+		"areaServed": "IN",
+		"availableLanguage": ["English", "Hindi"]
+	}
+};
+
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Poppins from Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="Crystal Group" />
+		<meta property="og:locale" content="en_IN" />
+
+		<!-- Twitter / X -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
+
+		<!-- JSON-LD: Organization -->
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+		<!-- ── Google Analytics 4 ── -->
+		<!-- TODO: replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+		<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" is:inline></script>
+		<script is:inline>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'G-XXXXXXXXXX');
+		</script> -->
+
+		<!-- ── Microsoft Clarity ── -->
+		<!-- TODO: replace YOUR_CLARITY_ID with your Clarity project ID -->
+		<!-- <script is:inline>
+		  (function(c,l,a,r,i,t,y){
+		    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+		    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+		    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+		  })(window,document,"clarity","script","YOUR_CLARITY_ID");
+		</script> -->
+
+		<ClientRouter />
+
+		{/* Hide page content immediately on first-ever load — removed by Preloader on exit */}
+		<script is:inline>
+			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('crystal-preloader-done')) {
+				document.documentElement.setAttribute('data-preloading', '');
+			}
+		</script>
+	</head>
+	<body class="bg-primary overflow-x-hidden">
+		{/* Static navy shell — painted before React mounts, prevents white flash */}
+		<div id="preloader-shell" style="display:none;position:fixed;inset:0;z-index:9998;background:#0F2854"></div>
+		<script is:inline>
+			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('crystal-preloader-done')) {
+				document.getElementById('preloader-shell').style.display = 'block';
+			}
+		</script>
+		<Preloader client:only="react" />
+		{/* Backdrop blur — separate from bar so bar opacity is independent */}
+		<div id="nav-backdrop" transition:persist style="display:none;position:fixed;inset:0;z-index:9990;backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px);background:rgba(15,40,84,0.1);opacity:0;transition:opacity 0.25s ease;pointer-events:none"></div>
+		{/* Progress bar — z-index above backdrop, thick amber line */}
+		<div id="nav-progress-bar" transition:persist style="display:none;position:fixed;top:0;left:0;height:10px;width:0%;z-index:9999;background:#FAC212;box-shadow:0 2px 24px rgba(250,194,18,1),0 0 10px rgba(250,194,18,0.9);pointer-events:none"></div>
+		{/* On reload: show the same blur + progress bar as SPA page transitions */}
+		<script is:inline>
+			try {
+				var _nt = performance.getEntriesByType('navigation')[0];
+				if (_nt && _nt.type === 'reload') {
+					var _bd = document.getElementById('nav-backdrop');
+					var _pb = document.getElementById('nav-progress-bar');
+					if (_bd && _pb) {
+						_bd.style.display = 'block';
+						_pb.style.display = 'block';
+						_pb.style.transition = 'none';
+						_pb.style.width = '0%';
+						_pb.style.opacity = '1';
+						requestAnimationFrame(function() {
+							_bd.style.opacity = '1';
+							_pb.style.transition = 'width 0.5s cubic-bezier(0.1,0.4,0.3,1)';
+							_pb.style.width = '65%';
+							setTimeout(function() {
+								_pb.style.transition = 'width 8s cubic-bezier(0.05,0.1,0.1,1)';
+								_pb.style.width = '93%';
+							}, 500);
+						});
+					}
+				}
+			} catch(e) {}
+		</script>
+		<Nav client:load transition:persist />
+		<div id="page-content" class="min-h-screen" transition:animate="fade">
+			<slot />
+		</div>
+		<Footer transition:persist />
+		<ScrollToTop client:visible transition:persist />
+
+	</body>
+</html>
+
+<script>
+  import Lenis from 'lenis';
+  import gsap from 'gsap';
+  import ScrollTrigger from 'gsap/ScrollTrigger';
+
+  // ── Run-once guard ────────────────────────────────────────────────────────
+  // Astro's ClientRouter re-executes module scripts on soft navigations.
+  // All listener registration, state, and first-load setup live inside this
+  // guard so nothing accumulates across navigations.
+  if (!(window as any).__crystalInited) {
+    (window as any).__crystalInited = true;
+
+    let lenis: InstanceType<typeof Lenis> | null = null;
+
+    // ── Navigation Timing (dev only) ───────────────────────────────────────
+    let _navT0 = 0, _navFetchT = 0, _navSwapT = 0;
+    if (import.meta.env.DEV) {
+      const _navTag = 'background:#0F2854;color:#FAC212;padding:2px 6px;font-weight:bold;border-radius:3px 0 0 3px';
+      const _segTag = 'background:#1a1a1a;color:#ccc;padding:2px 6px';
+      const _ms = (n: number) => `${n.toFixed(0)}ms`;
+      const _clr = (ms: number) => ms < 150 ? '#00E676' : ms < 500 ? '#FFD600' : '#FF5252';
+
+      document.addEventListener('astro:before-preparation', (e) => {
+        _navT0 = performance.now();
+        const to = (e as any).to?.pathname ?? '?';
+        console.log(`%c Crystal Nav %c → ${to}`, _navTag, _segTag);
+      });
+
+      document.addEventListener('astro:after-preparation', () => {
+        _navFetchT = performance.now();
+        const fetch = _navFetchT - _navT0;
+        console.log(
+          `%c Crystal Nav %c fetch  %c ${_ms(fetch)}`,
+          _navTag, _segTag,
+          `background:${_clr(fetch)};color:#000;padding:2px 6px;font-weight:bold`
+        );
+      });
+
+      document.addEventListener('astro:after-swap', () => {
+        _navSwapT = performance.now();
+        const swap = _navSwapT - _navFetchT;
+        console.log(
+          `%c Crystal Nav %c swap   %c ${_ms(swap)}`,
+          _navTag, _segTag,
+          `background:${_clr(swap)};color:#000;padding:2px 6px;font-weight:bold`
+        );
+      });
+    }
+    // ──────────────────────────────────────────────────────────────────────
+
+    // Detect reload once — 'reload' on F5/Ctrl+R, 'navigate' on link clicks
+    const _navType = (performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming)?.type;
+    let _isReload = _navType === 'reload';
+
+    // Take full control of scroll restoration so the browser doesn't fight with Lenis
+    history.scrollRestoration = 'manual';
+
+    // Save position + path before the user leaves / reloads
+    window.addEventListener('beforeunload', () => {
+      sessionStorage.setItem('crystal-scroll-y',    String(Math.round(window.scrollY)));
+      sessionStorage.setItem('crystal-scroll-path', window.location.pathname);
+    });
+
+    function initLenis() {
+      // Destroy previous instance if exists
+      if (lenis) {
+        lenis.destroy();
+        lenis = null;
+      }
+
+      lenis = new Lenis({
+        duration: 0.8,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        wheelMultiplier: 1.0,
+      });
+
+      // Synchronize Lenis with GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+
+      // Adaptive fps: measure the device's actual RAF cadence for 600ms, then lock GSAP accordingly
+      let _rafCount = 0;
+      const _rafStart = performance.now();
+      const _measureFps = (ts: number) => {
+        _rafCount++;
+        if (ts - _rafStart < 600) {
+          requestAnimationFrame(_measureFps);
+        } else {
+          const measured = Math.round(_rafCount / ((ts - _rafStart) / 1000));
+          // 120hz display → 60fps budget, 60hz → 45fps, low-end → 30fps
+          const target = measured >= 100 ? 60 : measured >= 50 ? 45 : 30;
+          gsap.ticker.fps(target);
+        }
+      };
+      requestAnimationFrame(_measureFps);
+
+      gsap.ticker.add((time) => {
+        lenis!.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+
+      // Make lenis globally available (e.g. for ScrollToTop component)
+      (window as any).lenis = lenis;
+
+      // On navigation → jump to top. On reload → position restored separately below.
+      if (!_isReload) {
+        window.scrollTo(0, 0);
+      }
+    }
+
+    // Core Web Vitals Monitor
+    function initVitals() {
+      if ('PerformanceObserver' in window) {
+        const getStatus = (metric: string, value: number) => {
+          const thresholds: Record<string, [number, number]> = {
+            LCP: [2500, 4000],
+            FID: [100, 300],
+            CLS: [0.1, 0.25],
+            FCP: [1800, 3000],
+            TTFB: [800, 1800]
+          };
+          const [good, poor] = thresholds[metric] || [0, 0];
+          if (value <= good) return { label: 'GOOD', color: '#00E676' };
+          if (value <= poor) return { label: 'NEEDS IMPROVEMENT', color: '#FFD600' };
+          return { label: 'POOR', color: '#FF5252' };
+        };
+
+        const logMetric = (name: string, value: number, unit = 'ms') => {
+          const status = getStatus(name, value);
+          console.log(
+            `%c Crystal Perf %c ${name.padEnd(5)} %c ${value.toFixed(name === 'CLS' ? 3 : 0)}${unit.padEnd(3)} %c ${status.label} `,
+            'background: #000; color: #fff; border-radius: 3px 0 0 3px; font-weight: bold; padding: 2px 4px;',
+            'background: #1a1a1a; color: #3b82f6; font-weight: bold; padding: 2px 4px;',
+            'background: #eee; color: #000; padding: 2px 4px;',
+            `background: ${status.color}; color: #000; border-radius: 0 3px 3px 0; font-weight: bold; padding: 2px 4px;`
+          );
+        };
+
+        // FCP
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries()) {
+            logMetric('FCP', entry.startTime);
+          }
+        }).observe({ type: 'paint', buffered: true });
+
+        // LCP
+        new PerformanceObserver((entryList) => {
+          const entries = entryList.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          logMetric('LCP', lastEntry.startTime);
+        }).observe({ type: 'largest-contentful-paint', buffered: true });
+
+        // CLS
+        let clsValue = 0;
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries() as any) {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+            }
+          }
+          logMetric('CLS', clsValue, '');
+        }).observe({ type: 'layout-shift', buffered: true });
+
+        // FID
+        new PerformanceObserver((entryList) => {
+          for (const entry of entryList.getEntries() as any) {
+            logMetric('FID', entry.processingStart - entry.startTime);
+          }
+        }).observe({ type: 'first-input', buffered: true });
+
+        // TTFB
+        const navEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        if (navEntry) {
+          logMetric('TTFB', navEntry.responseStart);
+        }
+      }
+    }
+
+    // Init on first load
+    initLenis();
+    if (import.meta.env.DEV) initVitals();
+
+    // CMS click-to-edit: when inside admin preview iframe, highlight sections on hover
+    // and send cms-click-section postMessage when user clicks one
+    if (window.parent !== window) {
+      let cmsActive = false
+
+      const initCmsClickToEdit = () => {
+        const topSections = () => Array.from(document.querySelectorAll('section'))
+          .filter((s: Element) => !s.parentElement?.closest('section')) as HTMLElement[]
+
+        let hovered: HTMLElement | null = null
+        const style = document.createElement('style')
+        style.id = 'cms-click-edit-style'
+        style.textContent = `.cms-hover-highlight{outline:2px solid rgba(250,194,18,0.7)!important;outline-offset:-2px;cursor:pointer!important;}`
+        if (!document.getElementById('cms-click-edit-style')) document.head.appendChild(style)
+
+        document.addEventListener('mouseover', (e) => {
+          if (hovered) { hovered.classList.remove('cms-hover-highlight'); hovered = null }
+          if (!cmsActive) return
+          const secs = topSections()
+          const target = (e.target as Element).closest('section')
+          const sec = target && !target.parentElement?.closest('section') ? target as HTMLElement : null
+          if (sec && secs.includes(sec)) { sec.classList.add('cms-hover-highlight'); hovered = sec }
+        }, { passive: true })
+
+        document.addEventListener('click', (e) => {
+          if (!cmsActive) return
+          const secs = topSections()
+          const target = (e.target as Element).closest('section')
+          const sec = target && !target.parentElement?.closest('section') ? target as HTMLElement : null
+          if (!sec || !secs.includes(sec)) return
+          const idx = secs.indexOf(sec)
+          window.parent.postMessage({ type: 'cms-click-section', index: idx }, '*')
+        })
+      }
+
+      // Init on first load and after each Astro page navigation
+      initCmsClickToEdit()
+      document.addEventListener('astro:page-load', initCmsClickToEdit)
+
+      // Toggle from parent admin app
+      window.addEventListener('message', (e) => {
+        if (e.data?.type !== 'cms-click-edit-active') return
+        cmsActive = !!e.data.enabled
+        if (!cmsActive) {
+          document.querySelectorAll('.cms-hover-highlight').forEach(el => el.classList.remove('cms-hover-highlight'))
+        }
+      })
+
+      // Real-time CMS live data bridge — receives data from ContentEditor on every keystroke
+      ;(window as any).__CMS_LIVE__ = (window as any).__CMS_LIVE__ || {}
+      window.addEventListener('message', (e) => {
+        if (e.data?.type !== 'cms-live-data') return
+        const { slug, data } = e.data as { slug: string; data: unknown }
+        ;(window as any).__CMS_LIVE__[slug] = data
+        const slugSubs = (window as any).__CMS_SUBS__?.[slug]
+        if (slugSubs) Object.values(slugSubs).forEach((fn: any) => fn(data))
+      })
+
+      // Screenshot capture for publish modal / history thumbnails
+      let _h2c: any = null
+      const loadH2C = (): Promise<any> => {
+        if (_h2c) return Promise.resolve(_h2c)
+        if ((window as any).html2canvas) { _h2c = (window as any).html2canvas; return Promise.resolve(_h2c) }
+        return new Promise((resolve, reject) => {
+          const s = document.createElement('script')
+          s.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js'
+          s.onload = () => { _h2c = (window as any).html2canvas; resolve(_h2c) }
+          s.onerror = reject
+          document.head.appendChild(s)
+        })
+      }
+
+      window.addEventListener('message', async (e) => {
+        if (e.data?.type !== 'cms-screenshot-request') return
+
+        // Reset Lenis (virtual scroll) to y=0 so we always capture the hero section
+        const lenis = (window as any).lenis
+        const prevY: number = lenis?.scroll ?? lenis?.targetScroll ?? window.scrollY ?? 0
+        if (lenis) lenis.scrollTo(0, { immediate: true })
+        else window.scrollTo(0, 0)
+        // Two rAF frames so any CSS transform triggered by Lenis settles
+        await new Promise<void>(r => requestAnimationFrame(() => requestAnimationFrame(r)))
+
+        try {
+          const h2c    = await loadH2C()
+          const canvas = await h2c(document.body, {
+            scale:        0.3,
+            useCORS:      true,
+            logging:      false,
+            x:            0,
+            y:            0,
+            width:        window.innerWidth,
+            height:       window.innerHeight,
+            windowWidth:  window.innerWidth,
+            windowHeight: window.innerHeight,
+          })
+          window.parent.postMessage({ type: 'cms-screenshot-data', dataUrl: canvas.toDataURL('image/jpeg', 0.75) }, '*')
+        } catch {
+          window.parent.postMessage({ type: 'cms-screenshot-data', dataUrl: null }, '*')
+        } finally {
+          // Restore previous scroll position
+          if (prevY > 0) {
+            if (lenis) lenis.scrollTo(prevY, { immediate: true })
+            else window.scrollTo(0, prevY)
+          }
+        }
+      })
+    }
+
+    // CMS admin → preview messages
+    window.addEventListener('message', (e) => {
+      const topSections = () => (Array.from(document.querySelectorAll('section'))
+        .filter(s => !s.parentElement?.closest('section')) as HTMLElement[])
+
+      if (e.data?.type === 'cms-scroll-to-section') {
+        const secs = topSections()
+        if (!secs.length) return
+        const idx = Math.min(e.data.index as number, secs.length - 1)
+        const target = secs[idx]
+        if (!target) return
+        const rawTop = target.getBoundingClientRect().top + window.scrollY
+        const scrollY = Math.max(0, rawTop - 80)
+        const l = (window as any).lenis
+        if (l) { l.scrollTo(scrollY, { immediate: true }) } else { window.scrollTo(0, scrollY) }
+        return
+      }
+
+      if (e.data?.type === 'cms-reorder-sections') {
+        const secs = topSections()
+        const { fromIdx, toIdx } = e.data as { fromIdx: number; toIdx: number }
+        if (fromIdx < 0 || toIdx < 0 || fromIdx >= secs.length || toIdx >= secs.length) return
+        const parent = secs[fromIdx]?.parentElement
+        if (!parent) return
+        const dragged = secs[fromIdx]
+        const anchor  = secs[toIdx]
+        if (fromIdx < toIdx) {
+          parent.insertBefore(dragged, anchor.nextSibling)
+        } else {
+          parent.insertBefore(dragged, anchor)
+        }
+        return
+      }
+    })
+
+    // Re-init Lenis + handle scroll state on every page ready
+    document.addEventListener('astro:page-load', () => {
+      if (import.meta.env.DEV && _navT0 > 0) {
+        const _navTag = 'background:#0F2854;color:#FAC212;padding:2px 6px;font-weight:bold;border-radius:3px 0 0 3px';
+        const _segTag = 'background:#1a1a1a;color:#ccc;padding:2px 6px';
+        const _ms = (n: number) => `${n.toFixed(0)}ms`;
+        const _clr = (ms: number) => ms < 150 ? '#00E676' : ms < 500 ? '#FFD600' : '#FF5252';
+        const total   = performance.now() - _navT0;
+        const hydrate = performance.now() - _navSwapT;
+        console.log(
+          `%c Crystal Nav %c hydrate%c ${_ms(hydrate)} %c total  %c ${_ms(total)}`,
+          _navTag, _segTag,
+          `background:${_clr(hydrate)};color:#000;padding:2px 6px;font-weight:bold`,
+          _segTag,
+          `background:${_clr(total)};color:#000;padding:2px 6px;font-weight:bold;border-radius:0 3px 3px 0`
+        );
+        _navT0 = 0;
+      }
+      initLenis();
+
+      // On reload: restore saved scroll position, then clear the flag
+      if (_isReload) {
+        _isReload = false;
+        const savedPath = sessionStorage.getItem('crystal-scroll-path');
+        const savedY    = parseInt(sessionStorage.getItem('crystal-scroll-y') || '0', 10);
+        if (savedPath === window.location.pathname && savedY > 0) {
+          requestAnimationFrame(() => {
+            lenis?.scrollTo(savedY, { immediate: true, force: true });
+          });
+        }
+        // fall through — hide bar/backdrop below (same as navigation)
+      }
+
+      // Navigation: complete + hide progress bar
+      if (_barCrawlTimer) { clearTimeout(_barCrawlTimer); _barCrawlTimer = null; }
+      const backdrop = document.getElementById('nav-backdrop');
+      const bar      = document.getElementById('nav-progress-bar');
+      if (!backdrop || !bar) return;
+      // Snap bar to 100%
+      bar.style.transition = 'width 0.15s ease';
+      bar.style.width = '100%';
+      // Fade everything out
+      setTimeout(() => {
+        backdrop.style.opacity = '0';
+        bar.style.opacity = '0';
+        setTimeout(() => {
+          backdrop.style.display = 'none';
+          bar.style.display = 'none';
+          bar.style.transition = 'none';
+          bar.style.width = '0%';
+          bar.style.opacity = '1';
+        }, 260);
+      }, 150);
+    });
+
+    // Progress bar crawl timer — cleared on page-load so it never fires after navigation completes
+    let _barCrawlTimer: ReturnType<typeof setTimeout> | null = null;
+
+    // Show backdrop + bar the moment navigation starts
+    document.addEventListener('astro:before-preparation', () => {
+      const backdrop = document.getElementById('nav-backdrop');
+      const bar      = document.getElementById('nav-progress-bar');
+      if (!backdrop || !bar) return;
+
+      if (_barCrawlTimer) { clearTimeout(_barCrawlTimer); _barCrawlTimer = null; }
+
+      // Reset bar instantly
+      bar.style.transition = 'none';
+      bar.style.width = '0%';
+      bar.style.opacity = '1';
+      // Show both
+      backdrop.style.display = 'block';
+      bar.style.display = 'block';
+      backdrop.offsetWidth; // force reflow
+      // Phase 1: fast fill to 65% in 0.5s
+      backdrop.style.opacity = '1';
+      bar.style.transition = 'width 0.5s cubic-bezier(0.1, 0.4, 0.3, 1)';
+      bar.style.width = '65%';
+      // Phase 2: slow crawl 65% → 93% over 8s — keeps moving during dev-mode Vite compile
+      _barCrawlTimer = setTimeout(() => {
+        _barCrawlTimer = null;
+        if (bar.style.display === 'none') return;
+        bar.style.transition = 'width 8s cubic-bezier(0.05, 0.1, 0.1, 1)';
+        bar.style.width = '93%';
+      }, 500);
+    });
+  }
+</script>

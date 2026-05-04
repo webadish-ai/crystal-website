@@ -1,0 +1,47 @@
+{
+    "page": {
+        "id": "fruits_vegetables_processing",
+        "sections": [
+            {
+                "type": "hero",
+                "eyebrow": "Fruits & vegetables processing",
+                "headline": "From farm. To shelf. Without losing a day of freshness.",
+                "subheadline": "India's F&V supply chain loses value at every uncontrolled step.\nCrystal's processing infrastructure: pre-cooling, sorting, grading, packing, and cold storage, designed to compress that loss and extend shelf life from the point of harvest."
+            },
+            {
+                "type": "cta",
+                "headline": "Ready to compress your supply chain loss?",
+                "body": "From harvest to retail, Crystal provides the climate-controlled backbone for your fruit and vegetable operations.",
+                "cta": {
+                    "label": "Contact F&V Solutions team",
+                    "action": "contact_fv_processing"
+                }
+            },
+            {
+                "type": "services",
+                "items": [
+                    {
+                        "title": "Pre-cooling",
+                        "description": "Rapid field heat removal immediately post-harvest. The single most important step in extending F&V shelf life, and the most commonly skipped."
+                    },
+                    {
+                        "title": "Sorting & grading",
+                        "description": "Size, weight, and quality grading to retail or export specifications. Reduces waste, improves presentation, and commands better pricing."
+                    },
+                    {
+                        "title": "Packing & palletisation",
+                        "description": "Export-ready or retail-ready packing in compliant packaging. Palletised for efficient cold storage and transport."
+                    },
+                    {
+                        "title": "Cold storage",
+                        "description": "Post-processing cold storage at the right temperature for each product. Integrated with Crystal's warehousing and transport network."
+                    }
+                ],
+                "cta": {
+                    "label": "Talk to us about F&V processing",
+                    "action": "contact_fv_processing"
+                }
+            }
+        ]
+    }
+}

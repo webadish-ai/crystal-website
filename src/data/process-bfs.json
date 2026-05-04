@@ -1,0 +1,36 @@
+{
+    "page": {
+        "id": "blast_freezing_services",
+        "sections": [
+            {
+                "type": "hero",
+                "eyebrow": "Blast freezing services",
+                "headline": "Fast, deep, and uncompromising.",
+                "subheadline": "Blast freezing is the fastest way to lock in product quality: reducing core temperature rapidly to preserve texture, nutrition, and shelf life.\nCrystal's blast freezing service is available at our facilities and as a portable solution at your location."
+            },
+            {
+                "type": "offerings",
+                "items": [
+                    {
+                        "title": "Facility-based blast freezing",
+                        "description": "Blast freezing at Crystal's cold storage facilities in Kolkata and Bhubaneswar. 10 MT/day capacity. FSSC 22000 compliant environment."
+                    },
+                    {
+                        "title": "Portable blast freezer",
+                        "description": "Crystal's blast freezer containers can be deployed at your production facility. Down to -40°C. Plug-and-play. Operational within days, not months."
+                    }
+                ]
+            },
+            {
+                "type": "products",
+                "body": "Seafood · Meat & poultry · Ready meals · Dairy products · Fruits & vegetables · Bakery products · Processed foods",
+                "cta_headline": "Lock in quality at the source.",
+                "cta_body": "Crystal's blast freezing infrastructure, at our facilities or deployed at yours, gives your product the fastest possible path to frozen without sacrificing quality.",
+                "cta": {
+                    "label": "Enquire about blast freezing",
+                    "action": "enquire_blast_freezing"
+                }
+            }
+        ]
+    }
+}

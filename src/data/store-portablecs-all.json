@@ -1,0 +1,139 @@
+{
+    "06 Store: Portable Cold Storage Containers": {
+        "Hero Page": {
+            "EYEBROW": "Portable cold storage containers",
+            "HEADLINE": "Cold storage. At your location. On your terms.",
+            "SUBHEADLINE": "India's most complete range of portable cold storage containers: available for rent or purchase.\nFrom a 10ft reefer at your production facility to a 40ft blast freezer at your processing plant.\nPlug in, switch on, start storing.",
+            "CTAS": "Rent a container | Buy a container"
+        },
+        "S1 Product range": {
+            "HEADLINE": "The right container for every cold chain need.",
+            "Product Temperature range Sizes Best for": {
+                "Reefer containers": "+25°C to -30°C, 10ft · 20ft · 40ft: Pharma, dairy, fruits, FMCG, frozen food",
+                "Blast freezer containers": "Down to -40°C, 20ft · 40ft: Rapid freezing of seafood, meat, ready meals",
+                "Super freezer": "Down to -70°C, 20ft · 40ft: Biological samples, specialty pharma, ice cream",
+                "Super store": "-30°C to +25°C, Modular: Large volume portable cold storage, events, overflow",
+                "ISO tanks": "Ambient to controlled, 20ft: Chemicals, hazardous liquids, industrial liquids"
+            }
+        },
+        "S2 Container features": {
+            "Plug and play": "Connect to standard power supply and your container is operational within hours. No civil construction, no complex installation.",
+            "Pan-India delivery": "Crystal delivers and installs containers at your location, anywhere in India. We handle the logistics.",
+            "Buy or rent": "Flexible commercial models. Short-term rental by the day for temporary requirements. Long-term lease or outright purchase for permanent needs.",
+            "AMC & spare parts": "Annual maintenance contracts and genuine spare parts available across India. Your container stays operational.",
+            "CTA": "Talk to us about your container requirement"
+        },
+        "06a Store: Reefer Containers": {
+            "Hero Page": {
+                "EYEBROW": "Reefer containers",
+                "HEADLINE": "Precise temperature. Wherever your business needs it.",
+                "SUBHEADLINE": "Crystal's reefer containers bring cold storage to your location: factory, processing facility, port, or site.\nAvailable in 10ft, 20ft, and 40ft. Rent or buy. Plug in and start storing.",
+                "CTAS": "Rent a reefer | Buy a reefer | Download brochure"
+            },
+            "S1 Specifications": {
+                "Specification 10 ft 20 ft 40 ft": {
+                    "Temperature range": "+25°C to -30°C",
+                    "Load capacity": "8 MT, 25 MT, 30 MT",
+                    "Cubic capacity": "12.4 m³, 28.2 m³, 67.9 m³",
+                    "Power supply": "440V-3PH-50Hz",
+                    "Refrigerant gas": "R-134A / R-404A (CFC-free)"
+                }
+            },
+            "S2 Key features": {
+                "Plug and play": "Connect to standard power supply. Operational within hours of delivery. No civil construction required.",
+                "Stainless steel interior": "Complete stainless steel lining for hygiene compliance. Easy to clean, FSSAI compliant.",
+                "External ramp": "External loading ramp for easy loading and unloading without forklifts.",
+                "Anti room": "Pre-cooling anti-room prevents heat ingress during loading. Maintains temperature integrity.",
+                "Strip curtains": "PVC strip curtains at the door to minimise cold loss during frequent access.",
+                "Man trap alarm": "Safety alarm system to prevent accidental entrapment inside the container."
+            },
+            "S3 Products stored": {
+                "BODY": "Pharmaceuticals · Dairy products · Fruits & vegetables · Frozen food · Meat & seafood · Bakery products · Confectionery · Biological samples · Chemicals",
+                "DOWNLOAD": "Download reefer container brochure (PDF)"
+            }
+        },
+        "06b Store: Blast Freezer Containers": {
+            "Hero Page": {
+                "EYEBROW": "Blast freezer containers",
+                "HEADLINE": "Freeze it fast. Lock in quality. At your location.",
+                "SUBHEADLINE": "Crystal's blast freezer containers bring industrial-grade rapid freezing to your production site.\nDown to -40°C. No civil construction. Operational in days.",
+                "CTAS": "Rent a blast freezer | Buy a blast freezer | Download brochure"
+            },
+            "S1 Why blast freezing matters": {
+                "BODY": "Standard freezing is slow. The longer a product takes to freeze, the more ice crystals form and the more cellular damage occurs.\nBlast freezing reduces core temperature rapidly, preserving texture, nutrition, colour, and shelf life in a way slow freezing simply cannot.\nFor seafood, meat, ready meals, and dairy, the difference is visible and measurable."
+            },
+            "S2 Specifications & features": {
+                "Temperature": "Down to -40°C. Rapid pull-down from ambient to frozen in hours.",
+                "Capacity": "Available in 20ft and 40ft. Up to 10 MT/day freezing capacity.",
+                "Portable": "Delivered and installed at your production facility. No civil construction. Plug-and-play.",
+                "Dual machine option": "40ft dual machine configuration for continuous operation and built-in redundancy."
+            },
+            "S3 Products": {
+                "BODY": "Seafood & fish · Meat & poultry · Ready meals · Dairy & ice cream · Fruits & vegetables · Bakery products · Processed foods",
+                "DOWNLOAD": "Download blast freezer container brochure (PDF)"
+            }
+        },
+        "06c Store: Super Store": {
+            "Hero Page": {
+                "EYEBROW": "Super store",
+                "HEADLINE": "Large-volume portable cold storage. No building required.",
+                "SUBHEADLINE": "The Super Store is Crystal's largest portable cold storage solution: a modular, high-capacity cold room that can be installed at any location without civil construction.\nFor businesses that need serious cold storage capacity, fast.",
+                "CTAS": "Enquire about Super Store | Download brochure"
+            },
+            "S1 Key features": {
+                "High capacity": "Modular design allows large storage volumes, significantly more than a standard reefer container.",
+                "No civil construction": "Install on any flat surface. No foundations, no building permits, no long lead times.",
+                "Temperature range": "-30°C to +25°C. Suitable for frozen, chilled, and controlled ambient storage.",
+                "Stainless steel interior": "Full stainless steel lining for hygiene compliance across food and pharma applications.",
+                "Microprocessor controller": "Precision temperature control with digital display and alarm systems.",
+                "Relocatable": "Can be moved and reinstalled at a new location as your business needs change.",
+                "DOWNLOAD": "Download Super Store brochure (PDF)"
+            }
+        },
+        "06d Store: Super Freezer": {
+            "Hero Page": {
+                "EYEBROW": "Super freezer",
+                "HEADLINE": "Ultra-low temperature. Uncompromising cold.",
+                "SUBHEADLINE": "Crystal's Super Freezer reaches temperatures down to -70°C: the deepest cold storage available in a portable format.\nFor biological samples, specialty pharmaceuticals, and products that demand the absolute extreme of temperature control.",
+                "CTAS": "Enquire about Super Freezer | Download brochure"
+            },
+            "S1 Specifications": {
+                "Temperature range": "Down to -70°C. The deepest cold available in a portable, plug-and-play format.",
+                "Applications": "Biological samples, specialty pharma (biologics, vaccines), ultra-frozen seafood and meat, research and laboratory storage.",
+                "Portable": "Delivered and installed at your location. No civil construction. No long lead times.",
+                "Compliance": "Suitable for pharma cold chain applications requiring validated ultra-low temperature storage.",
+                "DOWNLOAD": "Download Super Freezer brochure (PDF)"
+            }
+        },
+        "06e Store: ISO Tanks": {
+            "Hero Page": {
+                "EYEBROW": "ISO tank containers",
+                "HEADLINE": "Safe, certified transport and storage for liquid cargo.",
+                "SUBHEADLINE": "Crystal's ISO tank containers are certified for the transport and storage of liquid chemicals, food-grade liquids, and hazardous materials.\nAvailable for lease, pan-India.",
+                "CTA": "Enquire about ISO tanks"
+            },
+            "S1 Specifications & certifications": {
+                "Tank type": "T11 UN Portable Tank. IMDG-RID/ADR certified. UN Impact Test compliant.",
+                "Capacity": "20ft ISO tank. 26,000 litre capacity. 4 bar pressure rating.",
+                "Applications": "Food-grade liquids, chemicals, hazardous materials, industrial liquids.",
+                "Certification": "ABS certified. Compliant with international hazardous goods transport regulations.",
+                "CTA": "Discuss your ISO tank requirement"
+            }
+        },
+        "06f Store: AMC & Spare Parts": {
+            "Hero Page": {
+                "EYEBROW": "AMC & spare parts",
+                "HEADLINE": "Your container stays cold. Always.",
+                "SUBHEADLINE": "Crystal's Annual Maintenance Contract keeps your reefer container in peak operating condition: scheduled servicing, priority breakdown response, and genuine spare parts.\nAcross India.",
+                "CTA": "Enquire about AMC"
+            },
+            "S1 AMC coverage": {
+                "Scheduled servicing": "Regular preventive maintenance visits to keep your container running at peak efficiency.",
+                "Priority breakdown response": "AMC customers get priority response when something goes wrong. We know what's at stake.",
+                "Genuine spare parts": "Crystal stocks genuine replacement parts for all container types. No compromises on quality.",
+                "Pan-India coverage": "Service and parts available across India, wherever your container is located.",
+                "CTA": "Get an AMC quote"
+            }
+        }
+    }
+}

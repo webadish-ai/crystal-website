@@ -1,0 +1,84 @@
+[
+  {
+    "id": "01",
+    "category": "Q-Com",
+    "items": [
+      { "name": "Zomato",   "logoKey": "zomato",   "url": "https://www.zomato.com/" },
+      { "name": "Blinkit",  "logoKey": "blinkit",  "url": "https://blinkit.com/" },
+      { "name": "Swiggy",   "logoKey": "swiggy",   "url": "https://www.swiggy.com/" },
+      { "name": "Amazon",   "logoKey": "amazon",   "url": "https://www.amazon.in/" },
+      { "name": "Zepto",    "logoKey": "zepto",    "url": "https://www.zeptonow.com/" },
+      { "name": "Flipkart", "logoKey": "flipkart", "url": "https://www.flipkart.com/" }
+    ]
+  },
+  {
+    "id": "02",
+    "category": "Pharma",
+    "items": [
+      { "name": "Dr. Reddy's",  "logoKey": "drreddy", "url": "https://www.drreddys.com/" },
+      { "name": "Cipla",        "logoKey": "cipla",   "url": "https://www.cipla.com/" },
+      { "name": "Hetero",       "logoKey": "hetero",  "url": "https://www.heterodrugs.com/" },
+      { "name": "Laurus Labs",  "logoKey": "laurus",  "url": "https://www.lauruslabs.com/" },
+      { "name": "Lupin",        "logoKey": "lupin",   "url": "https://www.lupin.com/" }
+    ]
+  },
+  {
+    "id": "03",
+    "category": "Dairy",
+    "items": [
+      { "name": "Amul",         "logoKey": "amul2",       "url": "https://amul.com/" },
+      { "name": "Naturals",     "logoKey": "naturals",    "url": "https://www.naturalsicecream.com/" },
+      { "name": "Mother Dairy", "logoKey": "motherdairy", "url": "https://www.motherdairy.com/" },
+      { "name": "Prabhat",      "logoKey": "prabhat",     "url": "https://www.prabhatdairy.in/" },
+      { "name": "Omfed",        "logoKey": "omfed",       "url": "https://www.omfed.com/" },
+      { "name": "Rollick",      "logoKey": "rollick",     "url": "#" }
+    ]
+  },
+  {
+    "id": "04",
+    "category": "Chemical",
+    "items": [
+      { "name": "Deccan",        "logoKey": "deccan",      "url": "#" },
+      { "name": "Huntsman",      "logoKey": "huntsman",    "url": "https://www.huntsman.com/" },
+      { "name": "Ola Electric",  "logoKey": "olaelectric", "url": "https://olaelectric.com/" },
+      { "name": "Easton Energy", "logoKey": "easton",      "url": "#" }
+    ]
+  },
+  {
+    "id": "05",
+    "category": "FMCG",
+    "items": [
+      { "name": "Reliance",        "logoKey": "reliance2",    "url": "https://relianceretail.com/" },
+      { "name": "Reliance Fresh",  "logoKey": "reliancefresh","url": "https://www.reliancefresh.com/" },
+      { "name": "ITC",             "logoKey": "itc2",         "url": "https://www.itcportal.com/" },
+      { "name": "Britannia",       "logoKey": "britannia",    "url": "https://www.britannia.co.in/" },
+      { "name": "Mondelez",        "logoKey": "mondelez",     "url": "https://www.mondelezinternational.com/India" },
+      { "name": "Barry Callebaut", "logoKey": "bc",           "url": "https://www.barry-callebaut.com/" },
+      { "name": "Epigamia",        "logoKey": "epigamia",     "url": "https://www.epigamia.com/" },
+      { "name": "Ferrero Rocher",  "logoKey": "ferrero",      "url": "https://www.ferrero.com/" },
+      { "name": "Parle",           "logoKey": "parle",        "url": "https://www.parleindia.com/" },
+      { "name": "FoodVeg",         "logoKey": "foodveg",      "url": "#" }
+    ]
+  },
+  {
+    "id": "06",
+    "category": "Meat",
+    "items": [
+      { "name": "Fair Exports",  "logoKey": "fairexports", "url": "#" },
+      { "name": "Vimala Feeds",  "logoKey": "vimala",      "url": "#" },
+      { "name": "Godrej",        "logoKey": "godrej",      "url": "https://www.godrej.com/" },
+      { "name": "IFB Agro",      "logoKey": "ifbagro",     "url": "https://www.ifbagro.com/" },
+      { "name": "Off Shore",     "logoKey": "offshore",    "url": "#" },
+      { "name": "ANFAL MARINE",  "logoKey": "anfalmarine", "url": "#" }
+    ]
+  },
+  {
+    "id": "07",
+    "category": "QSR & Foodservice",
+    "items": [
+      { "name": "KFC",       "logoKey": "kfc",      "url": "https://www.kfc.co.in/" },
+      { "name": "Domino's",  "logoKey": "dominos",  "url": "https://www.dominos.co.in/" },
+      { "name": "Pizza Hut", "logoKey": "pizzahut", "url": "https://www.pizzahut.co.in/" }
+    ]
+  }
+]

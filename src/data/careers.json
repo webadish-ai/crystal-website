@@ -1,0 +1,235 @@
+{
+  "page": {
+    "id": "careers_crystal",
+    "sections": [
+      {
+        "type": "hero",
+        "eyebrow": "Careers at Crystal",
+        "headline": "Build the cold chain India needs. With us.",
+        "subheadline": "Crystal is building India's most capable cold chain platform, and we're looking for people who want to build it with us.\nIf you're driven by complex problems, operational excellence, and the chance to work on infrastructure that genuinely matters, you're in the right place.",
+        "cta": {
+          "label": "See open roles",
+          "action": "view_open_roles"
+        }
+      },
+      {
+        "type": "why_crystal",
+        "items": [
+          {
+            "title": "Real ownership",
+            "description": "Crystal is a growing platform. The work you do here has direct impact: on the business, on our clients, and on India's cold chain."
+          },
+          {
+            "title": "Hard problems",
+            "description": "Cold chain is one of the most complex operational sectors in the country. You'll be solving problems most people don't even know exist."
+          },
+          {
+            "title": "Growing fast",
+            "description": "Crystal is expanding rapidly across India. There's room to grow your career as fast as the business grows."
+          },
+          {
+            "title": "Experienced team",
+            "description": "Work alongside people who have spent their careers in cold chain, and learn from one of the most experienced teams in the sector."
+          }
+        ]
+      },
+      {
+        "type": "areas_hire",
+        "headline": "Areas we hire for.",
+        "body": "We are always looking for specialists across the entire cold chain spectrum: from engineering to ground operations.",
+        "functions": [
+          "Operations & Warehousing",
+          "Project Management (EPC/BTS)",
+          "Cold Chain Engineering",
+          "Sales & Business Development",
+          "Supply Chain & 3PL",
+          "Technology & WMS",
+          "Finance & Compliance",
+          "HR & Talent",
+          "Area"
+        ]
+      },
+      {
+        "type": "open_roles",
+        "headline": "Open roles.",
+        "body": "We are always looking for exceptional talent to build India's cold chain platform.",
+        "roles": [
+          {
+            "title": "Senior Cold Chain Engineer",
+            "function": "Cold Chain Engineering",
+            "location": "Mumbai",
+            "salary": "Competitive, based on experience",
+            "working_hours": "Full-time · 48 hrs/week",
+            "timing": "Monday – Saturday, 9:00 AM – 6:00 PM",
+            "company_overview": "Crystal Logistic Cool Chain Ltd. is India's leading integrated cold chain solutions provider. We design, build, and operate temperature-controlled infrastructure for pharma, food, and FMCG clients across India. With over two decades of operational experience, we are trusted by some of India's largest brands to keep their supply chains cold, compliant, and efficient.",
+            "role_summary": "We are looking for a Senior Cold Chain Engineer to lead the technical design and commissioning of temperature-controlled facilities for our pharma and food clients. You will own the engineering lifecycle from initial brief through to handover, working across refrigeration, MEP, and compliance requirements.",
+            "responsibilities": [
+              "Lead end-to-end design and specification of cold storage and blast freezing facilities",
+              "Develop refrigeration system layouts, heat load calculations, and equipment selection",
+              "Coordinate with EPC project teams, vendors, and client technical teams",
+              "Ensure compliance with GFSI, GMP, and food safety standards throughout design and buil",
+              "Supervise commissioning, testing, and handover of completed facilities",
+              "Provide technical input during client pitches and proposal stages"
+            ],
+            "qualifications": [
+              "B.E. / B.Tech in Mechanical, Refrigeration & Air Conditioning, or related discipline",
+              "Familiarity with cold room panel systems, refrigeration equipment, and energy efficiency standards",
+              "Knowledge of pharma GMP and food safety compliance requirements is strongly preferred",
+              "Proficiency in AutoCAD, Revit, or equivalent design tools"
+            ],
+            "experience": "Minimum 5–8 years in cold chain, industrial refrigeration, or temperature-controlled facility design. Prior EPC or design-build project experience preferred.",
+            "skills": [
+              "Refrigeration system design and heat load calculation",
+              "Cold room and controlled atmosphere storage knowledge",
+              "Strong coordination and stakeholder communication skills",
+              "Ability to manage multiple projects simultaneously",
+              "Attention to detail in technical documentation and compliance"
+            ],
+            "before_apply": "This role involves significant site travel across India. Please apply only if you are comfortable with a field-intensive role. Share your portfolio or project list along with your CV."
+          },
+          {
+            "title": "Project Manager – EPC",
+            "function": "Project Management",
+            "location": "Pan India",
+            "salary": "Competitive, based on experience",
+            "working_hours": "Full-time · 48 hrs/week",
+            "timing": "Monday – Saturday, 9:00 AM – 6:00 PM (site hours may vary)",
+            "company_overview": "Crystal Logistic Cool Chain Ltd. is India's leading integrated cold chain solutions provider. We design, build, and operate temperature-controlled infrastructure for pharma, food, and FMCG clients across India. With over two decades of operational experience, we are trusted by some of India's largest brands to keep their supply chains cold, compliant, and efficient.",
+            "role_summary": "We are looking for an experienced Project Manager to lead EPC delivery of cold chain construction projects across India. You will be responsible for end-to-end project execution — from mobilisation through commissioning — coordinating engineering, procurement, site teams, and client stakeholders.",
+            "responsibilities": [
+              "Own the full project lifecycle from kickoff to handover for cold storage and BTS construction projects",
+              "Prepare and manage project schedules, budgets, and resource plans",
+              "Coordinate across engineering, procurement, civil, MEP, and refrigeration sub-teams",
+              "Manage client relationships and ensure timely communication on progress, risks, and milestones",
+              "Identify and resolve project risks, delays, and technical issues proactively",
+              "Ensure all deliverables meet Crystal's quality, safety, and compliance standards"
+            ],
+            "qualifications": [
+              "B.E. / B.Tech in Civil, Mechanical, or related engineering discipline",
+              "PMP or equivalent project management certification preferred",
+              "Familiarity with cold chain, warehouse, or industrial construction projects",
+              "Proficiency in project management tools (MS Project, Primavera, or equivalent)"
+            ],
+            "experience": "Minimum 6–10 years in EPC, construction project management, or infrastructure delivery. Experience with food-grade or pharma-grade facilities is a strong advantage.",
+            "skills": [
+              "End-to-end project planning and execution",
+              "Budget and cost management",
+              "Cross-functional team coordination",
+              "Risk identification and mitigation",
+              "Strong written and verbal communication with senior stakeholders"
+            ],
+            "before_apply": "This is a high-travel role requiring frequent site visits across India. Candidates must be open to pan-India relocation or extended site stays. Please include a list of projects managed with scope, value, and outcomes in your application."
+          },
+          {
+            "title": "Business Development Manager",
+            "function": "Sales & Business Development",
+            "location": "Mumbai / Delhi",
+            "salary": "Fixed + performance incentive",
+            "working_hours": "Full-time · 48 hrs/week",
+            "timing": "Monday – Saturday, 9:00 AM – 6:00 PM",
+            "company_overview": "Crystal Logistic Cool Chain Ltd. is India's leading integrated cold chain solutions provider. We design, build, and operate temperature-controlled infrastructure for pharma, food, and FMCG clients across India. With over two decades of operational experience, we are trusted by some of India's largest brands to keep their supply chains cold, compliant, and efficient.",
+            "role_summary": "We are looking for a Business Development Manager to grow Crystal's client base across pharma, FMCG, and food sectors. You will own the full sales cycle — from prospecting and qualification through proposal, negotiation, and contract close — and work closely with Crystal's operations and solutions teams to build winning proposals.",
+            "responsibilities": [
+              "Build and manage a pipeline of new cold chain clients across pharma, FMCG, and food verticals",
+              "Own the full sales cycle: prospecting, qualification, proposal, negotiation, and close",
+              "Collaborate with operations, engineering, and solutions teams to develop client-specific proposals",
+              "Represent Crystal at industry events, trade bodies, and client visits",
+              "Track pipeline activity in CRM and report on conversion metrics",
+              "Identify market opportunities and feed insights back to product and operations teams"
+            ],
+            "qualifications": [
+              "Bachelor's degree in Business, Supply Chain, or related field",
+              "Strong understanding of cold chain logistics, warehousing, or supply chain sectors",
+              "Demonstrated track record of B2B sales in logistics, infrastructure, or industrial services"
+            ],
+            "experience": "Minimum 4–8 years in B2B sales or business development, preferably in logistics, cold chain, pharma supply chain, or FMCG distribution. Existing client relationships in relevant sectors are a strong advantage.",
+            "skills": [
+              "Consultative B2B sales and solution selling",
+              "Proposal writing and commercial negotiation",
+              "Relationship management with senior procurement and supply chain stakeholders",
+              "Market and competitive analysis",
+              "CRM proficiency and pipeline discipline"
+            ],
+            "before_apply": "This role involves frequent client travel across India. Please include specific examples of deals closed, sectors covered, and revenue generated in your application."
+          },
+          {
+            "title": "Warehouse Operations Supervisor",
+            "function": "Operations & Warehousing",
+            "location": "Multiple Locations",
+            "salary": "Competitive, based on experience",
+            "working_hours": "Full-time · Rotational shifts",
+            "timing": "Rotational shifts including nights and weekends",
+            "company_overview": "Crystal Logistic Cool Chain Ltd. is India's leading integrated cold chain solutions provider. We design, build, and operate temperature-controlled infrastructure for pharma, food, and FMCG clients across India. With over two decades of operational experience, we are trusted by some of India's largest brands to keep their supply chains cold, compliant, and efficient.",
+            "role_summary": "We are looking for experienced Warehouse Operations Supervisors to lead shift operations at Crystal's cold chain facilities. You will be responsible for daily warehouse activity, team performance, SLA adherence, and compliance — ensuring our clients' products are handled safely and accurately at all times.",
+            "responsibilities": [
+              "Supervise shift operations including inbound, outbound, and storage activities",
+              "Ensure SLA adherence across accuracy, throughput, and temperature compliance",
+              "Lead and develop a team of warehouse staff across multiple shifts",
+              "Maintain WMS records and ensure documentation accuracy",
+              "Coordinate with the transport team for timely dispatch and receipt",
+              "Identify and escalate operational risks, equipment failures, or compliance issues promptly"
+            ],
+            "qualifications": [
+              "Graduate in any discipline; logistics or supply chain qualification preferred",
+              "Proficiency in WMS systems and basic computer operations",
+              "Familiarity with cold chain compliance, food safety, or pharma handling requirements",
+              "Forklift certification preferred"
+            ],
+            "experience": "Minimum 3–6 years in warehouse operations, cold chain, or 3PL environments. Prior supervisory or team lead experience is required.",
+            "skills": [
+              "Team leadership and shift management",
+              "WMS operation and inventory accuracy",
+              "Cold chain and food safety compliance",
+              "Problem-solving under time pressure",
+              "Clear communication with supervisors and client representatives"
+            ],
+            "before_apply": "This role requires availability for rotational shifts including nights and weekends. Please specify your preferred location in your application. Immediate joiners will be preferred."
+          },
+          {
+            "title": "WMS Implementation Specialist",
+            "function": "Technology & WMS",
+            "location": "Mumbai",
+            "salary": "Competitive, based on experience",
+            "working_hours": "Full-time · 48 hrs/week",
+            "timing": "Monday – Saturday, 9:00 AM – 6:00 PM",
+            "company_overview": "Crystal Logistic Cool Chain Ltd. is India's leading integrated cold chain solutions provider. We design, build, and operate temperature-controlled infrastructure for pharma, food, and FMCG clients across India. With over two decades of operational experience, we are trusted by some of India's largest brands to keep their supply chains cold, compliant, and efficient.",
+            "role_summary": "We are looking for a WMS Implementation Specialist to lead the deployment, configuration, and go-live of warehouse management systems at Crystal's facilities. You will work directly with operations, IT, and client teams to ensure systems are set up correctly, staff are trained, and go-lives are smooth.",
+            "responsibilities": [
+              "Lead WMS configuration, testing, and go-live at Crystal facilities and client sites",
+              "Gather requirements from operations teams and translate them into system workflows",
+              "Train warehouse staff and supervisors on WMS operation and best practices",
+              "Provide post-go-live support and troubleshoot system or process issues",
+              "Coordinate with WMS vendors for customisations, integrations, and upgrades",
+              "Document standard operating procedures and system configurations"
+            ],
+            "qualifications": [
+              "B.E. / B.Sc. in Computer Science, Information Systems, or related discipline",
+              "Hands-on experience with one or more WMS platforms (e.g., Infor, Manhattan, SnapFulfil, or similar)",
+              "Understanding of warehouse operations, inventory management, and 3PL environments",
+              "Experience with ERP integrations (SAP, Oracle, or similar) is an advantage"
+            ],
+            "experience": "Minimum 3–6 years in WMS implementation, logistics technology, or supply chain IT. Prior experience in cold chain or 3PL environments is preferred.",
+            "skills": [
+              "WMS configuration and deployment",
+              "Warehouse operations and process mapping",
+              "User training and change management",
+              "SQL or basic data querying skills",
+              "Strong documentation and communication skills"
+            ],
+            "before_apply": "This role may require travel to Crystal facilities and client sites during go-live periods. Please list the WMS platforms you have worked with and the scale of deployments handled in your application."
+          }
+        ],
+        "cta": {
+          "label": "Don't see your role? Send us your CV anyway",
+          "action": "submit_cv"
+        },
+        "cta_cv": {
+          "label": "Submit Portfolio / CV"
+        },
+        "cta_general": {
+          "label": "General Queries"
+        }
+      }
+    ]
+  }
+}

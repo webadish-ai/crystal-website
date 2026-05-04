@@ -1,0 +1,42 @@
+{
+    "page": {
+        "id": "refrigerated_transportation",
+        "sections": [
+            {
+                "type": "hero",
+                "eyebrow": "Refrigerated transportation",
+                "headline": "Cold chain that moves as fast as your business.",
+                "subheadline": "Dedicated reefer fleet. Pan-India coverage. Temperature-controlled from pickup to delivery.\nWhether you need a single truck or a network of vehicles, Crystal keeps your product cold and moving.",
+                "cta": {
+                    "label": "Get a transport quote",
+                    "action": "get_transport_quote"
+                }
+            },
+            {
+                "type": "services",
+                "items": [
+                    {
+                        "title": "Dedicated reefer fleet",
+                        "description": "Crystal-owned and operated reefer vehicles available for dedicated assignment. Your product, your schedule, our vehicle: consistent service and single-point accountability."
+                    },
+                    {
+                        "title": "Pan-India cold transport",
+                        "description": "Extended reach through our trusted partner network. Crystal coordinates pan-India reefer transport: origin to destination, temperature monitored throughout."
+                    },
+                    {
+                        "title": "Full & part truckload",
+                        "description": "FTL for full consignments. PTL for smaller loads: shared cold transport that keeps your costs down without compromising temperature integrity."
+                    }
+                ]
+            },
+            {
+                "type": "why_crystal",
+                "body": "Crystal's transport capability is built on the same discipline as our warehousing: temperature integrity, on-time delivery, and a single point of accountability.\nOur owned fleet ensures consistency; our partner network ensures capacity.\nWhatever the volume, whatever the route, your product moves cold.",
+                "cta": {
+                    "label": "Plan your cold transport",
+                    "action": "plan_cold_transport"
+                }
+            }
+        ]
+    }
+}

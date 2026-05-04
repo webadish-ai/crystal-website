@@ -1,0 +1,52 @@
+{
+  "name": "crystal-group-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "compress": "node scripts/compress-images.mjs",
+    "compress:dry": "node scripts/compress-images.mjs --dry-run",
+    "lint": "eslint src --ext .ts,.tsx,.astro",
+    "format": "prettier --write \"src/**/*.{ts,tsx,astro,css}\""
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^6.6.5",
+    "@astrojs/node": "^9.5.5",
+    "@astrojs/react": "^4.2.0",
+    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/tailwind": "^6.0.2",
+    "@gsap/react": "^2.1.2",
+    "ajv": "^8.18.0",
+    "astro": "^5.4.1",
+    "autoprefixer": "^10.4.20",
+    "framer-motion": "^12.38.0",
+    "gsap": "^3.14.2",
+    "lenis": "^1.3.19",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.6.0",
+    "react-simple-maps": "^3.0.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "optionalDependencies": {
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^24.12.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "prettier": "^3.0.0",
+    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-tailwindcss": "^0.6.0",
+    "typescript": "~5.9.3"
+  }
+}

@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Preloader: hide page content synchronously until overlay exits */
+[data-preloading] #page-content {
+  visibility: hidden;
+}
+
+/* Fade breadcrumb when image gallery dialog is open */
+body[data-gallery-open] [data-breadcrumb] {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s ease !important;
+}
+
+/* Skeleton shimmer sweep */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Section stagger reveal after preloader exits */
+@keyframes sec-fadein {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+#page-content.is-entering main > section {
+  animation: sec-fadein 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+}
+
+#page-content.is-entering main > section:nth-child(1) { animation-delay: 0ms; }
+#page-content.is-entering main > section:nth-child(2) { animation-delay: 130ms; }
+#page-content.is-entering main > section:nth-child(3) { animation-delay: 250ms; }
+#page-content.is-entering main > section:nth-child(n+4) { animation-delay: 360ms; }
+
+:root {
+  --color-primary: #FEFFFE;
+  /* Pure Off-white */
+  /* --color-secondary: #042378; */
+  --color-secondary: #0F2854;
+  /* Crystal Deep Navy */
+  --color-accent: #FAC212;
+  /* Vibrant Amber */
+  --color-dark: #010000;
+  /* True Black */
+  --color-card-bg: #F8F9FF;
+  /* Very light tint for depth */
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  /* Architectural Grid Variables - Standardized for global alignment */
+  --max-width: 1160px;
+  --spacing-section: 120px;
+}
+
+@layer base {
+  body {
+    @apply font-body font-medium text-secondary bg-primary;
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: auto;
+    /* Ensure cursor doesn't change to I-beam for text */
+    cursor: default;
+    /* Prevent browser auto-hyphenation — always break at word boundaries only */
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+
+  /* Long words wrap at the end of a line rather than overflowing their container.
+     pre-line preserves \n line breaks in JSON body text for multi-sentence formatting. */
+  p, li, blockquote, td, th {
+    overflow-wrap: break-word;
+    word-break: normal;
+    white-space: pre-line;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  span,
+  blockquote,
+  div {
+    cursor: default !important;
+  }
+
+  a,
+  button,
+  [role="button"],
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+}
+
+
+@layer utilities {
+  .animate-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* ── Eyebrow labels ─────────────────────────────────────────────────────── */
+/* Italic gives eyebrow text a clear typographic role.
+   Colour is set per-component: text-accent on dark sections,
+   text-secondary (no opacity) on light sections.                           */
+.font-body.text-eyebrow.uppercase {
+  font-style: italic;
+}
+
+/* ── Performance utilities ──────────────────────────────────────────────── */
+
+/* content-visibility: skip off-screen render work (CLS-safe on fixed-height sections) */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
+/* GPU-composited marquee tracks */
+.marquee-track {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Promote animated elements to their own compositing layer */
+.gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Custom Boxed Scrollbar - Tailwind doesn't have a good default for this without plugins */
+::-webkit-scrollbar {
+  width: 14px;
+  background-color: var(--color-primary);
+  border-left: 1px solid color-mix(in srgb, #0F2854 10%, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-accent);
+  border-radius: 0;
+  border: 3px solid var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-secondary);
+}

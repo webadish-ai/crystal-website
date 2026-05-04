@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F1F3F8"/>
+      <stop offset="100%" stop-color="#FEFFFE"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(15,40,84,0.04)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Navy left accent bar -->
+  <rect x="0" y="0" width="6" height="630" fill="#0F2854"/>
+
+  <!-- Amber bottom accent bar -->
+  <rect x="0" y="610" width="1200" height="20" fill="#FAC212"/>
+
+  <!-- Crystal logo — centred, ~320px wide -->
+  <image href="/crystal-logo-black.png" x="440" y="180" width="320" height="160"
+         preserveAspectRatio="xMidYMid meet"/>
+
+  <!-- Divider -->
+  <rect x="540" y="370" width="120" height="2" fill="#0F2854" opacity="0.12"/>
+
+  <!-- Tagline -->
+  <text x="600" y="415" font-family="'Poppins', 'Helvetica Neue', Arial, sans-serif"
+        font-size="20" font-weight="600" fill="rgba(15,40,84,0.35)"
+        text-anchor="middle" letter-spacing="3">INDIA'S END-TO-END COLD CHAIN PLATFORM</text>
+
+  <!-- Domain -->
+  <text x="600" y="455" font-family="'Poppins', 'Helvetica Neue', Arial, sans-serif"
+        font-size="17" font-weight="700" fill="#FAC212"
+        text-anchor="middle" letter-spacing="1">crystalgroup.in</text>
+</svg>

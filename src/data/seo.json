@@ -1,0 +1,115 @@
+{
+  "_note": "SEO config for all pages. 'status' is 'preserved' (from old WordPress/AIOSEO) or 'todo' (needs writing). Apply to Astro page <head> when ready.",
+  "pages": {
+    "index": {
+      "status": "preserved",
+      "title": "Cold Chain, Refrigerated Containers & Cold Storage Solutions in India | Crystal Group",
+      "description": "Crystal Group provides advanced cold chain logistics, refrigerated containers, reefer trucks, and cold storage solutions across India. Trusted by pharma, dairy, seafood and FMCG brands for reliable temperature-controlled services."
+    },
+    "about": {
+      "status": "preserved",
+      "title": "About Crystal Group | India's Leading Cold Chain & Refrigeration Solutions Company",
+      "description": "Crystal Group is a trusted cold chain solutions provider offering refrigerated containers, cold rooms, reefer trucks, and storage services across India. Over a decade of reliable service."
+    },
+    "contact": {
+      "status": "preserved",
+      "title": "Contact Crystal Group | Cold Chain & Refrigeration Solutions in India",
+      "description": "Get in touch with Crystal Group to discuss cold storage, reefer containers, or cold chain logistics solutions. Available across India with quick response support."
+    },
+    "locations": {
+      "status": "preserved",
+      "title": "Crystal Group Locations | Cold Storage & Container Network",
+      "description": "Find Crystal Group at our convenient locations in Mumbai, Kolkata, Bhubaneswar. Get directions, contact details, and hours of operation. Visit us today!"
+    },
+    "careers": {
+      "status": "preserved",
+      "title": "Careers at Crystal Group | Join Our Team",
+      "description": "Explore job opportunities at Crystal Group — container manufacturing, cold chain, logistics & more. Grow your career with us."
+    },
+    "store-reefer": {
+      "status": "preserved",
+      "title": "Reefer / Refrigerated Containers | Crystal Group",
+      "description": "We offer a variety of reefer containers for businesses needing cold chain solutions. Choose from various sizes and configurations to meet your specific needs."
+    },
+    "store-blast-freezer": {
+      "status": "preserved",
+      "title": "Blast Freezer Containers | Crystal Group",
+      "description": "Rapid-freezing freezer containers from +25°C to -40°C using high-velocity airflow — preserve freshness, texture & safety for food, pharma & biotech."
+    },
+    "store-super-freezer": {
+      "status": "preserved",
+      "title": "Super Freezer Containers | Crystal Group",
+      "description": "Ultra-low temperature containers down to -70°C — energy-efficient, high insulation with alarm & backup power for biotech, pharma & seafood."
+    },
+    "store-super-store": {
+      "status": "preserved",
+      "title": "Super Store Reefer Containers | Crystal Group",
+      "description": "Dual-bay refrigerated containers (-25°C to +25°C) with high insulation and remote monitoring — ideal for food, pharma & perishable goods."
+    },
+    "store-iso-tank": {
+      "status": "preserved",
+      "title": "ISO Tanks: Safe and Efficient Liquid Transport | Crystal Group",
+      "description": "Discover our ISO tanks, the industry standard for transporting bulk liquids safely and efficiently. Explore our range of solutions and optimize your logistics."
+    },
+    "store-amc": {
+      "status": "preserved",
+      "title": "AMC & Spare Parts for Cold Chain Equipment | Crystal Group",
+      "description": "Get reliable AMC services and genuine spare parts for cold storage units, reefer trucks, and refrigerated containers with Crystal Group."
+    },
+    "build-bts": {
+      "status": "preserved",
+      "title": "Built-to-Suit Cold Storage Facilities | Crystal Group India",
+      "description": "Crystal Group provides custom-built cold chain facilities — efficient, scalable, and ready in 90 days. BTS design, build, operate, and maintain solutions."
+    },
+    "solutions": {
+      "status": "preserved",
+      "title": "End-to-End Cold Chain Solutions in India | Crystal Group",
+      "description": "Crystal Group delivers complete cold chain solutions — infrastructure, cold storage, refrigerated transport, blast freezing and 3PL services across India."
+    },
+    "impact": {
+      "status": "preserved",
+      "title": "Cold Chain Case Studies & Results | Crystal Group India",
+      "description": "See how Crystal Group delivers: 40,000 sqft pharma warehouses, 3-city rollouts in 90 days, and certified facilities for food, pharma and FMCG brands."
+    },
+    "move": {
+      "status": "preserved",
+      "title": "Refrigerated Transport & Reefer Fleet Pan-India | Crystal Group",
+      "description": "Dedicated reefer fleet for temperature-controlled FTL and PTL transport across India — reliable cold chain logistics for food, pharma and FMCG."
+    },
+    "solve": {
+      "status": "preserved",
+      "title": "Custom Cold Chain Solutions & Consulting | Crystal Group India",
+      "description": "Complex cold chain requirement? Crystal Group designs bespoke solutions — consulting, overflow capacity, and new market entry support across India."
+    },
+    "build-epc": {
+      "status": "preserved",
+      "title": "Cold Storage EPC Construction & Design | Crystal Group India",
+      "description": "Turnkey cold facility builds — engineering, procurement, construction and commissioning to GFSI and GMP food safety standards, pan-India."
+    },
+    "process-bfs": {
+      "status": "preserved",
+      "title": "Blast Freezing Services -40°C, 10 MT/day | Crystal Group India",
+      "description": "FSSC 22000 blast freezing in Kolkata & Bhubaneswar — 10 MT/day at -40°C for seafood, meat, dairy and food manufacturers. Portable units also available."
+    },
+    "process-fvp": {
+      "status": "preserved",
+      "title": "Fruits & Vegetables Cold Chain Processing | Crystal Group India",
+      "description": "Cut post-harvest losses with Crystal Group's F&V services — pre-cooling, sorting, grading, packing and cold storage from farm to retail in India."
+    },
+    "store-3pl": {
+      "status": "preserved",
+      "title": "3PL Cold Chain & Supply Chain Management | Crystal Group India",
+      "description": "Full cold supply chain outsourcing with WMS, ERP/SAP integration, order management and stock control. Trusted 3PL operator since 2000."
+    },
+    "store-colds": {
+      "status": "preserved",
+      "title": "Cold Storage & Warehousing Facilities Across India | Crystal Group",
+      "description": "FSSC 22000 certified cold warehouses in 9 cities — Kolkata, Chennai, JNPT, Delhi, Mundra & more. Four temperature zones, WMS-enabled, 100% power backup."
+    },
+    "store-portable-cold-storage": {
+      "status": "preserved",
+      "title": "Portable Cold Storage Containers: Rent or Buy | Crystal Group India",
+      "description": "Plug-and-play reefer, blast freezer (-40°C), super freezer (-70°C) and ISO tanks — pan-India delivery, rent or buy for food, pharma and cold chain needs."
+    }
+  }
+}

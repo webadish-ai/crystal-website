@@ -1,0 +1,43 @@
+{
+  "02 Build: Design, Build & Operate (BTS)": {
+    "Hero Page": {
+      "EYEBROW": "Built-to-suit cold chain",
+      "HEADLINE": "Your cold chain. Designed around your business.",
+      "SUBHEADLINE": "Most cold chain facilities are built for the average client.\nCrystal builds for you: your product, your throughput, your compliance requirements, your city.\nWe design it, build it, and operate it. You focus on your business.",
+      "CTA": "Talk to us about your requirement",
+      "CTA_BROCHURE": "Download Q-Comm Brochure"
+    },
+    "S1 What is BTS?": {
+      "HEADLINE": "Built for you. Operated by us.",
+      "BODY": "A built-to-suit cold chain facility is designed, engineered, and constructed specifically for your operation.\nCrystal manages the entire process: from site selection and design to construction, commissioning, and ongoing operations.\nYou get a world-class cold chain facility without the complexity of building it yourself."
+    },
+    "S2 What we deliver": {
+      "HEADLINE": "End-to-end. From brief to operations.",
+      "Site selection & design": "We identify the right location for your supply chain and design the facility around your exact operational requirements: temperature zones, throughput, compliance, and future scale.",
+      "Site selection & design IMAGE": "/images/build/bts-site-selection.png",
+      "Engineering & construction": "Crystal manages the full EPC process, covering structural, mechanical, electrical, and refrigeration, to the highest food safety and pharma standards.",
+      "Engineering & construction IMAGE": "/images/build/bts-engineering.png",
+      "Commissioning & handover": "We commission every system, train your team, and ensure the facility is SLA-ready from day one. No surprises. No delays.",
+      "Commissioning & handover IMAGE": "/images/build/bts-commissioning.png",
+      "Ongoing operations": "Crystal operates the facility on your behalf: warehouse management, staffing, compliance, maintenance, and reporting. We own the outcome.",
+      "Ongoing operations IMAGE": "/images/build/bts-operations.png"
+    },
+    "S3 Who this is for": {
+      "HEADLINE": "Built for businesses that need certainty.",
+      "BODY": "BTS is the right solution if you need dedicated cold chain capacity in a specific location, require pharma-grade or food-safety compliance from day one, want a single partner accountable for design, build, and operations, or are scaling into new cities and need infrastructure that replicates reliably."
+    },
+    "S4 Case study": {
+      "TAG": "Build · Pharma",
+      "TITLE": "Pharma-grade warehouse at JNPT: from brief to live in 3 months",
+      "BODY": "A leading pharmaceutical company needed a fully compliant bonded and non-bonded cold storage facility at JNPT: designed, built, and operational within 90 days.\nCrystal delivered a 40,000 sqft facility with segregated temperature zones, CFR 21-compliant monitoring, WMS integration, and full audit readiness from day one.",
+      "OUTCOMES": "40,000 sqft delivered · bonded & non-bonded zones · CFR 21 compliant · WMS-enabled · operational in 90 days"
+    },
+    "S5 Why Crystal for BTS": {
+      "20,000+ pallets built": "Proven track record of building and operating A-grade cold storage at scale across India.",
+      "Operational from day one": "We don't just hand over keys. We commission, staff, and operate so your supply chain never skips a beat.",
+      "Compliance built in": "FSSC 22000, ISO 22000, pharma GMP, FSSAI. Our facilities are built to the standards your auditors expect.",
+      "Demand-first approach": "We build only when the requirement is confirmed. No speculation. Every rupee of capital is accountable.",
+      "CTA": "Tell us your requirement"
+    }
+  }
+}

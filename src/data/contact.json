@@ -1,0 +1,61 @@
+{
+    "page": {
+        "id": "contact_crystal",
+        "sections": [
+            {
+                "type": "contact_form",
+                "eyebrow": "Get in touch",
+                "headline": "Tell us what you need.",
+                "subheadline": "Whether it's a container for next week or a cold chain built for the next decade: start with a conversation.",
+                "fields": [
+                    "Name",
+                    "Company",
+                    "Email",
+                    "Phone",
+                    {
+                        "field": "I need help with",
+                        "type": "dropdown",
+                        "options": [
+                            "Store",
+                            "Move",
+                            "Process",
+                            "Build",
+                            "Solve",
+                            "Not sure"
+                        ]
+                    },
+                    {
+                        "field": "Tell us more",
+                        "type": "text"
+                    },
+                    "Submit"
+                ]
+            },
+            {
+                "type": "offices",
+                "headline": "Base of operations.",
+                "locations": [
+                    {
+                        "city": "Mumbai",
+                        "address": "501, Synergy Business Park, Sahakar Wadi, Off Aarey Road, Goregaon East, Mumbai, Maharashtra 400063",
+                        "type": "Corporate"
+                    },
+                    {
+                        "city": "Kolkata",
+                        "address": "8B Middleton Street, Geetanjali, Park Street, Kolkata, West Bengal 700071",
+                        "type": "Registered"
+                    }
+                ]
+            },
+            {
+                "type": "contact",
+                "headline": "Direct lines.",
+                "phone": [
+                    "+91 98925 12900",
+                    "+91 9136121497"
+                ],
+                "email": "marketing@crystalgroup.in"
+            }
+        ]
+    }
+}

@@ -1,0 +1,62 @@
+{
+    "page": {
+        "id": "custom_cold_chain_solutions",
+        "sections": [
+            {
+                "type": "hero",
+                "eyebrow": "Custom cold chain solutions",
+                "headline": "Your problem doesn't fit the standard mould? Good.",
+                "subheadline": "Some cold chain problems don't come with an off-the-shelf answer. A new product format, an unusual location, a compliance requirement nobody has solved before, a supply chain that needs redesigning from scratch.\nThese are the problems Crystal is built for.",
+                "cta": {
+                    "label": "Tell us your problem",
+                    "action": "submit_problem"
+                }
+            },
+            {
+                "type": "coverage",
+                "items": [
+                    {
+                        "title": "Cold chain consulting",
+                        "description": "We audit your existing cold chain, identify gaps, and design a solution: whether that means new infrastructure, better processes, or a different technology."
+                    },
+                    {
+                        "title": "Bespoke cold chain design",
+                        "description": "A cold chain designed around your exact product, your exact route, and your exact compliance requirement. Not a template. A solution."
+                    },
+                    {
+                        "title": "Overflow & emergency capacity",
+                        "description": "Cold chain failure doesn't wait for convenient timing. Crystal can deploy portable cold storage and transport capacity at short notice, anywhere in India."
+                    },
+                    {
+                        "title": "New market entry",
+                        "description": "Entering a new city or a new product category? Crystal helps you design and deploy the cold chain infrastructure you need before you launch."
+                    }
+                ]
+            },
+            {
+                "type": "process",
+                "steps": [
+                    {
+                        "step": 1,
+                        "title": "Tell us your problem",
+                        "description": "Share your requirement in as much or as little detail as you have. No brief is too vague."
+                    },
+                    {
+                        "step": 2,
+                        "title": "Solution design",
+                        "description": "Crystal's team assesses your requirement and returns with a solution design: infrastructure, operations, and commercial model."
+                    },
+                    {
+                        "step": 3,
+                        "title": "Build & deploy",
+                        "description": "We build it, deploy it, and stand behind it. One partner, full accountability."
+                    }
+                ],
+                "cta": {
+                    "label": "Start the conversation",
+                    "action": "start_conversation"
+                }
+            }
+        ]
+    }
+}

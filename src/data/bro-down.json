@@ -1,0 +1,107 @@
+{
+    "page": {
+        "id": "brochure_download_strategy",
+        "sections": [
+            {
+                "type": "overview",
+                "purpose": "Downloadable brochures serve two functions: they give buyers something to share internally with their procurement or supply chain teams, and they are a lead capture opportunity — gating downloads behind a simple form generates qualified leads without friction."
+            },
+            {
+                "type": "brochures",
+                "items": [
+                    {
+                        "title": "Company profile / overview",
+                        "page": "About, Homepage",
+                        "status": "Exists — needs brand update",
+                        "gate": false
+                    },
+                    {
+                        "title": "Reefer container brochure",
+                        "page": "Reefer Containers page",
+                        "status": "Exists — needs brand update",
+                        "gate": true
+                    },
+                    {
+                        "title": "Blast freezer container brochure",
+                        "page": "Blast Freezer Containers page",
+                        "status": "Exists — needs brand update",
+                        "gate": true
+                    },
+                    {
+                        "title": "Super Store brochure",
+                        "page": "Super Store page",
+                        "status": "Exists — needs brand update",
+                        "gate": true
+                    },
+                    {
+                        "title": "Super Freezer brochure",
+                        "page": "Super Freezer page",
+                        "status": "Exists — needs brand update",
+                        "gate": true
+                    },
+                    {
+                        "title": "Cold storage warehousing brochure",
+                        "page": "Cold Storage & Warehousing page",
+                        "status": "Needs to be created",
+                        "gate": true
+                    },
+                    {
+                        "title": "3PL capability brochure",
+                        "page": "3PL & Supply Chain page",
+                        "status": "Needs to be created",
+                        "gate": true
+                    },
+                    {
+                        "title": "BTS capability brochure",
+                        "page": "Design, Build & Operate page",
+                        "status": "Partial — Cipla proposal exists",
+                        "gate": true
+                    },
+                    {
+                        "title": "EPC capability brochure",
+                        "page": "EPC page",
+                        "status": "Needs to be created",
+                        "gate": true
+                    },
+                    {
+                        "title": "Portable storage brochure",
+                        "page": "Containers landing page",
+                        "status": "Exists — needs brand update",
+                        "gate": false
+                    }
+                ]
+            },
+            {
+                "type": "download_form",
+                "fields": [
+                    "First name",
+                    "Last name",
+                    "Company name",
+                    "Email address",
+                    "Phone (optional)",
+                    {
+                        "field": "I am interested in",
+                        "type": "auto-filled from page context"
+                    }
+                ],
+                "post_download": "After submitting the form: instant PDF download + confirmation email with PDF attached + lead enters CRM for follow-up within 24 hours."
+            },
+            {
+                "type": "non_gated_downloads",
+                "rationale": "Company profile and portable storage brochure should be open downloads — no gate. These are top-of-funnel awareness materials. Gating them creates unnecessary friction for early-stage visitors."
+            },
+            {
+                "type": "brochure_design",
+                "brand_consistency": "All brochures must be updated to the new Crystal brand — new logo, navy + white + teal colour palette, updated typography, new positioning language. Existing content can be retained but must be reskinned.",
+                "file_format": "PDF, optimised for digital download. Max 5MB per file. Include clickable email and phone links within the PDF.",
+                "priority_order": [
+                    "Company profile",
+                    "Reefer container brochure",
+                    "Portable storage brochure",
+                    "BTS capability brochure",
+                    "All others"
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #888; display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+  .banner {
+    width: 1200px; height: 630px;
+    background: linear-gradient(to right, #F1F3F8, #FEFFFE);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  }
+  /* Grid pattern */
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(15,40,84,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(15,40,84,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .left-bar { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #0F2854; }
+  .bottom-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 20px; background: #FAC212; }
+  .logo { width: 320px; height: auto; position: relative; z-index: 1; }
+  .divider { width: 120px; height: 2px; background: rgba(15,40,84,0.12); margin: 24px 0 20px; position: relative; z-index: 1; }
+  .tagline {
+    font-size: 20px; font-weight: 600;
+    color: rgba(15,40,84,0.35);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+  .domain {
+    font-size: 17px; font-weight: 700;
+    color: #FAC212;
+    letter-spacing: 1px;
+    margin-top: 14px;
+    position: relative; z-index: 1;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="banner">
+    <div class="left-bar"></div>
+    <div class="bottom-bar"></div>
+    <img class="logo" src="/crystal-logo-black.png" alt="Crystal Group">
+    <div class="divider"></div>
+    <div class="tagline">India's End-to-End Cold Chain Platform</div>
+    <div class="domain">crystalgroup.in</div>
+  </div>
+</body>
+</html>
