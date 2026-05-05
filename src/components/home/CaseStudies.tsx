@@ -67,7 +67,7 @@ const CaseStudies: React.FC = () => {
             className="md:w-[45%] min-h-[160px] md:h-full relative p-5 md:p-8 flex flex-col justify-between bg-secondary text-primary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl rounded-sm"
           >
             <motion.div className="absolute inset-0 z-50 bg-primary pointer-events-none" variants={wipeVariants} />
-            <img src={reeferBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none" />
+            <img src={reeferBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none" />
             <div className="relative z-10 flex justify-between items-start">
               <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mt-1">
                 {caseStudiesData[0].tag}
