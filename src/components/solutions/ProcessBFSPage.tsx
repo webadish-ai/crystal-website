@@ -95,7 +95,7 @@ const ProcessBFSPage: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium">
               {hero.subheadline}
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact-us">
               {products.cta.label} <FiArrowRight className="ml-2 text-lg transition-transform group-hover/btn:translate-x-1" />
             </Button>
           </motion.div>
@@ -236,7 +236,7 @@ const ProcessBFSPage: React.FC = () => {
               </motion.p>
             </div>
             <motion.div variants={itemVariants} className="shrink-0">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact-us">
                 {products.cta.label} <FiArrowRight className="ml-2 text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
             </motion.div>

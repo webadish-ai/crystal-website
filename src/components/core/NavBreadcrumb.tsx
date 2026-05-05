@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiHome, FiPackage, FiTool, FiTrendingUp, FiTruck, FiThermometer, FiWind, FiBox, FiLayers, FiActivity, FiShield, FiUsers, FiMail } from 'react-icons/fi';
 
@@ -7,26 +7,26 @@ export interface Crumb { name: string; href: string; }
 const hrefIconMap: Record<string, React.ReactNode> = {
   '/':                             <FiHome />,
   '/#solutions':                   <FiLayers />,
-  '/build-bts':                    <FiPackage />,
+  '/built-to-suit':                    <FiPackage />,
   '/build-epc':                    <FiTool />,
-  '/store-cold-storage':           <FiThermometer />,
+  '/warehouse':           <FiThermometer />,
   '/store-3pl':                    <FiTrendingUp />,
   '#':                             <FiBox />,
   '/store-portable-cold-storage':  <FiBox />,
-  '/store-reefer':                 <FiTruck />,
-  '/store-blast-freezer':          <FiWind />,
-  '/store-super-store':            <FiLayers />,
-  '/store-super-freezer':          <FiThermometer />,
-  '/store-iso-tank':               <FiActivity />,
-  '/store-amc':                    <FiShield />,
-  '/move':                         <FiTruck />,
-  '/process-fvp':                  <FiActivity />,
+  '/reefer-containers':                 <FiTruck />,
+  '/blast-freezer':          <FiWind />,
+  '/super-store-reefer':            <FiLayers />,
+  '/super-freezer':          <FiThermometer />,
+  '/iso-tank-container':               <FiActivity />,
+  '/amc-spareparts':                    <FiShield />,
+  '/transportation':                         <FiTruck />,
+  '/food-processing':                  <FiActivity />,
   '/process-bfs':                  <FiWind />,
   '/solve':                        <FiLayers />,
-  '/impact':                       <FiTrendingUp />,
-  '/about':                        <FiUsers />,
-  '/careers':                      <FiUsers />,
-  '/contact':                      <FiMail />,
+  '/case-studies':                       <FiTrendingUp />,
+  '/about-us':                        <FiUsers />,
+  '/career':                      <FiUsers />,
+  '/contact-us':                      <FiMail />,
 };
 
 const TypewriterBreadcrumb = ({ text, startDelay = 600 }: { text: string; startDelay?: number }) => {

@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiUsers, FiTrendingUp, FiSettings, FiMapPin, FiBriefcase, FiClock } from 'react-icons/fi';
-import careersData from '../../data/careers.json';
+import careersData from '../../data/career.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
@@ -352,7 +352,7 @@ const CareersPage: React.FC = () => {
               <Button variant="primary" size="lg" href="mailto:marketing@crystalgroup.in">
                 {open_roles.cta_cv.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
-              <Button variant="secondary" size="lg" href="/contact">
+              <Button variant="secondary" size="lg" href="/contact-us">
                 {open_roles.cta_general.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

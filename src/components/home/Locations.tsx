@@ -166,7 +166,7 @@ const Locations: React.FC = () => {
             </div>
 
             <div className="mt-8">
-              <Button variant="primary" href="/contact">{s11.cta.toUpperCase()}</Button>
+              <Button variant="primary" href="/contact-us">{s11.cta.toUpperCase()}</Button>
             </div>
           </motion.div>
 

@@ -43,7 +43,7 @@ const SectionHeader = ({ eyebrow, head, desc, align = "left", dark = false }: { 
 /* EXACT HOMEPAGE BENTO CARD STYLE */
 const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string; title: string; desc: string; img: string; gridStyle?: React.CSSProperties; className?: string }) => (
   <motion.a
-    href="/contact"
+    href="/contact-us"
     variants={itemVariants}
     style={gridStyle}
     className={`bg-primary border border-secondary/15 rounded-sm relative group overflow-hidden
@@ -130,7 +130,7 @@ const BuildEPC: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium"
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact-us">
               {data["Hero Page"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
             </Button>
           </motion.div>
@@ -202,7 +202,7 @@ const BuildEPC: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: data["S3 Why Crystal for EPC"].BODY }}
             />
             <motion.div variants={itemVariants}>
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact-us">
                 {data["S3 Why Crystal for EPC"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/final:translate-x-1" />
               </Button>
             </motion.div>

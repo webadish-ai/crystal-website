@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
+﻿import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import crystalLogo from '../../assets/brand-data/crystal-logo-black-1.png';
 import gsap from 'gsap';
@@ -21,7 +21,7 @@ const navItems = [
     href: '/#solutions',
     activePathStart: '/build',
     subLinks: [
-      { name: 'Built to Suit', desc: 'Design, Build & Operate', icon: <FiPackage className="text-xl shrink-0" />, href: '/build-bts' },
+      { name: 'Built to Suit', desc: 'Design, Build & Operate', icon: <FiPackage className="text-xl shrink-0" />, href: '/built-to-suit' },
       { name: 'Engineering & Construction', desc: 'Full EPC project delivery', icon: <FiTool className="text-xl shrink-0" />, href: '/build-epc' },
     ],
   },
@@ -30,36 +30,36 @@ const navItems = [
     href: '/#solutions',
     activePathStart: '/store',
     subLinks: [
-      { name: 'Cold Storage', desc: 'Temp-controlled warehousing', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store-cold-storage' },
+      { name: 'Cold Storage', desc: 'Temp-controlled warehousing', icon: <FiThermometer className="text-xl shrink-0" />, href: '/warehouse' },
       { name: '3PL Management', desc: 'Full supply chain outsourcing', icon: <FiTrendingUp className="text-xl shrink-0" />, href: '/store-3pl' },
       {
         name: 'Portable Cold Storage', desc: 'Containers & modular units', icon: <FiBox className="text-xl shrink-0" />, href: '/store-portable-cold-storage',
         nestedLinks: [
           { name: 'Portable Cold Storage: Overview', desc: 'View all units & solutions', icon: <FiBox className="text-xl shrink-0" />, href: '/store-portable-cold-storage' },
-          { name: 'Reefer Containers', desc: 'Portable site cold storage', icon: <FiTruck className="text-xl shrink-0" />, href: '/store-reefer' },
-          { name: 'Blast Freezers', desc: 'Rapid industrial freezing', icon: <FiWind className="text-xl shrink-0" />, href: '/store-blast-freezer' },
-          { name: 'Super Store', desc: 'High-volume modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/store-super-store' },
-          { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store-super-freezer' },
-          { name: 'ISO Tanks', desc: 'Liquid cargo transport', icon: <FiActivity className="text-xl shrink-0" />, href: '/store-iso-tank' },
-          { name: 'AMC & Spare Parts', desc: '24/7 maintenance support', icon: <FiShield className="text-xl shrink-0" />, href: '/store-amc' },
+          { name: 'Reefer Containers', desc: 'Portable site cold storage', icon: <FiTruck className="text-xl shrink-0" />, href: '/reefer-containers' },
+          { name: 'Blast Freezers', desc: 'Rapid industrial freezing', icon: <FiWind className="text-xl shrink-0" />, href: '/blast-freezer' },
+          { name: 'Super Store', desc: 'High-volume modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/super-store-reefer' },
+          { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/super-freezer' },
+          { name: 'ISO Tanks', desc: 'Liquid cargo transport', icon: <FiActivity className="text-xl shrink-0" />, href: '/iso-tank-container' },
+          { name: 'AMC & Spare Parts', desc: '24/7 maintenance support', icon: <FiShield className="text-xl shrink-0" />, href: '/amc-spareparts' },
         ],
       },
     ],
   },
-  { name: 'Move', href: '/move' },
+  { name: 'Move', href: '/transportation' },
   {
     name: 'Process',
-    href: '/process-fvp',
+    href: '/food-processing',
     activePathStart: '/process',
     subLinks: [
-      { name: 'Fruits & Vegetables Processing', desc: 'Pre-cooling, sorting & packing', icon: <FiActivity className="text-xl shrink-0" />, href: '/process-fvp' },
+      { name: 'Fruits & Vegetables Processing', desc: 'Pre-cooling, sorting & packing', icon: <FiActivity className="text-xl shrink-0" />, href: '/food-processing' },
       { name: 'Blast Freezing', desc: 'Rapid industrial freezing services', icon: <FiWind className="text-xl shrink-0" />, href: '/process-bfs' },
     ],
   },
   { name: 'Solve', href: '/solve' },
-  { name: 'Impact', href: '/impact' },
-  { name: 'About', href: '/about' },
-  { name: 'Careers', href: '/careers' },
+  { name: 'Impact', href: '/case-studies' },
+  { name: 'About', href: '/about-us' },
+  { name: 'Careers', href: '/career' },
 ];
 
 /* ─── helpers ─────────────────────────────────────────────────────────────── */
@@ -416,7 +416,7 @@ const Nav: React.FC = () => {
           {/* Right: CTA + hamburger */}
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="/contact"
+              href="/contact-us"
               data-astro-prefetch={PREFETCH}
               className="hidden lg:flex font-heading font-extrabold text-[10px] uppercase tracking-[0.15em] px-6 py-3 bg-secondary text-primary rounded-sm transition-all duration-300 border-2 border-secondary hover:bg-transparent hover:text-secondary group items-center gap-2 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
@@ -447,7 +447,7 @@ const Nav: React.FC = () => {
               className="hidden lg:flex absolute top-[calc(100%+20px)] right-6 lg:right-10 z-[95] pointer-events-auto"
             >
               <a
-                href="/contact"
+                href="/contact-us"
                 className="flex items-center gap-2 bg-accent text-secondary font-heading font-extrabold text-[11px] uppercase tracking-[0.13em] px-4 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:bg-accent/90 transition-colors duration-200"
               >
                 Talk To Us <FiArrowRight className="text-[11px]" />

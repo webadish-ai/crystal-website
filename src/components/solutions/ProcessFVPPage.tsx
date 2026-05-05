@@ -1,12 +1,12 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiThermometer, FiGrid, FiArchive, FiBox } from 'react-icons/fi';
-import processData from '../../data/process-fvp.json';
+import processData from '../../data/food-processing.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import heroImgRaw from '../../data/images/process/Gemini_Generated_Image_lxtc84lxtc84lxtc (1).png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
-const heroVideo = '/videos/process-fvp.mp4';
+const heroVideo = '/videos/food-processing.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
@@ -91,7 +91,7 @@ const ProcessFVPPage: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium">
               {hero.subheadline}
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact-us">
               {services.cta.label} <FiArrowRight className="ml-3 text-lg" />
             </Button>
           </motion.div>
@@ -127,7 +127,7 @@ const ProcessFVPPage: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: cta.body }}
             />
             <motion.div variants={itemVariants}>
-              <Button variant="ghost" size="lg" href="/contact">
+              <Button variant="ghost" size="lg" href="/contact-us">
                 {cta.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

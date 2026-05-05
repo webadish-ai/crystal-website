@@ -1,12 +1,12 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiTruck, FiMapPin, FiPackage } from 'react-icons/fi';
-import moveData from '../../data/move.json';
+import moveData from '../../data/transportation.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
-import heroImgRaw from '../../data/images/move/Reefer Trucks (1).jpeg';
+import heroImgRaw from '../../data/images/transportation/Reefer Trucks (1).jpeg';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
-const heroVideo = '/videos/move.mp4';
+const heroVideo = '/videos/transportation.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
@@ -91,7 +91,7 @@ const MovePage: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium">
               {hero.subheadline}
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact-us">
               {hero.cta.label} <FiArrowRight className="ml-3 text-lg" />
             </Button>
           </motion.div>
@@ -127,7 +127,7 @@ const MovePage: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: why_crystal.body }}
             />
             <motion.div variants={itemVariants}>
-              <Button variant="ghost" size="lg" href="/contact">
+              <Button variant="ghost" size="lg" href="/contact-us">
                 {why_crystal.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

@@ -1,7 +1,7 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
-import impactData from '../../data/impact.json';
+import impactData from '../../data/case-studies.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';

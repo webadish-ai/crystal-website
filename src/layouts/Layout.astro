@@ -25,7 +25,20 @@ const {
 
 // Resolve seo.json key from current path — seo.json is the source of truth
 const pathToSeoKey: Record<string, string> = {
-	'store-cold-storage': 'store-colds',
+	'about-us':          'about',
+	'career':            'careers',
+	'contact-us':        'contact',
+	'reefer-containers': 'store-reefer',
+	'blast-freezer':     'store-blast-freezer',
+	'super-freezer':     'store-super-freezer',
+	'super-store-reefer':'store-super-store',
+	'iso-tank-container':'store-iso-tank',
+	'amc-spareparts':    'store-amc',
+	'built-to-suit':     'build-bts',
+	'transportation':    'move',
+	'case-studies':      'impact',
+	'warehouse':         'store-colds',
+	'food-processing':   'process-fvp',
 };
 const rawSlug = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '');
 const seoKey = pathToSeoKey[rawSlug] ?? (rawSlug === '' ? 'index' : rawSlug);

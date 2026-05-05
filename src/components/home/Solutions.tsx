@@ -15,7 +15,7 @@ const s3 = homepageData.homepage.sections.find(s => s.id === 'S3')! as unknown a
 /* â”€â”€ Local images (image extensions only to avoid zip/etc) â”€â”€ */
 const _buildRaw   = import.meta.glob('../../data/images/build/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',   { eager: true, query: '?url', import: 'default' });
 const _storeRaw   = import.meta.glob('../../data/images/store/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',   { eager: true, query: '?url', import: 'default' });
-const _moveRaw    = import.meta.glob('../../data/images/move/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',    { eager: true, query: '?url', import: 'default' });
+const _moveRaw    = import.meta.glob('../../data/images/transportation/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',    { eager: true, query: '?url', import: 'default' });
 const _processRaw = import.meta.glob('../../data/images/process/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}', { eager: true, query: '?url', import: 'default' });
 const _solveRaw   = import.meta.glob('../../data/images/solve/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',   { eager: true, query: '?url', import: 'default' });
 

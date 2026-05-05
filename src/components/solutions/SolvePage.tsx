@@ -88,7 +88,7 @@ const SolvePage: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium">
               {hero.subheadline}
             </p>
-            <Button variant="primary" size="lg" href="/contact">
+            <Button variant="primary" size="lg" href="/contact-us">
               {hero.cta.label} <FiArrowRight className="ml-3 text-lg" />
             </Button>
           </motion.div>
@@ -139,7 +139,7 @@ const SolvePage: React.FC = () => {
             </div>
 
             <motion.div variants={itemVariants} className="mt-20 flex justify-center">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact-us">
                 {process.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

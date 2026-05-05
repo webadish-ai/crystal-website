@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiCheckCircle, FiSend, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
-import contactData from '../../data/contact.json';
+import contactData from '../../data/contact-us.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';

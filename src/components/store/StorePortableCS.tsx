@@ -31,42 +31,42 @@ const sLabel    = (key: string) => key.replace(/^S\d+\s+/, '');
 /* Product range cards */
 const products = [
   {
-    id: '06a', name: 'Reefer Containers', href: '/store-reefer',
+    id: '06a', name: 'Reefer Containers', href: '/reefer-containers',
     tags: ['+25Â°C to âˆ’30Â°C', '10ft Â· 20ft Â· 40ft'],
     icon: <FiTruck />,
     img: reeferHero,
     gridStyle: { gridColumn: '1 / 3', gridRow: '1 / 2' },
   },
   {
-    id: '06b', name: 'Blast Freezer Containers', href: '/store-blast-freezer',
+    id: '06b', name: 'Blast Freezer Containers', href: '/blast-freezer',
     tags: ['Down to âˆ’40Â°C', '20ft Â· 40ft'],
     icon: <FiWind />,
     img: blastHero,
     gridStyle: { gridColumn: '3 / 4', gridRow: '1 / 2' },
   },
   {
-    id: '06c', name: 'Super Store', href: '/store-super-store',
+    id: '06c', name: 'Super Store', href: '/super-store-reefer',
     tags: ['âˆ’30Â°C to +25Â°C', 'Modular'],
     icon: <FiLayers />,
     img: superstoreHero,
     gridStyle: { gridColumn: '4 / 5', gridRow: '1 / 2' },
   },
   {
-    id: '06d', name: 'Super Freezer', href: '/store-super-freezer',
+    id: '06d', name: 'Super Freezer', href: '/super-freezer',
     tags: ['Down to âˆ’70Â°C', '20ft Â· 40ft'],
     icon: <FiThermometer />,
     img: superfreezerHero,
     gridStyle: { gridColumn: '1 / 2', gridRow: '2 / 3' },
   },
   {
-    id: '06e', name: 'ISO Tanks', href: '/store-iso-tank',
+    id: '06e', name: 'ISO Tanks', href: '/iso-tank-container',
     tags: ['Ambient to controlled', '20ft'],
     icon: <FiActivity />,
     img: isoHero,
     gridStyle: { gridColumn: '2 / 3', gridRow: '2 / 3' },
   },
   {
-    id: '06f', name: 'AMC & Spare Parts', href: '/store-amc',
+    id: '06f', name: 'AMC & Spare Parts', href: '/amc-spareparts',
     tags: ['All ranges', 'Pan-India'],
     icon: <FiShield />,
     img: 'https://images.unsplash.com/photo-1581094288338-2314dddb79a7?q=80&w=2070&auto=format&fit=crop',
@@ -134,10 +134,10 @@ const StorePortableCS: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact">
+              <Button variant="primary" size="lg" href="/contact-us">
                 {heroCtas[0]} <FiArrowRight className="text-lg" />
               </Button>
-              <Button variant="ghost" size="lg" href="/contact">
+              <Button variant="ghost" size="lg" href="/contact-us">
                 {heroCtas[1]} <FiArrowRight className="text-lg" />
               </Button>
             </div>
@@ -243,7 +243,7 @@ const StorePortableCS: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact">
+                <Button variant="primary" size="lg" href="/contact-us">
                   Get in touch <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>
