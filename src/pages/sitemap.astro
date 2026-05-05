@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const sections = [
+  {
+    heading: 'Company',
+    links: [
+      { label: 'Home',      href: '/' },
+      { label: 'About Us',  href: '/about-us/' },
+      { label: 'Careers',   href: '/career/' },
+      { label: 'Contact',   href: '/contact-us/' },
+      { label: 'Locations', href: '/locations/' },
+      { label: 'Impact',    href: '/case-studies/' },
+    ],
+  },
+  {
+    heading: 'Build',
+    links: [
+      { label: 'Built-to-Suit Cold Storage',       href: '/built-to-suit/' },
+      { label: 'Engineering & Construction (EPC)',  href: '/build-epc/' },
+    ],
+  },
+  {
+    heading: 'Store',
+    links: [
+      { label: 'Cold Storage & Warehousing',  href: '/warehouse/' },
+      { label: '3PL Management',              href: '/store-3pl/' },
+      { label: 'Portable Cold Storage',       href: '/store-portable-cold-storage/' },
+      { label: 'Reefer Containers',           href: '/reefer-containers/' },
+      { label: 'Blast Freezers',              href: '/blast-freezer/' },
+      { label: 'Super Store',                 href: '/super-store-reefer/' },
+      { label: 'Super Freezers',              href: '/super-freezer/' },
+      { label: 'ISO Tanks',                   href: '/iso-tank-container/' },
+      { label: 'AMC & Spare Parts',           href: '/amc-spareparts/' },
+    ],
+  },
+  {
+    heading: 'Move',
+    links: [
+      { label: 'Refrigerated Transport', href: '/transportation/' },
+    ],
+  },
+  {
+    heading: 'Solve',
+    links: [
+      { label: 'Custom Cold Chain Solutions', href: '/solve/' },
+    ],
+  },
+  {
+    heading: 'Process',
+    links: [
+      { label: 'Blast Freezing Services',        href: '/process-bfs/' },
+      { label: 'Fruits & Vegetables Processing', href: '/food-processing/' },
+    ],
+  },
+]
+---
+
+<Layout
+  title="Sitemap | Crystal Group"
+  description="Full sitemap of Crystal Group — cold storage, reefer containers, refrigerated transport, and cold chain solutions across India."
+>
+  <section class="bg-white py-16 sm:py-24">
+    <div class="max-w-4xl mx-auto px-6 sm:px-8">
+
+      <h1 class="font-heading font-extrabold text-secondary text-3xl sm:text-4xl mb-2">Sitemap</h1>
+      <p class="font-body text-secondary/50 text-sm mb-12">All pages on the Crystal Group website.</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+        {sections.map(section => (
+          <div>
+            <h2 class="font-heading font-bold text-secondary text-[13px] uppercase tracking-[0.15em] mb-4 pb-2 border-b border-secondary/10">
+              {section.heading}
+            </h2>
+            <ul class="flex flex-col gap-2">
+              {section.links.map(link => (
+                <li>
+                  <a
+                    href={link.href}
+                    class="font-body text-[14px] text-secondary/70 hover:text-accent transition-colors flex items-center gap-2 group"
+                  >
+                    <span class="w-1 h-1 rounded-full bg-accent/40 group-hover:bg-accent transition-colors shrink-0" />
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+</Layout>
