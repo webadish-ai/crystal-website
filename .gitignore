@@ -29,7 +29,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# admin panel — deployed separately on Render
+# admin panel — lives in its own git repo
 admin/
 
 # large files not needed in git (videos are in public/videos/)
