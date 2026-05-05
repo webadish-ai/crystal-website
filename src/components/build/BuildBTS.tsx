@@ -14,10 +14,31 @@ import bentoImg1Raw from '../../assets/pages/build/Warehouse site planning discu
 import bentoImg2Raw from '../../assets/pages/build/Reviewing blueprints at construction site.png';
 import bentoImg3Raw from '../../assets/pages/build/ChatGPT Image Apr 10, 2026, 02_17_40 PM.png';
 import bentoImg4Raw from '../../assets/pages/build/7a1a6198-cd52-4f2f-a746-8574fd61692c.png';
+import projImg1Raw from '../../data/images/build/_DSC4464 (5).jpg';
+import projImg2Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.44 PM (1).jpeg';
+import projImg3Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.45 PM.jpeg';
 
 const getSrc = (a: any): string => (typeof a === 'string' ? a : a.src);
 const buildVideoSrc = getSrc(buildVideoRaw);
 const fallbackBentoImgs = [bentoImg1Raw, bentoImg2Raw, bentoImg3Raw, bentoImg4Raw].map(getSrc);
+
+const PROJECTS = [
+  {
+    img: getSrc(projImg1Raw),
+    title: 'Project Title One',
+    desc: 'Brief description of this delivered built-to-suit cold storage facility — location, capacity, and scope.',
+  },
+  {
+    img: getSrc(projImg2Raw),
+    title: 'Project Title Two',
+    desc: 'Brief description of this delivered built-to-suit cold storage facility — location, capacity, and scope.',
+  },
+  {
+    img: getSrc(projImg3Raw),
+    title: 'Project Title Three',
+    desc: 'Brief description of this delivered built-to-suit cold storage facility — location, capacity, and scope.',
+  },
+];
 
 const sLabel = (key: string) => key.replace(/^S\d+\s+/, '');
 
@@ -218,36 +239,44 @@ const BuildBTS: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ S4 CASE STUDY PATCH â”€â”€ */}
+      {/* ── S4 PROJECTS ── */}
       <section className="bg-secondary text-primary flex items-center justify-center relative overflow-hidden py-24 px-6 md:px-12">
         <div className="absolute inset-0 z-0 opacity-5" style={{ backgroundImage: "linear-gradient(to right, #ffffff1a 1px, transparent 1px), linear-gradient(to bottom, #ffffff1a 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
 
         <motion.div
-          className="container mx-auto max-w-[var(--max-width)] relative z-20 flex flex-col lg:flex-row gap-8 md:gap-12"
+          className="container mx-auto max-w-[var(--max-width)] relative z-20 flex flex-col"
           initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}
         >
-          <div className="w-full lg:w-1/2 flex flex-col">
-            <SectionHeader
-               dark
-               eyebrow={data["S4 Case study"].TAG}
-               head={tc(data["S4 Case study"].TITLE)}
-             />
-            <motion.p variants={itemVariants} className="font-body text-body-lg text-primary/70 leading-relaxed font-medium mb-10 max-w-lg"
-              dangerouslySetInnerHTML={{ __html: data["S4 Case study"].BODY }}
-            />
-          </div>
+          <SectionHeader dark eyebrow="Our Work" head="Delivered Projects" />
 
-          <div className="w-full lg:w-1/2 flex flex-col justify-center gap-6 border-t lg:border-t-0 lg:border-l border-primary/20 pt-10 lg:pt-0 lg:pl-16">
-            <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mb-2">OUTCOMES CAPTURED</span>
-            {data["S4 Case study"].OUTCOMES.split(' Â· ').map((stat, idx) => (
-              <motion.div key={idx} variants={itemVariants} className="flex flex-col border-b border-primary/10 pb-4 group">
-                <span className="font-heading font-extrabold text-h3 tracking-tight text-primary">/ {stat}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+            {PROJECTS.map((project, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                className="flex flex-col overflow-hidden rounded-sm border border-primary/10 group"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={project.img}
+                    alt={project.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                </div>
+                <div className="flex flex-col gap-2 p-5 border-t border-primary/10">
+                  <h3 className="font-heading font-extrabold text-h4 tracking-tight text-primary leading-tight-none">
+                    {project.title}
+                  </h3>
+                  <p className="font-body text-body-md text-primary/60 leading-relaxed">
+                    {project.desc}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </section>
-
       {/* â”€â”€ S5 WHY CRYSTAL PATCH â”€â”€ */}
       <section className="bg-primary text-secondary flex flex-col justify-center py-20 px-6 md:px-12 border-t border-secondary/10">
         <motion.div
