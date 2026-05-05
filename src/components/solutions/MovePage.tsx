@@ -1,10 +1,10 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiTruck, FiMapPin, FiPackage } from 'react-icons/fi';
-import moveData from '../../data/transportation.json';
+import moveData from '../../data/move.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
-import heroImgRaw from '../../data/images/transportation/Reefer Trucks (1).jpeg';
+import heroImgRaw from '../../data/images/move/Reefer Trucks (1).jpeg';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 const heroVideo = '/videos/transportation.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';

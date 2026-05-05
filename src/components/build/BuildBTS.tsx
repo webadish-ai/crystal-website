@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
 import { containerVariants, itemVariants, tc } from '@components/core/animations';
 import Button from '@components/core/Button';
-import btsData from '@data/built-to-suit.json';
+import btsData from '@data/build-bts.json';
 import { useCmsData } from '../../hooks/useCmsData';
 // @ts-ignore
 import qcommBrochureUrl from '@data/brochures/Q-Comm Brochure 2026 (1).pdf?url';

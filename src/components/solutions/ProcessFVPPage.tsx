@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiThermometer, FiGrid, FiArchive, FiBox } from 'react-icons/fi';
-import processData from '../../data/food-processing.json';
+import processData from '../../data/process-fvp.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import heroImgRaw from '../../data/images/process/Gemini_Generated_Image_lxtc84lxtc84lxtc (1).png';

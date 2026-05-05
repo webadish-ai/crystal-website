@@ -1,7 +1,7 @@
 ﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiUsers, FiTrendingUp, FiSettings, FiMapPin, FiBriefcase, FiClock } from 'react-icons/fi';
-import careersData from '../../data/career.json';
+import careersData from '../../data/careers.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';

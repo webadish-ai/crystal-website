@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheck, FiAward, FiShield, FiTrendingUp, FiTarget, FiDownload } from 'react-icons/fi';
-import aboutData from '../../data/about-us.json';
+import aboutData from '../../data/about.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
