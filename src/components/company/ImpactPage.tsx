@@ -6,6 +6,10 @@ import { useCmsData } from '../../hooks/useCmsData';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
+function toSlug(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
+}
+
 const ImpactPage: React.FC = () => {
   const liveData = useCmsData('impact', impactData)
   const { hero, case_studies, blog } = liveData.page.sections.reduce((acc: any, s: any) => {
@@ -63,10 +67,11 @@ const ImpactPage: React.FC = () => {
             {/* Case study cards */}
             <div className="flex flex-col gap-4">
               {case_studies.items.map((item: any, idx: number) => (
-                <motion.div
+                <motion.a
                   key={idx}
+                  href={`/case-studies/${toSlug(item.title)}`}
                   variants={itemVariants}
-                  className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300"
+                  className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300 block"
                 >
                   {/* Watermark number */}
                   <span
@@ -122,9 +127,15 @@ const ImpactPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Bottom accent bar */}
+                  {/* Bottom bar */}
+                  <div className="flex items-center justify-between px-8 md:px-10 py-4 border-t border-primary/10">
+                    <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-primary/30 group-hover:text-accent transition-colors duration-300">
+                      View Case Study
+                    </span>
+                    <FiArrowRight className="text-primary/20 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300" />
+                  </div>
                   <div className="h-px w-0 group-hover:w-full bg-accent transition-all duration-500 ease-out" />
-                </motion.div>
+                </motion.a>
               ))}
             </div>
           </motion.div>

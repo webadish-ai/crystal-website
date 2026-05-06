@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CaseStudyPage from '../../components/company/CaseStudyPage';
+import impactData from '../../data/impact.json';
+
+function toSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .substring(0, 80);
+}
+
+export function getStaticPaths() {
+  const section = impactData.page.sections.find((s: any) => s.type === 'case_studies') as any;
+  return section.items.map((item: any, idx: number) => ({
+    params: { slug: toSlug(item.title) },
+    props: { item, idx },
+  }));
+}
+
+const { item, idx } = Astro.props;
+const tag = item.tag.replace(/[Â·]/g, '').trim();
+---
+
+<Layout
+  title={`${item.title} | Case Study — Crystal Group`}
+  description={item.challenge.substring(0, 155)}
+>
+  <CaseStudyPage client:load item={item} idx={idx} />
+</Layout>
