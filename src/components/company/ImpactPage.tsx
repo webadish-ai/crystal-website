@@ -71,7 +71,7 @@ const ImpactPage: React.FC = () => {
                   key={idx}
                   href={`/case-studies/${toSlug(item.title)}`}
                   variants={itemVariants}
-                  className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300 block"
+                  className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300 block cursor-pointer"
                 >
                   {/* Watermark number */}
                   <span

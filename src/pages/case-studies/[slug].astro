@@ -3,15 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import CaseStudyPage from '../../components/company/CaseStudyPage';
 import impactData from '../../data/impact.json';
 
-function toSlug(title: string): string {
-  return title
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .substring(0, 80);
-}
-
 export function getStaticPaths() {
+  function toSlug(title: string): string {
+    return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
+  }
   const section = impactData.page.sections.find((s: any) => s.type === 'case_studies') as any;
   return section.items.map((item: any, idx: number) => ({
     params: { slug: toSlug(item.title) },
@@ -19,8 +14,8 @@ export function getStaticPaths() {
   }));
 }
 
-const { item, idx } = Astro.props;
-const tag = item.tag.replace(/[Â·]/g, '').trim();
+interface CaseStudyItem { tag: string; title: string; challenge: string; solution: string; outcomes: string; }
+const { item, idx } = Astro.props as { item: CaseStudyItem; idx: number };
 ---
 
 <Layout
