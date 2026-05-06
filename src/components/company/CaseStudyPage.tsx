@@ -15,29 +15,33 @@ interface CaseStudyItem {
 interface Props {
   item: CaseStudyItem;
   idx: number;
+  heroImage?: string;
 }
 
 function splitOutcomes(str: string): string[] {
   return str.split(/\s*(?:Â·|·|·)\s*/).map(s => s.trim()).filter(Boolean);
 }
 
-const CaseStudyPage: React.FC<Props> = ({ item, idx }) => {
+const CaseStudyPage: React.FC<Props> = ({ item, idx, heroImage }) => {
   const outcomes = splitOutcomes(item.outcomes);
   const tags = item.tag.split(/(?:Â·|·|·)/).map(s => s.trim()).filter(Boolean);
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
 
-      {/* ── HERO — full-bleed dark visual ── */}
+      {/* ── HERO — full-bleed image ── */}
       <section className="relative h-[62vh] min-h-[480px] bg-secondary flex flex-col overflow-hidden">
-        {/* Grid texture */}
-        <div
-          className="absolute inset-0 z-0 opacity-[0.045]"
-          style={{
-            backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-            backgroundSize: '52px 52px',
-          }}
-        />
+        {/* Hero image */}
+        {heroImage && (
+          <img
+            src={heroImage}
+            alt=""
+            className="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+          />
+        )}
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0 z-10 bg-secondary/60" />
         {/* Large watermark number */}
         <span
           className="absolute bottom-0 right-6 md:right-14 font-heading font-extrabold leading-none select-none pointer-events-none"
@@ -52,7 +56,7 @@ const CaseStudyPage: React.FC<Props> = ({ item, idx }) => {
         </span>
 
         {/* Back link — top left */}
-        <div className="relative z-20 px-6 md:px-14 pt-28">
+        <div className="relative z-20 px-6 md:px-14 pt-28 flex-shrink-0">
           <motion.a
             href="/case-studies"
             initial={{ opacity: 0, x: -12 }}

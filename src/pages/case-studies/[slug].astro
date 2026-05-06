@@ -2,6 +2,11 @@
 import Layout from '../../layouts/Layout.astro';
 import CaseStudyPage from '../../components/company/CaseStudyPage';
 import impactData from '../../data/impact.json';
+import img0 from '../../data/images/build/_DSC4464 (5).jpg';
+import img1 from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.44 PM (1).jpeg';
+import img2 from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.45 PM.jpeg';
+
+const heroImages = [img0, img1, img2];
 
 export function getStaticPaths() {
   function toSlug(title: string): string {
@@ -16,11 +21,12 @@ export function getStaticPaths() {
 
 interface CaseStudyItem { tag: string; title: string; challenge: string; solution: string; outcomes: string; }
 const { item, idx } = Astro.props as { item: CaseStudyItem; idx: number };
+const heroImage = (heroImages[idx] as any)?.src ?? heroImages[idx] as string;
 ---
 
 <Layout
   title={`${item.title} | Case Study — Crystal Group`}
   description={item.challenge.substring(0, 155)}
 >
-  <CaseStudyPage client:load item={item} idx={idx} />
+  <CaseStudyPage client:load item={item} idx={idx} heroImage={heroImage} />
 </Layout>
