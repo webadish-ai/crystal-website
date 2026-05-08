@@ -7,23 +7,39 @@ import StoreProductTemplate from '../components/templates/StoreProductTemplate'
 import ServicePageTemplate from '../components/templates/ServicePageTemplate'
 import TextPageTemplate from '../components/templates/TextPageTemplate'
 import LandingConversionTemplate from '../components/templates/LandingConversionTemplate'
+import SectionRenderer from '../components/sections/SectionRenderer'
 
 const { slug } = Astro.params
 const API_BASE = import.meta.env.API_URL ?? 'http://localhost:4000'
 
+// Try LP first
 let data: any = null
+let builderPage: any = null
+
 try {
   const res = await fetch(`${API_BASE}/api/lp/public/${slug}`)
-  if (!res.ok) return Astro.redirect('/404', 404)
-  data = await res.json()
-} catch {
-  return Astro.redirect('/404', 404)
+  if (res.ok) data = await res.json()
+} catch {}
+
+// If no LP found, try builder pages
+if (!data) {
+  try {
+    const preview = Astro.url.searchParams.get('preview') === '1' ? '?preview=1' : ''
+    const res = await fetch(`${API_BASE}/api/pages/by-slug/${slug}${preview}`)
+    if (res.ok) builderPage = await res.json()
+  } catch {}
 }
 
-const template = data._template
+if (!data && !builderPage) return Astro.redirect('/404', 404)
+
+const template = data?._template
 ---
 
-{template === 'landing-conversion' ? (
+{builderPage ? (
+  <Layout title={`${builderPage.title} | Crystal Group`} description={builderPage.seo_description || ''}>
+    <SectionRenderer client:load sections={builderPage.sections ?? []} />
+  </Layout>
+) : template === 'landing-conversion' ? (
   <LandingLayout title={data._seo_title || data.meta_title || slug} description={data._seo_description || data.meta_description || ''}>
     <LandingConversionTemplate client:load {...data} _lpSlug={slug} />
   </LandingLayout>
