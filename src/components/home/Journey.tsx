@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { FiBox, FiTruck, FiThermometer, FiZap, FiSend, FiShoppingBag } from 'react-icons/fi';
 import {
+  EASE,
   containerVariants,
   itemVariants,
   wordContainerVariants,
@@ -9,6 +10,10 @@ import {
   viewportOnce,
   tc,
 } from '@components/core/animations';
+
+// Matches tailwind.config accent + primary tokens — needed for Framer Motion animate props
+const C_ACCENT = C_ACCENT;
+const C_PRIMARY = C_PRIMARY;
 import homepageData from '@data/homepage.json';
 import type { S4Section } from '@types/homepage';
 
@@ -63,7 +68,7 @@ const Journey: React.FC = () => {
     <section
       id="journey"
       ref={sectionRef}
-      className="min-h-[100vh] w-full bg-secondary text-primary relative overflow-hidden flex flex-col items-center justify-center py-16 md:py-20 px-6 md:px-12 box-border"
+      className="min-h-[100vh] w-full bg-secondary text-primary relative overflow-hidden flex flex-col items-center justify-center py-20 px-6 md:px-12 box-border"
     >
       <motion.div
         className="w-full flex flex-col items-center"
@@ -74,7 +79,7 @@ const Journey: React.FC = () => {
       >
         {/* â”€â”€ HEADER â”€â”€ */}
         <div className="w-full flex items-center justify-center relative z-20 mb-6 md:mb-16">
-          <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-[var(--max-width)] text-center">
+          <div className="container mx-auto max-w-[var(--max-width)] text-center">
             <motion.span
               variants={itemVariants}
               className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mb-4 block"
@@ -106,7 +111,7 @@ const Journey: React.FC = () => {
         {/* â”€â”€ PROCESS DIAGRAM â”€â”€ */}
         <motion.div
           variants={itemVariants}
-          className="w-full container mx-auto px-4 md:px-8 lg:px-16 max-w-[var(--max-width)]"
+          className="w-full container mx-auto max-w-[var(--max-width)]"
         >
           {/* Chain label */}
           <p className="font-body font-bold text-eyebrow uppercase tracking-[0.22em] text-primary/45 mb-6 md:mb-8">
@@ -127,7 +132,7 @@ const Journey: React.FC = () => {
                     <motion.div
                       className="w-8 h-8 rounded-full border-2 flex items-center justify-center shrink-0"
                       animate={{
-                        borderColor: isActive ? '#FAC212' : isPast ? 'rgba(250,194,18,0.45)' : 'rgba(255,255,255,0.18)',
+                        borderColor: isActive ? C_ACCENT : isPast ? 'rgba(250,194,18,0.45)' : 'rgba(255,255,255,0.18)',
                         backgroundColor: isActive ? 'rgba(250,194,18,0.13)' : 'transparent',
                       }}
                       transition={{ duration: 0.5 }}
@@ -135,7 +140,7 @@ const Journey: React.FC = () => {
                       {isCrystal ? (
                         <motion.span
                           className="font-heading font-extrabold text-[10px] tracking-tight"
-                          animate={{ color: isActive ? '#FAC212' : isPast ? 'rgba(250,194,18,0.7)' : 'rgba(255,255,255,0.3)' }}
+                          animate={{ color: isActive ? C_ACCENT : isPast ? 'rgba(250,194,18,0.7)' : 'rgba(255,255,255,0.3)' }}
                           transition={{ duration: 0.4 }}
                         >
                           {step.id}
@@ -143,7 +148,7 @@ const Journey: React.FC = () => {
                       ) : (
                         <motion.div
                           className="w-2 h-2 rounded-full"
-                          animate={{ backgroundColor: isActive ? '#FAC212' : isPast ? 'rgba(250,194,18,0.5)' : 'rgba(255,255,255,0.25)' }}
+                          animate={{ backgroundColor: isActive ? C_ACCENT : isPast ? 'rgba(250,194,18,0.5)' : 'rgba(255,255,255,0.25)' }}
                           transition={{ duration: 0.4 }}
                         />
                       )}
@@ -163,14 +168,14 @@ const Journey: React.FC = () => {
                     <div className="flex items-center gap-2.5 mb-1">
                       <motion.span
                         className="flex items-center shrink-0"
-                        animate={{ color: isActive ? '#FAC212' : isPast ? 'rgba(250,194,18,0.55)' : 'rgba(255,255,255,0.22)' }}
+                        animate={{ color: isActive ? C_ACCENT : isPast ? 'rgba(250,194,18,0.55)' : 'rgba(255,255,255,0.22)' }}
                         transition={{ duration: 0.4 }}
                       >
                         {step.icon}
                       </motion.span>
                       <motion.p
                         className="font-heading font-extrabold text-[14px] sm:text-[15px] leading-tight tracking-tight"
-                        animate={{ color: isActive ? '#FEFFFE' : isPast ? 'rgba(255,255,255,0.65)' : isCrystal ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.25)' }}
+                        animate={{ color: isActive ? C_PRIMARY : isPast ? 'rgba(255,255,255,0.65)' : isCrystal ? 'rgba(255,255,255,0.4)' : 'rgba(255,255,255,0.25)' }}
                         transition={{ duration: 0.4 }}
                       >
                         {step.title}
@@ -179,7 +184,7 @@ const Journey: React.FC = () => {
                     {isCrystal && (
                       <motion.span
                         className="font-body font-bold text-[9px] sm:text-[10px] uppercase tracking-[0.15em] leading-none block pl-[34px]"
-                        animate={{ color: isActive ? '#FAC212' : 'rgba(255,255,255,0.18)' }}
+                        animate={{ color: isActive ? C_ACCENT : 'rgba(255,255,255,0.18)' }}
                         transition={{ duration: 0.4 }}
                       >
                         â— {step.subtitle ?? s4.crystal_badge}
@@ -226,7 +231,7 @@ const Journey: React.FC = () => {
                     transformOrigin: 'left center',
                   }}
                   animate={{ scaleX: trackFill }}
-                  transition={{ duration: 0.8, ease: [0.34, 1.2, 0.64, 1] }}
+                  transition={{ duration: 0.8, ease: EASE }}
                 />
 
   
@@ -243,7 +248,7 @@ const Journey: React.FC = () => {
                         <motion.span
                           className="flex items-center justify-center"
                           animate={{
-                            color: isActive ? '#FAC212' : isPast ? 'rgba(250,194,18,0.55)' : 'rgba(255,255,255,0.25)',
+                            color: isActive ? C_ACCENT : isPast ? 'rgba(250,194,18,0.55)' : 'rgba(255,255,255,0.25)',
                             scale: isActive ? [1, 1.35, 1.15] : 1,
                             filter: isActive
                               ? ['drop-shadow(0 0 0px #FAC212)', 'drop-shadow(0 0 8px #FAC212)', 'drop-shadow(0 0 4px #FAC212)']
@@ -251,7 +256,7 @@ const Journey: React.FC = () => {
                           }}
                           transition={{
                             color: { duration: 0.4 },
-                            scale: isActive ? { duration: 0.5, ease: [0.34, 1.5, 0.64, 1] } : { duration: 0.3 },
+                            scale: isActive ? { duration: 0.5, ease: EASE } : { duration: 0.3 },
                             filter: { duration: 0.5 },
                           }}
                         >
@@ -263,7 +268,7 @@ const Journey: React.FC = () => {
                           className="w-10 h-10 rounded-full border-2 flex items-center justify-center"
                           animate={{
                             borderColor: isActive
-                              ? '#FAC212'
+                              ? C_ACCENT
                               : isPast
                               ? 'rgba(250,194,18,0.45)'
                               : 'rgba(255,255,255,0.2)',
@@ -278,7 +283,7 @@ const Journey: React.FC = () => {
                           {isCrystal ? (
                             <span
                               className="font-heading font-extrabold text-[11px] tracking-tight transition-colors duration-500"
-                              style={{ color: isActive ? '#FAC212' : isPast ? 'rgba(250,194,18,0.7)' : 'rgba(255,255,255,0.35)' }}
+                              style={{ color: isActive ? C_ACCENT : isPast ? 'rgba(250,194,18,0.7)' : 'rgba(255,255,255,0.35)' }}
                             >
                               {step.id}
                             </span>
@@ -319,14 +324,14 @@ const Journey: React.FC = () => {
 
                         <motion.span
                           className="block font-body font-bold text-body-sm uppercase tracking-[0.18em] mb-2 md:mb-3 transition-colors duration-500"
-                          animate={{ color: isActive ? '#FAC212' : 'rgba(255,255,255,0.35)' }}
+                          animate={{ color: isActive ? C_ACCENT : 'rgba(255,255,255,0.35)' }}
                         >
                           â— {s4.crystal_badge}
                         </motion.span>
 
                         <p
                           className="font-heading font-extrabold text-body-md md:text-h4 leading-tight tracking-tight transition-colors duration-500"
-                          style={{ color: isActive ? '#FEFFFE' : 'rgba(255,255,255,0.5)' }}
+                          style={{ color: isActive ? C_PRIMARY : 'rgba(255,255,255,0.5)' }}
                         >
                           {step.title}
                         </p>

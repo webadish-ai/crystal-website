@@ -54,7 +54,7 @@ const FounderCard = ({ name, honorific, title, established, bio, photo }: {
     className="w-full bg-secondary rounded-sm overflow-hidden flex flex-col md:flex-row"
   >
     {/* Photo area */}
-    <div className="w-full md:w-[38%] shrink-0 aspect-[4/5] md:aspect-auto relative min-h-[320px] md:min-h-[420px] bg-[#0a1e42]">
+    <div className="w-full md:w-[38%] shrink-0 aspect-[4/5] md:aspect-auto relative min-h-[320px] md:min-h-[420px] bg-secondary">
       {photo ? (
         <img
           src={photo}

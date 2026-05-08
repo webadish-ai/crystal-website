@@ -127,7 +127,7 @@ const MovePage: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: why_crystal.body }}
             />
             <motion.div variants={itemVariants}>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact-us">
                 {why_crystal.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

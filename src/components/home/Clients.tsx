@@ -212,8 +212,8 @@ const Clients: React.FC = () => {
   const [paused, setPaused] = useState(false);
 
   return (
-    <section id="clients" className="h-full w-full flex flex-col items-center justify-center bg-primary overflow-hidden py-16 px-4 md:px-12">
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-[var(--max-width)] w-full mb-6 md:mb-10 mt-6 lg:mt-0">
+    <section id="clients" className="h-full w-full flex flex-col items-center justify-center bg-primary overflow-hidden py-20 px-6 md:px-12">
+      <div className="container mx-auto max-w-[var(--max-width)] w-full mb-6 md:mb-10 mt-6 lg:mt-0">
         <div className="flex items-start justify-between gap-4">
           <div>
             <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-secondary mb-4 block">
@@ -239,7 +239,7 @@ const Clients: React.FC = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-[var(--max-width)] w-full flex flex-col gap-4 md:gap-6">
+      <div className="container mx-auto max-w-[var(--max-width)] w-full flex flex-col gap-4 md:gap-6">
         {groups.map((group, idx) => (
           <div key={group.id} className="flex flex-col md:flex-row items-center border-b border-secondary/5 pb-4 md:pb-6 last:border-0 group">
 

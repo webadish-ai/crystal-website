@@ -127,7 +127,7 @@ const Hero: React.FC<HeroProps> = ({ isLoaded }) => {
     <section className="min-h-[85vh] md:min-h-[100vh] flex flex-col justify-center bg-primary py-16 md:py-24 pt-24 md:pt-32">
       {/* Text content: stagger container starts opacity:0 — fine, text is not the LCP element */}
       <motion.div
-        className="container mx-auto px-6 md:px-12 lg:px-16 max-w-[var(--max-width)]"
+        className="container mx-auto px-6 md:px-12 max-w-[var(--max-width)]"
         variants={containerVariants}
         initial="hidden"
         animate={ready ? "visible" : "hidden"}
@@ -183,7 +183,7 @@ const Hero: React.FC<HeroProps> = ({ isLoaded }) => {
       </motion.div>
 
       {/* Video: outside stagger container so opacity is NEVER 0 — browser records LCP immediately */}
-      <div className="container mx-auto px-6 md:px-12 lg:px-16 max-w-[var(--max-width)]">
+      <div className="container mx-auto px-6 md:px-12 max-w-[var(--max-width)]">
         <motion.div
           className="relative w-full h-[35vh] md:h-[45vh] min-h-[300px] md:min-h-[400px] overflow-hidden cursor-none rounded-sm group shadow-2xl"
           style={{ aspectRatio: '16/9', contain: 'layout paint' }}

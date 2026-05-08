@@ -35,16 +35,18 @@ const CoverageCard = ({ title, desc, icon, index }: { title: string; desc: strin
     variants={itemVariants}
     className="bg-primary border border-secondary/15 rounded-sm p-6 flex flex-col group hover:-translate-y-[2px] hover:border-secondary/40 hover:shadow-xl transition-all duration-300 relative overflow-hidden h-full"
   >
-    <div className="absolute inset-x-0 bottom-0 h-1 bg-accent translate-y-full transition-transform duration-500 group-hover:translate-y-0 z-10" />
-    <div className="w-10 h-10 flex items-center justify-center bg-secondary/[0.04] text-secondary group-hover:bg-secondary group-hover:text-accent rounded-sm mb-6 transition-colors duration-500">
-      <span className="text-xl">{icon}</span>
+    <div className="absolute inset-0 bg-secondary translate-y-[calc(100%-2px)] transition-transform duration-500 ease-out group-hover:translate-y-0 z-0" />
+    <div className="relative z-10 flex flex-col h-full">
+      <div className="w-10 h-10 flex items-center justify-center bg-secondary/[0.04] text-secondary group-hover:bg-primary group-hover:text-accent rounded-sm mb-6 transition-colors duration-500">
+        <span className="text-xl">{icon}</span>
+      </div>
+      <h3 className="font-heading font-extrabold text-h3 text-secondary tracking-tight leading-tight-none mb-3 group-hover:text-primary transition-colors duration-300">
+        {title}
+      </h3>
+      <p className="font-body text-body-md text-secondary/60 leading-relaxed font-medium group-hover:text-primary/70 transition-colors duration-300">
+        {desc}
+      </p>
     </div>
-    <h3 className="font-heading font-extrabold text-h3 text-secondary tracking-tight leading-tight-none mb-3">
-      {title}
-    </h3>
-    <p className="font-body text-body-md text-secondary/60 leading-relaxed font-medium">
-      {desc}
-    </p>
   </motion.div>
 );
 
@@ -102,7 +104,7 @@ const SolvePage: React.FC = () => {
             <LocalSectionHeader
               head={tc(coverage.type.replace(/_/g, ' '))}
             />
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-1.5 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
               {coverage.items.map((item: any, idx: number) => (
                 <CoverageCard key={idx} {...item} icon={coverageIcons[idx]} index={idx} />
               ))}
@@ -119,12 +121,9 @@ const SolvePage: React.FC = () => {
               align="center"
               head={tc(process.type.replace(/_/g, ' '))}
             />
-            <div className="flex flex-col gap-12 mt-16 relative">
-              {/* Vertical line connector */}
-              <div className="absolute left-[20px] top-0 bottom-0 w-[2px] bg-secondary/5 hidden md:block" />
-
+            <div className="flex flex-col gap-4 mt-16">
               {process.steps.map((step: any, idx: number) => (
-                <motion.div key={idx} variants={itemVariants} className="flex gap-8 items-start relative z-10">
+                <motion.div key={idx} variants={itemVariants} className="flex gap-6 items-start bg-primary border border-secondary/10 border-l-[3px] border-l-accent rounded-sm p-6 md:p-8">
                   <div className="w-10 h-10 shrink-0 flex items-center justify-center bg-secondary text-primary font-heading font-bold text-sm rounded-sm">
                     {step.step}
                   </div>
