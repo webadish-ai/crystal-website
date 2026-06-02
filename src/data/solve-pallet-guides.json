@@ -1,0 +1,163 @@
+{
+  "reefer": {
+    "product": "Reefer Containers",
+    "eyebrow": "Solve · Pallet Guide",
+    "tagline": "How many pallets fit in a Crystal reefer container? Euro, standard, and trolley configurations for 10ft, 20ft, and 40ft units.",
+    "temp_range": "−25°C to +25°C",
+    "sizes": [
+      {
+        "size": "10 ft",
+        "tagline": "Compact & agile",
+        "internal": "2.30 × 2.29 × 2.31 m",
+        "floor_area": "5.27 m²",
+        "volume": "12.15 m³",
+        "max_load": "8 MT",
+        "euro_pallets": 4,
+        "standard_pallets": 3,
+        "trolleys": 5,
+        "pallet_image": "/solve/pallet/10ft-pallets.webp",
+        "trolley_image": "/solve/pallet/10ft-trolley.webp"
+      },
+      {
+        "size": "20 ft",
+        "tagline": "Industry standard",
+        "internal": "5.36 × 2.29 × 2.31 m",
+        "floor_area": "12.27 m²",
+        "volume": "28.35 m³",
+        "max_load": "25 MT",
+        "euro_pallets": 11,
+        "standard_pallets": 9,
+        "trolleys": 14,
+        "pallet_image": "/solve/pallet/20ft-pallets.webp",
+        "trolley_image": "/solve/pallet/20ft-trolley.webp"
+      },
+      {
+        "size": "40 ft",
+        "tagline": "Maximum capacity",
+        "internal": "11.50 × 2.29 × 2.60 m",
+        "floor_area": "26.34 m²",
+        "volume": "68.46 m³",
+        "max_load": "30 MT",
+        "euro_pallets": 23,
+        "standard_pallets": 20,
+        "trolleys": 28,
+        "pallet_image": "/solve/pallet/40ft-pallets.webp",
+        "trolley_image": "/solve/pallet/40ft-trolley.webp"
+      }
+    ],
+    "notes": [
+      "Pallet counts assume single-layer floor loading. Double-stacking possible where cargo height permits.",
+      "Euro pallet: 1,200 × 800 mm. Standard/UK pallet: 1,200 × 1,000 mm.",
+      "Trolley configurations vary by product type. Counts shown are indicative.",
+      "Actual capacity depends on cargo height, weight, and loading method."
+    ]
+  },
+  "blast-freezer": {
+    "product": "Blast Freezer Containers",
+    "eyebrow": "Solve · Pallet Guide — Blast Freezer",
+    "tagline": "Pallet capacity for Crystal blast freezer containers. 20ft and 40ft configurations for rapid freezing of seafood, meat, and processed foods.",
+    "temp_range": "Down to −40°C",
+    "sizes": [
+      {
+        "size": "20 ft",
+        "tagline": "Standard blast freezer",
+        "internal": "5.36 × 2.29 × 2.31 m",
+        "floor_area": "12.27 m²",
+        "volume": "28.35 m³",
+        "max_load": "10 MT/day",
+        "euro_pallets": 10,
+        "standard_pallets": 8,
+        "trolleys": 12
+      },
+      {
+        "size": "40 ft",
+        "tagline": "High-capacity blast freezer",
+        "internal": "11.50 × 2.29 × 2.60 m",
+        "floor_area": "26.34 m²",
+        "volume": "68.46 m³",
+        "max_load": "20 MT/day",
+        "euro_pallets": 22,
+        "standard_pallets": 18,
+        "trolleys": 26
+      }
+    ],
+    "notes": [
+      "Blast freezer containers have evaporator units that reduce usable floor area vs standard reefers.",
+      "Freezing capacity (MT/day) is distinct from storage capacity — product is cycled through.",
+      "Euro pallet: 1,200 × 800 mm. Standard/UK pallet: 1,200 × 1,000 mm.",
+      "Dual-machine 40ft configurations available for continuous operation with redundancy."
+    ]
+  },
+  "super-freezer": {
+    "product": "Super Freezer Containers",
+    "eyebrow": "Solve · Pallet Guide — Super Freezer",
+    "tagline": "Pallet capacity for Crystal super freezer containers. Ultra-low temperature storage down to −70°C for biologics, specialty pharma, and research applications.",
+    "temp_range": "Down to −70°C",
+    "sizes": [
+      {
+        "size": "20 ft",
+        "tagline": "Ultra-low temperature",
+        "internal": "5.36 × 2.29 × 2.31 m",
+        "floor_area": "12.27 m²",
+        "volume": "28.35 m³",
+        "max_load": "10 MT",
+        "euro_pallets": 9,
+        "standard_pallets": 7,
+        "trolleys": 11
+      },
+      {
+        "size": "40 ft",
+        "tagline": "High-capacity ultra-low",
+        "internal": "11.50 × 2.29 × 2.60 m",
+        "floor_area": "26.34 m²",
+        "volume": "68.46 m³",
+        "max_load": "20 MT",
+        "euro_pallets": 20,
+        "standard_pallets": 17,
+        "trolleys": 24
+      }
+    ],
+    "notes": [
+      "Super freezer units have additional insulation and refrigeration equipment reducing usable space.",
+      "At −70°C, product must be loaded rapidly to maintain temperature — pre-planning is essential.",
+      "Euro pallet: 1,200 × 800 mm. Standard/UK pallet: 1,200 × 1,000 mm.",
+      "Validated storage protocols available for pharma and biologics applications."
+    ]
+  },
+  "superstore": {
+    "product": "Super Store",
+    "eyebrow": "Solve · Pallet Guide — Super Store",
+    "tagline": "Pallet capacity for Crystal Super Store units. Modular, high-volume portable cold storage from −30°C to +25°C.",
+    "temp_range": "−30°C to +25°C",
+    "sizes": [
+      {
+        "size": "20 ft",
+        "tagline": "Single module",
+        "internal": "5.36 × 2.29 × 2.31 m",
+        "floor_area": "12.27 m²",
+        "volume": "28.35 m³",
+        "max_load": "25 MT",
+        "euro_pallets": 11,
+        "standard_pallets": 9,
+        "trolleys": 14
+      },
+      {
+        "size": "40 ft",
+        "tagline": "Double module",
+        "internal": "11.50 × 2.29 × 2.60 m",
+        "floor_area": "26.34 m²",
+        "volume": "68.46 m³",
+        "max_load": "30 MT",
+        "euro_pallets": 23,
+        "standard_pallets": 20,
+        "trolleys": 28
+      }
+    ],
+    "notes": [
+      "Super Store units can be linked as multi-module configurations for larger volumes.",
+      "Modular design allows expansion without new civil construction.",
+      "Euro pallet: 1,200 × 800 mm. Standard/UK pallet: 1,200 × 1,000 mm.",
+      "Temperature range: −30°C to +25°C — suitable for both chilled and frozen storage."
+    ]
+  }
+}

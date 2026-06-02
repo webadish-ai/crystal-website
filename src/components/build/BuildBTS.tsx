@@ -1,7 +1,7 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
-import { FiArrowRight, FiDownload } from 'react-icons/fi';
-import { containerVariants, itemVariants, tc } from '@components/core/animations';
+﻿import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiArrowRight, FiDownload, FiPlus, FiMinus } from 'react-icons/fi';
+import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import Button from '@components/core/Button';
 import btsData from '@data/build-bts.json';
 import { useCmsData } from '../../hooks/useCmsData';
@@ -17,24 +17,46 @@ import bentoImg4Raw from '../../assets/pages/build/7a1a6198-cd52-4f2f-a746-8574f
 import projImg1Raw from '../../data/images/build/_DSC4464 (5).jpg';
 import projImg2Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.44 PM (1).jpeg';
 import projImg3Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.45 PM.jpeg';
+import projImg4Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.46 PM.jpeg';
+import modelImg5Raw from '../../assets/pages/build/95631b3c-7074-4244-907f-a4b7d7efce2f.png';
+import modelImg6Raw from '../../assets/pages/build/e547a0e6-71da-4349-894f-d59076e5803a.png';
 
 const getSrc = (a: any): string => (typeof a === 'string' ? a : a.src);
 const buildVideoSrc = getSrc(buildVideoRaw);
 const fallbackBentoImgs = [bentoImg1Raw, bentoImg2Raw, bentoImg3Raw, bentoImg4Raw].map(getSrc);
+const modelImgs = [projImg1Raw, projImg2Raw, projImg3Raw, projImg4Raw].map(getSrc);
 
 const PROJECTS = [
   {
     img: getSrc(projImg1Raw),
+    code: 'BTS-001',
+    location: 'Mumbai',
+    year: '2024',
+    type: 'Cold Store',
+    area: '40,000 sqft',
+    timeline: '90 days',
     title: 'Project Title One',
     desc: 'Brief description of this delivered built-to-suit cold storage facility — location, capacity, and scope.',
   },
   {
     img: getSrc(projImg2Raw),
+    code: 'BTS-002',
+    location: 'Delhi NCR',
+    year: '2024',
+    type: 'Multi-Zone',
+    area: '28,000 sqft',
+    timeline: '75 days',
     title: 'Project Title Two',
     desc: 'Brief description of this delivered built-to-suit cold storage facility — location, capacity, and scope.',
   },
   {
     img: getSrc(projImg3Raw),
+    code: 'BTS-003',
+    location: 'Pune',
+    year: '2025',
+    type: 'Pharma-Grade',
+    area: '15,000 sqft',
+    timeline: '60 days',
     title: 'Project Title Three',
     desc: 'Brief description of this delivered built-to-suit cold storage facility — location, capacity, and scope.',
   },
@@ -119,6 +141,70 @@ const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string;
   </motion.a>
 );
 
+function ModelsGrid({ models, images }: { models: { name: string; TEMP: string; USE_CASE: string; DESC: string; num: string }[]; images: string[] }) {
+  const [open, setOpen] = useState<number | null>(null);
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8 items-start">
+      {models.map((model, i) => (
+        <div key={i} className="flex flex-col overflow-hidden border border-secondary/12">
+          {/* Image — tall, full-width, title overlaid */}
+          <div className="relative h-72 shrink-0 overflow-hidden">
+            <img
+              src={images[i % images.length]}
+              alt={model.name}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
+            <span className="absolute top-4 right-4 font-mono text-[10px] font-bold bg-secondary/75 text-accent px-2.5 py-1 tracking-wider backdrop-blur-sm">
+              {model.TEMP}
+            </span>
+            <div className="absolute bottom-0 left-0 right-0 px-6 pb-5">
+              <h3 className="font-heading font-extrabold text-h2 text-primary tracking-tight leading-tight">{model.name}</h3>
+              <p className="font-body text-[11px] font-bold uppercase tracking-[0.16em] text-accent mt-1.5">{model.USE_CASE}</p>
+            </div>
+          </div>
+
+          {/* Accent bar — the trigger */}
+          <button
+            onClick={() => setOpen(open === i ? null : i)}
+            className={`w-full flex items-center justify-between px-6 py-3.5 transition-colors duration-300
+              ${open === i ? 'bg-secondary' : 'bg-accent hover:bg-accent/90'}`}
+          >
+            <span className={`font-body font-bold text-[11px] uppercase tracking-[0.18em] transition-colors ${open === i ? 'text-accent' : 'text-secondary'}`}>
+              {open === i ? 'Close' : 'Read more'}
+            </span>
+            <motion.span
+              animate={{ rotate: open === i ? 180 : 0 }}
+              transition={{ duration: 0.25 }}
+              className={`text-base transition-colors ${open === i ? 'text-accent' : 'text-secondary'}`}
+            >
+              ↓
+            </motion.span>
+          </button>
+
+          {/* Accordion body — description only */}
+          <AnimatePresence initial={false}>
+            {open === i && (
+              <motion.div
+                initial={{ height: 0 }}
+                animate={{ height: 'auto' }}
+                exit={{ height: 0 }}
+                transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 py-5 bg-primary">
+                  <p className="font-body text-body-lg text-secondary/65 leading-relaxed">{model.DESC}</p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 const BuildBTS: React.FC = () => {
   const rawData = useCmsData('build-bts', btsData)
   const data = rawData["02 Build: Design, Build & Operate (BTS)"]
@@ -129,6 +215,10 @@ const BuildBTS: React.FC = () => {
     (s2Raw[`${k} IMAGE`] || fallbackBentoImgs[i]) as string
   )
   const s5Benefits = Object.entries(data["S5 Why Crystal for BTS"]).filter(([k]) => k !== "CTA") as [string, string][]
+  const modelsRaw = data["Models"] as Record<string, any>
+  const models = Object.entries(modelsRaw)
+    .filter(([k]) => !["HEADLINE", "EYEBROW", "BODY"].includes(k))
+    .map(([name, val], i) => ({ name, ...val as { TEMP: string; USE_CASE: string; DESC: string }, num: `0${i + 1}` }))
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
@@ -239,38 +329,63 @@ const BuildBTS: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* ── S4 PROJECTS ── */}
-      <section className="bg-secondary text-primary flex items-center justify-center relative overflow-hidden py-24 px-6 md:px-12">
-        <div className="absolute inset-0 z-0 opacity-5" style={{ backgroundImage: "linear-gradient(to right, #ffffff1a 1px, transparent 1px), linear-gradient(to bottom, #ffffff1a 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+      {/* ── MODELS ── */}
+      <section className="bg-primary py-20 px-6 md:px-12 border-t border-secondary/10">
+        <div className="container mx-auto max-w-[var(--max-width)]">
+          <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
+            <SectionHeader
+              eyebrow={modelsRaw.EYEBROW}
+              head={tc(modelsRaw.HEADLINE)}
+              desc={modelsRaw.BODY}
+            />
+            <ModelsGrid models={models} images={modelImgs} />
+          </motion.div>
+        </div>
+      </section>
 
+      {/* ── S4 OUR WORK ── */}
+      <section className="bg-secondary text-primary py-20 px-6 md:px-12 border-t border-primary/8">
         <motion.div
-          className="container mx-auto max-w-[var(--max-width)] relative z-20 flex flex-col"
-          initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}
+          className="container mx-auto max-w-[var(--max-width)]"
+          initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}
         >
           <SectionHeader dark eyebrow="Our Work" head="Delivered Projects" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-2">
             {PROJECTS.map((project, idx) => (
               <motion.div
                 key={idx}
                 variants={itemVariants}
-                className="flex flex-col overflow-hidden rounded-sm border border-primary/10 group"
+                className="group flex flex-col border border-primary/12 overflow-hidden hover:border-primary/25 transition-colors duration-300"
               >
-                <div className="relative h-56 overflow-hidden">
+                {/* Image */}
+                <div className="relative h-52 overflow-hidden shrink-0">
                   <img
                     src={project.img}
                     alt={project.title}
                     loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
                   />
+                  <span className="absolute top-3 left-3 font-mono text-[9px] font-bold tracking-[0.18em] bg-secondary/80 text-accent px-2 py-1">
+                    {project.code}
+                  </span>
                 </div>
-                <div className="flex flex-col gap-2 p-5 border-t border-primary/10">
-                  <h3 className="font-heading font-extrabold text-h4 tracking-tight text-primary leading-tight-none">
-                    {project.title}
-                  </h3>
-                  <p className="font-body text-body-md text-primary/60 leading-relaxed">
-                    {project.desc}
-                  </p>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1 px-5 py-5 gap-3">
+                  <div className="flex gap-4 border-l-[3px] border-accent pl-4">
+                    {([['Type', project.type], ['Area', project.area], ['Timeline', project.timeline]] as [string, string][]).map(([label, val]) => (
+                      <div key={label} className="flex flex-col gap-0.5">
+                        <span className="font-body text-[9px] uppercase tracking-[0.18em] text-primary/35">{label}</span>
+                        <span className="font-heading font-bold text-[12px] text-primary/75">{val}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <h3 className="font-heading font-extrabold text-h3 text-primary tracking-tight leading-tight">{project.title}</h3>
+                  <p className="font-body text-body-md text-primary/55 leading-relaxed flex-1">{project.desc}</p>
+                  <span className="inline-flex items-center gap-1.5 font-body text-[11px] font-bold uppercase tracking-[0.16em] text-accent/60 group-hover:text-accent group-hover:gap-2.5 transition-all duration-300 mt-1">
+                    View case study <FiArrowRight size={11} />
+                  </span>
                 </div>
               </motion.div>
             ))}

@@ -42,11 +42,33 @@ const navItems = [
           { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/super-freezer' },
           { name: 'ISO Tanks', desc: 'Liquid cargo transport', icon: <FiActivity className="text-xl shrink-0" />, href: '/iso-tank-container' },
           { name: 'AMC & Spare Parts', desc: '24/7 maintenance support', icon: <FiShield className="text-xl shrink-0" />, href: '/amc-spareparts' },
+          { name: 'Bhubaneswar', desc: 'Cold storage facility, Odisha', icon: <FiActivity className="text-xl shrink-0" />, href: '/locations/bhubaneswar' },
+        ],
+      },
+      {
+        name: 'Dry & Modular', desc: 'Dry, open-top & cold rooms', icon: <FiBox className="text-xl shrink-0" />, href: '/store/tunnel-containers',
+        nestedLinks: [
+          { name: 'Tunnel Containers', desc: 'Drive-through dual-door access', icon: <FiBox className="text-xl shrink-0" />, href: '/store/tunnel-containers' },
+          { name: 'Open Top Containers', desc: 'Open-roof for crane-loaded cargo', icon: <FiPackage className="text-xl shrink-0" />, href: '/store/open-top-containers' },
+          { name: 'Hard Top Containers', desc: 'Removable steel roof panels', icon: <FiLayers className="text-xl shrink-0" />, href: '/store/hard-top-containers' },
+          { name: 'Cold Rooms', desc: 'Modular walk-in refrigeration', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store/cold-rooms' },
+          { name: 'Dry Containers', desc: 'Standard 20ft & 40ft dry boxes', icon: <FiPackage className="text-xl shrink-0" />, href: '/store/dry-containers' },
+          { name: 'Office Containers', desc: 'Portable site office solutions', icon: <FiTool className="text-xl shrink-0" />, href: '/store/office-containers' },
+          { name: 'Dry Fabricated', desc: 'Prefab cabins & modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/store/dry-fabricated' },
+          { name: 'Accessories', desc: 'Container parts & fittings', icon: <FiShield className="text-xl shrink-0" />, href: '/store/accessories' },
         ],
       },
     ],
   },
-  { name: 'Move', href: '/transportation' },
+  {
+    name: 'Move',
+    href: '/transportation',
+    activePathStart: '/move',
+    subLinks: [
+      { name: 'Transportation', desc: 'Pan-India cold chain logistics', icon: <FiTruck className="text-xl shrink-0" />, href: '/transportation' },
+      { name: 'Freight Forwarding', desc: 'International shipping & customs', icon: <FiActivity className="text-xl shrink-0" />, href: '/move/freight-forwarding' },
+    ],
+  },
   {
     name: 'Process',
     href: '/food-processing',
@@ -56,7 +78,19 @@ const navItems = [
       { name: 'Blast Freezing', desc: 'Rapid industrial freezing services', icon: <FiWind className="text-xl shrink-0" />, href: '/process-bfs' },
     ],
   },
-  { name: 'Solve', href: '/solve' },
+  {
+    name: 'Solve',
+    href: '/solve',
+    activePathStart: '/solve',
+    subLinks: [
+      { name: 'Custom Solutions', desc: 'Bespoke cold chain design', icon: <FiShield className="text-xl shrink-0" />, href: '/solve' },
+      { name: 'Loading Calculator', desc: 'Find the right container size', icon: <FiTrendingUp className="text-xl shrink-0" />, href: '/solve/loading-calculator' },
+      { name: 'Pallet Guide — Reefer', desc: 'Euro, standard & trolley counts', icon: <FiLayers className="text-xl shrink-0" />, href: '/solve/pallet-guide' },
+      { name: 'Pallet Guide — Blast Freezer', desc: 'Blast freezer pallet configs', icon: <FiWind className="text-xl shrink-0" />, href: '/solve/pallet-guide-blast-freezer' },
+      { name: 'Pallet Guide — Super Freezer', desc: 'Ultra-low temp configurations', icon: <FiThermometer className="text-xl shrink-0" />, href: '/solve/pallet-guide-super-freezer' },
+      { name: 'Pallet Guide — Super Store', desc: 'Modular storage pallet guide', icon: <FiBox className="text-xl shrink-0" />, href: '/solve/pallet-guide-superstore' },
+    ],
+  },
   { name: 'Impact', href: '/case-studies' },
   { name: 'About', href: '/about-us' },
   { name: 'Careers', href: '/career' },
@@ -326,87 +360,108 @@ const Nav: React.FC = () => {
                       )}
                     </a>
 
-                    {item.subLinks && (
-                      <div
-                        ref={el => { dropdownRefs.current[idx] = el; }}
-                        className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-[200]"
-                        style={{
-                          width: item.subLinks.length >= 6 ? '340px' : '300px',
-                          opacity: isDropOpen ? 1 : 0,
-                          pointerEvents: isDropOpen ? 'auto' : 'none',
-                          transform: `translateX(-50%) translateY(${isDropOpen ? '0px' : '8px'})`,
-                          visibility: isDropOpen ? 'visible' : 'hidden',
-                          transition: 'opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)',
-                        }}
-                        onMouseEnter={() => handleNavEnter(idx, true)}
-                        onMouseLeave={() => handleNavLeave(idx, true)}
-                      >
-                        <div className="bg-primary border border-secondary/15 shadow-[0_15px_40px_rgba(0,0,0,0.08)] rounded-sm p-1">
-                          <div className="flex flex-col gap-0.5">
-                            {item.subLinks.map((sub, sidx) => {
-                              const hasNested = !!sub.nestedLinks;
-                              const isSubActive = currentPath === sub.href;
-                              return (
-                                <div key={sub.name} className="relative group/nested flex flex-col">
-                                  <a
-                                    href={sub.href}
-                                    data-astro-prefetch={PREFETCH}
-                                    className={`subnav-card flex flex-col pt-2 pb-2 pl-2 pr-4 rounded-sm transition-all duration-300 hover:bg-secondary/[0.03] group-hover/nested:bg-secondary/[0.03] border-l-2 hover:border-accent group-hover/nested:border-accent group/sublink ${isSubActive ? 'bg-secondary/[0.03] border-accent' : 'border-transparent'}`}
-                                    style={{ opacity: 0, transform: 'translateY(15px)' }}
-                                  >
-                                    <div className="flex items-center gap-3 w-full">
-                                      <div className={`w-8 h-8 flex items-center justify-center rounded-sm transition-all duration-300 shrink-0 ${isSubActive ? 'bg-secondary text-accent' : 'bg-secondary/[0.04] text-secondary group-hover/sublink:bg-secondary group-hover/nested:bg-secondary group-hover/sublink:text-accent group-hover/nested:text-accent'}`}>
-                                        <span className="text-base">{sub.icon}</span>
-                                      </div>
-                                      <div className="flex flex-col flex-1">
-                                        <span className={`font-heading font-extrabold text-[10.5px] uppercase tracking-[0.1em] transition-colors leading-none mb-1 ${isSubActive ? 'text-accent' : 'text-secondary group-hover/sublink:text-accent group-hover/nested:text-accent'}`}>
-                                          {sub.name}
-                                        </span>
-                                        <span className={`font-body font-medium text-[9.5px] transition-colors ${isSubActive ? 'text-secondary/70' : 'text-secondary/40 group-hover/sublink:text-secondary/60 group-hover/nested:text-secondary/60'}`}>
-                                          {sub.desc}
-                                        </span>
-                                      </div>
-                                      {hasNested && (
-                                        <span className="text-secondary/40 group-hover/sublink:text-accent group-hover/nested:text-accent transition-all duration-300 group-hover/nested:rotate-90">
-                                          <FiArrowRight className="text-sm" />
-                                        </span>
-                                      )}
-                                    </div>
-                                  </a>
-
-                                  {/* Inline vertical accordion nested menu */}
-                                  {hasNested && (
-                                    <div className="grid grid-rows-[0fr] group-hover/nested:grid-rows-[1fr] transition-[grid-template-rows] duration-500 overflow-hidden w-full pl-12 pr-2">
-                                      <div className="min-h-0 flex flex-col gap-1 border-l-2 border-accent/20 pl-4 py-1 mb-2">
-                                        {sub.nestedLinks?.map((nested, nidx) => {
-                                          const isNestedActive = currentPath === nested.href;
-                                          return (
-                                            <a
-                                              key={nested.name}
-                                              href={nested.href}
-                                              data-astro-prefetch={PREFETCH}
-                                              className="flex items-center gap-3 py-1.5 transition-all duration-300 group/nestedlink cursor-pointer relative"
-                                            >
-                                              <div className="flex flex-col">
-                                                <span className={`flex items-center gap-2 font-heading font-extrabold text-[10px] uppercase tracking-[0.1em] transition-colors leading-none mb-[2px] ${isNestedActive ? 'text-accent' : 'text-secondary/70 group-hover/nestedlink:text-accent'}`}>
-                                                  {nested.name}
-                                                  {isNestedActive && <span className="absolute -left-[14px] w-[3px] h-[3px] bg-accent rounded-full" />}
-                                                  <FiArrowRight className={`text-[10px] transition-all text-accent ${isNestedActive ? 'opacity-100 ml-0' : 'opacity-0 -ml-1 group-hover/nestedlink:opacity-100 group-hover/nestedlink:ml-0'}`} />
-                                                </span>
-                                              </div>
-                                            </a>
-                                          );
-                                        })}
-                                      </div>
-                                    </div>
-                                  )}
+                    {item.subLinks && (() => {
+                      const hasMega = item.subLinks.some(s => s.nestedLinks);
+                      const flatSubs = item.subLinks.filter(s => !s.nestedLinks);
+                      const nestedParents = item.subLinks.filter(s => s.nestedLinks);
+                      return (
+                        <div
+                          ref={el => { dropdownRefs.current[idx] = el; }}
+                          className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-[200]"
+                          style={{
+                            width: hasMega ? '540px' : '280px',
+                            opacity: isDropOpen ? 1 : 0,
+                            pointerEvents: isDropOpen ? 'auto' : 'none',
+                            transform: `translateX(-50%) translateY(${isDropOpen ? '0px' : '8px'})`,
+                            visibility: isDropOpen ? 'visible' : 'hidden',
+                            transition: 'opacity 0.3s cubic-bezier(0.23, 1, 0.32, 1), transform 0.3s cubic-bezier(0.23, 1, 0.32, 1)',
+                          }}
+                          onMouseEnter={() => handleNavEnter(idx, true)}
+                          onMouseLeave={() => handleNavLeave(idx, true)}
+                        >
+                          <div className="bg-primary border border-secondary/15 shadow-[0_15px_40px_rgba(0,0,0,0.10)] rounded-sm overflow-hidden">
+                            {hasMega ? (
+                              /* Wide 2-column mega dropdown */
+                              <div className="py-2">
+                                {/* Services row — side by side */}
+                                <div className="grid grid-cols-2 border-b border-secondary/8 pb-1 mb-1">
+                                  {flatSubs.map(sub => {
+                                    const isSubActive = currentPath === sub.href;
+                                    return (
+                                      <a
+                                        key={sub.name}
+                                        href={sub.href}
+                                        data-astro-prefetch={PREFETCH}
+                                        className={`subnav-card group/sublink flex items-center gap-3 mx-2 px-3 py-2.5 rounded-sm transition-all duration-200 hover:bg-secondary hover:text-primary ${isSubActive ? 'bg-secondary/[0.05] text-secondary' : 'text-secondary'}`}
+                                        style={{ opacity: 0, transform: 'translateY(15px)' }}
+                                      >
+                                        <span className={`text-base shrink-0 transition-colors duration-200 ${isSubActive ? 'text-accent' : 'text-secondary/35 group-hover/sublink:text-accent'}`}>{sub.icon}</span>
+                                        <div className="flex flex-col">
+                                          <span className={`font-heading font-extrabold text-[10.5px] uppercase tracking-[0.1em] leading-none mb-0.5 transition-colors ${isSubActive ? 'text-accent' : 'group-hover/sublink:text-primary'}`}>{sub.name}</span>
+                                          <span className="font-body text-[9.5px] text-secondary/40 group-hover/sublink:text-primary/50 transition-colors">{sub.desc}</span>
+                                        </div>
+                                      </a>
+                                    );
+                                  })}
                                 </div>
-                              );
-                            })}
+
+                                {/* Product groups — 2 columns side by side */}
+                                <div className="grid grid-cols-2 divide-x divide-secondary/8">
+                                  {nestedParents.map(parent => (
+                                    <div key={parent.name}>
+                                      <div className="flex items-center gap-2 px-4 pt-2 pb-1">
+                                        <span className="font-body font-bold text-[8px] uppercase tracking-[0.2em] text-secondary/30">{parent.name}</span>
+                                        <span className="flex-1 h-px bg-secondary/8" />
+                                      </div>
+                                      {parent.nestedLinks?.map(nested => {
+                                        const isNestedActive = currentPath === nested.href;
+                                        return (
+                                          <a
+                                            key={nested.name}
+                                            href={nested.href}
+                                            data-astro-prefetch={PREFETCH}
+                                            className={`subnav-card group/nestedlink flex items-center gap-3 mx-2 px-3 py-2 rounded-sm transition-all duration-200 hover:bg-secondary hover:text-primary ${isNestedActive ? 'bg-secondary/[0.05]' : ''}`}
+                                            style={{ opacity: 0, transform: 'translateY(15px)' }}
+                                          >
+                                            <span className={`text-sm shrink-0 transition-colors duration-200 ${isNestedActive ? 'text-accent' : 'text-secondary/30 group-hover/nestedlink:text-accent'}`}>{nested.icon}</span>
+                                            <div className="flex flex-col">
+                                              <span className={`font-heading font-extrabold text-[10px] uppercase tracking-[0.1em] leading-none mb-0.5 transition-colors ${isNestedActive ? 'text-accent' : 'text-secondary/70 group-hover/nestedlink:text-primary'}`}>{nested.name}</span>
+                                              <span className="font-body text-[9px] text-secondary/35 group-hover/nestedlink:text-primary/50 transition-colors">{nested.desc}</span>
+                                            </div>
+                                          </a>
+                                        );
+                                      })}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            ) : (
+                              /* Regular vertical list */
+                              <div className="py-2">
+                                {item.subLinks.map(sub => {
+                                  const isSubActive = currentPath === sub.href;
+                                  return (
+                                    <a
+                                      key={sub.name}
+                                      href={sub.href}
+                                      data-astro-prefetch={PREFETCH}
+                                      className={`subnav-card group/sublink flex items-center gap-3 mx-2 px-3 py-2.5 rounded-sm transition-all duration-200 hover:bg-secondary hover:text-primary ${isSubActive ? 'bg-secondary/[0.05]' : ''}`}
+                                      style={{ opacity: 0, transform: 'translateY(15px)' }}
+                                    >
+                                      <span className={`text-base shrink-0 transition-colors duration-200 ${isSubActive ? 'text-accent' : 'text-secondary/35 group-hover/sublink:text-accent'}`}>{sub.icon}</span>
+                                      <div className="flex flex-col">
+                                        <span className={`font-heading font-extrabold text-[10.5px] uppercase tracking-[0.1em] leading-none mb-0.5 transition-colors ${isSubActive ? 'text-accent' : 'text-secondary group-hover/sublink:text-primary'}`}>{sub.name}</span>
+                                        <span className="font-body text-[9.5px] text-secondary/40 group-hover/sublink:text-primary/50 transition-colors">{sub.desc}</span>
+                                      </div>
+                                    </a>
+                                  );
+                                })}
+                              </div>
+                            )}
                           </div>
                         </div>
-                      </div>
-                    )}
+                      );
+                    })()}
                   </div>
                 );
               })}

@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "title": "Modular Container Cabins & Dry Fabricated Units | Crystal Group",
+    "description": "Custom container cabins for site offices, dormitories, security booths, cafes, and more. Delivered ready in 7–15 days. Save up to 40% vs conventional construction."
+  },
+  "hero": {
+    "eyebrow": "Store · Dry Fabricated",
+    "name": "Modular Container Cabins",
+    "tagline": "Custom-built container spaces delivered in 7–15 days. Site offices, dormitories, cafes, security cabins — any configuration.",
+    "badge": "7–15 Day Delivery",
+    "sizes": ["20 ft", "40 ft"]
+  },
+  "overview": "Crystal Group's dry fabricated units are custom-built from repurposed shipping containers — portable, durable spaces with insulation, ventilation, electrical fittings, and optional plumbing. Save up to 40% versus conventional construction. Available as site offices, dormitories, container cafes, security cabins, medical rooms, and more. Move via forklift or crane — no permanent foundation required.",
+  "features": [
+    { "title": "Site Office", "desc": "Fully furnished portable offices for construction sites, project HQs, and remote operations. Pre-fitted with electrics, AC, and lighting." },
+    { "title": "Dormitory", "desc": "Multi-bunk accommodation units for site workers. Insulated, ventilated, and fitted with electrical points and lighting." },
+    { "title": "Security Cabin", "desc": "Compact security booths for entry points and checkposts. Weatherproof, with window panel, lock, and electrical fitting." },
+    { "title": "Container Cafe", "desc": "Pop-up cafe and food kiosk conversions. 20 ft G+1 configuration available. Custom branding and interior fit-out." },
+    { "title": "Medical Room", "desc": "Hygienic medical-grade container rooms for site healthcare facilities. Easy to clean, ventilated, and compliant layouts." },
+    { "title": "Custom Cabin", "desc": "Baby creche, smoking rooms, toilet blocks, or any bespoke requirement. Tell us your use case and we design it." }
+  ],
+  "specs": [
+    {
+      "size": "20 ft",
+      "tare_weight": "Approx. 2,350 kg",
+      "max_gross": "30,480 kg rated",
+      "max_payload": "Custom fitted",
+      "ext_dimensions": "6.06 × 2.44 × 2.59 m",
+      "int_dimensions": "5.90 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "32.5 m³"
+    },
+    {
+      "size": "40 ft",
+      "tare_weight": "Approx. 3,850 kg",
+      "max_gross": "32,500 kg rated",
+      "max_payload": "Custom fitted",
+      "ext_dimensions": "12.19 × 2.44 × 2.59 m",
+      "int_dimensions": "12.03 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "66.5 m³"
+    }
+  ],
+  "industries": ["Construction", "Events & Hospitality", "Healthcare", "Education", "Government & Defence", "Retail & Pop-Up", "Logistics Yards"],
+  "faq": [
+    { "q": "How long does fabrication and delivery take?", "a": "Most units are ready in 7–15 days from order confirmation, depending on customisation complexity." },
+    { "q": "Does it need a permanent foundation?", "a": "No permanent foundation is required. A level concrete or RCC surface is sufficient. Units can be relocated via forklift or crane." },
+    { "q": "Can the exterior and interior be branded?", "a": "Yes. Custom paint colours, vinyl wraps, signage, and interior branding are all available." },
+    { "q": "Is electricity and plumbing included?", "a": "All units come with electrical wiring and LED lighting. Plumbing can be added as an optional fitment." },
+    { "q": "Are multi-storey configurations possible?", "a": "Yes. G+1 (two-storey) configurations are available for container cafes and offices where height permits." }
+  ]
+}

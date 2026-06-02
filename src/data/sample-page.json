@@ -1,0 +1,107 @@
+{
+  "slug": "sample",
+  "title": "Sample Page",
+  "sections": [
+    {
+      "type": "hero",
+      "eyebrow": "Tunnel Containers",
+      "headline": "Cold Storage,",
+      "headline_accent": "Wherever You Need It.",
+      "subheadline": "Crystal's tunnel containers bring cold storage on-location — processing facility, port, or site. Available in 10ft, 20ft, and 40ft. Plug in and start storing.",
+      "image": "/images/hero.png",
+      "cta_primary": { "label": "Rent a Container", "href": "/contact-us" },
+      "cta_secondary": { "label": "Download Brochure", "href": "/contact-us" }
+    },
+    {
+      "type": "intro_statement",
+      "headline": "Built For You. Operated By Us.",
+      "body": "A tunnel container is a self-contained cold storage unit, delivered to your site. No construction, no civil work. Plug in to standard power, and you are cold-chain ready within hours of delivery.",
+      "align": "center"
+    },
+    {
+      "type": "split_statement",
+      "headline": "Precision Temperature. Wherever Your Business Needs It.",
+      "body": "Crystal's tunnel containers bring the full cold chain to your location — processing facility, port, farm gate, or distribution hub. Every unit is pre-cooled before delivery, ensuring you are operational from day one.",
+      "cta": { "label": "Talk To Us About Your Requirement", "href": "/contact-us" }
+    },
+    {
+      "type": "feature_grid",
+      "eyebrow": "What's Included",
+      "headline": "Key Features",
+      "columns": 3,
+      "items": [
+        { "title": "Plug and Play", "desc": "Connect to standard power supply. Operational within hours of delivery. No civil construction required." },
+        { "title": "Stainless Steel Interior", "desc": "Complete stainless steel lining for hygiene compliance. Easy to clean, FSSAI compliant." },
+        { "title": "External Ramp", "desc": "External loading ramp for easy loading and unloading with forklifts." },
+        { "title": "Anti Room", "desc": "Connect anti-room prevents heat ingress during loading. Maintains temperature integrity." },
+        { "title": "Strip Curtains", "desc": "PVC strip curtains at the door to minimise cold loss during frequent access." },
+        { "title": "Man Trap Alarm", "desc": "Safety alarm system to prevent accidental entrapment inside the container." }
+      ]
+    },
+    {
+      "type": "service_cards",
+      "eyebrow": "Who Uses Reefer Containers",
+      "headline": "Industries Served",
+      "items": [
+        { "title": "FMCG & Food Processing", "desc": "Overflow capacity, seasonal surge storage, pre-shipment cold holding." },
+        { "title": "Pharmaceuticals", "desc": "GDP-compliant cold storage for medicines, vaccines, and biologics." },
+        { "title": "Agriculture & Exports", "desc": "On-farm or port-side cold storage for fresh produce and marine exports." }
+      ]
+    },
+    {
+      "type": "process_steps",
+      "headline": "How It Works",
+      "steps": [
+        { "step": "01", "title": "Tell Us Your Requirement", "description": "Share your location, capacity requirement, and timeline. No brief is too vague." },
+        { "step": "02", "title": "We Configure & Deliver", "description": "Crystal selects the right unit, pre-cools it, and delivers to your site." },
+        { "step": "03", "title": "Plug In & Start Storing", "description": "Connect to standard power. Operational within hours. Crystal handles the rest." }
+      ],
+      "cta": { "label": "Get a Quote", "href": "/contact-us" }
+    },
+    {
+      "type": "stats_grid",
+      "eyebrow": "Why Crystal",
+      "headline": "Why Crystal For Tunnel Containers",
+      "items": [
+        { "title": "500+ Units Deployed", "desc": "Across pharma, FMCG, agriculture, and quick commerce clients nationwide." },
+        { "title": "Operational From Day One", "desc": "We pre-cool every unit before delivery. You are cold-chain ready on arrival." },
+        { "title": "Compliance Built In", "desc": "FSSAI, ISO 22000, pharma GMP. All our units meet the standards your auditors expect." },
+        { "title": "Flexible Terms", "desc": "Rent monthly, rent long-term, or buy. Every rupee of capital is accountable." }
+      ],
+      "cta": { "label": "Tell Us Your Requirement", "href": "/contact-us" }
+    },
+    {
+      "type": "industries_grid",
+      "eyebrow": "Applications",
+      "headline": "Where We Deploy",
+      "items": [
+        { "title": "Processing Facilities", "image": "/images/hero.png" },
+        { "title": "Ports & Logistics Hubs", "image": "/images/hero.png" },
+        { "title": "Pharmaceutical Plants", "image": "/images/hero.png" },
+        { "title": "Farm Gates", "image": "/images/hero.png" }
+      ]
+    },
+    {
+      "type": "certifications",
+      "eyebrow": "Certifications",
+      "headline": "India's Certified Cold Chain Infrastructure.",
+      "body": "FSSC 22000 · ISO 22000 · ISO 9001:2015 · FSSAI · MPEDA · Export Inspection Council · Bureau Veritas · NCCD",
+      "items": ["FSSC 22000", "ISO 22000", "ISO 9001:2015", "FSSAI", "MPEDA", "Bureau Veritas", "NCCD", "Dept. of Agriculture, WB"],
+      "cta": { "label": "Talk To Us About Your Storage Requirement", "href": "/contact-us" }
+    },
+    {
+      "type": "why_dark",
+      "headline": "Why Crystal For Tunnel Containers",
+      "body": "Crystal has deployed 500+ reefer containers across India. We know what a 3am breakdown looks like, what an audit demands, and what a 10,000-pallet throughput day requires. That operational knowledge is built into every container we deliver.",
+      "cta": { "label": "Get In Touch", "href": "/contact-us" }
+    },
+    {
+      "type": "cta",
+      "eyebrow": "Ready To Rent Or Buy?",
+      "headline": "Get a Reefer Container At Your Site.",
+      "body": "Tell us your site, location, and timeline. Pricing and availability within 24 hours.",
+      "cta_primary": { "label": "Request a Quote", "href": "/contact-us" },
+      "cta_secondary": { "label": "Download Brochure", "href": "/contact-us" }
+    }
+  ]
+}

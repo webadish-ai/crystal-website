@@ -1,0 +1,110 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Crystal Group — Netlify 301 Redirects
+# Old crystalgroup.in (WordPress) → New site (Netlify)
+# Format: /old-path  /new-path  301
+# ─────────────────────────────────────────────────────────────────────────────
+
+# ── RETIRE: dead / duplicate pages ───────────────────────────────────────────
+/jobs/                                                          /career/                                    301
+/job-openings/                                                  /career/                                    301
+/gallery/                                                       /case-studies/                              301
+/blast-freezer-/                                                /store/blast-freezer/                       301
+/pharmaceutical-2/                                              /case-studies/                              301
+/sitemap/                                                       /sitemap-index.xml                          301
+
+# ── PRODUCTS: old slugs → /store/ ────────────────────────────────────────────
+/blast-freezer/                                                 /store/blast-freezer/                       301
+/super-freezer/                                                 /store/super-freezer/                       301
+/super-store-reefer/                                            /store/super-store/                         301
+/dry-fabricated/                                                /store/dry-fabricated/                      301
+/portable-office-containers/                                    /store/office-containers/                   301
+/accessories/                                                   /store/accessories/                         301
+/amc-spareparts/                                                /store/amc-spareparts/                      301
+/all-containers/                                                /store/                                     301
+/dry-shipping-containers-rent-buy-modify/                       /store/dry-containers/                      301
+/cold-rooms/                                                    /store/cold-rooms/                          301
+/warehouse-bhubaneswar/                                         /locations/bhubaneswar/                     301
+
+# ── DEEP PRODUCT PAGES ───────────────────────────────────────────────────────
+/dry-containers/open-top-dry-shipping-containers/               /store/open-top-containers/                 301
+/dry-containers/dry-shipping-containers-tunnel/                 /store/tunnel-containers/                   301
+/dry-containers/hard-top-dry-shipping-containers/               /store/hard-top-containers/                 301
+
+# ── SERVICES ─────────────────────────────────────────────────────────────────
+/freight-forwarding/                                            /move/freight-forwarding/                   301
+/freight-forwarding-landing-page/                               /move/freight-forwarding/                   301
+
+# ── UTILITY TOOLS ────────────────────────────────────────────────────────────
+/container-loading-calculator/                                  /solve/loading-calculator/                  301
+/pallet-footprints-guide/                                       /solve/pallet-guide/                        301
+/pallet-footprints-guide-blast-freezer/                         /solve/pallet-guide-blast-freezer/          301
+/pallet-footprints-guide-super-freezer/                         /solve/pallet-guide-super-freezer/          301
+/pallet-footprints-guide-superstore/                            /solve/pallet-guide-superstore/             301
+
+# ── LEGAL ────────────────────────────────────────────────────────────────────
+/terms_conditions/                                              /terms-conditions/                          301
+
+# ── LANDING PAGES ────────────────────────────────────────────────────────────
+/rent-buy-reefer-containers-landing-page-karnataka/             /lp/karnataka/                              301
+/rent-buy-reefer-containers-landing-page-andhra-pradesh/        /lp/andhra-pradesh/                         301
+/rent-buy-reefer-containers-landing-page-gujarat/               /lp/gujarat/                                301
+/rent-buy-reefer-containers-landing-page-maharashtra/           /lp/maharashtra/                            301
+/rent-buy-reefer-containers-landing-page-tamil-nadu/            /lp/tamil-nadu/                             301
+/rent-buy-reefer-containers-landing-page-telangana/             /lp/telangana/                              301
+/rent-buy-container-landingpage-uae/                            /lp/uae/                                    301
+/warehouse-bhubaneshwar-landing-page/                           /lp/bhubaneswar/                            301
+
+# ── BLOG POSTS: old WordPress slugs → /blog/ ─────────────────────────────────
+/why-most-cold-storages-fail-during-peak-summer/                                                                                        /blog/cold-storages-fail-summer/                        301
+/your-cold-storage-is-slow-and-its-costing-you-more-than-you-think/                                                                    /blog/hidden-costs-slow-cold-storage/                   301
+/when-1-of-containers-disrupts-100-of-cold-chain-confidence/                                                                           /blog/container-reliability-cold-chain/                 301
+/when-the-strait-tightens-the-cold-chain-breaks-silently/                                                                              /blog/geopolitical-impact-cold-chain/                   301
+/how-smart-cold-chain-investments-are-reducing-logistics-costs-for-fmcg-qsr-brands/                                                    /blog/cold-chain-fmcg-qsr-savings/                      301
+/refrigerating-indias-harvest-why-cold-chain-is-becoming-the-new-backbone-of-agriculture/                                              /blog/cold-chain-agriculture-india/                     301
+/cold-chain-challenges-in-the-pharmaceutical-sector-how-india-can-build-a-smarter-compliant-future/                                    /blog/cold-chain-pharma-india/                          301
+/rajasthans-%e2%82%b910000-crore-logistics-corridor-a-new-advantage-for-cold-chain-and-freight/                                        /blog/rajasthan-logistics-corridor/                     301
+/indias-cold-chain-needs-a-reality-check-towards-a-smarter-sustainable-future-in-2026/                                                 /blog/india-cold-chain-2026/                            301
+/built-to-suit-cold-storage-facilities-customized-solutions-for-your-growing-business-in-2025/                                         /blog/built-to-suit-solutions-2025/                     301
+/iot-in-cold-chain-logistics-driving-efficiency-safety-real-time-visibility-in-2025/                                                   /blog/iot-cold-chain-2025/                              301
+/building-consumer-trust-in-quick-commerce-by-ensuring-safety-and-compliance-through-cold-chain-solutions/                             /blog/q-commerce-trust-compliance/                      301
+/delhi-gears-up-for-a-logistics-transformation-creating-new-opportunities-for-cold-chain-leaders/                                      /blog/delhi-logistics-transformation/                   301
+/quick-commerce-is-booming-and-so-is-the-need-for-smarter-cold-storage-across-india/                                                   /blog/q-commerce-boom-india/                            301
+/the-rise-of-container-cafes-restaurants-and-modular-facilities-in-india/                                                              /blog/container-cafes-india/                            301
+/how-crystal-group-keeps-ice-cream-and-frozen-treats-perfectly-fresh-as-your-trusted-cold-chain-partner-july-2025/                     /blog/ice-cream-logistics/                              301
+/big-changes-are-happening-in-indias-plant-based-protein-market-heres-what-you-need-to-know/                                           /blog/plant-protein-market-india/                       301
+/how-crystal-groups-annual-maintenance-contract-amc-keeps-your-cold-chain-run-smoothly/                                                /blog/amc-benefits-cold-chain/                          301
+/whats-happening-with-indias-shrimp-farmers-june-2025/                                                                                 /blog/shrimp-farming-logistics/                         301
+/how-safe-warehousing-is-helping-indias-supply-chains-beat-bad-weather-may-2025/                                                       /blog/weather-resilient-warehousing/                    301
+/indias-new-port-restrictions-on-bangladeshi-exports-what-it-means-for-indian-trade-and-logistics-may-2025/                            /blog/india-bangladesh-trade-logistics/                 301
+/blast-freezer-containers-the-smart-choice-for-food-businesses/                                                                        /blog/blast-freezer-guide/                              301
+/indias-dairy-export-gap-how-crystal-group-empowers-indias-dairy-industry-to-seize-global-opportunities/                               /blog/dairy-export-logistics/                           301
+/how-cold-storage-companies-are-revolutionizing-food-supply-chains/                                                                    /blog/cold-storage-revolution/                          301
+/the-incredible-second-life-of-dry-containers/                                                                                         /blog/dry-container-second-life/                        301
+/reefer-containers-uncovered-the-ultimate-guide-to-temperature-controlled-shipping-solutions/                                          /blog/reefer-container-guide/                           301
+/how-cold-warehouses-are-quietly-saving-the-planet-one-fresh-product-at-a-time/                                                        /blog/sustainable-cold-warehousing/                     301
+/the-ultimate-guide-to-reefer-containers-revolutionizing-perishable-goods-transportation/                                              /blog/reefer-transportation-guide/                      301
+
+# ── CASE STUDIES: old WordPress slugs → /case-studies/[slug] ─────────────────
+/delivered-specialized-reefer-trucks-for-frozen-food-transport-in-qsr-fmcg-industry/   /case-studies/specialized-reefer-trucks-for-frozen-food-transport-in-qsr-fmcg/              301
+/custom-reefer-truck-solution-for-the-frozen-dessert-industry/                          /case-studies/custom-reefer-truck-for-the-frozen-dessert-industry/                          301
+/laurus-labs/                                                                           /case-studies/optimizing-cold-chain-for-laurus-labs-with-flexible-reefer-containers/        301
+/vimala-feeds-mumbai/                                                                   /case-studies/rapid-blast-freezer-installation-for-vimala-feeds-export-order-fulfilled-in-reco/ 301
+/10ft-blast-freezer-deployment-for-pcm-pads-cold-storage-in-assam/                     /case-studies/10ft-blast-freezer-deployment-for-pcm-pads-cold-storage-in-assam/             301
+/10ft-reefer-containers-for-pharmaceutical-plasma-storage-hyderabad/                    /case-studies/10ft-reefer-containers-for-pharmaceutical-plasma-storage-hyderabad/           301
+/2-bay-superstore-scales-compliance-and-capacity-for-a-leading-pharma-company/         /case-studies/2-bay-superstore-scales-compliance-and-capacity-for-a-leading-pharma-company/ 301
+/powers-temperature-compliance-for-a-leading-chemical-manufacturer/                     /case-studies/temperature-compliance-for-a-leading-chemical-manufacturer-surat/            301
+/delivering-advanced-cold-storage-solutions-for-a-petrochemical-giant-in-qatar/        /case-studies/advanced-cold-storage-for-a-petrochemical-giant-in-qatar/                    301
+/dairy-company/                                                                         /case-studies/rapid-blast-freezer-for-a-dairy-company-in-maharashtra/                      301
+/40-ft-20-ft-dry-containers-for-high-footfall-tourist-destination/                      /case-studies/40-20-ft-dry-containers-for-high-footfall-tourist-destination-lonavala/      301
+/rapid-deployment-of-2x40-ft-reefer-containers-for-a-leading-pharma-company/           /case-studies/rapid-deployment-of-2-40-ft-reefer-containers-for-a-leading-pharma-company/  301
+/delivering-modular-cold-chain-warehouse-efficiency-solutions-for-a-global-logistics-leader/ /case-studies/modular-cold-chain-warehouse-efficiency-for-a-global-logistics-leader/  301
+/transforming-pcm-pad-storage/                                                          /case-studies/transforming-pcm-pad-storage-for-qwik-supply-chain-reliance-industries/      301
+/1000-squarefoot-cold-storage-unit/                                                     /case-studies/1-000-sq-ft-cold-storage-unit-installed-in-7-days-at-hyderabad-airport/      301
+/delivering-precision-cold-storage-solutions-in-telangana/                              /case-studies/precision-cold-storage-for-api-manufacturer-in-telangana/                    301
+/delivering-precision-cold-storage-for-membrane-chemicals-in-maharashtra/               /case-studies/custom-cold-storage-for-membrane-chemicals-in-maharashtra/                  301
+/delivered-specialized-refrigerated-truck-for-top-pharma-companys-rd-products/         /case-studies/specialized-refrigerated-truck-for-a-leading-pharma-company-s-r-d-products/ 301
+/enhancing-entry-with-a-custom-access-cabin-for-a-top-creative-tech-firm/              /case-studies/custom-access-cabin-for-debrique-creative-labs-navi-mumbai/                  301
+/transformed-iskcon-temples-entrance-with-a-custom-security-cabin/                     /case-studies/custom-security-cabin-for-iskcon-temple-entrance-mumbai/                     301
+/customized-dry-container-innovation-for-a-global-tyre-manufacturer/                   /case-studies/custom-high-cube-dry-containers-for-michelin-india/                          301
+/enhanced-cold-storage-solutions-for-a-leading-quick-commerce-provider/                /case-studies/custom-built-to-suit-cold-storage-for-a-leading-quick-commerce-provider/     301
+/scalable-frozen-chiller-storage-for-leading-food-delivery-platform/                   /case-studies/scalable-frozen-chiller-storage-for-swiggy-fulfilment-centres/               301

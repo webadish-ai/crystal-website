@@ -19,14 +19,20 @@ export function getStaticPaths() {
   }));
 }
 
-interface CaseStudyItem { tag: string; title: string; challenge: string; solution: string; outcomes: string; }
+interface CaseStudyItem {
+  tag: string; title: string; client: string; location: string; product: string;
+  challenge: string[]; solution: string[]; results: string[];
+  outcomes: { kpi: string; value: string }[];
+  testimonial?: { quote: string; author: string; company: string };
+  pdf?: string | null;
+}
 const { item, idx } = Astro.props as { item: CaseStudyItem; idx: number };
 const heroImage = (heroImages[idx] as any)?.src ?? heroImages[idx] as string;
 ---
 
 <Layout
   title={`${item.title} | Case Study — Crystal Group`}
-  description={item.challenge.substring(0, 155)}
+  description={item.challenge[0]?.substring(0, 155) ?? item.title}
 >
-  <CaseStudyPage client:load item={item} idx={idx} heroImage={heroImage} />
+  <CaseStudyPage client:load item={item} idx={idx} heroImage={heroImage} pdfUrl={item.pdf ?? undefined} />
 </Layout>

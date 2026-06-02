@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "Tunnel Containers — Double Door | Crystal Group",
+    "description": "Tunnel containers (double door) in 20ft & 40ft for easy drive-through loading. CSC-plated, ISO-standard, available for sale and lease pan-India."
+  },
+  "hero": {
+    "eyebrow": "Store · Tunnel Containers",
+    "name": "Tunnel Containers",
+    "tagline": "Dual entry shipping containers for easy access, fast loading, unloading, and secure storage solutions.",
+    "badge": "CSC Plated",
+    "sizes": ["20 ft", "40 ft"]
+  },
+  "overview": "Tunnel Containers, also known as Double Door Containers, have doors on both ends for quick loading, unloading, and easy access. They are ideal for storing and transporting vehicles, machinery, construction materials, general cargo, and oversized equipment. Durable and CSC-plated, they meet international standards for multimodal transport.",
+  "features": [
+    { "title": "Dual Door Access", "desc": "Doors on both ends allow loading and unloading from either side, improving throughput and operational efficiency." },
+    { "title": "Heavy-Duty Steel Construction", "desc": "Built from strong Corten steel for durability and long-term use in harsh conditions." },
+    { "title": "Spacious Interior", "desc": "Optimised storage capacity for general cargo, machinery, equipment, and dry goods." },
+    { "title": "ISO-Standard", "desc": "Fully compliant with international logistics standards — CSC-plated for road, sea, and rail multimodal transport." }
+  ],
+  "specs": [
+    {
+      "size": "20 ft",
+      "tare_weight": "2,350 kg (5,181 lbs)",
+      "max_gross": "30,480 kg (67,200 lbs)",
+      "max_payload": "28,130 kg (62,019 lbs)",
+      "ext_dimensions": "6,058 × 2,438 × 2,591 mm",
+      "int_dimensions": "5,898 × 2,352 × 2,348 mm",
+      "door_opening": "2,340 mm W × 2,280 mm H",
+      "volume": "32.5 m³ (1,148 ft³)"
+    },
+    {
+      "size": "40 ft",
+      "tare_weight": "3,850 kg (8,489 lbs)",
+      "max_gross": "32,500 kg (71,650 lbs)",
+      "max_payload": "28,650 kg (63,161 lbs)",
+      "ext_dimensions": "12,192 × 2,438 × 2,591 mm",
+      "int_dimensions": "12,032 × 2,352 × 2,348 mm",
+      "door_opening": "2,340 mm W × 2,280 mm H",
+      "volume": "66.5 m³ (2,347 ft³)"
+    }
+  ],
+  "industries": ["Pharma", "Chemical", "Dairy", "FMCG", "Meat", "Logistics", "Construction"],
+  "faq": [
+    { "q": "What are tunnel containers?", "a": "Tunnel containers are also known as double-door containers equipped with doors on both ends, allowing for easy access from either side. This design facilitates efficient loading and unloading processes." },
+    { "q": "What sizes are available for tunnel containers?", "a": "Tunnel containers are available in 10-foot, 20-foot, and 40-foot sizes." },
+    { "q": "What materials are used in constructing tunnel containers?", "a": "These containers are constructed from Corten steel, known for its durability and resistance to harsh environmental conditions." },
+    { "q": "Are tunnel containers compliant with international shipping standards?", "a": "Yes. Crystal Group's double-door containers are ISO-certified and CSC-plated, meeting international transport standards for road, sea, and rail, ensuring seamless integration into global logistics networks." },
+    { "q": "How do tunnel containers improve operational efficiency?", "a": "The dual-access design allows for loading and unloading from either end, reducing handling time and increasing flexibility in cargo management." },
+    { "q": "Can tunnel containers be customised for specific needs?", "a": "While tunnel containers come in standard sizes, customisation options such as interior modifications may be available to suit specific requirements." }
+  ]
+}

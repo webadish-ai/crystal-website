@@ -1,0 +1,50 @@
+{
+  "meta": {
+    "title": "Portable Office Containers — 20ft & 40ft | Crystal Group",
+    "description": "Pre-fitted portable office containers with electrical wiring, LED lighting, and HVAC. Custom layouts for construction sites, events, and field operations."
+  },
+  "hero": {
+    "eyebrow": "Store · Office Containers",
+    "name": "Portable Office Containers",
+    "tagline": "Ready-to-use workspace delivered to your site. Pre-fitted with electrics, LED lighting, and HVAC — operational the same day.",
+    "badge": "Custom Layouts",
+    "sizes": ["20 ft", "40 ft"]
+  },
+  "overview": "Crystal Group's portable office containers deliver fully fitted workspaces to any site. Each unit comes pre-wired with electrical fittings, LED lighting, and HVAC — operational within hours of delivery. Available in standard pre-designed models or fully custom interiors. Ideal for construction companies, event organisers, educational institutions, and remote operations.",
+  "features": [
+    { "title": "Ready to Use", "desc": "Pre-fitted electrical wiring, LED lighting, and HVAC. Operational within hours of delivery — connect to site power and start." },
+    { "title": "Fully Custom", "desc": "Choose from standard models or specify your layout — partitions, furniture, flooring, paint colours, and branded exteriors." },
+    { "title": "Fully Mobile", "desc": "Relocate via forklift or crane as the project moves. No civil foundations or permanent work required." },
+    { "title": "Secure & Weatherproof", "desc": "Weatherproof Corten steel construction with high-quality locks and reinforced walls for site security." }
+  ],
+  "specs": [
+    {
+      "size": "20 ft",
+      "tare_weight": "2,350 kg",
+      "max_gross": "30,480 kg",
+      "max_payload": "28,130 kg",
+      "ext_dimensions": "6.06 × 2.44 × 2.59 m",
+      "int_dimensions": "5.90 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "32.5 m³"
+    },
+    {
+      "size": "40 ft",
+      "tare_weight": "3,850 kg",
+      "max_gross": "32,500 kg",
+      "max_payload": "28,650 kg",
+      "ext_dimensions": "12.19 × 2.44 × 2.59 m",
+      "int_dimensions": "12.03 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "66.5 m³"
+    }
+  ],
+  "industries": ["Construction Sites", "Events & Exhibitions", "Education", "Remote Field Operations", "Healthcare", "Government", "Retail"],
+  "faq": [
+    { "q": "What utilities come pre-fitted?", "a": "Standard units include electrical wiring, LED lighting, and HVAC. Plumbing connections can be added on request." },
+    { "q": "How quickly is a unit operational?", "a": "Units are ready within a few hours of delivery — connect to your site's power supply and you're set." },
+    { "q": "Can the interior be customised?", "a": "Yes. Choose from standard layouts or request custom partitions, furniture, flooring, paint colours, and branding." },
+    { "q": "How do you move the container when the project site changes?", "a": "Our team handles relocation via forklift or crane. We cover pan-India." },
+    { "q": "Is rental available or only purchase?", "a": "Both. We offer flexible short-term and long-term rental alongside outright purchase options." }
+  ]
+}

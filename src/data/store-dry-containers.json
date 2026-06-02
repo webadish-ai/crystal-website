@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "General Purpose Dry Containers | Crystal Group",
+    "description": "ISO-certified dry shipping containers for sale or rent. 10ft, 20ft, 40ft. Weatherproof Corten steel, pan-India delivery in 4–5 days."
+  },
+  "hero": {
+    "eyebrow": "Store · Dry Containers",
+    "name": "General Purpose Dry Containers",
+    "tagline": "ISO-certified, weatherproof containers for sale or lease. New and used units available with pan-India delivery.",
+    "badge": "Sale & Lease",
+    "sizes": ["10 ft", "20 ft", "40 ft"]
+  },
+  "overview": "Crystal Group's general purpose dry containers are built from Corten steel — rust-resistant, weatherproof, and structurally sound. Available new and used, every unit is inspected for integrity, weatherproofing, and secure locking before delivery. Suitable for FMCG, pharmaceuticals, chemicals, dairy, textiles, electronics, and machinery. Modifications available for offices, pop-up stores, and site facilities.",
+  "features": [
+    { "title": "ISO Certified", "desc": "All units carry ISO certification ensuring global shipping compliance and full structural integrity." },
+    { "title": "Weatherproof Corten Steel", "desc": "Rust-resistant, weather-sealed steel construction that protects cargo in any climate condition." },
+    { "title": "Stackable", "desc": "Engineered for up to 9-high stacking — maximise yard and on-site storage density." },
+    { "title": "Modifiable", "desc": "Convert into site offices, pop-up stores, or custom storage rooms. We handle all modifications." }
+  ],
+  "specs": [
+    {
+      "size": "10 ft",
+      "tare_weight": "1,200 kg",
+      "max_gross": "10,160 kg",
+      "max_payload": "8,860 kg",
+      "ext_dimensions": "3.0 × 2.44 × 2.59 m",
+      "int_dimensions": "2.78 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "15.5 m³"
+    },
+    {
+      "size": "20 ft",
+      "tare_weight": "2,350 kg",
+      "max_gross": "30,480 kg",
+      "max_payload": "28,130 kg",
+      "ext_dimensions": "6.06 × 2.44 × 2.59 m",
+      "int_dimensions": "5.90 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "32.5 m³"
+    },
+    {
+      "size": "40 ft",
+      "tare_weight": "3,850 kg",
+      "max_gross": "32,500 kg",
+      "max_payload": "28,650 kg",
+      "ext_dimensions": "12.19 × 2.44 × 2.59 m",
+      "int_dimensions": "12.03 × 2.35 × 2.39 m",
+      "door_opening": "2.34 m W × 2.28 m H",
+      "volume": "66.5 m³"
+    }
+  ],
+  "industries": ["FMCG", "Pharmaceuticals", "Chemicals", "Dairy", "Textiles", "Electronics", "Machinery", "Agriculture", "Retail"],
+  "faq": [
+    { "q": "Can containers be converted into offices or pop-up shops?", "a": "Yes. Our dry containers can be converted into site offices, pop-up stores, or custom storage facilities. Contact us to discuss your design requirements." },
+    { "q": "Are used containers structurally sound?", "a": "All used containers are inspected for structural integrity, weatherproofing, and locking mechanisms before delivery. We certify every unit." },
+    { "q": "What is the delivery timeline?", "a": "Standard delivery is 4–5 business days across India." },
+    { "q": "Can containers be stacked on-site?", "a": "Yes. Our containers are rated for up to 9-high stacking — ensure your ground surface is level and load-bearing." },
+    { "q": "Are both sale and lease available?", "a": "Yes. We offer flexible short-term and long-term lease alongside outright purchase. Contact us to discuss which suits your project." }
+  ]
+}

@@ -12,8 +12,8 @@ import {
 } from '@components/core/animations';
 
 // Matches tailwind.config accent + primary tokens — needed for Framer Motion animate props
-const C_ACCENT = C_ACCENT;
-const C_PRIMARY = C_PRIMARY;
+const C_ACCENT = '#FAC212';
+const C_PRIMARY = '#FEFFFE';
 import homepageData from '@data/homepage.json';
 import type { S4Section } from '@types/homepage';
 

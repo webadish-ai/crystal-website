@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Open Top Dry Containers — 20ft & 40ft | Crystal Group",
+    "description": "Open top containers with removable tarpaulin roof for crane or forklift top-loading. Ideal for oversized cargo, machinery, and construction materials. Sale & lease pan-India."
+  },
+  "hero": {
+    "eyebrow": "Store · Open Top Containers",
+    "name": "Open Top Dry Containers",
+    "tagline": "Removable tarpaulin roof for easy top-loading of heavy and oversized cargo using cranes or forklifts.",
+    "badge": "ISO Certified",
+    "sizes": ["20 ft", "40 ft"]
+  },
+  "overview": "Open Top Dry Containers are designed for easy top-loading of heavy and oversized cargo. These containers feature a removable tarpaulin roof for loading bulky items like machinery, construction materials, mining equipment, and agricultural goods. Available for sale and lease — new and used units inspected before delivery.",
+  "features": [
+    { "title": "Open-Top Design", "desc": "Removable tarpaulin roof for loading oversized cargo using cranes or forklifts — no height restrictions." },
+    { "title": "ISO-Certified Dimensions", "desc": "Compatible with international shipping and logistics systems for seamless multimodal transport." },
+    { "title": "Weatherproof Cover", "desc": "Tarpaulin roof is tightly secured with locking mechanisms, protecting cargo from rain, dust, and harsh environmental elements." },
+    { "title": "Forklift & Crane Access", "desc": "Enables easy loading and unloading of heavy, bulky goods that cannot fit through standard container doors." }
+  ],
+  "specs": [
+    {
+      "size": "20 ft",
+      "tare_weight": "2,350 kg (5,181 lbs)",
+      "max_gross": "30,480 kg (67,200 lbs)",
+      "max_payload": "28,130 kg (62,019 lbs)",
+      "ext_dimensions": "6,058 × 2,438 × 2,591 mm",
+      "int_dimensions": "5,898 × 2,352 × 2,348 mm",
+      "door_opening": "2,340 mm W × 2,280 mm H",
+      "volume": "32.5 m³ (1,148 ft³)"
+    },
+    {
+      "size": "40 ft",
+      "tare_weight": "3,850 kg (8,489 lbs)",
+      "max_gross": "32,500 kg (71,650 lbs)",
+      "max_payload": "28,650 kg (63,161 lbs)",
+      "ext_dimensions": "12,192 × 2,438 × 2,591 mm",
+      "int_dimensions": "12,032 × 2,352 × 2,348 mm",
+      "door_opening": "2,340 mm W × 2,280 mm H",
+      "volume": "66.5 m³ (2,347 ft³)"
+    }
+  ],
+  "industries": ["Construction", "Mining", "Agriculture", "Pharma", "Chemical", "FMCG", "Dairy"],
+  "faq": [
+    { "q": "What are open top containers?", "a": "Open top containers are specialised shipping containers with removable rooftops, allowing easy loading and unloading of oversized cargo from above using cranes or forklifts." },
+    { "q": "What types of cargo are best suited?", "a": "Open top containers are ideal for transporting bulky items such as machinery, equipment, and materials that exceed standard height limits." },
+    { "q": "Are containers available for both sale and rent?", "a": "Yes. Crystal Group offers both new and used open top dry containers for sale and lease, providing flexible options to meet your specific needs." },
+    { "q": "How does the tarpaulin roof protect cargo?", "a": "The tarpaulin roof is tightly secured using locking mechanisms and ensures that cargo remains protected from rain, dust, and other environmental factors during transit." },
+    { "q": "Can open top containers be customised?", "a": "Yes, they can be modified based on specific requirements, including additional reinforcements, customised doors, internal padding, or ventilation systems for sensitive cargo." },
+    { "q": "Are they suitable for long-term storage?", "a": "Absolutely. These containers can be used for both transportation and long-term storage of bulky or irregularly shaped goods, provided they are secured properly." },
+    { "q": "How are goods loaded?", "a": "Cargo is typically loaded using cranes or forklifts from the top, making it easier to handle oversized or heavy materials compared to side or rear-loading methods." },
+    { "q": "Do open top containers have end doors?", "a": "Yes. These containers are equipped with doors on one end, providing easy access, while the open top design offers flexibility for loading large items that cannot fit through standard container doors." }
+  ]
+}

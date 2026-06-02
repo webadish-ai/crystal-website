@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Cold Rooms — Chilled & Frozen Storage | Crystal Group",
+    "description": "Custom cold room installation for chilled (+4°C) and frozen (-18°C) storage. Advanced temperature control, energy-efficient compressors, and 21 CFR-compliant monitoring."
+  },
+  "hero": {
+    "eyebrow": "Store · Cold Rooms",
+    "name": "Cold Rooms",
+    "tagline": "Cost-effective, energy-saving cold room solutions ideal for preserving large amounts of chilled or frozen goods.",
+    "temp_options": ["+4°C Chilled", "−18°C Frozen"]
+  },
+  "overview": "Crystal Logistic Cool Chain Ltd provides seamless installation of cold rooms and refrigeration units tailored to meet your specific storage needs. Our advanced cold rooms are equipped to maintain precise temperature and humidity control, ensuring the safety and longevity of temperature-sensitive products. Flexible and economical for businesses of any size — from single-room installations to large multi-chamber facilities.",
+  "temp_options": [
+    {
+      "label": "+4°C",
+      "name": "Chilled Storage",
+      "desc": "Maintains +4°C for fresh produce, dairy, pharmaceuticals, and beverages. Ideal for extending shelf life of perishables without freezing.",
+      "industries": ["Dairy", "Pharmaceuticals", "Fresh Produce", "Hospitality", "Retail"]
+    },
+    {
+      "label": "−18°C",
+      "name": "Frozen Storage",
+      "desc": "Maintains −18°C for frozen foods, meat, seafood, and ice cream. Full blast-freeze capability available for rapid temperature pull-down.",
+      "industries": ["Frozen Food", "Meat & Seafood", "Ice Cream", "FMCG", "Food Processing"]
+    }
+  ],
+  "features": [
+    { "title": "Advanced Temperature Control", "desc": "Designed for precise settings, ensuring ideal storage conditions for a wide range of sensitive goods." },
+    { "title": "Humidity Control", "desc": "Adjustable humidity levels keep pharmaceuticals, perishables, and other delicate items in optimal condition." },
+    { "title": "Data Monitoring & Security", "desc": "21 CFR-compliant monitoring for Pharma and FMCG — data integrity, audit trails, electronic signatures, access control, and system validation." },
+    { "title": "Energy-Efficient Compressors", "desc": "High-performance compressors provide powerful, consistent cooling with minimal energy consumption." },
+    { "title": "Insulated Panels", "desc": "Premium insulation (0.22 W/m²K thermal conductivity, 40–42 kg/m³ panel density) maintains consistent internal temperatures." },
+    { "title": "Safety Alarms & Backup Systems", "desc": "Built-in alarms and backup power systems protect temperature stability, reducing spoilage risks during power outages or system failures." }
+  ],
+  "industries": ["Food Storage", "Pharmaceuticals", "Dairy", "Hospitality", "Retail", "FMCG", "Meat & Seafood"],
+  "faq": [
+    { "q": "What temperatures can your cold rooms maintain?", "a": "Our cold rooms operate at +4°C for chilled storage and −18°C for frozen storage. Custom temperature ranges can be configured based on your product requirements." },
+    { "q": "What insulation specification do you use?", "a": "Our insulated panels have a thermal conductivity of 0.22 W/m²K and a panel density of 40–42 kg/m³, ensuring energy-efficient and stable temperature retention." },
+    { "q": "Are cold rooms compliant with pharmaceutical standards?", "a": "Yes. Our monitoring systems are 21 CFR compliant — covering data integrity, audit trails, electronic signatures, access control, and full system validation for Pharma and FMCG applications." },
+    { "q": "How long does installation take?", "a": "Installation timelines depend on the size and complexity of the cold room. Contact our team for a site assessment and project timeline." },
+    { "q": "Is there backup power in case of outages?", "a": "Yes. All our cold rooms include built-in alarms and backup power systems to protect temperature stability during power outages or equipment failures." },
+    { "q": "Can the cold room be customised to fit my space?", "a": "Absolutely. We tailor cold room dimensions, temperature settings, and features to your specific site and storage requirements." }
+  ]
+}

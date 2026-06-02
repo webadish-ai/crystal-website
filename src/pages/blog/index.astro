@@ -1,0 +1,67 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = await getCollection('blog');
+---
+
+<Layout
+  title="Blog — Cold Chain Insights | Crystal Group"
+  description="Insights, guides, and industry news from Crystal Group — India's leading cold chain and container solutions provider."
+>
+  <!-- Hero -->
+  <section class="bg-secondary pt-40 pb-20 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]"
+      style="background-image: repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px);">
+    </div>
+    <div class="relative max-w-[1160px] mx-auto px-6 md:px-10">
+      <p class="text-eyebrow tracking-eyebrow uppercase text-accent/80 mb-4">Insights · Crystal Group</p>
+      <h1 class="text-h1 font-heading font-bold text-primary tracking-tight mb-6">
+        Blog
+      </h1>
+      <p class="text-body-lg text-primary/60 max-w-xl">
+        Industry news, cold chain guides, and thought leadership from India's cold storage experts.
+      </p>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="bg-primary py-section">
+    <div class="max-w-[1160px] mx-auto px-6 md:px-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {posts.map((post) => (
+          <a
+            href={`/blog/${post.slug}/`}
+            class="group flex flex-col border border-secondary/10 rounded-sm hover:border-accent/40 transition-colors duration-200 overflow-hidden"
+          >
+            <!-- Accent bar -->
+            <div class="h-1 w-full bg-accent/20 group-hover:bg-accent transition-colors duration-200"></div>
+            <div class="p-6 md:p-8 flex flex-col flex-1">
+              <!-- Tag -->
+              <span class="text-eyebrow tracking-eyebrow uppercase text-accent/70 mb-3">
+                {post.data.tags[0]}
+              </span>
+              <!-- Title -->
+              <h2 class="text-h4 font-heading font-semibold text-secondary leading-snug mb-3 group-hover:text-accent/90 transition-colors duration-200">
+                {post.data.title}
+              </h2>
+              <!-- Excerpt -->
+              <p class="text-body-md text-secondary/60 leading-relaxed flex-1">
+                {post.data.excerpt.length > 120
+                  ? post.data.excerpt.slice(0, 120) + '…'
+                  : post.data.excerpt}
+              </p>
+              <!-- Read link -->
+              <div class="mt-6 flex items-center gap-2 text-body-sm font-semibold text-secondary/50 group-hover:text-accent transition-colors duration-200">
+                Read article
+                <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

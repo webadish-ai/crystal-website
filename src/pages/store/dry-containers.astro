@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StoreDryContainer from '../../components/store/StoreDryContainer';
+import data from '../../data/store-dry-containers.json';
+import heroImg from '../../data/images/store/_DSC4461-Edit (3).jpg';
+---
+
+<Layout title={data.meta.title} description={data.meta.description}>
+  <StoreDryContainer client:load data={data} heroImage={(heroImg as any).src ?? heroImg} />
+</Layout>

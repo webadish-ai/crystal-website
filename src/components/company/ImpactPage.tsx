@@ -1,7 +1,8 @@
-﻿import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import impactData from '../../data/impact.json';
+import blogMeta from '../../data/blog-meta.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
@@ -11,8 +12,9 @@ function toSlug(title: string): string {
 }
 
 const ImpactPage: React.FC = () => {
-  const liveData = useCmsData('impact', impactData)
-  const { hero, case_studies, blog } = liveData.page.sections.reduce((acc: any, s: any) => {
+  const [activeTab, setActiveTab] = useState<'cases' | 'blog'>('cases');
+  const liveData = useCmsData('impact', impactData);
+  const { hero, case_studies } = liveData.page.sections.reduce((acc: any, s: any) => {
     acc[s.type] = s; return acc;
   }, {});
 
@@ -48,144 +50,171 @@ const ImpactPage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* ── CASE STUDIES ── card grid ── */}
-      <section className="bg-primary py-20 px-6 md:px-12">
-        <div className="container mx-auto max-w-[var(--max-width)]">
-          <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
-
-            {/* Section label */}
-            <motion.div variants={itemVariants} className="flex items-center gap-4 mb-12">
-              <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-secondary">
-                {case_studies.eyebrow}
+      {/* ── TABS ── */}
+      <div className="bg-secondary sticky top-[64px] z-20">
+        <div className="container mx-auto max-w-[var(--max-width)] px-6 md:px-12 py-4 flex items-center gap-3">
+          {([
+            { key: 'cases', label: 'Case Studies', count: case_studies.items.length },
+            { key: 'blog',  label: 'Blog',         count: (blogMeta as any[]).length },
+          ] as const).map(({ key, label, count }) => (
+            <button
+              key={key}
+              onClick={() => setActiveTab(key)}
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-sm font-body font-bold text-body-sm uppercase tracking-[0.12em] transition-all duration-200 ${
+                activeTab === key
+                  ? 'bg-accent text-secondary'
+                  : 'text-primary/40 hover:text-primary hover:bg-primary/10'
+              }`}
+            >
+              {label}
+              <span className={`text-[11px] font-bold transition-colors duration-200 ${
+                activeTab === key ? 'text-secondary/60' : 'text-primary/25'
+              }`}>
+                {count}
               </span>
-              <span className="flex-1 h-px bg-secondary/10" />
-              <span className="font-heading font-extrabold text-eyebrow text-secondary/20 tracking-[0.2em]">
-                {String(case_studies.items.length).padStart(2, '0')} Cases
-              </span>
-            </motion.div>
-
-            {/* Case study cards */}
-            <div className="flex flex-col gap-4">
-              {case_studies.items.map((item: any, idx: number) => (
-                <motion.a
-                  key={idx}
-                  href={`/case-studies/${toSlug(item.title)}`}
-                  variants={itemVariants}
-                  className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300 block cursor-pointer"
-                >
-                  {/* Watermark number */}
-                  <span
-                    className="absolute top-0 right-6 font-heading font-extrabold text-[clamp(80px,10vw,140px)] leading-none text-secondary/0 select-none pointer-events-none"
-                    style={{ WebkitTextStroke: '1px rgba(255,255,255,0.06)' }}
-                  >
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-
-                  <div className="relative z-10 p-8 md:p-10">
-                    {/* Tag + title */}
-                    <div className="flex flex-col gap-3 mb-8">
-                      <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent w-fit">
-                        {item.tag}
-                      </span>
-                      <h3 className="font-heading font-extrabold text-h3 text-primary tracking-tight leading-snug max-w-3xl">
-                        {tc(item.title)}
-                      </h3>
-                    </div>
-
-                    {/* Challenge / Solution */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mb-8 pt-6 border-t border-primary/10">
-                      <div>
-                        <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-primary/35 block mb-3">
-                          Challenge
-                        </span>
-                        <p className="font-body text-body-md text-primary/60 leading-relaxed">
-                          {item.challenge}
-                        </p>
-                      </div>
-                      <div>
-                        <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-primary/35 block mb-3">
-                          Solution
-                        </span>
-                        <p className="font-body text-body-md text-primary/80 leading-relaxed">
-                          {item.solution}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Outcome pills */}
-                    <div className="flex flex-wrap gap-2">
-                      {item.outcomes.split(' · ').map((o: string, i: number) => (
-                        <span
-                          key={i}
-                          className="font-body font-bold text-eyebrow uppercase tracking-[0.1em] text-accent/70
-                            border border-accent/20 px-3 py-1 rounded-sm
-                            group-hover:border-accent/50 group-hover:text-accent transition-all duration-300"
-                        >
-                          {o}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Bottom bar */}
-                  <div className="flex items-center justify-between px-8 md:px-10 py-4 border-t border-primary/10">
-                    <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-primary/30 group-hover:text-accent transition-colors duration-300">
-                      View Case Study
-                    </span>
-                    <FiArrowRight className="text-primary/20 group-hover:text-accent group-hover:translate-x-1 transition-all duration-300" />
-                  </div>
-                  <div className="h-px w-0 group-hover:w-full bg-accent transition-all duration-500 ease-out" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
+            </button>
+          ))}
         </div>
-      </section>
+      </div>
 
-      {/* ── INTELLIGENCE ── */}
-      <section className="bg-secondary text-primary py-16 px-6 md:px-12 border-t border-primary/10">
-        <div className="container mx-auto max-w-[var(--max-width)]">
-          <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 items-start">
+      {/* ── CONTENT ── */}
+      <AnimatePresence mode="wait">
 
-              {/* Left */}
-              <div>
-                <motion.span variants={itemVariants} className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mb-3 block">
-                  {blog.eyebrow}
-                </motion.span>
-                <motion.h2 variants={itemVariants} className="font-heading font-extrabold text-h2 text-primary leading-tight-none tracking-tighter border-b border-primary/10 pb-2 mb-5">
-                  {tc(blog.headline)}
-                </motion.h2>
-                <motion.p variants={itemVariants} className="font-body text-body-lg text-primary/55 leading-relaxed">
-                  In-depth guides and analysis from Crystal's cold chain team: covering infrastructure, compliance, and operations. New articles published regularly.
-                </motion.p>
-              </div>
+        {/* ── CASE STUDIES ── */}
+        {activeTab === 'cases' && (
+          <motion.section
+            key="cases"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
+            className="bg-primary py-20 px-6 md:px-12"
+          >
+            <div className="container mx-auto max-w-[var(--max-width)]">
+              <motion.div key="cases-inner" initial="hidden" animate="visible" variants={containerVariants}>
 
-              {/* Right: theme tags as a clean grid */}
-              <div>
-                <motion.span variants={itemVariants} className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-primary/30 mb-4 block">
-                  {blog.topics_label}
-                </motion.span>
-                <div className="flex flex-col gap-0">
-                  {blog.themes.map((theme: string, idx: number) => (
-                    <motion.div
+                <motion.div variants={itemVariants} className="flex items-center gap-4 mb-12">
+                  <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-secondary">
+                    {case_studies.eyebrow}
+                  </span>
+                  <span className="flex-1 h-px bg-secondary/10" />
+                  <span className="font-heading font-extrabold text-eyebrow text-secondary/20 tracking-[0.2em]">
+                    {String(case_studies.items.length).padStart(2, '0')} Cases
+                  </span>
+                </motion.div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {case_studies.items.map((item: any, idx: number) => (
+                    <motion.a
                       key={idx}
+                      href={`/case-studies/${toSlug(item.title)}`}
                       variants={itemVariants}
-                      className="flex items-center justify-between py-3 border-b border-primary/8 group cursor-default"
+                      className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300 block cursor-pointer"
                     >
-                      <span className="font-body font-bold text-body-md text-primary/60 group-hover:text-primary transition-colors duration-200">
-                        {theme}
-                      </span>
-                      <FiArrowRight className="text-primary/20 group-hover:text-accent group-hover:translate-x-1 transition-all duration-200 shrink-0 ml-4" />
-                    </motion.div>
+                      {/* 16:9 image / visual area */}
+                      <div className="relative w-full aspect-video bg-secondary overflow-hidden">
+                        {/* Watermark number */}
+                        <span
+                          className="absolute bottom-2 right-4 font-heading font-extrabold text-[clamp(60px,8vw,100px)] leading-none select-none pointer-events-none text-transparent"
+                          style={{ WebkitTextStroke: '1px rgba(255,255,255,0.08)' }}
+                        >
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        {/* Tag badge */}
+                        <span className="absolute top-4 left-4 font-body font-bold text-eyebrow uppercase tracking-[0.12em] text-secondary bg-accent px-2.5 py-1 rounded-sm text-[10px]">
+                          {item.tag}
+                        </span>
+                        {/* Grid pattern overlay */}
+                        <div className="absolute inset-0 opacity-[0.03]"
+                          style={{backgroundImage:'repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 40px)'}}>
+                        </div>
+                        {/* Product label */}
+                        <div className="absolute bottom-0 left-0 right-0 p-4">
+                          <p className="font-body text-body-sm text-primary/40 truncate">{item.product}</p>
+                        </div>
+                      </div>
+
+                      {/* Card body */}
+                      <div className="p-5 md:p-6">
+                        <h3 className="font-heading font-bold text-h4 text-primary tracking-tight leading-snug mb-4 group-hover:text-accent transition-colors duration-200">
+                          {tc(item.title)}
+                        </h3>
+                        {/* Outcome pills */}
+                        <div className="flex flex-wrap gap-1.5 mb-4">
+                          {(Array.isArray(item.outcomes) ? item.outcomes : []).slice(0, 3).map((o: any, i: number) => (
+                            <span key={i} className="font-body font-bold text-[10px] uppercase tracking-[0.1em] text-accent/60 border border-accent/15 px-2 py-0.5 rounded-sm group-hover:border-accent/40 group-hover:text-accent transition-all duration-200">
+                              {o.value}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex items-center gap-1.5 text-body-sm font-semibold text-primary/30 group-hover:text-accent transition-colors duration-200">
+                          View Case Study
+                          <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                        </div>
+                      </div>
+                    </motion.a>
                   ))}
                 </div>
-              </div>
-
+              </motion.div>
             </div>
-          </motion.div>
-        </div>
-      </section>
+          </motion.section>
+        )}
+
+        {/* ── BLOG ── */}
+        {activeTab === 'blog' && (
+          <motion.section
+            key="blog"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25 }}
+            className="bg-primary py-20 px-6 md:px-12"
+          >
+            <div className="container mx-auto max-w-[var(--max-width)]">
+              <motion.div key="blog-inner" initial="hidden" animate="visible" variants={containerVariants}>
+
+                <motion.div variants={itemVariants} className="flex items-center gap-4 mb-12">
+                  <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-secondary">
+                    Insights & Articles
+                  </span>
+                  <span className="flex-1 h-px bg-secondary/10" />
+                  <span className="font-heading font-extrabold text-eyebrow text-secondary/20 tracking-[0.2em]">
+                    {String((blogMeta as any[]).length).padStart(2, '0')} Articles
+                  </span>
+                </motion.div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {(blogMeta as any[]).map((post, idx) => (
+                    <motion.a
+                      key={idx}
+                      href={`/blog/${post.slug}/`}
+                      variants={itemVariants}
+                      className="group flex flex-col border border-secondary/10 rounded-sm hover:border-accent/40 transition-colors duration-200 overflow-hidden"
+                    >
+                      <div className="h-1 w-full bg-accent/20 group-hover:bg-accent transition-colors duration-200" />
+                      <div className="p-6 flex flex-col flex-1">
+                        <span className="text-eyebrow tracking-[0.15em] uppercase text-accent/70 mb-3">
+                          {post.tags[0]}
+                        </span>
+                        <h3 className="font-heading font-semibold text-h4 text-secondary leading-snug mb-3 group-hover:text-accent/90 transition-colors duration-200">
+                          {post.title}
+                        </h3>
+                        <p className="font-body text-body-md text-secondary/60 leading-relaxed flex-1">
+                          {post.excerpt.length > 110 ? post.excerpt.slice(0, 110) + '…' : post.excerpt}
+                        </p>
+                        <div className="mt-5 flex items-center gap-2 text-body-sm font-semibold text-secondary/40 group-hover:text-accent transition-colors duration-200">
+                          Read article
+                          <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-200" />
+                        </div>
+                      </div>
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </motion.section>
+        )}
+      </AnimatePresence>
 
     </div>
   );

@@ -1,0 +1,64 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout
+  title={`${post.data.title} | Crystal Group Blog`}
+  description={post.data.excerpt}
+  type="article"
+>
+  <!-- Hero -->
+  <section class="bg-secondary pt-40 pb-16 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-[0.04]"
+      style="background-image: repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 60px);">
+    </div>
+    <div class="relative max-w-[760px] mx-auto px-6 md:px-10">
+      <!-- Breadcrumb -->
+      <div class="flex items-center gap-2 text-eyebrow tracking-eyebrow uppercase text-primary/30 mb-6">
+        <a href="/blog/" class="hover:text-accent transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-accent/70">{post.data.tags[0]}</span>
+      </div>
+      <h1 class="text-h1 font-heading font-bold text-primary tracking-tight mb-6 leading-tight">
+        {post.data.title}
+      </h1>
+      <p class="text-body-lg text-primary/60 leading-relaxed">
+        {post.data.excerpt}
+      </p>
+    </div>
+  </section>
+
+  <!-- Article body -->
+  <section class="bg-primary py-section">
+    <div class="max-w-[760px] mx-auto px-6 md:px-10">
+      <article class="blog-content">
+        <Content />
+      </article>
+
+      <!-- Back link -->
+      <div class="mt-16 pt-10 border-t border-secondary/10">
+        <a
+          href="/blog/"
+          class="inline-flex items-center gap-2 text-body-sm font-semibold text-secondary/50 hover:text-accent transition-colors"
+        >
+          <svg class="w-3.5 h-3.5 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+          Back to all articles
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

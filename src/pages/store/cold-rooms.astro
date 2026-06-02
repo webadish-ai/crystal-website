@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import StoreColdRooms from '../../components/store/StoreColdRooms';
+import data from '../../data/store-cold-rooms.json';
+---
+
+<Layout title={data.meta.title} description={data.meta.description}>
+  <StoreColdRooms client:load />
+</Layout>

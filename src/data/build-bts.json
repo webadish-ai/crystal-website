@@ -32,6 +32,31 @@
       "BODY": "A leading pharmaceutical company needed a fully compliant bonded and non-bonded cold storage facility at JNPT: designed, built, and operational within 90 days.\nCrystal delivered a 40,000 sqft facility with segregated temperature zones, CFR 21-compliant monitoring, WMS integration, and full audit readiness from day one.",
       "OUTCOMES": "40,000 sqft delivered · bonded & non-bonded zones · CFR 21 compliant · WMS-enabled · operational in 90 days"
     },
+    "Models": {
+      "HEADLINE": "Our facility models",
+      "EYEBROW": "Facility types",
+      "BODY": "Every BTS facility is engineered around your product, compliance requirements, and throughput. Choose a proven model or work with our engineers to create a hybrid.",
+      "Cold Store": {
+        "TEMP": "2°C – 8°C",
+        "USE_CASE": "Fresh produce · Dairy · Pharma",
+        "DESC": "Our most widely deployed model. Consistent refrigerated conditions for fresh produce, pharmaceutical storage, dairy, and any perishable requiring precise temperature control."
+      },
+      "Blast Freeze": {
+        "TEMP": "−30°C to −18°C",
+        "USE_CASE": "Seafood · IQF · Meat · Frozen",
+        "DESC": "Rapid freeze capability integrated with long-term frozen storage. Suitable for IQF lines, seafood processors, and any product requiring guaranteed freeze-through."
+      },
+      "Pharma-Grade": {
+        "TEMP": "2°C – 25°C (zoned)",
+        "USE_CASE": "Vaccines · Biologics · API · Clinical",
+        "DESC": "CFR 21-compliant, GMP-ready cold chain with continuous monitoring, validated temperature mapping, and full audit-ready documentation from day one."
+      },
+      "Multi-Zone": {
+        "TEMP": "Multiple zones",
+        "USE_CASE": "Mixed SKUs · 3PL · Retail distribution",
+        "DESC": "Two or more temperature zones under one roof. Ideal for operators managing diverse product portfolios or clients needing consolidated, multi-temp cold chain."
+      }
+    },
     "S5 Why Crystal for BTS": {
       "20,000+ pallets built": "Proven track record of building and operating A-grade cold storage at scale across India.",
       "Operational from day one": "We don't just hand over keys. We commission, staff, and operate so your supply chain never skips a beat.",

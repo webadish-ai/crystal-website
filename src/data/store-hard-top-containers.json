@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "title": "Hard Top Dry Containers — 20ft & 40ft | Crystal Group",
+    "description": "Hard top containers with removable steel roof for top-loading heavy and irregularly shaped cargo. Ideal for glass, coal, automotive parts, and construction materials."
+  },
+  "hero": {
+    "eyebrow": "Store · Hard Top Containers",
+    "name": "Hard Top Dry Containers",
+    "tagline": "Removable roof — specially designed for easy top-loading and safe transport of heavy, oversized, and irregularly shaped cargo.",
+    "badge": "ISO Standard",
+    "sizes": ["20 ft", "40 ft"]
+  },
+  "overview": "Hard Top Dry Containers are built for transporting and storing heavy, oversized, and irregularly shaped cargo. These containers feature a removable hard roof for easy top-loading and unloading with cranes. They are ideal for cargo such as glass sheets, raw materials like coal, automotive parts, bulk freight like cement, large machinery, and construction materials.",
+  "features": [
+    { "title": "Removable Roof Design", "desc": "Hard steel roof panels can be removed for easy top-loading and unloading of bulky cargo such as machinery, steel, and heavy equipment." },
+    { "title": "Dual Door Access", "desc": "Doors at both front and top open to simplify loading and unloading of oversized materials." },
+    { "title": "Weatherproof Protection", "desc": "Strong steel body safeguards cargo from rain, sunlight, and snow during transit and long-term storage." },
+    { "title": "ISO-Standard", "desc": "Compliant with international shipping container standards for seamless multimodal transport by road, sea, and rail." }
+  ],
+  "specs": [
+    {
+      "size": "20 ft",
+      "tare_weight": "2,350 kg (5,181 lbs)",
+      "max_gross": "30,480 kg (67,200 lbs)",
+      "max_payload": "28,130 kg (62,019 lbs)",
+      "ext_dimensions": "6,058 × 2,438 × 2,591 mm",
+      "int_dimensions": "5,898 × 2,352 × 2,348 mm",
+      "door_opening": "2,340 mm W × 2,280 mm H",
+      "volume": "32.5 m³ (1,148 ft³)"
+    },
+    {
+      "size": "40 ft",
+      "tare_weight": "3,850 kg (8,489 lbs)",
+      "max_gross": "32,500 kg (71,650 lbs)",
+      "max_payload": "28,650 kg (63,161 lbs)",
+      "ext_dimensions": "12,192 × 2,438 × 2,591 mm",
+      "int_dimensions": "12,032 × 2,352 × 2,348 mm",
+      "door_opening": "2,340 mm W × 2,280 mm H",
+      "volume": "66.5 m³ (2,347 ft³)"
+    }
+  ],
+  "industries": ["Pharma", "Chemical", "Dairy", "FMCG", "Meat", "Construction", "Automotive"],
+  "faq": [
+    { "q": "What is a hard top dry container?", "a": "A hard top dry container features a removable hard steel roof, specially designed for easy top-loading and safe transport of heavy, oversized, and irregularly shaped cargo." },
+    { "q": "What sizes are available?", "a": "Hard top dry containers are available in 10ft, 20ft, and 40ft sizes." },
+    { "q": "What are the key features?", "a": "Removable hard roof for top-loading; dual access doors at both ends; weatherproof steel construction shielding cargo from rain, sun, and snow; ISO-standard dimensions for global shipping." },
+    { "q": "Can hard top containers be customised?", "a": "Yes. These containers can be modified to suit specific shipping needs, offering flexibility for various cargo requirements." },
+    { "q": "Are they compliant with international shipping standards?", "a": "Yes. They adhere to ISO-standard dimensions, ensuring compatibility with global shipping regulations and seamless transportation across sea, rail, and road." },
+    { "q": "What types of cargo are they best suited for?", "a": "Hard top containers are ideal for glass sheets, raw materials like coal, automotive parts, bulk freight like cement, large machinery, and construction materials." }
+  ]
+}

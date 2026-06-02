@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionRenderer from '../components/sections/SectionRenderer';
+import samplePage from '../data/sample-page.json';
+---
+
+<Layout
+  title="Sample Page — Builder Demo | Crystal Group"
+  description="Section builder demo — shows how any page can be composed from reusable sections."
+>
+  <SectionRenderer client:load sections={samplePage.sections} />
+</Layout>

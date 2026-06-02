@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SolveLoadingCalculator from '../../components/solve/SolveLoadingCalculator';
+---
+
+<Layout
+  title="Container Loading Calculator | Crystal Group"
+  description="Find the right cold storage container for your cargo. Enter your temperature requirement and cargo volume — instantly see which Crystal container fits."
+>
+  <SolveLoadingCalculator client:load />
+</Layout>

@@ -127,19 +127,19 @@
       "solutions_links": [
         {
           "label": "Build",
-          "href": "/build-bts"
+          "href": "/built-to-suit"
         },
         {
           "label": "Store",
-          "href": "/store-cold-storage"
+          "href": "/warehouse"
         },
         {
           "label": "Move",
-          "href": "/move"
+          "href": "/transportation"
         },
         {
           "label": "Process",
-          "href": "/process-fvp"
+          "href": "/food-processing"
         },
         {
           "label": "Solve",
@@ -150,23 +150,23 @@
       "company_links": [
         {
           "label": "About",
-          "href": "/about"
-        },
-        {
-          "label": "Network",
-          "href": "/#locations"
+          "href": "/about-us"
         },
         {
           "label": "Impact",
-          "href": "/impact"
+          "href": "/case-studies"
+        },
+        {
+          "label": "Blog",
+          "href": "/blog"
         },
         {
           "label": "Careers",
-          "href": "/careers"
+          "href": "/career"
         },
         {
           "label": "Contact",
-          "href": "/contact"
+          "href": "/contact-us"
         }
       ],
       "contact_label": "Contact",
@@ -179,15 +179,11 @@
       "legal_links": [
         {
           "label": "Privacy Policy",
-          "href": "#"
+          "href": "/privacy-policy"
         },
         {
-          "label": "Terms of Service",
-          "href": "#"
-        },
-        {
-          "label": "Cookie Policy",
-          "href": "#"
+          "label": "Terms & Conditions",
+          "href": "/terms-conditions"
         }
       ],
       "copyright": "Crystal Group. All rights reserved."
