@@ -1,0 +1,439 @@
+{
+  "redirects": [
+    {
+      "source": "/jobs/",
+      "destination": "/career/",
+      "permanent": true
+    },
+    {
+      "source": "/job-openings/",
+      "destination": "/career/",
+      "permanent": true
+    },
+    {
+      "source": "/gallery/",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/blast-freezer-/",
+      "destination": "/store/blast-freezer/",
+      "permanent": true
+    },
+    {
+      "source": "/pharmaceutical-2/",
+      "destination": "/case-studies/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap/",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blast-freezer/",
+      "destination": "/store/blast-freezer/",
+      "permanent": true
+    },
+    {
+      "source": "/super-freezer/",
+      "destination": "/store/super-freezer/",
+      "permanent": true
+    },
+    {
+      "source": "/super-store-reefer/",
+      "destination": "/store/super-store/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-fabricated/",
+      "destination": "/store/dry-fabricated/",
+      "permanent": true
+    },
+    {
+      "source": "/portable-office-containers/",
+      "destination": "/store/office-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/accessories/",
+      "destination": "/store/accessories/",
+      "permanent": true
+    },
+    {
+      "source": "/amc-spareparts/",
+      "destination": "/store/amc-spareparts/",
+      "permanent": true
+    },
+    {
+      "source": "/all-containers/",
+      "destination": "/store/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-shipping-containers-rent-buy-modify/",
+      "destination": "/store/dry-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/cold-rooms/",
+      "destination": "/store/cold-rooms/",
+      "permanent": true
+    },
+    {
+      "source": "/warehouse-bhubaneswar/",
+      "destination": "/locations/bhubaneswar/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-containers/open-top-dry-shipping-containers/",
+      "destination": "/store/open-top-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-containers/dry-shipping-containers-tunnel/",
+      "destination": "/store/tunnel-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-containers/hard-top-dry-shipping-containers/",
+      "destination": "/store/hard-top-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/freight-forwarding/",
+      "destination": "/move/freight-forwarding/",
+      "permanent": true
+    },
+    {
+      "source": "/freight-forwarding-landing-page/",
+      "destination": "/move/freight-forwarding/",
+      "permanent": true
+    },
+    {
+      "source": "/container-loading-calculator/",
+      "destination": "/solve/loading-calculator/",
+      "permanent": true
+    },
+    {
+      "source": "/pallet-footprints-guide/",
+      "destination": "/solve/pallet-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/pallet-footprints-guide-blast-freezer/",
+      "destination": "/solve/pallet-guide-blast-freezer/",
+      "permanent": true
+    },
+    {
+      "source": "/pallet-footprints-guide-super-freezer/",
+      "destination": "/solve/pallet-guide-super-freezer/",
+      "permanent": true
+    },
+    {
+      "source": "/pallet-footprints-guide-superstore/",
+      "destination": "/solve/pallet-guide-superstore/",
+      "permanent": true
+    },
+    {
+      "source": "/terms_conditions/",
+      "destination": "/terms-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-landing-page-karnataka/",
+      "destination": "/lp/karnataka/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-landing-page-andhra-pradesh/",
+      "destination": "/lp/andhra-pradesh/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-landing-page-gujarat/",
+      "destination": "/lp/gujarat/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-landing-page-maharashtra/",
+      "destination": "/lp/maharashtra/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-landing-page-tamil-nadu/",
+      "destination": "/lp/tamil-nadu/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-landing-page-telangana/",
+      "destination": "/lp/telangana/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-container-landingpage-uae/",
+      "destination": "/lp/uae/",
+      "permanent": true
+    },
+    {
+      "source": "/warehouse-bhubaneshwar-landing-page/",
+      "destination": "/lp/bhubaneswar/",
+      "permanent": true
+    },
+    {
+      "source": "/why-most-cold-storages-fail-during-peak-summer/",
+      "destination": "/blog/cold-storages-fail-summer/",
+      "permanent": true
+    },
+    {
+      "source": "/your-cold-storage-is-slow-and-its-costing-you-more-than-you-think/",
+      "destination": "/blog/hidden-costs-slow-cold-storage/",
+      "permanent": true
+    },
+    {
+      "source": "/when-1-of-containers-disrupts-100-of-cold-chain-confidence/",
+      "destination": "/blog/container-reliability-cold-chain/",
+      "permanent": true
+    },
+    {
+      "source": "/when-the-strait-tightens-the-cold-chain-breaks-silently/",
+      "destination": "/blog/geopolitical-impact-cold-chain/",
+      "permanent": true
+    },
+    {
+      "source": "/how-smart-cold-chain-investments-are-reducing-logistics-costs-for-fmcg-qsr-brands/",
+      "destination": "/blog/cold-chain-fmcg-qsr-savings/",
+      "permanent": true
+    },
+    {
+      "source": "/refrigerating-indias-harvest-why-cold-chain-is-becoming-the-new-backbone-of-agriculture/",
+      "destination": "/blog/cold-chain-agriculture-india/",
+      "permanent": true
+    },
+    {
+      "source": "/cold-chain-challenges-in-the-pharmaceutical-sector-how-india-can-build-a-smarter-compliant-future/",
+      "destination": "/blog/cold-chain-pharma-india/",
+      "permanent": true
+    },
+    {
+      "source": "/rajasthans-%e2%82%b910000-crore-logistics-corridor-a-new-advantage-for-cold-chain-and-freight/",
+      "destination": "/blog/rajasthan-logistics-corridor/",
+      "permanent": true
+    },
+    {
+      "source": "/indias-cold-chain-needs-a-reality-check-towards-a-smarter-sustainable-future-in-2026/",
+      "destination": "/blog/india-cold-chain-2026/",
+      "permanent": true
+    },
+    {
+      "source": "/built-to-suit-cold-storage-facilities-customized-solutions-for-your-growing-business-in-2025/",
+      "destination": "/blog/built-to-suit-solutions-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/iot-in-cold-chain-logistics-driving-efficiency-safety-real-time-visibility-in-2025/",
+      "destination": "/blog/iot-cold-chain-2025/",
+      "permanent": true
+    },
+    {
+      "source": "/building-consumer-trust-in-quick-commerce-by-ensuring-safety-and-compliance-through-cold-chain-solutions/",
+      "destination": "/blog/q-commerce-trust-compliance/",
+      "permanent": true
+    },
+    {
+      "source": "/delhi-gears-up-for-a-logistics-transformation-creating-new-opportunities-for-cold-chain-leaders/",
+      "destination": "/blog/delhi-logistics-transformation/",
+      "permanent": true
+    },
+    {
+      "source": "/quick-commerce-is-booming-and-so-is-the-need-for-smarter-cold-storage-across-india/",
+      "destination": "/blog/q-commerce-boom-india/",
+      "permanent": true
+    },
+    {
+      "source": "/the-rise-of-container-cafes-restaurants-and-modular-facilities-in-india/",
+      "destination": "/blog/container-cafes-india/",
+      "permanent": true
+    },
+    {
+      "source": "/how-crystal-group-keeps-ice-cream-and-frozen-treats-perfectly-fresh-as-your-trusted-cold-chain-partner-july-2025/",
+      "destination": "/blog/ice-cream-logistics/",
+      "permanent": true
+    },
+    {
+      "source": "/big-changes-are-happening-in-indias-plant-based-protein-market-heres-what-you-need-to-know/",
+      "destination": "/blog/plant-protein-market-india/",
+      "permanent": true
+    },
+    {
+      "source": "/how-crystal-groups-annual-maintenance-contract-amc-keeps-your-cold-chain-run-smoothly/",
+      "destination": "/blog/amc-benefits-cold-chain/",
+      "permanent": true
+    },
+    {
+      "source": "/whats-happening-with-indias-shrimp-farmers-june-2025/",
+      "destination": "/blog/shrimp-farming-logistics/",
+      "permanent": true
+    },
+    {
+      "source": "/how-safe-warehousing-is-helping-indias-supply-chains-beat-bad-weather-may-2025/",
+      "destination": "/blog/weather-resilient-warehousing/",
+      "permanent": true
+    },
+    {
+      "source": "/indias-new-port-restrictions-on-bangladeshi-exports-what-it-means-for-indian-trade-and-logistics-may-2025/",
+      "destination": "/blog/india-bangladesh-trade-logistics/",
+      "permanent": true
+    },
+    {
+      "source": "/blast-freezer-containers-the-smart-choice-for-food-businesses/",
+      "destination": "/blog/blast-freezer-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/indias-dairy-export-gap-how-crystal-group-empowers-indias-dairy-industry-to-seize-global-opportunities/",
+      "destination": "/blog/dairy-export-logistics/",
+      "permanent": true
+    },
+    {
+      "source": "/how-cold-storage-companies-are-revolutionizing-food-supply-chains/",
+      "destination": "/blog/cold-storage-revolution/",
+      "permanent": true
+    },
+    {
+      "source": "/the-incredible-second-life-of-dry-containers/",
+      "destination": "/blog/dry-container-second-life/",
+      "permanent": true
+    },
+    {
+      "source": "/reefer-containers-uncovered-the-ultimate-guide-to-temperature-controlled-shipping-solutions/",
+      "destination": "/blog/reefer-container-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/how-cold-warehouses-are-quietly-saving-the-planet-one-fresh-product-at-a-time/",
+      "destination": "/blog/sustainable-cold-warehousing/",
+      "permanent": true
+    },
+    {
+      "source": "/the-ultimate-guide-to-reefer-containers-revolutionizing-perishable-goods-transportation/",
+      "destination": "/blog/reefer-transportation-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/delivered-specialized-reefer-trucks-for-frozen-food-transport-in-qsr-fmcg-industry/",
+      "destination": "/case-studies/specialized-reefer-trucks-for-frozen-food-transport-in-qsr-fmcg/",
+      "permanent": true
+    },
+    {
+      "source": "/custom-reefer-truck-solution-for-the-frozen-dessert-industry/",
+      "destination": "/case-studies/custom-reefer-truck-for-the-frozen-dessert-industry/",
+      "permanent": true
+    },
+    {
+      "source": "/laurus-labs/",
+      "destination": "/case-studies/optimizing-cold-chain-for-laurus-labs-with-flexible-reefer-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/vimala-feeds-mumbai/",
+      "destination": "/case-studies/rapid-blast-freezer-installation-for-vimala-feeds-export-order-fulfilled-in-reco/",
+      "permanent": true
+    },
+    {
+      "source": "/10ft-blast-freezer-deployment-for-pcm-pads-cold-storage-in-assam/",
+      "destination": "/case-studies/10ft-blast-freezer-deployment-for-pcm-pads-cold-storage-in-assam/",
+      "permanent": true
+    },
+    {
+      "source": "/10ft-reefer-containers-for-pharmaceutical-plasma-storage-hyderabad/",
+      "destination": "/case-studies/10ft-reefer-containers-for-pharmaceutical-plasma-storage-hyderabad/",
+      "permanent": true
+    },
+    {
+      "source": "/2-bay-superstore-scales-compliance-and-capacity-for-a-leading-pharma-company/",
+      "destination": "/case-studies/2-bay-superstore-scales-compliance-and-capacity-for-a-leading-pharma-company/",
+      "permanent": true
+    },
+    {
+      "source": "/powers-temperature-compliance-for-a-leading-chemical-manufacturer/",
+      "destination": "/case-studies/temperature-compliance-for-a-leading-chemical-manufacturer-surat/",
+      "permanent": true
+    },
+    {
+      "source": "/delivering-advanced-cold-storage-solutions-for-a-petrochemical-giant-in-qatar/",
+      "destination": "/case-studies/advanced-cold-storage-for-a-petrochemical-giant-in-qatar/",
+      "permanent": true
+    },
+    {
+      "source": "/dairy-company/",
+      "destination": "/case-studies/rapid-blast-freezer-for-a-dairy-company-in-maharashtra/",
+      "permanent": true
+    },
+    {
+      "source": "/40-ft-20-ft-dry-containers-for-high-footfall-tourist-destination/",
+      "destination": "/case-studies/40-20-ft-dry-containers-for-high-footfall-tourist-destination-lonavala/",
+      "permanent": true
+    },
+    {
+      "source": "/rapid-deployment-of-2x40-ft-reefer-containers-for-a-leading-pharma-company/",
+      "destination": "/case-studies/rapid-deployment-of-2-40-ft-reefer-containers-for-a-leading-pharma-company/",
+      "permanent": true
+    },
+    {
+      "source": "/delivering-modular-cold-chain-warehouse-efficiency-solutions-for-a-global-logistics-leader/",
+      "destination": "/case-studies/modular-cold-chain-warehouse-efficiency-for-a-global-logistics-leader/",
+      "permanent": true
+    },
+    {
+      "source": "/transforming-pcm-pad-storage/",
+      "destination": "/case-studies/transforming-pcm-pad-storage-for-qwik-supply-chain-reliance-industries/",
+      "permanent": true
+    },
+    {
+      "source": "/1000-squarefoot-cold-storage-unit/",
+      "destination": "/case-studies/1-000-sq-ft-cold-storage-unit-installed-in-7-days-at-hyderabad-airport/",
+      "permanent": true
+    },
+    {
+      "source": "/delivering-precision-cold-storage-solutions-in-telangana/",
+      "destination": "/case-studies/precision-cold-storage-for-api-manufacturer-in-telangana/",
+      "permanent": true
+    },
+    {
+      "source": "/delivering-precision-cold-storage-for-membrane-chemicals-in-maharashtra/",
+      "destination": "/case-studies/custom-cold-storage-for-membrane-chemicals-in-maharashtra/",
+      "permanent": true
+    },
+    {
+      "source": "/delivered-specialized-refrigerated-truck-for-top-pharma-companys-rd-products/",
+      "destination": "/case-studies/specialized-refrigerated-truck-for-a-leading-pharma-company-s-r-d-products/",
+      "permanent": true
+    },
+    {
+      "source": "/enhancing-entry-with-a-custom-access-cabin-for-a-top-creative-tech-firm/",
+      "destination": "/case-studies/custom-access-cabin-for-debrique-creative-labs-navi-mumbai/",
+      "permanent": true
+    },
+    {
+      "source": "/transformed-iskcon-temples-entrance-with-a-custom-security-cabin/",
+      "destination": "/case-studies/custom-security-cabin-for-iskcon-temple-entrance-mumbai/",
+      "permanent": true
+    },
+    {
+      "source": "/customized-dry-container-innovation-for-a-global-tyre-manufacturer/",
+      "destination": "/case-studies/custom-high-cube-dry-containers-for-michelin-india/",
+      "permanent": true
+    },
+    {
+      "source": "/enhanced-cold-storage-solutions-for-a-leading-quick-commerce-provider/",
+      "destination": "/case-studies/custom-built-to-suit-cold-storage-for-a-leading-quick-commerce-provider/",
+      "permanent": true
+    },
+    {
+      "source": "/scalable-frozen-chiller-storage-for-leading-food-delivery-platform/",
+      "destination": "/case-studies/scalable-frozen-chiller-storage-for-swiggy-fulfilment-centres/",
+      "permanent": true
+    }
+  ]
+}
