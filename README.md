@@ -1,6 +1,6 @@
-# Website — Astro + React
+# Crystal Group — Website
 
-Static marketing website built with Astro, React, and Tailwind CSS. Deployed on Netlify with a hybrid static/SSR output for landing pages.
+Marketing website for Crystal Logistic Cool Chain Ltd. Built with Astro, React, and Tailwind CSS. Deployed on Vercel.
 
 ---
 
@@ -8,13 +8,13 @@ Static marketing website built with Astro, React, and Tailwind CSS. Deployed on 
 
 | Layer | Technology |
 |---|---|
-| Framework | [Astro 5](https://astro.build) |
+| Framework | Astro 5 |
 | UI Components | React 19 |
 | Styling | Tailwind CSS v3 |
 | Animations | Framer Motion, GSAP |
-| Deployment | Netlify (static + SSR adapter) |
+| Deployment | Vercel |
 | Content | JSON files in `src/data/` |
-| Dynamic pages | `src/pages/[slug].astro` — fetches from Admin API at build time |
+| Blog | Astro Content Collections (`src/content/blog/`) |
 
 ---
 
@@ -25,21 +25,14 @@ Static marketing website built with Astro, React, and Tailwind CSS. Deployed on 
 
 ---
 
-## Installation
+## Local Development
 
 ```bash
 npm install
-```
-
----
-
-## Development
-
-```bash
 npm run dev
 ```
 
-Starts the local dev server at `http://localhost:4321`.
+Dev server runs at `http://localhost:4321`.
 
 ---
 
@@ -47,7 +40,7 @@ Starts the local dev server at `http://localhost:4321`.
 
 | Command | Description |
 |---|---|
-| `npm run dev` | Start local dev server at `localhost:4321` |
+| `npm run dev` | Start local dev server |
 | `npm run build` | Build for production to `./dist/` |
 | `npm run preview` | Preview the production build locally |
 
@@ -58,56 +51,40 @@ Starts the local dev server at `http://localhost:4321`.
 ```
 /
 ├── public/              # Static assets (fonts, images, videos, PDFs)
-│   └── images/
 ├── src/
 │   ├── components/      # React + Astro components
-│   │   ├── core/        # Shared UI primitives (Button, Nav, animations, etc.)
-│   │   ├── home/        # Homepage section components
+│   │   ├── core/        # Shared UI primitives (Button, Nav, animations)
+│   │   ├── home/        # Homepage sections
 │   │   ├── company/     # About, Careers, Contact, Impact pages
-│   │   ├── build/       # Build service pages (BTS, EPC)
-│   │   ├── solutions/   # Solutions pages (Move, Solve, Process)
+│   │   ├── build/       # Built-to-Suit pages
+│   │   ├── solutions/   # Move, Solve, Food Processing pages
 │   │   └── store/       # Store pages (Cold Storage, Reefer, etc.)
+│   ├── content/
+│   │   └── blog/        # Blog posts as Markdown files
 │   ├── data/            # JSON content files + local media
-│   │   ├── images/      # Per-section local images (imported at build time)
-│   │   └── lp/          # Landing page JSON data
-│   ├── hooks/           # React hooks (useCmsData, useEnquiry, etc.)
-│   ├── layouts/         # Astro layout wrappers (Layout.astro)
+│   ├── hooks/           # React hooks (useCmsData, etc.)
+│   ├── layouts/         # Astro layout wrappers
 │   ├── pages/           # Astro pages — each file = one URL route
-│   └── types/           # TypeScript type definitions
-├── admin/               # Admin panel (see admin/README.md)
+│   └── styles/          # Global CSS
+├── vercel.json          # 301 redirects for old WordPress URLs
 ├── astro.config.mjs
-├── tailwind.config.mjs
-└── tsconfig.json
+└── tailwind.config.mjs
 ```
-
----
-
-## Environment Variables
-
-### Netlify Dashboard
-
-Set these under **Site > Settings > Environment variables** in Netlify:
-
-| Variable | Description |
-|---|---|
-| `API_URL` | URL of the admin backend (e.g. `https://admin.yourdomain.com`) — used by `[slug].astro` to fetch landing page data at build time |
-
-No `.env` file is needed for the website itself. All other config is in `astro.config.mjs`.
 
 ---
 
 ## Deployment
 
-The site deploys automatically via Netlify on every push to `main`.
+Auto-deploys on every push to `main` via Vercel.
 
-- Build command: `npm run build`
-- Publish directory: `dist`
-- The Netlify adapter handles SSR for the `[slug].astro` dynamic route.
+- **Repo:** `webadish-ai/crystal-website`
+- **Build command:** `npm run build`
+- **Output directory:** `dist`
 
 ---
 
 ## Content Management
 
-Static page content is stored as JSON files in `src/data/`. Landing pages are managed via the Admin panel and fetched at build time from the Admin API.
+Page content is stored as JSON in `src/data/`. Blog posts are Markdown files in `src/content/blog/`. The admin panel manages landing pages and enquiries separately.
 
-To trigger a rebuild after content changes, use the Netlify build hook configured in the admin backend's `.env`.
+Admin panel repo: `webadish-ai/crystal-admin`
