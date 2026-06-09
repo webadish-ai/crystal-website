@@ -33,28 +33,43 @@
       "OUTCOMES": "40,000 sqft delivered · bonded & non-bonded zones · CFR 21 compliant · WMS-enabled · operational in 90 days"
     },
     "Models": {
-      "HEADLINE": "Our facility models",
-      "EYEBROW": "Facility types",
-      "BODY": "Every BTS facility is engineered around your product, compliance requirements, and throughput. Choose a proven model or work with our engineers to create a hybrid.",
-      "Cold Store": {
-        "TEMP": "2°C – 8°C",
-        "USE_CASE": "Fresh produce · Dairy · Pharma",
-        "DESC": "Our most widely deployed model. Consistent refrigerated conditions for fresh produce, pharmaceutical storage, dairy, and any perishable requiring precise temperature control."
+      "HEADLINE": "Our BTS Models",
+      "EYEBROW": "Delivery models",
+      "BODY": "Choose the model that fits your business — from full ownership to asset-light leasing. Every model is backed by Crystal's design, engineering, and cold chain expertise.",
+      "BT – Build & Transfer": {
+        "TAG": "Ownership",
+        "USE_CASE": "Long-term ownership · Full control",
+        "DESC": "We design and construct your cold storage warehouse from the ground up — including cold room, ambient zones, and operational spaces — then transfer full ownership to you.",
+        "BEST_FOR": "Businesses seeking long-term ownership and control",
+        "DELIVERED_FOR": "Flipkart"
       },
-      "Blast Freeze": {
-        "TEMP": "−30°C to −18°C",
-        "USE_CASE": "Seafood · IQF · Meat · Frozen",
-        "DESC": "Rapid freeze capability integrated with long-term frozen storage. Suitable for IQF lines, seafood processors, and any product requiring guaranteed freeze-through."
+      "BOT – Build, Operate & Transfer": {
+        "TAG": "Managed transition",
+        "USE_CASE": "Operations · Seamless handover",
+        "DESC": "We build your facility, manage end-to-end cold chain operations, and transfer it to you once the system is stabilized and optimized — without the burden of initial operational challenges.",
+        "BEST_FOR": "Companies that want to avoid operational complexity",
+        "DELIVERED_FOR": ""
       },
-      "Pharma-Grade": {
-        "TEMP": "2°C – 25°C (zoned)",
-        "USE_CASE": "Vaccines · Biologics · API · Clinical",
-        "DESC": "CFR 21-compliant, GMP-ready cold chain with continuous monitoring, validated temperature mapping, and full audit-ready documentation from day one."
+      "Build + 3PL": {
+        "TAG": "Full logistics",
+        "USE_CASE": "E-commerce · FMCG · Food",
+        "DESC": "We develop your warehouse and integrate third-party logistics to handle inbound, outbound, inventory, and documentation — creating a fully managed cold chain ecosystem.",
+        "BEST_FOR": "E-commerce, food, and FMCG industries",
+        "DELIVERED_FOR": "Amazon, Falcon"
       },
-      "Multi-Zone": {
-        "TEMP": "Multiple zones",
-        "USE_CASE": "Mixed SKUs · 3PL · Retail distribution",
-        "DESC": "Two or more temperature zones under one roof. Ideal for operators managing diverse product portfolios or clients needing consolidated, multi-temp cold chain."
+      "Build & Lease": {
+        "TAG": "Asset-light",
+        "USE_CASE": "Quick commerce · High-growth",
+        "DESC": "We construct the warehouse and lease it to you, enabling faster expansion with lower upfront costs — ideal for rapidly growing businesses without heavy capital investment.",
+        "BEST_FOR": "Quick commerce and high-growth companies",
+        "DELIVERED_FOR": "Zepto"
+      },
+      "Cold Room Solutions": {
+        "TAG": "Retrofit",
+        "USE_CASE": "Existing facilities · Modular",
+        "DESC": "Already have a warehouse? We convert your existing space into a fully functional cold storage system using advanced insulation, puff panels, and refrigeration technology.",
+        "BEST_FOR": "Businesses with existing infrastructure",
+        "DELIVERED_FOR": "Kolkata, Noida"
       }
     },
     "S5 Why Crystal for BTS": {

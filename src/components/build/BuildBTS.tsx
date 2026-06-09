@@ -1,6 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiDownload, FiPlus, FiMinus } from 'react-icons/fi';
+import { FiArrowRight, FiDownload, FiPlus, FiMinus, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import Button from '@components/core/Button';
 import btsData from '@data/build-bts.json';
@@ -20,15 +20,22 @@ import projImg3Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.
 import projImg4Raw from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.46 PM.jpeg';
 import modelImg5Raw from '../../assets/pages/build/95631b3c-7074-4244-907f-a4b7d7efce2f.png';
 import modelImg6Raw from '../../assets/pages/build/e547a0e6-71da-4349-894f-d59076e5803a.png';
+import btsModelBT from '../../data/images/build/bts-model/model/bts-model-bt.png';
+import btsModelBOT from '../../data/images/build/bts-model/model/bts-model-bot.png';
+import btsModel3PL from '../../data/images/build/bts-model/model/bts-model-3pl.png';
+import btsModelLease from '../../data/images/build/bts-model/model/bts-model-lease.png';
+import btsModelColdRoom from '../../data/images/build/bts-model/model/bts-model-cold-room.png';
 
 const getSrc = (a: any): string => (typeof a === 'string' ? a : a.src);
 const buildVideoSrc = getSrc(buildVideoRaw);
 const fallbackBentoImgs = [bentoImg1Raw, bentoImg2Raw, bentoImg3Raw, bentoImg4Raw].map(getSrc);
 const modelImgs = [projImg1Raw, projImg2Raw, projImg3Raw, projImg4Raw].map(getSrc);
+const btsModelImgs = [btsModelBT, btsModelBOT, btsModel3PL, btsModelLease, btsModelColdRoom].map(getSrc);
 
 const PROJECTS = [
   {
     img: getSrc(projImg1Raw),
+    youtubeId: '8zIPCj_o_Us',
     code: 'BTS-001',
     location: 'Mumbai',
     year: '2024',
@@ -141,67 +148,155 @@ const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string;
   </motion.a>
 );
 
-function ModelsGrid({ models, images }: { models: { name: string; TEMP: string; USE_CASE: string; DESC: string; num: string }[]; images: string[] }) {
-  const [open, setOpen] = useState<number | null>(null);
+function ModelsGrid({ models, images }: { models: { name: string; TAG: string; USE_CASE: string; DESC: string; BEST_FOR: string; DELIVERED_FOR: string; num: string }[]; images: string[] }) {
+  const [active, setActive] = useState<number | null>(null);
+  const activeModel = active !== null ? models[active] : null;
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-8 items-start">
-      {models.map((model, i) => (
-        <div key={i} className="flex flex-col overflow-hidden border border-secondary/12">
-          {/* Image — tall, full-width, title overlaid */}
-          <div className="relative h-72 shrink-0 overflow-hidden">
+    <div className="mt-8">
+      {/* 5 images in a row — leave handler on the grid, not individual cards */}
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2" onMouseLeave={() => setActive(null)}>
+        {models.map((model, i) => (
+          <div
+            key={i}
+            className={`relative aspect-square overflow-hidden cursor-pointer group transition-opacity duration-200 ${active !== null && active !== i ? 'opacity-50' : 'opacity-100'}`}
+            onMouseEnter={() => setActive(i)}
+          >
             <img
               src={images[i % images.length]}
               alt={model.name}
               loading="lazy"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/50 to-transparent" />
-            <span className="absolute top-4 right-4 font-mono text-[10px] font-bold bg-secondary/75 text-accent px-2.5 py-1 tracking-wider backdrop-blur-sm">
-              {model.TEMP}
-            </span>
-            <div className="absolute bottom-0 left-0 right-0 px-6 pb-5">
-              <h3 className="font-heading font-extrabold text-h2 text-primary tracking-tight leading-tight">{model.name}</h3>
-              <p className="font-body text-[11px] font-bold uppercase tracking-[0.16em] text-accent mt-1.5">{model.USE_CASE}</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/40 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 px-3 pb-3 flex items-end justify-between gap-1">
+              <h3
+                className="font-heading font-extrabold text-[13px] text-primary leading-tight"
+                style={{ textShadow: '0 1px 4px rgba(0,0,0,0.6)' }}
+              >
+                {model.name}
+              </h3>
+              <FiArrowRight size={12} className="text-primary/50 shrink-0 group-hover:text-accent group-hover:translate-y-1 transition-all duration-200" />
             </div>
           </div>
+        ))}
+      </div>
 
-          {/* Accent bar — the trigger */}
-          <button
-            onClick={() => setOpen(open === i ? null : i)}
-            className={`w-full flex items-center justify-between px-6 py-3.5 transition-colors duration-300
-              ${open === i ? 'bg-secondary' : 'bg-accent hover:bg-accent/90'}`}
+      {/* Info panel — expands below on hover */}
+      <AnimatePresence>
+        {activeModel && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="overflow-hidden"
           >
-            <span className={`font-body font-bold text-[11px] uppercase tracking-[0.18em] transition-colors ${open === i ? 'text-accent' : 'text-secondary'}`}>
-              {open === i ? 'Close' : 'Read more'}
-            </span>
-            <motion.span
-              animate={{ rotate: open === i ? 180 : 0 }}
-              transition={{ duration: 0.25 }}
-              className={`text-base transition-colors ${open === i ? 'text-accent' : 'text-secondary'}`}
-            >
-              ↓
-            </motion.span>
-          </button>
-
-          {/* Accordion body — description only */}
-          <AnimatePresence initial={false}>
-            {open === i && (
-              <motion.div
-                initial={{ height: 0 }}
-                animate={{ height: 'auto' }}
-                exit={{ height: 0 }}
-                transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="overflow-hidden"
-              >
-                <div className="px-6 py-5 bg-primary">
-                  <p className="font-body text-body-lg text-secondary/65 leading-relaxed">{model.DESC}</p>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
+            <div className="border border-t-0 border-secondary/10 px-5 py-4 flex flex-col sm:flex-row gap-4">
+              <div className="flex-1 min-w-0">
+                <p className="font-body font-bold text-[9px] uppercase tracking-[0.16em] text-accent mb-1">{activeModel!.TAG}</p>
+                <h3 className="font-heading font-extrabold text-h4 text-secondary tracking-tight leading-snug mb-2">{activeModel!.name}</h3>
+                <p className="font-body text-body-sm text-secondary/60 leading-relaxed">{activeModel!.DESC}</p>
+              </div>
+              <div className="flex flex-col gap-1 sm:w-56 shrink-0 sm:border-l sm:border-secondary/8 sm:pl-5 justify-center">
+                <p className="font-body text-body-sm text-secondary/50">
+                  <span className="font-semibold text-secondary/70">Best for: </span>{activeModel!.BEST_FOR}
+                </p>
+                {activeModel!.DELIVERED_FOR && (
+                  <p className="font-body text-body-sm text-secondary/50">
+                    <span className="font-semibold text-secondary/70">Delivered for: </span>{activeModel!.DELIVERED_FOR}
+                  </p>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
+  );
+}
+
+const slideVariants = {
+  enter: (dir: number) => ({ x: dir > 0 ? 40 : -40, opacity: 0 }),
+  center: { x: 0, opacity: 1 },
+  exit: (dir: number) => ({ x: dir > 0 ? -40 : 40, opacity: 0 }),
+};
+
+function ProjectsCarousel() {
+  const [active, setActive] = useState(0);
+  const [dir, setDir] = useState(1);
+
+  const go = (i: number) => {
+    setDir(i > active ? 1 : -1);
+    setActive(i);
+  };
+  const prev = () => go(active === 0 ? PROJECTS.length - 1 : active - 1);
+  const next = () => go(active === PROJECTS.length - 1 ? 0 : active + 1);
+  const project = PROJECTS[active];
+
+  return (
+    <section className="bg-secondary text-primary border-t border-primary/8">
+      <motion.div
+        className="container mx-auto max-w-[var(--max-width)] px-6 md:px-12 pt-10 pb-10"
+        initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}
+      >
+        {/* Header + arrows on same row */}
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent">Our Work</span>
+            <span className="w-px h-4 bg-primary/15" />
+            <span className="font-heading font-extrabold text-h4 text-primary tracking-tight">Delivered Projects</span>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <button onClick={prev} aria-label="Previous"
+              className="w-8 h-8 flex items-center justify-center border border-primary/15 text-primary/35 hover:border-accent hover:text-accent transition-colors duration-200">
+              <FiChevronLeft size={14} />
+            </button>
+            <span className="font-mono text-[10px] text-primary/25 tracking-widest select-none tabular-nums">
+              {String(active + 1).padStart(2, '0')} / {String(PROJECTS.length).padStart(2, '0')}
+            </span>
+            <button onClick={next} aria-label="Next"
+              className="w-8 h-8 flex items-center justify-center border border-primary/15 text-primary/35 hover:border-accent hover:text-accent transition-colors duration-200">
+              <FiChevronRight size={14} />
+            </button>
+          </div>
+        </div>
+
+        {/* Slide */}
+        <AnimatePresence mode="wait" custom={dir}>
+          <motion.div
+            key={active}
+            custom={dir}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.28, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
+            {/* Video only */}
+            <div className="relative w-full bg-black" style={{ height: 'clamp(300px, 75vh, 75vh)' }}>
+              {project.youtubeId ? (
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${project.youtubeId}`}
+                  title={project.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full border-0"
+                />
+              ) : (
+                <img
+                  src={project.img}
+                  alt={project.title}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+      </motion.div>
+    </section>
   );
 }
 
@@ -218,7 +313,7 @@ const BuildBTS: React.FC = () => {
   const modelsRaw = data["Models"] as Record<string, any>
   const models = Object.entries(modelsRaw)
     .filter(([k]) => !["HEADLINE", "EYEBROW", "BODY"].includes(k))
-    .map(([name, val], i) => ({ name, ...val as { TEMP: string; USE_CASE: string; DESC: string }, num: `0${i + 1}` }))
+    .map(([name, val], i) => ({ name, ...val as { TAG: string; USE_CASE: string; DESC: string; BEST_FOR: string; DELIVERED_FOR: string }, num: `0${i + 1}` }))
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
@@ -338,60 +433,24 @@ const BuildBTS: React.FC = () => {
               head={tc(modelsRaw.HEADLINE)}
               desc={modelsRaw.BODY}
             />
-            <ModelsGrid models={models} images={modelImgs} />
+            {/* BTS models explainer video */}
+            <div className="relative w-full mb-8 overflow-hidden" style={{ height: '75vh' }}>
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/EXrcmCwQan8"
+                title="The 5 BTS Cold Chain Models Explained"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+                className="absolute inset-0 w-full h-full border-0"
+              />
+            </div>
+            <ModelsGrid models={models} images={btsModelImgs} />
           </motion.div>
         </div>
       </section>
 
       {/* ── S4 OUR WORK ── */}
-      <section className="bg-secondary text-primary py-20 px-6 md:px-12 border-t border-primary/8">
-        <motion.div
-          className="container mx-auto max-w-[var(--max-width)]"
-          initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}
-        >
-          <SectionHeader dark eyebrow="Our Work" head="Delivered Projects" />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-2">
-            {PROJECTS.map((project, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                className="group flex flex-col border border-primary/12 overflow-hidden hover:border-primary/25 transition-colors duration-300"
-              >
-                {/* Image */}
-                <div className="relative h-52 overflow-hidden shrink-0">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    loading="lazy"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                  />
-                  <span className="absolute top-3 left-3 font-mono text-[9px] font-bold tracking-[0.18em] bg-secondary/80 text-accent px-2 py-1">
-                    {project.code}
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="flex flex-col flex-1 px-5 py-5 gap-3">
-                  <div className="flex gap-4 border-l-[3px] border-accent pl-4">
-                    {([['Type', project.type], ['Area', project.area], ['Timeline', project.timeline]] as [string, string][]).map(([label, val]) => (
-                      <div key={label} className="flex flex-col gap-0.5">
-                        <span className="font-body text-[9px] uppercase tracking-[0.18em] text-primary/35">{label}</span>
-                        <span className="font-heading font-bold text-[12px] text-primary/75">{val}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <h3 className="font-heading font-extrabold text-h3 text-primary tracking-tight leading-tight">{project.title}</h3>
-                  <p className="font-body text-body-md text-primary/55 leading-relaxed flex-1">{project.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 font-body text-[11px] font-bold uppercase tracking-[0.16em] text-accent/60 group-hover:text-accent group-hover:gap-2.5 transition-all duration-300 mt-1">
-                    View case study <FiArrowRight size={11} />
-                  </span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
+      <ProjectsCarousel />
       {/* â”€â”€ S5 WHY CRYSTAL PATCH â”€â”€ */}
       <section className="bg-primary text-secondary flex flex-col justify-center py-20 px-6 md:px-12 border-t border-secondary/10">
         <motion.div
