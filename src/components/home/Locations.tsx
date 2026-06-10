@@ -30,7 +30,7 @@ interface Location {
 const locations: Location[] = locationsData as Location[];
 
 // Rough India bounding box for transform-origin calculation
-// Lon: 68â€“97Â°E, Lat: 8â€“37Â°N
+// Lon: 68–97°E, Lat: 8–37°N
 const toMapPercent = (lon: number, lat: number) => ({
   x: Math.max(10, Math.min(90, ((lon - 68) / 29) * 100)),
   y: Math.max(10, Math.min(90, ((37 - lat) / 29) * 100)),
@@ -45,7 +45,7 @@ const Locations: React.FC = () => {
   const mapWrapperRef = useRef<HTMLDivElement>(null); // parallax layer (mouse-move x/y only)
   const zoomRef       = useRef<HTMLDivElement>(null); // zoom layer (scale + translate to center)
 
-  // Parallax on mouse-move â€” only affects the outer wrapper, never conflicts with zoom
+  // Parallax on mouse-move — only affects the outer wrapper, never conflicts with zoom
   useGSAP(() => {
     const container = containerRef.current;
     const wrapper   = mapWrapperRef.current;
@@ -66,8 +66,8 @@ const Locations: React.FC = () => {
   /**
    * Zoom via scale(1.85) from center + translate to bring the location to the visual center.
    * Formula (transformOrigin 50% 50%):
-   *   tx = -scale Ã— W Ã— (px% - 0.5)   clamped to Â±WÃ—(scale-1)/2
-   * Switching locations just animates tx/ty at constant scale â†’ smooth slide.
+   *   tx = -scale × W × (px% - 0.5)   clamped to Â±W×(scale-1)/2
+   * Switching locations just animates tx/ty at constant scale → smooth slide.
    */
   const zoomToLocation = (id: string | null) => {
     const el = zoomRef.current;
@@ -88,7 +88,7 @@ const Locations: React.FC = () => {
 
     const { x: px, y: py } = toMapPercent(loc.coordinates[0], loc.coordinates[1]);
 
-    // Translation to center the pin â€” clamped so no empty space bleeds in
+    // Translation to center the pin — clamped so no empty space bleeds in
     const rawTx = -SCALE * W * (px / 100 - 0.5);
     const rawTy = -SCALE * H * (py / 100 - 0.5);
     const maxTx = W * (SCALE - 1) / 2;

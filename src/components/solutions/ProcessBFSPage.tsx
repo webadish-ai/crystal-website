@@ -14,7 +14,7 @@ import { containerVariants, itemVariants, viewportOnce, tc } from '@components/c
 import CharReveal from '@components/core/CharReveal';
 
 
-/* â”€â”€ SECTION HEADER â”€â”€ */
+/* ── SECTION HEADER ── */
 const SectionHeader = ({ eyebrow, head, desc, align = 'left', dark = false }: {
   eyebrow?: string; head: string; desc?: string; align?: 'left' | 'center'; dark?: boolean;
 }) => (
@@ -35,7 +35,7 @@ const SectionHeader = ({ eyebrow, head, desc, align = 'left', dark = false }: {
   </div>
 );
 
-/* â”€â”€ PRODUCT ICONS â”€â”€ */
+/* ── PRODUCT ICONS ── */
 const productMeta: Record<string, { icon: React.ReactNode; accent?: boolean }> = {
   'Seafood':               { icon: <FiDroplet />,     accent: true  },
   'Meat & poultry':        { icon: <FiPackage />,     accent: false },
@@ -46,7 +46,7 @@ const productMeta: Record<string, { icon: React.ReactNode; accent?: boolean }> =
   'Processed foods':       { icon: <FiBox />,         accent: false },
 };
 
-/* â”€â”€ OFFERING DATA â”€â”€ */
+/* ── OFFERING DATA ── */
 const offeringMeta = [
   {
     img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
@@ -61,7 +61,7 @@ const offeringMeta = [
     img: 'https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop',
     icon: <FiTruck />,
     specs: [
-      { label: 'Temperature',  value: 'Down to âˆ’40Â°C' },
+      { label: 'Temperature',  value: 'Down to −40°C' },
       { label: 'Deployment',   value: 'Days, not months' },
       { label: 'Setup',        value: 'Plug-and-play'  },
     ],
@@ -78,7 +78,7 @@ const ProcessBFSPage: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img src={heroImg} alt="Blast freezing services" loading="eager" decoding="async"
           className="absolute inset-0 z-0 w-full h-full object-cover" />
@@ -102,14 +102,14 @@ const ProcessBFSPage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ WHY BLAST FREEZING â”€â”€ */}
+      {/* ── WHY BLAST FREEZING ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
 
             {/* Pull quote */}
             <motion.p variants={itemVariants} className="font-heading font-extrabold text-h2 md:text-[2.6rem] text-primary leading-tight tracking-tighter max-w-4xl mb-14">
-              "Blast freezing is the fastest way to lock in product quality â€” preserving{' '}
+              "Blast freezing is the fastest way to lock in product quality — preserving{' '}
               <span className="text-accent">texture, nutrition, and shelf life</span>{' '}
               in a way slow freezing simply cannot."
             </motion.p>
@@ -117,7 +117,7 @@ const ProcessBFSPage: React.FC = () => {
             {/* 3 key stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { icon: <FiZap />,         stat: 'Down to âˆ’40Â°C',    label: 'Freezing depth'    },
+                { icon: <FiZap />,         stat: 'Down to −40°C',    label: 'Freezing depth'    },
                 { icon: <FiClock />,        stat: 'Hours',            label: 'Pull-down time'    },
                 { icon: <FiCheckCircle />,  stat: 'FSSC 22000',       label: 'Compliance standard'},
               ].map(({ icon, stat, label }) => (
@@ -136,7 +136,7 @@ const ProcessBFSPage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ TWO OFFERINGS â”€â”€ */}
+      {/* ── TWO OFFERINGS ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-y border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -189,7 +189,7 @@ const ProcessBFSPage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ PRODUCTS WE BLAST FREEZE â”€â”€ */}
+      {/* ── PRODUCTS WE BLAST FREEZE ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -219,7 +219,7 @@ const ProcessBFSPage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ CLOSING CTA â”€â”€ */}
+      {/* ── CLOSING CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-t border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}

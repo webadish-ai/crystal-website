@@ -16,10 +16,10 @@ const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any
 
 const parent   = portableData["06 Store: Portable Cold Storage Containers"];
 const d        = parent["06c Store: Super Store"];
-const heroCtas = d["Hero Page"].CTAS.split(' | ').map((s: string) => s.replace(/\s*[Â®Â¯]$/, '').trim());
+const heroCtas = d["Hero Page"].CTAS.split(' | ').map((s: string) => s.replace(/\s*[®Â¯]$/, '').trim());
 const sLabel   = (key: string) => key.replace(/^S\d+\s+/, '');
 
-/* â”€â”€â”€â”€â”€â”€â”€ BAY IMAGES â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── BAY IMAGES ─────── */
 const _raw2Bay = import.meta.glob<string>(
   '../../data/images/store/superstore/2Bay/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
   { eager: true, query: '?url', import: 'default' },
@@ -41,48 +41,48 @@ const imgs3Bay = Object.values(_raw3Bay);
 const imgs4Bay = Object.values(_raw4Bay);
 const imgs6Bay = Object.values(_raw6Bay);
 
-/* â”€â”€â”€â”€â”€â”€â”€ SIZE META â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── SIZE META ─────── */
 const sizes = [
   { label: '20 ft', tagline: 'Standard config',  bestFor: 'Mid-size operations, overflow storage, events & exhibitions' },
   { label: '40 ft', tagline: 'High capacity',     bestFor: 'Large processing volumes, distribution centres, long-term deployment' },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ SIZE IMAGES â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── SIZE IMAGES ─────── */
 const sizeImages = [
   {
     main:         imgs2Bay[0] ?? '',
     sub:          imgs3Bay[0] ?? '',
-    cap_metric:   '66.4 mÂ³ Â· 2-bay baseline',
-    cap_imperial: "2,346 ftÂ³ Â· 20' Ã— 8' Ã— 8'7\"",
-    note:         '+25Â°C to âˆ’25Â°C Â· Scales to 10 bays Â· 332 mÂ³ max',
+    cap_metric:   '66.4 m³ · 2-bay baseline',
+    cap_imperial: "2,346 ft³ · 20' × 8' × 8'7\"",
+    note:         '+25°C to −25°C · Scales to 10 bays · 332 m³ max',
     gallery:      [...imgs2Bay, ...imgs3Bay],
     pallet:       [] as string[],
   },
   {
     main:         imgs6Bay[0] ?? '',
     sub:          imgs4Bay[0] ?? '',
-    cap_metric:   '135 mÂ³ Â· 2-bay baseline',
-    cap_imperial: "4,767 ftÂ³ Â· 40' Ã— 8' Ã— 9'6\"",
-    note:         '+25Â°C to âˆ’25Â°C Â· Scales to 10 bays Â· 675 mÂ³ max',
+    cap_metric:   '135 m³ · 2-bay baseline',
+    cap_imperial: "4,767 ft³ · 40' × 8' × 9'6\"",
+    note:         '+25°C to −25°C · Scales to 10 bays · 675 m³ max',
     gallery:      [...imgs4Bay, ...imgs6Bay],
     pallet:       [] as string[],
   },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ KEY FEATURES (from website) â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── KEY FEATURES (from website) ─────── */
 const s2Features: [string, string][] = [
-  ['Multi-Bay Design',              'Two to ten separate compartments allow simultaneous storage of different product types â€” all in one footprint.'],
-  ['Independent Temperature Control','Each bay operates separately, +25Â°C to âˆ’25Â°C per bay. Run frozen and chilled zones simultaneously.'],
+  ['Multi-Bay Design',              'Two to ten separate compartments allow simultaneous storage of different product types — all in one footprint.'],
+  ['Independent Temperature Control','Each bay operates separately, +25°C to −25°C per bay. Run frozen and chilled zones simultaneously.'],
   ['High Insulation',               'Superior panel insulation minimises heat exchange, reducing energy consumption while maintaining stable temperatures.'],
-  ['Easy Accessibility',            'Wide door openings with optional loading ramps for convenient access â€” no specialised handling equipment needed.'],
+  ['Easy Accessibility',            'Wide door openings with optional loading ramps for convenient access — no specialised handling equipment needed.'],
   ['Customizable Interiors',        'Full stainless steel lining tailored to specific storage requirements. FSSAI and pharma-GMP compliant.'],
-  ['SmartArctic Monitoring',        'Remote monitoring tracks temperature, alarms, and performance 24/7 â€” full visibility across all bays from anywhere.'],
+  ['SmartArctic Monitoring',        'Remote monitoring tracks temperature, alarms, and performance 24/7 — full visibility across all bays from anywhere.'],
 ];
 const featureIcons: React.ReactNode[] = [
   <FiLayers />, <FiThermometer />, <FiShield />, <FiZap />, <FiCpu />, <FiPackage />,
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ INDUSTRIES â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── INDUSTRIES ─────── */
 const industries = [
   { label: 'Food & Beverage',   icon: <FiPackage /> },
   { label: 'Pharmaceuticals',   icon: <FiActivity /> },
@@ -92,7 +92,7 @@ const industries = [
   { label: 'Dairy',             icon: <FiDroplet /> },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ PRODUCTS STORED â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── PRODUCTS STORED ─────── */
 const products = [
   { label: 'Fruits & Vegetables', icon: <FiSun /> },
   { label: 'Dairy Products',      icon: <FiDroplet /> },
@@ -104,7 +104,7 @@ const products = [
   { label: 'Confectionery',       icon: <FiStar /> },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ ACCORDION SPECS â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── ACCORDION SPECS ─────── */
 const accordionSpecs = [
   {
     id: 'ext', label: 'External Dimensions',
@@ -122,66 +122,66 @@ const accordionSpecs = [
   },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ BAY CONFIGURATION DATA (all 9 configs Â· verbatim from crystalgroup.in/super-store-reefer) â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── BAY CONFIGURATION DATA (all 9 configs · verbatim from crystalgroup.in/super-store-reefer) ─────── */
 type BayRow = { bays: string; width: string; floor: string; vol: string; weight: string };
 type BaySizeData = { metric: BayRow[]; imperial: BayRow[] };
 
 const bayData: Record<'20ft' | '40ft', BaySizeData> = {
   '20ft': {
     metric: [
-      { bays: '2-bay',  width: '4.89 m',  floor: '27 mÂ²',     vol: '66.4 mÂ³',   weight: '6,000 kg'  },
-      { bays: '3-bay',  width: '7.35 m',  floor: '40.5 mÂ²',   vol: '99.6 mÂ³',   weight: '9,000 kg'  },
-      { bays: '4-bay',  width: '9.81 m',  floor: '54 mÂ²',     vol: '132.8 mÂ³',  weight: '12,000 kg' },
-      { bays: '5-bay',  width: '12.27 m', floor: '67.5 mÂ²',   vol: '166 mÂ³',    weight: '15,000 kg' },
-      { bays: '6-bay',  width: '14.72 m', floor: '81 mÂ²',     vol: '199.2 mÂ³',  weight: '18,000 kg' },
-      { bays: '7-bay',  width: '17.18 m', floor: '94.5 mÂ²',   vol: '232.4 mÂ³',  weight: '21,000 kg' },
-      { bays: '8-bay',  width: '19.64 m', floor: '108 mÂ²',    vol: '265.6 mÂ³',  weight: '24,000 kg' },
-      { bays: '9-bay',  width: '22.10 m', floor: '121.5 mÂ²',  vol: '298.8 mÂ³',  weight: '27,000 kg' },
-      { bays: '10-bay', width: '24.53 m', floor: '135 mÂ²',    vol: '332 mÂ³',    weight: '30,000 kg' },
+      { bays: '2-bay',  width: '4.89 m',  floor: '27 mÂ²',     vol: '66.4 m³',   weight: '6,000 kg'  },
+      { bays: '3-bay',  width: '7.35 m',  floor: '40.5 mÂ²',   vol: '99.6 m³',   weight: '9,000 kg'  },
+      { bays: '4-bay',  width: '9.81 m',  floor: '54 mÂ²',     vol: '132.8 m³',  weight: '12,000 kg' },
+      { bays: '5-bay',  width: '12.27 m', floor: '67.5 mÂ²',   vol: '166 m³',    weight: '15,000 kg' },
+      { bays: '6-bay',  width: '14.72 m', floor: '81 mÂ²',     vol: '199.2 m³',  weight: '18,000 kg' },
+      { bays: '7-bay',  width: '17.18 m', floor: '94.5 mÂ²',   vol: '232.4 m³',  weight: '21,000 kg' },
+      { bays: '8-bay',  width: '19.64 m', floor: '108 mÂ²',    vol: '265.6 m³',  weight: '24,000 kg' },
+      { bays: '9-bay',  width: '22.10 m', floor: '121.5 mÂ²',  vol: '298.8 m³',  weight: '27,000 kg' },
+      { bays: '10-bay', width: '24.53 m', floor: '135 mÂ²',    vol: '332 m³',    weight: '30,000 kg' },
     ],
     imperial: [
-      { bays: '2-bay',  width: '16.04 ft', floor: '290.5 ftÂ²',   vol: '2,345 ftÂ³',  weight: '13,228 lb' },
-      { bays: '3-bay',  width: '24.11 ft', floor: '435.8 ftÂ²',   vol: '3,518 ftÂ³',  weight: '19,842 lb' },
-      { bays: '4-bay',  width: '32.18 ft', floor: '581 ftÂ²',     vol: '4,691 ftÂ³',  weight: '26,455 lb' },
-      { bays: '5-bay',  width: '40.25 ft', floor: '726.3 ftÂ²',   vol: '5,863 ftÂ³',  weight: '33,069 lb' },
-      { bays: '6-bay',  width: '48.29 ft', floor: '871.5 ftÂ²',   vol: '7,036 ftÂ³',  weight: '39,683 lb' },
-      { bays: '7-bay',  width: '56.36 ft', floor: '1,016.8 ftÂ²', vol: '8,209 ftÂ³',  weight: '46,297 lb' },
-      { bays: '8-bay',  width: '64.43 ft', floor: '1,162 ftÂ²',   vol: '9,381 ftÂ³',  weight: '52,911 lb' },
-      { bays: '9-bay',  width: '72.50 ft', floor: '1,307.3 ftÂ²', vol: '10,554 ftÂ³', weight: '59,525 lb' },
-      { bays: '10-bay', width: '80.47 ft', floor: '1,452.5 ftÂ²', vol: '11,727 ftÂ³', weight: '66,139 lb' },
+      { bays: '2-bay',  width: '16.04 ft', floor: '290.5 ftÂ²',   vol: '2,345 ft³',  weight: '13,228 lb' },
+      { bays: '3-bay',  width: '24.11 ft', floor: '435.8 ftÂ²',   vol: '3,518 ft³',  weight: '19,842 lb' },
+      { bays: '4-bay',  width: '32.18 ft', floor: '581 ftÂ²',     vol: '4,691 ft³',  weight: '26,455 lb' },
+      { bays: '5-bay',  width: '40.25 ft', floor: '726.3 ftÂ²',   vol: '5,863 ft³',  weight: '33,069 lb' },
+      { bays: '6-bay',  width: '48.29 ft', floor: '871.5 ftÂ²',   vol: '7,036 ft³',  weight: '39,683 lb' },
+      { bays: '7-bay',  width: '56.36 ft', floor: '1,016.8 ftÂ²', vol: '8,209 ft³',  weight: '46,297 lb' },
+      { bays: '8-bay',  width: '64.43 ft', floor: '1,162 ftÂ²',   vol: '9,381 ft³',  weight: '52,911 lb' },
+      { bays: '9-bay',  width: '72.50 ft', floor: '1,307.3 ftÂ²', vol: '10,554 ft³', weight: '59,525 lb' },
+      { bays: '10-bay', width: '80.47 ft', floor: '1,452.5 ftÂ²', vol: '11,727 ft³', weight: '66,139 lb' },
     ],
   },
   '40ft': {
     metric: [
-      { bays: '2-bay',  width: '4.89 m',  floor: '53 mÂ²',     vol: '135 mÂ³',    weight: '9,600 kg'  },
-      { bays: '3-bay',  width: '7.35 m',  floor: '79.5 mÂ²',   vol: '202.5 mÂ³',  weight: '14,400 kg' },
-      { bays: '4-bay',  width: '9.81 m',  floor: '106 mÂ²',    vol: '270 mÂ³',    weight: '19,200 kg' },
-      { bays: '5-bay',  width: '12.27 m', floor: '132.5 mÂ²',  vol: '337.5 mÂ³',  weight: '24,000 kg' },
-      { bays: '6-bay',  width: '14.72 m', floor: '159 mÂ²',    vol: '405 mÂ³',    weight: '28,800 kg' },
-      { bays: '7-bay',  width: '17.18 m', floor: '185.5 mÂ²',  vol: '472.5 mÂ³',  weight: '33,600 kg' },
-      { bays: '8-bay',  width: '19.64 m', floor: '212 mÂ²',    vol: '540 mÂ³',    weight: '38,400 kg' },
-      { bays: '9-bay',  width: '22.10 m', floor: '238.5 mÂ²',  vol: '607.5 mÂ³',  weight: '43,200 kg' },
-      { bays: '10-bay', width: '24.63 m', floor: '265 mÂ²',    vol: '675 mÂ³',    weight: '48,000 kg' },
+      { bays: '2-bay',  width: '4.89 m',  floor: '53 mÂ²',     vol: '135 m³',    weight: '9,600 kg'  },
+      { bays: '3-bay',  width: '7.35 m',  floor: '79.5 mÂ²',   vol: '202.5 m³',  weight: '14,400 kg' },
+      { bays: '4-bay',  width: '9.81 m',  floor: '106 mÂ²',    vol: '270 m³',    weight: '19,200 kg' },
+      { bays: '5-bay',  width: '12.27 m', floor: '132.5 mÂ²',  vol: '337.5 m³',  weight: '24,000 kg' },
+      { bays: '6-bay',  width: '14.72 m', floor: '159 mÂ²',    vol: '405 m³',    weight: '28,800 kg' },
+      { bays: '7-bay',  width: '17.18 m', floor: '185.5 mÂ²',  vol: '472.5 m³',  weight: '33,600 kg' },
+      { bays: '8-bay',  width: '19.64 m', floor: '212 mÂ²',    vol: '540 m³',    weight: '38,400 kg' },
+      { bays: '9-bay',  width: '22.10 m', floor: '238.5 mÂ²',  vol: '607.5 m³',  weight: '43,200 kg' },
+      { bays: '10-bay', width: '24.63 m', floor: '265 mÂ²',    vol: '675 m³',    weight: '48,000 kg' },
     ],
     imperial: [
-      { bays: '2-bay',  width: '16.04 ft', floor: '570.5 ftÂ²',   vol: '4,767 ftÂ³',  weight: '21,164 lb' },
-      { bays: '3-bay',  width: '24.11 ft', floor: '855.8 ftÂ²',   vol: '7,151 ftÂ³',  weight: '31,747 lb' },
-      { bays: '4-bay',  width: '32.18 ft', floor: '1,141 ftÂ²',   vol: '9,535 ftÂ³',  weight: '42,329 lb' },
-      { bays: '5-bay',  width: '40.25 ft', floor: '1,426.3 ftÂ²', vol: '11,919 ftÂ³', weight: '52,911 lb' },
-      { bays: '6-bay',  width: '48.29 ft', floor: '1,711.5 ftÂ²', vol: '14,302 ftÂ³', weight: '63,493 lb' },
-      { bays: '7-bay',  width: '56.36 ft', floor: '1,996.8 ftÂ²', vol: '16,686 ftÂ³', weight: '74,075 lb' },
-      { bays: '8-bay',  width: '64.43 ft', floor: '2,282 ftÂ²',   vol: '19,070 ftÂ³', weight: '84,658 lb' },
-      { bays: '9-bay',  width: '72.50 ft', floor: '2,567.3 ftÂ²', vol: '21,454 ftÂ³', weight: '95,240 lb' },
-      { bays: '10-bay', width: '80.47 ft', floor: '2,852.5 ftÂ²', vol: '23,837 ftÂ³', weight: '105,822 lb'},
+      { bays: '2-bay',  width: '16.04 ft', floor: '570.5 ftÂ²',   vol: '4,767 ft³',  weight: '21,164 lb' },
+      { bays: '3-bay',  width: '24.11 ft', floor: '855.8 ftÂ²',   vol: '7,151 ft³',  weight: '31,747 lb' },
+      { bays: '4-bay',  width: '32.18 ft', floor: '1,141 ftÂ²',   vol: '9,535 ft³',  weight: '42,329 lb' },
+      { bays: '5-bay',  width: '40.25 ft', floor: '1,426.3 ftÂ²', vol: '11,919 ft³', weight: '52,911 lb' },
+      { bays: '6-bay',  width: '48.29 ft', floor: '1,711.5 ftÂ²', vol: '14,302 ft³', weight: '63,493 lb' },
+      { bays: '7-bay',  width: '56.36 ft', floor: '1,996.8 ftÂ²', vol: '16,686 ft³', weight: '74,075 lb' },
+      { bays: '8-bay',  width: '64.43 ft', floor: '2,282 ftÂ²',   vol: '19,070 ft³', weight: '84,658 lb' },
+      { bays: '9-bay',  width: '72.50 ft', floor: '2,567.3 ftÂ²', vol: '21,454 ft³', weight: '95,240 lb' },
+      { bays: '10-bay', width: '80.47 ft', floor: '2,852.5 ftÂ²', vol: '23,837 ft³', weight: '105,822 lb'},
     ],
   },
 };
 
 const goodToKnowItems = [
-  'Temperature range: +25Â°C to âˆ’25Â°C',
+  'Temperature range: +25°C to −25°C',
   'Multi-bay: 2 to 10 bays per configuration',
-  'Power supply: 380â€“460V Â· 3-Phase',
-  'Modular â€” add bays as your business grows',
+  'Power supply: 380–460V · 3-Phase',
+  'Modular — add bays as your business grows',
   'No civil construction required',
   'Relocatable as your needs change',
   'FSSAI-compliant stainless steel interior',
@@ -271,7 +271,7 @@ const BentoGrid = ({
               <span className="font-heading font-extrabold text-h3 text-accent tracking-tight leading-none">{sizeLabel}</span>
             </div>
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-secondary/80 to-transparent px-4 py-3">
-              <span className="font-heading font-extrabold text-[11px] text-primary/70 uppercase tracking-[0.15em]">+25Â°C to âˆ’25Â°C</span>
+              <span className="font-heading font-extrabold text-[11px] text-primary/70 uppercase tracking-[0.15em]">+25°C to −25°C</span>
             </div>
             {imgs.gallery.length > 0 && (
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/main:opacity-100 transition-opacity duration-300">
@@ -413,7 +413,7 @@ const SpecsTable = ({
 
   return (
     <div className="flex flex-col gap-3">
-      {/* Size switcher â€” 2 columns for 20ft / 40ft */}
+      {/* Size switcher — 2 columns for 20ft / 40ft */}
       <div>
         <div className="border border-secondary/10 rounded-sm p-4 grid grid-cols-2 gap-2">
           {sizes.map((s, i) => (
@@ -489,7 +489,7 @@ const SpecsTable = ({
 
         {/* CTA */}
         <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
-          <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy Â· Pan-India delivery</span>
+          <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy · Pan-India delivery</span>
           <Button variant="primary" size="sm" href="/contact-us">Get a quote <FiArrowRight className="ml-2" /></Button>
         </div>
       </div>
@@ -563,7 +563,7 @@ const StoreSuperStore: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src={heroImg}
@@ -590,7 +590,7 @@ const StoreSuperStore: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ SPECIFICATIONS â”€â”€ */}
+      {/* ── SPECIFICATIONS ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -606,7 +606,7 @@ const StoreSuperStore: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ KEY FEATURES â”€â”€ */}
+      {/* ── KEY FEATURES ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -628,7 +628,7 @@ const StoreSuperStore: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ INDUSTRIES â”€â”€ */}
+      {/* ── INDUSTRIES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -651,14 +651,14 @@ const StoreSuperStore: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ PRODUCTS STORED â”€â”€ */}
+      {/* ── PRODUCTS STORED ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerVariants}>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
               <SectionHeader dark eyebrow="What we store" head="Products stored" />
               <motion.p variants={itemVariants} className="font-body text-body-lg text-primary/70 leading-relaxed max-w-sm md:text-right shrink-0 mb-8">
-                From chilled produce to frozen meals â€” each bay holds what it needs to hold.
+                From chilled produce to frozen meals — each bay holds what it needs to hold.
               </motion.p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
@@ -674,7 +674,7 @@ const StoreSuperStore: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -693,7 +693,7 @@ const StoreSuperStore: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ IMAGE DIALOG â”€â”€ */}
+      {/* ── IMAGE DIALOG ── */}
       <AnimatePresence>
         {gallery.open && (
           <ImageDialog key="gallery-dialog"

@@ -146,9 +146,10 @@ const Preloader: React.FC = () => {
                 fontWeight: 800,
                 lineHeight: 1,
                 letterSpacing: '-0.04em',
-                fontSize: 'clamp(4.5rem, 18vw, 14rem)',
+                fontSize: 'clamp(4rem, 13vw, 10rem)',
                 color: 'rgba(254,255,254,0.18)',
                 fontVariantNumeric: 'tabular-nums',
+                overflow: 'hidden',
               }}
             >
               <span style={{ display: 'inline-flex', alignItems: 'flex-start' }}>

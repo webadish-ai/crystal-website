@@ -61,7 +61,7 @@ const SolvePage: React.FC = () => {
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <video
           autoPlay
@@ -97,7 +97,7 @@ const SolvePage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ COVERAGE â”€â”€ */}
+      {/* ── COVERAGE ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -113,7 +113,7 @@ const SolvePage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ PROCESS STEPS â”€â”€ */}
+      {/* ── PROCESS STEPS ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-4xl">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>

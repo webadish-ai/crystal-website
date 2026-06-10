@@ -39,5 +39,22 @@ src/assets/brand-data/*.mp4
 src/assets/brand-data/*.pdf
 src/assets/brand-data/*.PDF
 
+# original images kept as local backup — webp versions are used instead
+public/crystal-logo-black.png
+public/crystal_warehouse_hero.png
+public/images/about/leadership/akash-agarwal.jpeg
+public/images/about/leadership/murari-lal-agarwal.jpg
+public/images/about/leadership/naresh-agarwal.jpg
+public/images/about/leadership/rajesh-agarwal.png
+public/images/about/leadership/yatish-agarwal.png
+public/images/build/bts-commissioning.png
+public/images/build/bts-engineering.png
+public/images/build/bts-operations.png
+public/images/build/bts-site-selection.png
+public/uploads/cms/1777460591611.png
+public/uploads/misc/1777701349195.jpg
+public/uploads/misc/1777701351934.jpg
+public/uploads/misc/1777701353189.jpg
+
 # backend data — never commit the database or generated files
 src/data/lp/

@@ -12,7 +12,7 @@ import type { S3Section } from '@types/homepage';
 
 const s3 = homepageData.homepage.sections.find(s => s.id === 'S3')! as unknown as S3Section;
 
-/* â”€â”€ Local images (image extensions only to avoid zip/etc) â”€â”€ */
+/* ── Local images (image extensions only to avoid zip/etc) ── */
 const _buildRaw   = import.meta.glob('../../data/images/build/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',   { eager: true, query: '?url', import: 'default' });
 const _storeRaw   = import.meta.glob('../../data/images/store/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',   { eager: true, query: '?url', import: 'default' });
 const _moveRaw    = import.meta.glob('../../data/images/move/*.{jpg,jpeg,png,webp,JPG,JPEG,PNG,WEBP}',    { eager: true, query: '?url', import: 'default' });
@@ -50,7 +50,7 @@ const comingSoonSol = {
   tags: s3.solutions[5]?.tags ?? [],
 };
 
-/* â”€â”€ Direction-aware slide variants â”€â”€ */
+/* ── Direction-aware slide variants ── */
 const slideVariants = {
   enter: (dir: number) => ({ x: dir > 0 ? '100%' : '-100%', opacity: 0 }),
   center: { x: 0, opacity: 1 },
@@ -66,7 +66,7 @@ const textVariants = {
 const TRANSITION = { duration: 0.55, ease: [0.23, 1, 0.32, 1] as const };
 const TEXT_TRANSITION = { duration: 0.5, ease: [0.34, 1.4, 0.64, 1] as const };
 
-/* â”€â”€ Per-solution image carousel with its own arrow controls â”€â”€ */
+/* ── Per-solution image carousel with its own arrow controls ── */
 const SolutionImages = ({ imgs, alt, solDirection }: { imgs: string[]; alt: string; solDirection: number }) => {
   const [imgIdx, setImgIdx] = useState(0);
   const [activeDir, setActiveDir] = useState(1);
@@ -114,7 +114,7 @@ const SolutionImages = ({ imgs, alt, solDirection }: { imgs: string[]; alt: stri
         />
       </AnimatePresence>
 
-      {/* Image counter + dots â€” bottom left, both track imgIdx */}
+      {/* Image counter + dots — bottom left, both track imgIdx */}
       {imgs.length > 1 && (
         <div className="absolute bottom-5 left-5 z-20 flex flex-col gap-3">
           <span className="font-heading font-extrabold text-[11px] text-primary/50 tracking-[0.2em]">
@@ -137,7 +137,7 @@ const SolutionImages = ({ imgs, alt, solDirection }: { imgs: string[]; alt: stri
         </div>
       )}
 
-      {/* Image prev/next arrows â€” bottom right */}
+      {/* Image prev/next arrows — bottom right */}
       {imgs.length > 1 && (
         <div className="absolute bottom-4 right-5 z-20 flex gap-2">
           <button
@@ -202,7 +202,7 @@ const Solutions: React.FC = () => {
         viewport={{ once: true, amount: 0.08 }}
         variants={containerVariants}
       >
-        {/* â”€â”€ Section header â”€â”€ */}
+        {/* ── Section header ── */}
         <div className="mb-2 sm:mb-4 shrink-0">
           <motion.span variants={itemVariants} className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-secondary mb-1 block">
             {s3.eyebrow.toUpperCase()}
@@ -226,12 +226,12 @@ const Solutions: React.FC = () => {
           </motion.h2>
         </div>
 
-        {/* â”€â”€ Split panel â€” fills remaining height â”€â”€ */}
+        {/* ── Split panel — fills remaining height ── */}
         <motion.div
           variants={itemVariants}
           className="flex flex-col lg:grid lg:grid-cols-[3fr_2fr] gap-0 rounded-sm overflow-hidden border border-secondary/10 flex-1 min-h-0"
         >
-          {/* LEFT â€” Image panel (swipe target on mobile) */}
+          {/* LEFT — Image panel (swipe target on mobile) */}
           <div
             className="relative overflow-hidden bg-secondary h-[42%] shrink-0 min-h-[220px] lg:h-auto lg:min-h-0"
             onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX; }}
@@ -245,7 +245,7 @@ const Solutions: React.FC = () => {
 
           </div>
 
-          {/* RIGHT â€” Text panel */}
+          {/* RIGHT — Text panel */}
           <div className="relative bg-primary border-t lg:border-t-0 lg:border-l border-secondary/10 flex flex-col gap-2 justify-between p-4 sm:p-5 lg:p-6 xl:p-8 overflow-hidden flex-1 min-h-0 lg:flex-none">
 
             {/* Top: fading content */}
@@ -283,7 +283,7 @@ const Solutions: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            {/* Bottom: static â€” solution tabs grid + CTA */}
+            {/* Bottom: static — solution tabs grid + CTA */}
             <div className="shrink-0">
               <div className="grid grid-cols-2 gap-0 mb-2 sm:mb-4 border-t border-secondary/10 mt-2 sm:mt-3">
                 {solutionsData.map((s, i) => {
@@ -321,13 +321,13 @@ const Solutions: React.FC = () => {
                   hover:bg-accent hover:text-secondary transition-all duration-300 group"
               >
                 {sol.link}
-                <span className="transition-transform duration-300 group-hover:translate-x-1">â†’</span>
+                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
               </a>
             </div>
           </div>
         </motion.div>
 
-        {/* â”€â”€ Coming soon banner â”€â”€ */}
+        {/* ── Coming soon banner ── */}
         <motion.div
           variants={itemVariants}
           className="mt-2 shrink-0 border border-secondary/20 rounded-sm relative overflow-hidden
@@ -352,7 +352,7 @@ const Solutions: React.FC = () => {
             </div>
           </div>
           <span className="z-10 font-body font-bold text-body-sm uppercase tracking-[0.15em] flex items-center gap-1.5 text-secondary/60 shrink-0">
-            {s3.coming_soon_label.toUpperCase()} â†’
+            {s3.coming_soon_label.toUpperCase()} →
           </span>
         </motion.div>
 

@@ -102,11 +102,11 @@ const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string;
       transition-all duration-300 hover:-translate-y-[2px] hover:border-secondary/40 hover:shadow-xl
       flex flex-col cursor-pointer ${className ?? ''}`}
   >
-    {/* â”€â”€ WIPE OVERLAY (solid blue, below image) â”€â”€ */}
+    {/* ── WIPE OVERLAY (solid blue, below image) ── */}
     <div className="absolute inset-0 bg-secondary translate-y-[calc(100%-2px)]
       transition-transform duration-500 ease-out group-hover:translate-y-0 z-[5] pointer-events-none" />
 
-    {/* â”€â”€ INFO BLOCK (30%) â€” sits above wipe â”€â”€ */}
+    {/* ── INFO BLOCK (30%) — sits above wipe ── */}
     <div className="relative z-[30] shrink-0 px-3 pt-3 pb-2 md:px-5 md:pt-5" style={{ flex: '0 0 30%' }}>
       <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mb-1 block">
         {id}
@@ -120,9 +120,9 @@ const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string;
       </p>
     </div>
 
-    {/* â”€â”€ IMAGE BLOCK (70%) â€” z-[20], sits above the blue wipe â”€â”€ */}
+    {/* ── IMAGE BLOCK (70%) — z-[20], sits above the blue wipe ── */}
     <div className="relative overflow-hidden z-[20] mt-2 md:mt-3" style={{ flex: '1 1 70%' }}>
-      {/* Gradient scrim â€” fades out on hover so image shows through the blue */}
+      {/* Gradient scrim — fades out on hover so image shows through the blue */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent
         z-10 opacity-70 group-hover:opacity-0 transition-opacity duration-500" />
       <img
@@ -142,7 +142,7 @@ const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string;
           text-primary/80 group-hover:text-primary transition-colors duration-300"
       >
         <span>EXPLORE DELIVERABLE</span>
-        <span className="text-secondary bg-accent px-2 py-0.5 rounded-sm font-bold ml-2">â†’</span>
+        <span className="text-secondary bg-accent px-2 py-0.5 rounded-sm font-bold ml-2">→</span>
       </div>
     </div>
   </motion.a>
@@ -317,7 +317,7 @@ const BuildBTS: React.FC = () => {
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
-      {/* â”€â”€ HERO PATCH â”€â”€ */}
+      {/* ── HERO PATCH ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <video
           src={buildVideoSrc}
@@ -346,7 +346,7 @@ const BuildBTS: React.FC = () => {
             />
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="lg" href="/contact-us">
-                {data["Hero Page"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
+                {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
               <Button variant="ghost" size="lg" href={qcommBrochureUrl} download="Q-Comm-Brochure-2026.pdf">
                 {data["Hero Page"].CTA_BROCHURE} <FiDownload className="text-lg transition-transform group-hover/btn:translate-y-1" />
@@ -356,7 +356,7 @@ const BuildBTS: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ S1 INTRO PATCH â”€â”€ */}
+      {/* ── S1 INTRO PATCH ── */}
       <section className="bg-primary text-secondary flex items-center justify-center py-20 px-6 md:px-12 border-t border-secondary/10">
         <motion.div
           className="container mx-auto max-w-4xl flex flex-col items-center text-center"
@@ -372,7 +372,7 @@ const BuildBTS: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ S2 DELIVERABLES BENTO GRID PATCH â”€â”€ */}
+      {/* ── S2 DELIVERABLES BENTO GRID PATCH ── */}
       <section className="bg-primary flex flex-col py-20 px-4 md:px-8">
         <div className="container mx-auto px-2 md:px-6 lg:px-10 max-w-[var(--max-width)] flex flex-col h-full">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={containerVariants}>
@@ -381,7 +381,7 @@ const BuildBTS: React.FC = () => {
             />
           </motion.div>
 
-          {/* Mobile: simple 2Ã—2 card grid */}
+          {/* Mobile: simple 2×2 card grid */}
           <div className="block md:hidden">
             <div className="grid grid-cols-2 gap-3">
               {s2Deliverables.map(([title, desc], i) => (
@@ -405,7 +405,7 @@ const BuildBTS: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ S3 WHO THIS IS FOR PATCH â”€â”€ */}
+      {/* ── S3 WHO THIS IS FOR PATCH ── */}
       <section className="bg-primary text-secondary flex items-center justify-center py-20 px-6 md:px-12 border-t border-secondary/10">
         <motion.div
           className="container mx-auto max-w-[var(--max-width)] flex flex-col md:flex-row gap-8 md:gap-12 items-center justify-center"
@@ -451,7 +451,7 @@ const BuildBTS: React.FC = () => {
 
       {/* ── S4 OUR WORK ── */}
       <ProjectsCarousel />
-      {/* â”€â”€ S5 WHY CRYSTAL PATCH â”€â”€ */}
+      {/* ── S5 WHY CRYSTAL PATCH ── */}
       <section className="bg-primary text-secondary flex flex-col justify-center py-20 px-6 md:px-12 border-t border-secondary/10">
         <motion.div
           className="container mx-auto max-w-[var(--max-width)] flex flex-col"
@@ -472,7 +472,7 @@ const BuildBTS: React.FC = () => {
 
           <motion.div variants={itemVariants} className="flex">
             <Button variant="primary" size="lg" href="/contact-us">
-              {data["S5 Why Crystal for BTS"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/final:translate-x-1" />
+              {data["S5 Why Crystal for BTS"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/final:translate-x-1" />
             </Button>
           </motion.div>
         </motion.div>

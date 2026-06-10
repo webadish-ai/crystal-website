@@ -77,7 +77,7 @@ const Journey: React.FC = () => {
         viewport={viewportOnce}
         variants={containerVariants}
       >
-        {/* â”€â”€ HEADER â”€â”€ */}
+        {/* ── HEADER ── */}
         <div className="w-full flex items-center justify-center relative z-20 mb-6 md:mb-16">
           <div className="container mx-auto max-w-[var(--max-width)] text-center">
             <motion.span
@@ -108,7 +108,7 @@ const Journey: React.FC = () => {
           </div>
         </div>
 
-        {/* â”€â”€ PROCESS DIAGRAM â”€â”€ */}
+        {/* ── PROCESS DIAGRAM ── */}
         <motion.div
           variants={itemVariants}
           className="w-full container mx-auto max-w-[var(--max-width)]"
@@ -118,7 +118,7 @@ const Journey: React.FC = () => {
             {s4.chain_label}
           </p>
 
-          {/* â”€â”€ Mobile: vertical timeline (< md) â”€â”€ */}
+          {/* ── Mobile: vertical timeline (< md) ── */}
           <div className="flex md:hidden flex-col">
             {steps.map((step, idx) => {
               const isActive  = idx === activeCrystal;
@@ -187,7 +187,7 @@ const Journey: React.FC = () => {
                         animate={{ color: isActive ? C_ACCENT : 'rgba(255,255,255,0.18)' }}
                         transition={{ duration: 0.4 }}
                       >
-                        â— {step.subtitle ?? s4.crystal_badge}
+                        ▸ {step.subtitle ?? s4.crystal_badge}
                       </motion.span>
                     )}
                   </div>
@@ -196,11 +196,11 @@ const Journey: React.FC = () => {
             })}
           </div>
 
-          {/* â”€â”€ Desktop: horizontal track diagram (md+) â”€â”€ */}
+          {/* ── Desktop: horizontal track diagram (md+) ── */}
           <div className="hidden md:block">
             <div>
 
-              {/* â€” Endpoint labels row (above track) â€” */}
+              {/* — Endpoint labels row (above track) — */}
               <div className="flex mb-4">
                 {steps.map((step, idx) => (
                   <div key={step.id} className="flex-1 flex justify-center">
@@ -213,9 +213,9 @@ const Journey: React.FC = () => {
                 ))}
               </div>
 
-              {/* â€” Track row â€” */}
+              {/* — Track row — */}
               <div className="relative">
-                {/* Background track â€” shifted down by icon height (15px) + gap (6px) = 21px, then centred in 40px circle â†’ +19px */}
+                {/* Background track — shifted down by icon height (15px) + gap (6px) = 21px, then centred in 40px circle → +19px */}
                 <div
                   className="absolute h-[3px] bg-primary/10 rounded-full"
                   style={{ left: `${(1 / (2 * TOTAL)) * 100}%`, right: `${(1 / (2 * TOTAL)) * 100}%`, top: '46px' }}
@@ -300,7 +300,7 @@ const Journey: React.FC = () => {
                 </div>
               </div>
 
-              {/* â€” Crystal step cards row (below track) â€” */}
+              {/* — Crystal step cards row (below track) — */}
               <div className="flex mt-5 md:mt-7">
                 {steps.map((step, idx) => {
                   const isActive = idx === activeCrystal;
@@ -326,7 +326,7 @@ const Journey: React.FC = () => {
                           className="block font-body font-bold text-body-sm uppercase tracking-[0.18em] mb-2 md:mb-3 transition-colors duration-500"
                           animate={{ color: isActive ? C_ACCENT : 'rgba(255,255,255,0.35)' }}
                         >
-                          â— {s4.crystal_badge}
+                          ▸ {s4.crystal_badge}
                         </motion.span>
 
                         <p

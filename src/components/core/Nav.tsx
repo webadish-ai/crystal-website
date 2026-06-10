@@ -66,7 +66,6 @@ const navItems = [
     activePathStart: '/move',
     subLinks: [
       { name: 'Transportation', desc: 'Pan-India cold chain logistics', icon: <FiTruck className="text-xl shrink-0" />, href: '/transportation' },
-      { name: 'Freight Forwarding', desc: 'International shipping & customs', icon: <FiActivity className="text-xl shrink-0" />, href: '/move/freight-forwarding' },
     ],
   },
   {

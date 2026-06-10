@@ -11,10 +11,10 @@ import CharReveal from '@components/core/CharReveal';
 
 const parent    = portableData["06 Store: Portable Cold Storage Containers"];
 const d         = parent["06f Store: AMC & Spare Parts"];
-const heroCta   = d["Hero Page"].CTA.replace(/\s*Â®$/, '').trim();
+const heroCta   = d["Hero Page"].CTA.replace(/\s*®$/, '').trim();
 const isDataKey = (k: string) => k !== k.toUpperCase();
 const s1Features = Object.entries(d["S1 AMC coverage"]).filter(([k]) => isDataKey(k)) as [string, string][];
-const ctaLabel  = d["S1 AMC coverage"].CTA.replace(/\s*Â®$/, '').trim();
+const ctaLabel  = d["S1 AMC coverage"].CTA.replace(/\s*®$/, '').trim();
 const sLabel    = (key: string) => key.replace(/^S\d+\s+/, '');
 
 const featureIcons: React.ReactNode[] = [<FiRefreshCw />, <FiZap />, <FiTool />, <FiGlobe />];
@@ -48,7 +48,7 @@ const StoreAMC: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=75&w=1400&auto=format&fit=crop"
@@ -82,12 +82,12 @@ const StoreAMC: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ S1 AMC COVERAGE â”€â”€ */}
+      {/* ── S1 AMC COVERAGE ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
             <SectionHeader dark eyebrow="What's covered" head={tc(sLabel('S1 AMC coverage'))}
-              desc="Scheduled maintenance, priority response, and genuine parts â€” across India." />
+              desc="Scheduled maintenance, priority response, and genuine parts — across India." />
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-primary/5 mt-2">
               {s1Features.map(([title, desc], i) => (
                 <motion.div key={title} variants={itemVariants}
@@ -104,7 +104,7 @@ const StoreAMC: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>

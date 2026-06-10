@@ -52,7 +52,7 @@ const StoreColdStorage: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <video
           src={storeVideoSrc}
@@ -77,20 +77,20 @@ const StoreColdStorage: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
             <Button variant="primary" size="lg" href="/contact-us">
-              {data["Hero Page"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="text-lg" />
+              {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg" />
             </Button>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* â”€â”€ S1 TEMPERATURE CAPABILITIES â”€â”€ */}
+      {/* ── S1 TEMPERATURE CAPABILITIES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
             <SectionHeader
               eyebrow="Temperature zones"
               head={tc(data["S1 Temperature capabilities"].HEADLINE)}
-              desc="Multiple temperature zones under one roof â€” matched to your product's exact requirement."
+              desc="Multiple temperature zones under one roof — matched to your product's exact requirement."
             />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
               {temperatureZones.map(([zone, detail], i) => (
@@ -108,7 +108,7 @@ const StoreColdStorage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ S2 OUR FACILITIES â”€â”€ */}
+      {/* ── S2 OUR FACILITIES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div
@@ -136,7 +136,7 @@ const StoreColdStorage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ S3 FACILITY FEATURES â”€â”€ */}
+      {/* ── S3 FACILITY FEATURES ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -158,7 +158,7 @@ const StoreColdStorage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ S4 CERTIFICATIONS / FINAL CTA â”€â”€ */}
+      {/* ── S4 CERTIFICATIONS / FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -179,7 +179,7 @@ const StoreColdStorage: React.FC = () => {
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
                 <Button variant="primary" size="lg" href="/contact-us">
-                  {data["S4 Certifications"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="ml-2 text-lg" />
+                  {data["S4 Certifications"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>
             </div>

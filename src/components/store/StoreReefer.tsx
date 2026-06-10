@@ -30,43 +30,43 @@ import inside40ft  from '../../data/images/store/reefer/40ft/inside.JPG?url';
 
 const parent = portableData["06 Store: Portable Cold Storage Containers"];
 const d      = parent["06a Store: Reefer Containers"];
-const heroCtas = d["Hero Page"].CTAS.split(' | ').map((s: string) => s.replace(/\s*[Â®Â¯]$/, '').trim());
+const heroCtas = d["Hero Page"].CTAS.split(' | ').map((s: string) => s.replace(/\s*[®Â¯]$/, '').trim());
 const isDataKey = (k: string) => k !== k.toUpperCase();
 const s2Features = Object.entries(d["S2 Key features"]).filter(([k]) => isDataKey(k)) as [string, string][];
 const sLabel = (key: string) => key.replace(/^S\d+\s+/, '');
 
-/* â”€â”€â”€â”€â”€â”€â”€ SIZE META â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── SIZE META ─────── */
 const sizes = [
   { label: '10 ft', tagline: 'Compact & agile',   bestFor: 'Retail back-of-house, pharma distribution points, short-term overflow' },
-  { label: '20 ft', tagline: 'Industry standard', bestFor: 'Most cold chain operations â€” balances capacity and site footprint'      },
+  { label: '20 ft', tagline: 'Industry standard', bestFor: 'Most cold chain operations — balances capacity and site footprint'      },
   { label: '40 ft', tagline: 'Maximum capacity',  bestFor: 'Distribution hubs, large processing volumes, high-throughput sites'     },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ SPEC ROWS â€” metric + imperial â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── SPEC ROWS — metric + imperial ─────── */
 const specRows = [
   {
     label: 'Temperature range',
     highlight: true,
-    metric:   ['âˆ’25Â°C to +25Â°C',  'âˆ’25Â°C to +25Â°C',  'âˆ’25Â°C to +25Â°C' ],
-    imperial: ['âˆ’13Â°F to +77Â°F',  'âˆ’13Â°F to +77Â°F',  'âˆ’13Â°F to +77Â°F' ],
+    metric:   ['−25°C to +25°C',  '−25°C to +25°C',  '−25°C to +25°C' ],
+    imperial: ['−13°F to +77°F',  '−13°F to +77°F',  '−13°F to +77°F' ],
   },
   {
     label: 'External dimensions',
     highlight: false,
-    metric:   ['2.99 Ã— 2.44 Ã— 2.59 m', '6.06 Ã— 2.44 Ã— 2.60 m', '12.19 Ã— 2.44 Ã— 2.90 m'],
-    imperial: ["10' Ã— 8' Ã— 8'6\"",      "20' Ã— 8' Ã— 8'7\"",      "40' Ã— 8' Ã— 9'6\""      ],
+    metric:   ['2.99 × 2.44 × 2.59 m', '6.06 × 2.44 × 2.60 m', '12.19 × 2.44 × 2.90 m'],
+    imperial: ["10' × 8' × 8'6\"",      "20' × 8' × 8'7\"",      "40' × 8' × 9'6\""      ],
   },
   {
     label: 'Internal dimensions',
     highlight: false,
-    metric:   ['2.30 Ã— 2.29 Ã— 2.31 m', '5.36 Ã— 2.29 Ã— 2.31 m', '11.50 Ã— 2.29 Ã— 2.60 m'],
-    imperial: ["7.6' Ã— 7.5' Ã— 7.6'",   "17.6' Ã— 7.5' Ã— 7.6'",  "37.7' Ã— 7.5' Ã— 8.5'"  ],
+    metric:   ['2.30 × 2.29 × 2.31 m', '5.36 × 2.29 × 2.31 m', '11.50 × 2.29 × 2.60 m'],
+    imperial: ["7.6' × 7.5' × 7.6'",   "17.6' × 7.5' × 7.6'",  "37.7' × 7.5' × 8.5'"  ],
   },
   {
     label: 'Cubic capacity',
     highlight: true,
-    metric:   ['12.15 mÂ³',   '28.35 mÂ³',    '68.46 mÂ³'    ],
-    imperial: ['429.3 ftÂ³',  '1,001.2 ftÂ³', '2,417.9 ftÂ³' ],
+    metric:   ['12.15 m³',   '28.35 m³',    '68.46 m³'    ],
+    imperial: ['429.3 ft³',  '1,001.2 ft³', '2,417.9 ft³' ],
   },
   {
     label: 'Floor area',
@@ -89,8 +89,8 @@ const specRows = [
   {
     label: 'Power supply',
     highlight: false,
-    metric:   ['380â€“460V Â· 3-Ph', '380â€“460V Â· 3-Ph', '380â€“460V Â· 3-Ph'],
-    imperial: ['380â€“460V Â· 3-Ph', '380â€“460V Â· 3-Ph', '380â€“460V Â· 3-Ph'],
+    metric:   ['380–460V · 3-Ph', '380–460V · 3-Ph', '380–460V · 3-Ph'],
+    imperial: ['380–460V · 3-Ph', '380–460V · 3-Ph', '380–460V · 3-Ph'],
   },
   {
     label: 'Refrigerant',
@@ -100,7 +100,7 @@ const specRows = [
   },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ PER-SIZE IMAGES (local assets) â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── PER-SIZE IMAGES (local assets) ─────── */
 const _raw10ft = import.meta.glob<string>('../../data/images/store/reefer/10ft/*', { eager: true, query: '?url', import: 'default' });
 const _raw20ft = import.meta.glob<string>('../../data/images/store/reefer/20ft/*', { eager: true, query: '?url', import: 'default' });
 const _raw40ft = import.meta.glob<string>('../../data/images/store/reefer/40ft/*', { eager: true, query: '?url', import: 'default' });
@@ -120,9 +120,9 @@ const sizeImages = [
     // 10 ft
     main:         outside10ft,
     sub:          inside10ft,
-    cap_metric:   '12.15 mÂ³ Â· 8 MT',
-    cap_imperial: "429 ftÂ³ Â· 8.8 T Â· 10' Ã— 8' Ã— 8'6\"",
-    note:         'Compact Â· Retail Â· Pharma Â· Short-term',
+    cap_metric:   '12.15 m³ · 8 MT',
+    cap_imperial: "429 ft³ · 8.8 T · 10' × 8' × 8'6\"",
+    note:         'Compact · Retail · Pharma · Short-term',
     gallery:      _imgs10ft,
     pallet:       _pallet10ft,
   },
@@ -130,9 +130,9 @@ const sizeImages = [
     // 20 ft
     main:         outside20ft,
     sub:          inside20ft,
-    cap_metric:   '28.35 mÂ³ Â· 25 MT',
-    cap_imperial: "1,001 ftÂ³ Â· 27.6 T Â· 20' Ã— 8' Ã— 8'7\"",
-    note:         'Industry standard Â· Most deployed across India',
+    cap_metric:   '28.35 m³ · 25 MT',
+    cap_imperial: "1,001 ft³ · 27.6 T · 20' × 8' × 8'7\"",
+    note:         'Industry standard · Most deployed across India',
     gallery:      _imgs20ft,
     pallet:       _pallet20ft,
   },
@@ -140,15 +140,15 @@ const sizeImages = [
     // 40 ft
     main:         outside40ft,
     sub:          inside40ft,
-    cap_metric:   '68.46 mÂ³ Â· 30 MT',
-    cap_imperial: "2,418 ftÂ³ Â· 33.1 T Â· 40' Ã— 8' Ã— 9'6\"",
-    note:         'High volume Â· Distribution hubs Â· Max throughput',
+    cap_metric:   '68.46 m³ · 30 MT',
+    cap_imperial: "2,418 ft³ · 33.1 T · 40' × 8' × 9'6\"",
+    note:         'High volume · Distribution hubs · Max throughput',
     gallery:      _imgs40ft,
     pallet:       _pallet40ft,
   },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ MISC DATA â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── MISC DATA ─────── */
 const featureIcons: React.ReactNode[] = [
   <FiZap />, <FiGrid />, <FiAlertCircle />, <FiCheckCircle />, <FiCpu />, <FiShield />,
 ];
@@ -165,7 +165,7 @@ const hireSteps = [
   { num: '01', title: 'Request a quote',        desc: 'Tell us your size, duration, and location. We respond within 24 hours with pricing and availability.' },
   { num: '02', title: 'We deliver & position',  desc: "Crystal's team delivers to your site and positions the container. Pan-India." },
   { num: '03', title: 'Plug in & start storing',desc: 'Connect to 440V 3-phase power. Operational within hours. No foundations or civil work.' },
-  { num: '04', title: 'We collect at end',       desc: 'We collect at the end of your rental period. Or buy outright â€” the choice is yours.' },
+  { num: '04', title: 'We collect at end',       desc: 'We collect at the end of your rental period. Or buy outright — the choice is yours.' },
 ];
 const products = [
   { label: 'Pharmaceuticals',    icon: <FiActivity />,    accent: true  },
@@ -229,7 +229,7 @@ const BentoGrid = ({
             className="relative rounded-sm overflow-hidden bg-secondary/10 cursor-pointer group/main"
             onClick={() => onOpenGallery(0)}
           >
-            {/* Skeleton â€” solid navy base + amber shimmer band */}
+            {/* Skeleton — solid navy base + amber shimmer band */}
             <div className={`absolute inset-0 z-10 pointer-events-none transition-opacity duration-500 ${mainLoaded ? 'opacity-0' : 'opacity-100'}`}>
               <div className="absolute inset-0 bg-secondary/60" />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent from-[15%] via-accent/[0.22] via-[50%] to-transparent to-[85%] animate-[shimmer_1.6s_ease-in-out_infinite]" />
@@ -254,7 +254,7 @@ const BentoGrid = ({
 
             {/* Temp gradient bottom */}
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-secondary/80 to-transparent px-4 py-3">
-              <span className="font-heading font-extrabold text-[11px] text-primary/70 uppercase tracking-[0.15em]">âˆ’25Â°C to +25Â°C</span>
+              <span className="font-heading font-extrabold text-[11px] text-primary/70 uppercase tracking-[0.15em]">−25°C to +25°C</span>
             </div>
 
             {/* Hover: View all button */}
@@ -314,7 +314,7 @@ const BentoGrid = ({
   );
 };
 
-/* â”€â”€â”€â”€â”€â”€â”€ ACCORDION SPEC DATA â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── ACCORDION SPEC DATA ─────── */
 const accordionSpecs = [
   {
     id: 'ext',
@@ -353,22 +353,22 @@ const accordionSpecs = [
     label: 'Weight, Area, Capacity',
     cols: ['Size', 'Tare weight', 'Floor area', 'Capacity'],
     metric: [
-      ['10 ft', '2,059 kg', '5.27 mÂ²', '12.15 mÂ³'],
-      ['20 ft', '2,770 kg', '12.27 mÂ²', '28.35 mÂ³'],
-      ['40 ft', '4,649 kg', '26.34 mÂ²', '68.46 mÂ³'],
+      ['10 ft', '2,059 kg', '5.27 mÂ²', '12.15 m³'],
+      ['20 ft', '2,770 kg', '12.27 mÂ²', '28.35 m³'],
+      ['40 ft', '4,649 kg', '26.34 mÂ²', '68.46 m³'],
     ],
     imperial: [
-      ['10 ft', '4,541 lb', '56.6 ftÂ²', '429.3 ftÂ³'],
-      ['20 ft', '6,107 lb', '132.1 ftÂ²', '1,001.2 ftÂ³'],
-      ['40 ft', '10,251 lb', '283.4 ftÂ²', '2,417.9 ftÂ³'],
+      ['10 ft', '4,541 lb', '56.6 ftÂ²', '429.3 ft³'],
+      ['20 ft', '6,107 lb', '132.1 ftÂ²', '1,001.2 ft³'],
+      ['40 ft', '10,251 lb', '283.4 ftÂ²', '2,417.9 ft³'],
     ],
     note: 'All measurements should be used as a guide. Small variations can and do apply.',
   },
 ];
 
 const goodToKnowItems = [
-  'Temperature range: âˆ’25Â°C to +25Â°C',
-  'Power supply: 380â€“460V Â· 3-Phase',
+  'Temperature range: −25°C to +25°C',
+  'Power supply: 380–460V · 3-Phase',
   'Refrigerant: R-134A / R-404A',
   ...s2Features.map(([title]) => title),
 ];
@@ -393,7 +393,7 @@ const AccordionSection: React.FC<{
     const el = sectionRef.current;
     const timer = setTimeout(() => {
       const rect = el.getBoundingClientRect();
-      const offset = rect.top + window.scrollY - 160; // 160px clearance â€” title sits below nav with breathing room
+      const offset = rect.top + window.scrollY - 160; // 160px clearance — title sits below nav with breathing room
       if ((window as any).lenis) {
         (window as any).lenis.scrollTo(offset, { duration: 0.7 });
       } else {
@@ -507,7 +507,7 @@ const SpecsTable = ({
   return (
     <div className="flex flex-col gap-3">
 
-      {/* â”€â”€ Size switcher â”€â”€ */}
+      {/* ── Size switcher ── */}
       <div>
         <div className="border border-secondary/10 rounded-sm p-4 grid grid-cols-3 gap-2">
           {sizes.map((s, i) => (
@@ -532,7 +532,7 @@ const SpecsTable = ({
         </div>
       </div>
 
-      {/* â”€â”€ Accordion container â”€â”€ */}
+      {/* ── Accordion container ── */}
       <div className="border border-secondary/10 rounded-sm overflow-hidden flex flex-col divide-y divide-secondary/10">
 
       {/* Specifications heading */}
@@ -540,7 +540,7 @@ const SpecsTable = ({
         <span className="font-heading font-extrabold text-h4 text-secondary/50 tracking-tight uppercase text-[11px] tracking-[0.15em]">Specifications</span>
       </div>
 
-      {/* Accordion sections â€” only one open at a time */}
+      {/* Accordion sections — only one open at a time */}
       {accordionSpecs.map(spec => (
         <AccordionSection
           key={spec.id}
@@ -604,7 +604,7 @@ const SpecsTable = ({
 
       {/* CTA */}
       <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
-        <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy Â· Pan-India delivery</span>
+        <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy · Pan-India delivery</span>
         <Button variant="primary" size="sm" href="/contact-us">
           Get a quote <FiArrowRight className="ml-2" />
         </Button>
@@ -654,7 +654,7 @@ const StoreReefer: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src={heroImg}
@@ -685,12 +685,12 @@ const StoreReefer: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ SPECIFICATIONS â”€â”€ */}
+      {/* ── SPECIFICATIONS ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-start">
-              {/* LEFT: bento images â€” sticky on desktop so it stays visible while accordions expand */}
+              {/* LEFT: bento images — sticky on desktop so it stays visible while accordions expand */}
               <motion.div variants={itemVariants} className="order-2 lg:order-1 lg:sticky lg:top-24 lg:self-start">
                 <BentoGrid activeSize={activeSize} unit={unit} onOpenGallery={openGallery} />
               </motion.div>
@@ -704,7 +704,7 @@ const StoreReefer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ KEY FEATURES â”€â”€ */}
+      {/* ── KEY FEATURES ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -726,7 +726,7 @@ const StoreReefer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ INDUSTRIES â”€â”€ */}
+      {/* ── INDUSTRIES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -749,14 +749,14 @@ const StoreReefer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ PRODUCTS STORED â”€â”€ */}
+      {/* ── PRODUCTS STORED ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerVariants}>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
               <SectionHeader dark eyebrow="What we keep cold" head={tc(sLabel("S3 Products stored"))} />
               <motion.p variants={itemVariants} className="font-body text-body-lg text-primary/70 leading-relaxed max-w-sm md:text-right shrink-0 mb-8">
-                From fresh produce to pharma-grade biologics â€” stored at the right temperature.
+                From fresh produce to pharma-grade biologics — stored at the right temperature.
               </motion.p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
@@ -774,7 +774,7 @@ const StoreReefer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -803,7 +803,7 @@ const StoreReefer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ IMAGE DIALOG â”€â”€ */}
+      {/* ── IMAGE DIALOG ── */}
       <AnimatePresence>
         {gallery.open && (
           <ImageDialog

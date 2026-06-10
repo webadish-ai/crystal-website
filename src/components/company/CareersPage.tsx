@@ -27,7 +27,7 @@ const LocalSectionHeader = ({ eyebrow, head, desc, align = "left", dark = false 
   </div>
 );
 
-/* â”€â”€ Right detail pane â”€â”€ */
+/* ── Right detail pane ── */
 const RolePane = ({ role }: { role: any }) => (
   <motion.div
     key={role.title}
@@ -58,7 +58,7 @@ const RolePane = ({ role }: { role: any }) => (
           <FiMapPin className="text-[9px]" />{role.location}
         </span>
         <span className="flex items-center gap-1.5 font-body font-bold text-[11px] uppercase tracking-[0.1em] text-secondary/55">
-          <FiClock className="text-[9px]" />{role.working_hours.split('Â·')[0].trim()}
+          <FiClock className="text-[9px]" />{role.working_hours.split('·')[0].trim()}
         </span>
         <span className="font-body font-bold text-[11px] uppercase tracking-[0.1em] text-secondary/40">
           {role.timing.split(',')[0]}
@@ -69,7 +69,7 @@ const RolePane = ({ role }: { role: any }) => (
     {/* Scrollable body */}
     <div className="flex-1 overflow-y-auto px-7 py-6 flex flex-col gap-6">
 
-      {/* Summary â€” 2 sentences */}
+      {/* Summary — 2 sentences */}
       <div>
         <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-2">About the Role</span>
         <p className="font-body text-body-md text-secondary/75 leading-relaxed font-medium">
@@ -77,7 +77,7 @@ const RolePane = ({ role }: { role: any }) => (
         </p>
       </div>
 
-      {/* Responsibilities â€” 3 bullets */}
+      {/* Responsibilities — 3 bullets */}
       <div>
         <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">What You'll Do</span>
         <ul className="flex flex-col gap-2.5">
@@ -128,7 +128,7 @@ const CareersPage: React.FC = () => {
 
   const whyIcons = [<FiSettings />, <FiUsers />, <FiTrendingUp />, <FiBriefcase />];
 
-  /* â”€â”€ Open roles state â”€â”€ */
+  /* ── Open roles state ── */
   const allRoles: any[] = open_roles.roles;
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
@@ -152,7 +152,7 @@ const CareersPage: React.FC = () => {
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=75&w=1400&auto=format&fit=crop"
@@ -185,7 +185,7 @@ const CareersPage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ WHY CRYSTAL â”€â”€ */}
+      {/* ── WHY CRYSTAL ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -205,7 +205,7 @@ const CareersPage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ AREAS WE HIRE FOR â”€â”€ */}
+      {/* ── AREAS WE HIRE FOR ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -237,7 +237,7 @@ const CareersPage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ OPEN ROLES â”€â”€ */}
+      {/* ── OPEN ROLES ── */}
       <section id="roles" className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -253,7 +253,7 @@ const CareersPage: React.FC = () => {
             {/* Split panel */}
             <motion.div variants={itemVariants} className="flex flex-col lg:flex-row border border-secondary/10 rounded-sm overflow-hidden" style={{ minHeight: '540px' }}>
 
-              {/* â”€â”€ Left: filter + role list â”€â”€ */}
+              {/* ── Left: filter + role list ── */}
               <div className="lg:w-[38%] shrink-0 border-b lg:border-b-0 lg:border-r border-secondary/10 flex flex-col">
 
                 {/* Domain filter pills */}
@@ -311,9 +311,9 @@ const CareersPage: React.FC = () => {
                               <span className="flex items-center gap-1 font-body font-medium text-[10px] text-secondary/45">
                                 <FiMapPin className="text-[8px]" />{role.location}
                               </span>
-                              <span className="text-secondary/20 text-[10px]">Â·</span>
+                              <span className="text-secondary/20 text-[10px]">·</span>
                               <span className="font-body font-medium text-[10px] text-secondary/45">
-                                {role.working_hours.split('Â·')[0].trim()}
+                                {role.working_hours.split('·')[0].trim()}
                               </span>
                             </div>
                           </div>
@@ -338,7 +338,7 @@ const CareersPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* â”€â”€ Right: role detail pane â”€â”€ */}
+              {/* ── Right: role detail pane ── */}
               <div className="flex-1 min-w-0 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <RolePane key={`${activeFilter}-${selectedIdx}`} role={filteredRoles[selectedIdx] ?? filteredRoles[0]} />

@@ -2,18 +2,18 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
-import netlify from '@astrojs/netlify';
+import vercel from '@astrojs/vercel';
 import path from 'path';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
-  adapter: netlify(),
+  adapter: vercel(),
   site: 'https://www.crystalgroup.in',
   trailingSlash: 'ignore',
   prefetch: {
     defaultStrategy: 'hover',
-    prefetchAll: false,
+    prefetchAll: true,
   },
   integrations: [
     react(),

@@ -16,16 +16,16 @@ const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any
 
 const parent   = portableData["06 Store: Portable Cold Storage Containers"];
 const d        = parent["06d Store: Super Freezer"];
-const heroCtas = d["Hero Page"].CTAS.split(' | ').map((s: string) => s.replace(/\s*[Â®Â¯]$/, '').trim());
+const heroCtas = d["Hero Page"].CTAS.split(' | ').map((s: string) => s.replace(/\s*[®Â¯]$/, '').trim());
 const sLabel   = (key: string) => key.replace(/^S\d+\s+/, '');
 
-/* â”€â”€â”€â”€â”€â”€â”€ SIZE META â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── SIZE META ─────── */
 const sizes = [
   { label: '20 ft', tagline: 'Standard ultra-low', bestFor: 'Pharma, biologics, specialty seafood, research' },
 ];
 
 
-/* â”€â”€â”€â”€â”€â”€â”€ SIZE IMAGES â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── SIZE IMAGES ─────── */
 const _raw20ft = import.meta.glob<string>(
   '../../data/images/store/superfreezer/20ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
   { eager: true, query: '?url', import: 'default' },
@@ -36,28 +36,28 @@ const sizeImages = [
   {
     main:         imgs20ft[0] ?? '',
     sub:          imgs20ft[1] ?? '',
-    cap_metric:   '28.35 mÂ³ Â· 25 MT',
-    cap_imperial: "1,001 ftÂ³ Â· 27.6 T Â· 20' Ã— 8' Ã— 8'7\"",
-    note:         'âˆ’70Â°C Â· Standard ultra-low Â· Most deployed',
+    cap_metric:   '28.35 m³ · 25 MT',
+    cap_imperial: "1,001 ft³ · 27.6 T · 20' × 8' × 8'7\"",
+    note:         '−70°C · Standard ultra-low · Most deployed',
     gallery:      imgs20ft,
     pallet:       [] as string[],
   },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ KEY FEATURES â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── KEY FEATURES ─────── */
 const s2Features: [string, string][] = [
-  ['Ultra-Low Temperature',    'Reaches âˆ’70Â°C â€” the deepest cold available in a portable, plug-and-play format. No civil construction required.'],
+  ['Ultra-Low Temperature',    'Reaches −70°C — the deepest cold available in a portable, plug-and-play format. No civil construction required.'],
   ['Precise Digital Control',  'Digital temperature settings with alarm systems ensure full traceability and compliance for regulated applications.'],
   ['Pharma & Bio Validated',   'Suitable for validated ultra-low temperature storage of biologics, vaccines, and clinical samples. FSSAI-compliant.'],
   ['Rapid Pull-Down',          'High-velocity refrigeration pulls temperatures down from ambient to ultra-low rapidly, protecting product integrity.'],
   ['Energy Efficient',         'Latest compressor technology minimises power consumption without compromising pull-down speed or holding accuracy.'],
-  ['SmartArctic Monitoring',   'Remote monitoring tracks temperature, alarms, and performance 24/7 â€” full visibility from any location.'],
+  ['SmartArctic Monitoring',   'Remote monitoring tracks temperature, alarms, and performance 24/7 — full visibility from any location.'],
 ];
 const featureIcons: React.ReactNode[] = [
   <FiThermometer />, <FiActivity />, <FiShield />, <FiZap />, <FiWind />, <FiCpu />,
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ INDUSTRIES â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── INDUSTRIES ─────── */
 const industries = [
   { label: 'Pharmaceuticals',  icon: <FiActivity /> },
   { label: 'Biotechnology',    icon: <FiShield /> },
@@ -67,7 +67,7 @@ const industries = [
   { label: 'Hospitality',      icon: <FiStar /> },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ PRODUCTS STORED â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── PRODUCTS STORED ─────── */
 const products = [
   { label: 'Biological Samples', icon: <FiShield /> },
   { label: 'Vaccines & Biologics', icon: <FiActivity /> },
@@ -77,7 +77,7 @@ const products = [
   { label: 'Ice Cream & Desserts',icon: <FiLayers /> },
 ];
 
-/* â”€â”€â”€â”€â”€â”€â”€ ACCORDION SPECS â”€â”€â”€â”€â”€â”€â”€ */
+/* ─────── ACCORDION SPECS ─────── */
 const accordionSpecs = [
   {
     id: 'ext', label: 'External Dimensions',
@@ -96,18 +96,18 @@ const accordionSpecs = [
   {
     id: 'weight', label: 'Weight, Area, Capacity',
     cols: ['Tare weight', 'Floor area', 'Capacity'],
-    metric:   [['2,770 kg', '12.27 mÂ²', '28.35 mÂ³']],
-    imperial: [['6,107 lb', '132.1 ftÂ²', '1,001 ftÂ³']],
+    metric:   [['2,770 kg', '12.27 mÂ²', '28.35 m³']],
+    imperial: [['6,107 lb', '132.1 ftÂ²', '1,001 ft³']],
     note: 'All measurements should be used as a guide. Small variations can and do apply.',
   },
 ];
 
 const goodToKnowItems = [
-  'Temperature range: +25Â°C to âˆ’70Â°C',
-  'Power supply: 380â€“460V Â· 3-Phase',
+  'Temperature range: +25°C to −70°C',
+  'Power supply: 380–460V · 3-Phase',
   'Deepest portable cold available in India',
   'SmartArctic 24/7 remote monitoring',
-  'No foundation required â€” installs on flat ground',
+  'No foundation required — installs on flat ground',
   'Dual machine option available on 40ft',
   'Pharma-grade validated temperature logging',
   'Pan-India delivery and installation',
@@ -187,7 +187,7 @@ const BentoGrid = ({
               <span className="font-heading font-extrabold text-h3 text-accent tracking-tight leading-none">{sizeLabel}</span>
             </div>
             <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-secondary/80 to-transparent px-4 py-3">
-              <span className="font-heading font-extrabold text-[11px] text-primary/70 uppercase tracking-[0.15em]">+25Â°C to âˆ’70Â°C</span>
+              <span className="font-heading font-extrabold text-[11px] text-primary/70 uppercase tracking-[0.15em]">+25°C to −70°C</span>
             </div>
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/main:opacity-100 transition-opacity duration-300">
               <button className="flex items-center gap-2 font-heading font-extrabold text-[11px] uppercase tracking-[0.15em] px-4 py-2.5 bg-accent text-secondary rounded-sm hover:bg-primary hover:text-secondary transition-all"
@@ -308,7 +308,7 @@ const SpecsTable = ({
       {/* Size badge */}
       <div className="border border-secondary/10 rounded-sm px-5 py-4 flex items-center gap-3">
         <span className="font-heading font-extrabold text-h2 tracking-tighter leading-none text-accent">20 ft</span>
-        <span className="font-body font-bold text-[11px] uppercase tracking-[0.12em] text-secondary/50">Standard ultra-low Â· +25Â°C to âˆ’70Â°C</span>
+        <span className="font-body font-bold text-[11px] uppercase tracking-[0.12em] text-secondary/50">Standard ultra-low · +25°C to −70°C</span>
       </div>
 
       {/* Accordion container */}
@@ -357,7 +357,7 @@ const SpecsTable = ({
 
         {/* CTA */}
         <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
-          <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy Â· Pan-India delivery</span>
+          <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy · Pan-India delivery</span>
           <Button variant="primary" size="sm" href="/contact-us">Get a quote <FiArrowRight className="ml-2" /></Button>
         </div>
       </div>
@@ -379,7 +379,7 @@ const StoreSuperFreezer: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src={heroImg}
@@ -406,7 +406,7 @@ const StoreSuperFreezer: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ SPECIFICATIONS â”€â”€ */}
+      {/* ── SPECIFICATIONS ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -422,12 +422,12 @@ const StoreSuperFreezer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ KEY FEATURES â”€â”€ */}
+      {/* ── KEY FEATURES ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
             <SectionHeader dark eyebrow="What's included" head={tc(sLabel('S1 Specifications'))}
-              desc="Every Crystal super freezer ships ready to operate â€” plug in, cool down, store." />
+              desc="Every Crystal super freezer ships ready to operate — plug in, cool down, store." />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-primary/5 mt-2">
               {s2Features.map(([title, desc], i) => (
                 <motion.div key={title} variants={itemVariants}
@@ -444,14 +444,14 @@ const StoreSuperFreezer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ INDUSTRIES â”€â”€ */}
+      {/* ── INDUSTRIES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
               <SectionHeader eyebrow="Who uses super freezers" head="Industries served" />
               <motion.p variants={itemVariants} className="font-body text-body-lg text-secondary/50 leading-relaxed max-w-sm md:text-right shrink-0 mb-8">
-                From clinical research to ultra-frozen seafood â€” âˆ’70Â°C cold where it matters most.
+                From clinical research to ultra-frozen seafood — −70°C cold where it matters most.
               </motion.p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -467,14 +467,14 @@ const StoreSuperFreezer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ PRODUCTS STORED â”€â”€ */}
+      {/* ── PRODUCTS STORED ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={containerVariants}>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
               <SectionHeader dark eyebrow="What we store" head="Products stored" />
               <motion.p variants={itemVariants} className="font-body text-body-lg text-primary/70 leading-relaxed max-w-sm md:text-right shrink-0 mb-8">
-                Anything requiring the deepest cold â€” biological, pharmaceutical, or food-grade.
+                Anything requiring the deepest cold — biological, pharmaceutical, or food-grade.
               </motion.p>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -490,7 +490,7 @@ const StoreSuperFreezer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -498,7 +498,7 @@ const StoreSuperFreezer: React.FC = () => {
               <div className="max-w-xl">
                 <motion.span variants={itemVariants} className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-secondary mb-2 block">Need ultra-low temperature storage?</motion.span>
                 <motion.h2 variants={itemVariants} className="font-heading font-extrabold text-h2 text-secondary leading-tight-none tracking-tighter">Get a super freezer at your site.</motion.h2>
-                <motion.p variants={itemVariants} className="font-body text-body-lg text-secondary/55 leading-relaxed mt-4 font-medium">Down to âˆ’70Â°C. Delivered and installed pan-India. Enquire for pricing and availability.</motion.p>
+                <motion.p variants={itemVariants} className="font-body text-body-lg text-secondary/55 leading-relaxed mt-4 font-medium">Down to −70°C. Delivered and installed pan-India. Enquire for pricing and availability.</motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
                 <Button variant="primary" size="lg" href="/contact-us">Request a quote <FiArrowRight className="ml-2 text-lg" /></Button>
@@ -509,7 +509,7 @@ const StoreSuperFreezer: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ IMAGE DIALOG â”€â”€ */}
+      {/* ── IMAGE DIALOG ── */}
       <AnimatePresence>
         {gallery.open && (
           <ImageDialog key="gallery-dialog"

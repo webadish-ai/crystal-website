@@ -18,12 +18,14 @@ import blastHeroRaw      from '../../data/images/store/Blast-Freezer/Blast-freez
 import superstoreHeroRaw from '../../data/images/store/superstore/superstore-hero.png';
 import superfreezerHeroRaw from '../../data/images/store/superfreezer/superfreezer-hero.png';
 import isoHeroRaw        from '../../data/images/store/iso/ISO-Tank-hero.png';
+import amcHeroRaw        from '../../data/images/store/Technical Drawings  (23).jpg';
 
 const reeferHero      = typeof reeferHeroRaw      === 'string' ? reeferHeroRaw      : (reeferHeroRaw      as any).src;
 const blastHero       = typeof blastHeroRaw       === 'string' ? blastHeroRaw       : (blastHeroRaw       as any).src;
 const superstoreHero  = typeof superstoreHeroRaw  === 'string' ? superstoreHeroRaw  : (superstoreHeroRaw  as any).src;
 const superfreezerHero= typeof superfreezerHeroRaw=== 'string' ? superfreezerHeroRaw: (superfreezerHeroRaw as any).src;
 const isoHero         = typeof isoHeroRaw         === 'string' ? isoHeroRaw         : (isoHeroRaw         as any).src;
+const amcHero         = typeof amcHeroRaw         === 'string' ? amcHeroRaw         : (amcHeroRaw         as any).src;
 
 const isDataKey = (k: string) => k !== k.toUpperCase();
 const sLabel    = (key: string) => key.replace(/^S\d+\s+/, '');
@@ -32,28 +34,28 @@ const sLabel    = (key: string) => key.replace(/^S\d+\s+/, '');
 const products = [
   {
     id: '06a', name: 'Reefer Containers', href: '/reefer-containers',
-    tags: ['+25Â°C to âˆ’30Â°C', '10ft Â· 20ft Â· 40ft'],
+    tags: ['+25°C to −30°C', '10ft · 20ft · 40ft'],
     icon: <FiTruck />,
     img: reeferHero,
     gridStyle: { gridColumn: '1 / 3', gridRow: '1 / 2' },
   },
   {
     id: '06b', name: 'Blast Freezer Containers', href: '/blast-freezer',
-    tags: ['Down to âˆ’40Â°C', '20ft Â· 40ft'],
+    tags: ['Down to −40°C', '20ft · 40ft'],
     icon: <FiWind />,
     img: blastHero,
     gridStyle: { gridColumn: '3 / 4', gridRow: '1 / 2' },
   },
   {
     id: '06c', name: 'Super Store', href: '/super-store-reefer',
-    tags: ['âˆ’30Â°C to +25Â°C', 'Modular'],
+    tags: ['−30°C to +25°C', 'Modular'],
     icon: <FiLayers />,
     img: superstoreHero,
     gridStyle: { gridColumn: '4 / 5', gridRow: '1 / 2' },
   },
   {
     id: '06d', name: 'Super Freezer', href: '/super-freezer',
-    tags: ['Down to âˆ’70Â°C', '20ft Â· 40ft'],
+    tags: ['Down to −70°C', '20ft · 40ft'],
     icon: <FiThermometer />,
     img: superfreezerHero,
     gridStyle: { gridColumn: '1 / 2', gridRow: '2 / 3' },
@@ -69,7 +71,7 @@ const products = [
     id: '06f', name: 'AMC & Spare Parts', href: '/amc-spareparts',
     tags: ['All ranges', 'Pan-India'],
     icon: <FiShield />,
-    img: 'https://images.unsplash.com/photo-1581094288338-2314dddb79a7?q=80&w=2070&auto=format&fit=crop',
+    img: amcHero,
     gridStyle: { gridColumn: '3 / 5', gridRow: '2 / 3' },
   },
 ];
@@ -108,7 +110,7 @@ const StorePortableCS: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src={heroImg}
@@ -145,7 +147,7 @@ const StorePortableCS: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ S1 PRODUCT RANGE â”€â”€ */}
+      {/* ── S1 PRODUCT RANGE ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -192,7 +194,7 @@ const StorePortableCS: React.FC = () => {
                     className="absolute inset-0 w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.05] transition-all duration-700 ease-out" />
                   <div className="absolute bottom-0 left-0 right-0 z-20 px-4 py-3 flex items-center justify-between font-body font-bold text-body-sm uppercase tracking-[0.15em] text-primary/80 group-hover:text-primary transition-colors duration-300">
                     <span>Explore</span>
-                    <span className="text-accent text-base transition-transform group-hover:translate-x-1">â†’</span>
+                    <span className="text-accent text-base transition-transform group-hover:translate-x-1">→</span>
                   </div>
                 </div>
               </motion.a>
@@ -201,7 +203,7 @@ const StorePortableCS: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ S2 CONTAINER FEATURES â”€â”€ */}
+      {/* ── S2 CONTAINER FEATURES ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -223,7 +225,7 @@ const StorePortableCS: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>

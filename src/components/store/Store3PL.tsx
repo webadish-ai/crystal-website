@@ -50,7 +50,7 @@ const Store3PL: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src={heroImg}
@@ -77,19 +77,19 @@ const Store3PL: React.FC = () => {
             />
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="lg" href="/contact-us">
-                {data["Hero Page"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="text-lg" />
+                {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg" />
               </Button>
             </div>
           </motion.div>
         </motion.div>
       </section>
 
-      {/* â”€â”€ S1 3PL SERVICES â”€â”€ */}
+      {/* ── S1 3PL SERVICES ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
             <SectionHeader dark eyebrow="What we manage" head={tc(sLabel('S1 3PL services'))}
-              desc="End-to-end cold chain logistics â€” from storage to delivery, managed by Crystal." />
+              desc="End-to-end cold chain logistics — from storage to delivery, managed by Crystal." />
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-primary/5 mt-2">
               {s1Services.map(([title, desc], i) => (
                 <motion.div key={title} variants={itemVariants}
@@ -106,7 +106,7 @@ const Store3PL: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ S2 WHY OUTSOURCE TO CRYSTAL â”€â”€ */}
+      {/* ── S2 WHY OUTSOURCE TO CRYSTAL ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div
@@ -123,7 +123,7 @@ const Store3PL: React.FC = () => {
               />
               <motion.div variants={itemVariants}>
                 <Button variant="primary" size="lg" href="/contact-us">
-                  {data["S2 Why outsource to Crystal"].CTA.replace(/\s*Â®$/, '')} <FiArrowRight className="ml-2 text-lg" />
+                  {data["S2 Why outsource to Crystal"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>
             </div>
@@ -131,7 +131,7 @@ const Store3PL: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -147,7 +147,7 @@ const Store3PL: React.FC = () => {
                 </motion.h2>
                 <motion.p variants={itemVariants}
                   className="font-body text-body-lg text-secondary/55 leading-relaxed mt-4 font-medium">
-                  Storage, handling, distribution â€” all temperature-controlled. Tell us what you need.
+                  Storage, handling, distribution — all temperature-controlled. Tell us what you need.
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">

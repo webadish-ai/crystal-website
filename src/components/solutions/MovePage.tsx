@@ -6,7 +6,7 @@ import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import heroImgRaw from '../../data/images/move/Reefer Trucks (1).jpeg';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
-const heroVideo = '/videos/transportation.mp4';
+const heroVideo = '/videos/move.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
@@ -62,7 +62,7 @@ const MovePage: React.FC = () => {
 
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <video
           autoPlay
@@ -98,7 +98,7 @@ const MovePage: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ SERVICES â”€â”€ */}
+      {/* ── SERVICES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -114,7 +114,7 @@ const MovePage: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ WHY CRYSTAL â”€â”€ */}
+      {/* ── WHY CRYSTAL ── */}
       <section className="bg-secondary text-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-5xl text-center flex flex-col items-center">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>

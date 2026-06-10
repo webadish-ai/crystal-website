@@ -12,7 +12,7 @@ interface SectionHeaderProps {
   eyebrow?: string;
   heading: string;
   body?: string;
-  /** 'left' | 'center' â€” default 'left' */
+  /** 'left' | 'center' — default 'left' */
   align?: 'left' | 'center';
   /** 'h1' uses display scale; 'h2' section scale; 'h3' sub-section scale */
   headingSize?: 'h1' | 'h2' | 'h3';

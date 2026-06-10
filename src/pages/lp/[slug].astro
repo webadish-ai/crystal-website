@@ -1,0 +1,47 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro'
+import ReeferLP from '../../components/lp/ReeferLP'
+
+import telangana from '../../data/lp/telangana.json'
+import karnataka from '../../data/lp/karnataka.json'
+import andhraPradesh from '../../data/lp/andhra-pradesh.json'
+import gujarat from '../../data/lp/gujarat.json'
+import maharashtra from '../../data/lp/maharashtra.json'
+import tamilNadu from '../../data/lp/tamil-nadu.json'
+import uae from '../../data/lp/uae.json'
+import bhubaneswar from '../../data/lp/bhubaneswar.json'
+
+const LP_PAGES: Record<string, typeof telangana> = {
+  'rent-buy-reefer-containers-landing-page-telangana': telangana,
+  'rent-buy-reefer-containers-landing-page-karnataka': karnataka,
+  'rent-buy-reefer-containers-landing-page-andhra-pradesh': andhraPradesh,
+  'rent-buy-reefer-containers-landing-page-gujarat': gujarat,
+  'rent-buy-reefer-containers-landing-page-maharashtra': maharashtra,
+  'rent-buy-reefer-containers-landing-page-tamil-nadu': tamilNadu,
+  'rent-buy-reefer-containers-landing-page-uae': uae,
+  'rent-buy-reefer-containers-landing-page-bhubaneswar': bhubaneswar,
+}
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-telangana' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-karnataka' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-andhra-pradesh' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-gujarat' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-maharashtra' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-tamil-nadu' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-uae' } },
+    { params: { slug: 'rent-buy-reefer-containers-landing-page-bhubaneswar' } },
+  ]
+}
+
+const { slug } = Astro.params
+const data = LP_PAGES[slug]
+---
+
+<LandingLayout
+  title={data.meta_title ?? `Reefer Container Rental — ${data.location} | Crystal Group`}
+  description={data.meta_description}
+>
+  <ReeferLP data={data} client:load />
+</LandingLayout>

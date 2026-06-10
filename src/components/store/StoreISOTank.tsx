@@ -14,10 +14,10 @@ const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any
 
 const parent    = portableData["06 Store: Portable Cold Storage Containers"];
 const d         = parent["06e Store: ISO Tanks"];
-const heroCta   = d["Hero Page"].CTA.replace(/\s*Â®$/, '').trim();
+const heroCta   = d["Hero Page"].CTA.replace(/\s*®$/, '').trim();
 const isDataKey = (k: string) => k !== k.toUpperCase();
 const s1Specs   = Object.entries(d["S1 Specifications & certifications"]).filter(([k]) => isDataKey(k)) as [string, string][];
-const ctaLabel  = d["S1 Specifications & certifications"].CTA.replace(/\s*Â®$/, '').trim();
+const ctaLabel  = d["S1 Specifications & certifications"].CTA.replace(/\s*®$/, '').trim();
 const sLabel    = (key: string) => key.replace(/^S\d+\s+/, '');
 
 const featureIcons: React.ReactNode[] = [<FiGrid />, <FiLayers />, <FiPackage />, <FiShield />];
@@ -51,7 +51,7 @@ const StoreISOTank: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-clip font-body">
 
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src={heroImg}
@@ -85,7 +85,7 @@ const StoreISOTank: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* â”€â”€ S1 SPECIFICATIONS & CERTIFICATIONS â”€â”€ */}
+      {/* ── S1 SPECIFICATIONS & CERTIFICATIONS ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
@@ -107,7 +107,7 @@ const StoreISOTank: React.FC = () => {
         </div>
       </section>
 
-      {/* â”€â”€ FINAL CTA â”€â”€ */}
+      {/* ── FINAL CTA ── */}
       <section className="bg-primary py-20 px-6 md:px-12">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
