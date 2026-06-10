@@ -95,7 +95,7 @@ const SectionHeader = ({ eyebrow, head, desc, align = "left", dark = false }: { 
 /* EXACT HOMEPAGE BENTO CARD STYLE */
 const BentoCard = ({ id, title, desc, img, gridStyle, className }: { id: string; title: string; desc: string; img: string; gridStyle?: React.CSSProperties; className?: string }) => (
   <motion.a
-    href="/contact-us"
+    href="/contact"
     variants={itemVariants}
     style={gridStyle}
     className={`bg-primary border border-secondary/15 rounded-sm relative group overflow-hidden
@@ -345,7 +345,7 @@ const BuildBTS: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
               <Button variant="ghost" size="lg" href={qcommBrochureUrl} download="Q-Comm-Brochure-2026.pdf">
@@ -471,7 +471,7 @@ const BuildBTS: React.FC = () => {
           </div>
 
           <motion.div variants={itemVariants} className="flex">
-            <Button variant="primary" size="lg" href="/contact-us">
+            <Button variant="primary" size="lg" href="/contact">
               {data["S5 Why Crystal for BTS"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/final:translate-x-1" />
             </Button>
           </motion.div>

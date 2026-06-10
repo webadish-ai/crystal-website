@@ -59,10 +59,10 @@ const WarehouseBhubaneswar: React.FC = () => {
               Cold storage warehousing, blast freezing, and portable reefer containers serving Odisha and Eastern India. 24/7 operations.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Enquire now <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
-              <Button variant="ghost" size="lg" href="/warehouse">
+              <Button variant="ghost" size="lg" href="/store/cold-storage">
                 All warehouse locations
               </Button>
             </div>
@@ -157,10 +157,10 @@ const WarehouseBhubaneswar: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Enquire now <FiArrowRight className="ml-2 text-lg" />
                 </Button>
-                <Button variant="secondary" size="lg" href="/warehouse">
+                <Button variant="secondary" size="lg" href="/store/cold-storage">
                   All locations
                 </Button>
               </motion.div>

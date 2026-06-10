@@ -72,7 +72,7 @@ const CaseStudyPage: React.FC<Props> = ({ item, idx, heroImage, pdfUrl }) => {
           <div className="container mx-auto max-w-[var(--max-width)] px-6 md:px-14 py-3.5 flex items-center justify-between gap-6 flex-wrap">
             <div className="flex items-center gap-5 flex-wrap">
               <motion.a
-                href="/case-studies"
+                href="/impact"
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.4 }}
@@ -237,10 +237,10 @@ const CaseStudyPage: React.FC<Props> = ({ item, idx, heroImage, pdfUrl }) => {
             </motion.h2>
           </div>
           <motion.div variants={itemVariants} className="flex flex-wrap gap-4 shrink-0">
-            <Button variant="primary" size="lg" href="/contact-us">
+            <Button variant="primary" size="lg" href="/contact">
               Talk to our team <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
             </Button>
-            <Button variant="ghost" size="lg" href="/case-studies">
+            <Button variant="ghost" size="lg" href="/impact">
               All cases
             </Button>
           </motion.div>

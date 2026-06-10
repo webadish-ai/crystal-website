@@ -136,10 +136,10 @@ const StorePortableCS: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 {heroCtas[0]} <FiArrowRight className="text-lg" />
               </Button>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="ghost" size="lg" href="/contact">
                 {heroCtas[1]} <FiArrowRight className="text-lg" />
               </Button>
             </div>
@@ -245,7 +245,7 @@ const StorePortableCS: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Get in touch <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>

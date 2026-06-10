@@ -212,7 +212,7 @@ const NavMobileDrawer: React.FC<NavMobileDrawerProps> = ({
           {/* CTA footer */}
           <div className="px-6 py-5 border-t border-primary/10 shrink-0">
             <a
-              href="/contact-us"
+              href="/contact"
               data-astro-prefetch={PREFETCH}
               onClick={() => setMenuOpen(false)}
               className="font-heading font-extrabold text-[11px] uppercase tracking-[0.15em] w-full py-4 bg-accent text-secondary rounded-sm flex items-center justify-center gap-2 active:scale-[0.98] transition-all duration-300 hover:bg-primary hover:text-secondary group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"

@@ -454,7 +454,7 @@ const SpecsTable = ({
         {/* CTA */}
         <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
           <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy · Pan-India delivery</span>
-          <Button variant="primary" size="sm" href="/contact-us">Get a quote <FiArrowRight className="ml-2" /></Button>
+          <Button variant="primary" size="sm" href="/contact">Get a quote <FiArrowRight className="ml-2" /></Button>
         </div>
       </div>
     </div>
@@ -496,8 +496,8 @@ const StoreBlastFreezer: React.FC = () => {
           <motion.div variants={itemVariants} className="max-w-2xl border-l-[3px] border-accent pl-6 md:pl-8">
             <div className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium" dangerouslySetInnerHTML={{ __html: d["Hero Page"].SUBHEADLINE }} />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">{heroCtas[0]} <FiArrowRight className="text-lg" /></Button>
-              <Button variant="ghost" size="lg" href="/contact-us">{heroCtas[2] ?? heroCtas[1]} <FiDownload className="text-lg" /></Button>
+              <Button variant="primary" size="lg" href="/contact">{heroCtas[0]} <FiArrowRight className="text-lg" /></Button>
+              <Button variant="ghost" size="lg" href="/contact">{heroCtas[2] ?? heroCtas[1]} <FiDownload className="text-lg" /></Button>
             </div>
           </motion.div>
         </motion.div>
@@ -598,8 +598,8 @@ const StoreBlastFreezer: React.FC = () => {
                 <motion.p variants={itemVariants} className="font-body text-body-lg text-secondary/55 leading-relaxed mt-4 font-medium">Tell us your capacity, location, and timeline. Pricing and availability within 24 hours.</motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">Request a quote <FiArrowRight className="ml-2 text-lg" /></Button>
-                <Button variant="secondary" size="lg" href="/contact-us">Download brochure <FiDownload className="ml-2 text-lg" /></Button>
+                <Button variant="primary" size="lg" href="/contact">Request a quote <FiArrowRight className="ml-2 text-lg" /></Button>
+                <Button variant="secondary" size="lg" href="/contact">Download brochure <FiDownload className="ml-2 text-lg" /></Button>
               </motion.div>
             </div>
           </motion.div>

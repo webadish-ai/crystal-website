@@ -45,7 +45,7 @@ const FinalCTA: React.FC = () => {
         />
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-          <Button variant="primary" href="/contact-us">{s10.cta_primary.toUpperCase()}</Button>
+          <Button variant="primary" href="/contact">{s10.cta_primary.toUpperCase()}</Button>
           <Button variant="secondary" href="#solutions">{s10.cta_secondary.toUpperCase()}</Button>
         </motion.div>
       </motion.div>

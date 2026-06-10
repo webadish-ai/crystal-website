@@ -70,12 +70,12 @@ function SectionHero({ data }: { data: any }) {
             </p>
             <div className="flex flex-wrap gap-4">
               {data.cta_primary && (
-                <Button variant="primary" size="lg" href={data.cta_primary.href ?? '/contact-us'}>
+                <Button variant="primary" size="lg" href={data.cta_primary.href ?? '/contact'}>
                   {data.cta_primary.label} <FiArrowRight className="ml-3 text-lg" />
                 </Button>
               )}
               {data.cta_secondary && (
-                <Button variant="ghost" size="lg" href={data.cta_secondary.href ?? '/contact-us'}>
+                <Button variant="ghost" size="lg" href={data.cta_secondary.href ?? '/contact'}>
                   {data.cta_secondary.label}
                 </Button>
               )}
@@ -130,7 +130,7 @@ function SectionSplitStatement({ data }: { data: any }) {
           )}
           {data.cta && (
             <motion.div variants={itemVariants}>
-              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact-us'}>
+              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact'}>
                 {data.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>
@@ -237,7 +237,7 @@ function SectionProcessSteps({ data }: { data: any }) {
           </div>
           {data.cta && (
             <motion.div variants={itemVariants} className="mt-12 flex justify-center">
-              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact-us'}>
+              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact'}>
                 {data.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>
@@ -272,7 +272,7 @@ function SectionStatsGrid({ data }: { data: any }) {
           </div>
           {data.cta && (
             <motion.div variants={itemVariants} className="mt-12">
-              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact-us'}>
+              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact'}>
                 {data.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>
@@ -301,7 +301,7 @@ function SectionWhyDark({ data }: { data: any }) {
           )}
           {data.cta && (
             <motion.div variants={itemVariants}>
-              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact-us'}>
+              <Button variant="primary" size="lg" href={data.cta.href ?? '/contact'}>
                 {data.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>
@@ -459,7 +459,7 @@ function SectionCertifications({ data }: { data: any }) {
             </div>
             {data.cta && (
               <motion.div variants={itemVariants} className="shrink-0">
-                <Button variant="primary" size="lg" href={data.cta.href ?? '/contact-us'}>
+                <Button variant="primary" size="lg" href={data.cta.href ?? '/contact'}>
                   {data.cta.label} <FiArrowRight className="ml-3 text-lg" />
                 </Button>
               </motion.div>
@@ -508,14 +508,14 @@ function SectionCta({ data }: { data: any }) {
           <div className="flex flex-wrap gap-4 shrink-0">
             {data.cta_primary && (
               <motion.div variants={itemVariants}>
-                <Button variant="primary" size="lg" href={data.cta_primary.href ?? '/contact-us'}>
+                <Button variant="primary" size="lg" href={data.cta_primary.href ?? '/contact'}>
                   {data.cta_primary.label} <FiArrowRight className="ml-3 text-lg" />
                 </Button>
               </motion.div>
             )}
             {data.cta_secondary && (
               <motion.div variants={itemVariants}>
-                <Button variant="ghost" size="lg" href={data.cta_secondary.href ?? '/contact-us'}>
+                <Button variant="ghost" size="lg" href={data.cta_secondary.href ?? '/contact'}>
                   {data.cta_secondary.label}
                 </Button>
               </motion.div>

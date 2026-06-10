@@ -605,7 +605,7 @@ const SpecsTable = ({
       {/* CTA */}
       <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
         <span className="font-body text-body-sm text-secondary/35 font-medium">Rent or buy · Pan-India delivery</span>
-        <Button variant="primary" size="sm" href="/contact-us">
+        <Button variant="primary" size="sm" href="/contact">
           Get a quote <FiArrowRight className="ml-2" />
         </Button>
       </div>
@@ -674,7 +674,7 @@ const StoreReefer: React.FC = () => {
           <motion.div variants={itemVariants} className="max-w-2xl border-l-[3px] border-accent pl-6 md:pl-8">
             <div className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium" dangerouslySetInnerHTML={{ __html: d["Hero Page"].SUBHEADLINE }} />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 {heroCtas[0]} <FiArrowRight className="text-lg" />
               </Button>
               <Button variant="ghost" size="lg" href={reeferBookletUrl} download="Reefer-Booklet-2026.pdf">
@@ -791,7 +791,7 @@ const StoreReefer: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Request a quote <FiArrowRight className="ml-2 text-lg" />
                 </Button>
                 <Button variant="secondary" size="lg" href={reeferBookletUrl} download="Reefer-Booklet-2026.pdf">

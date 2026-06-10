@@ -76,7 +76,7 @@ const StoreColdStorage: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium"
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
-            <Button variant="primary" size="lg" href="/contact-us">
+            <Button variant="primary" size="lg" href="/contact">
               {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg" />
             </Button>
           </motion.div>
@@ -178,7 +178,7 @@ const StoreColdStorage: React.FC = () => {
                 />
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   {data["S4 Certifications"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>

@@ -91,8 +91,8 @@ const navItems = [
     ],
   },
   { name: 'Impact', href: '/case-studies' },
-  { name: 'About', href: '/about-us' },
-  { name: 'Careers', href: '/career' },
+  { name: 'About', href: '/about' },
+  { name: 'Careers', href: '/careers' },
 ];
 
 /* ─── helpers ─────────────────────────────────────────────────────────────── */
@@ -470,7 +470,7 @@ const Nav: React.FC = () => {
           {/* Right: CTA + hamburger */}
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="/contact-us"
+              href="/contact"
               data-astro-prefetch={PREFETCH}
               className="hidden lg:flex font-heading font-extrabold text-[10px] uppercase tracking-[0.15em] px-6 py-3 bg-secondary text-primary rounded-sm transition-all duration-300 border-2 border-secondary hover:bg-transparent hover:text-secondary group items-center gap-2 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
             >
@@ -501,7 +501,7 @@ const Nav: React.FC = () => {
               className="hidden lg:flex absolute top-[calc(100%+20px)] right-6 lg:right-10 z-[95] pointer-events-auto"
             >
               <a
-                href="/contact-us"
+                href="/contact"
                 className="flex items-center gap-2 bg-accent text-secondary font-heading font-extrabold text-[11px] uppercase tracking-[0.13em] px-4 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.12)] hover:bg-accent/90 transition-colors duration-200"
               >
                 Talk To Us <FiArrowRight className="text-[11px]" />

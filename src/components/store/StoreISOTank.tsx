@@ -77,7 +77,7 @@ const StoreISOTank: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: d["Hero Page"].SUBHEADLINE }}
             />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 {heroCta} <FiArrowRight className="text-lg" />
               </Button>
             </div>
@@ -127,7 +127,7 @@ const StoreISOTank: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Get in touch <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>

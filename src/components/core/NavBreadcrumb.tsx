@@ -24,9 +24,9 @@ const hrefIconMap: Record<string, React.ReactNode> = {
   '/process-bfs':                  <FiWind />,
   '/solve':                        <FiLayers />,
   '/case-studies':                       <FiTrendingUp />,
-  '/about-us':                        <FiUsers />,
-  '/career':                      <FiUsers />,
-  '/contact-us':                      <FiMail />,
+  '/about':                        <FiUsers />,
+  '/careers':                      <FiUsers />,
+  '/contact':                      <FiMail />,
 };
 
 const TypewriterBreadcrumb = ({ text, startDelay = 600 }: { text: string; startDelay?: number }) => {

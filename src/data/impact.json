@@ -68,7 +68,8 @@
               "quote": "Crystal delivered exactly what they promised — a fully compliant facility, on time, ready to operate from day one. Their team managed every detail so we didn't have to.",
               "author": "Operations Head",
               "company": "Leading Pharmaceutical Company"
-            }
+            },
+            "slug": "pharma-grade-warehouse-jnpt"
           },
           {
             "tag": "Build · Q-Commerce",
@@ -122,7 +123,8 @@
               "quote": "We needed infrastructure that could scale as fast as we do. Crystal built the template and delivered it across three cities without a single miss.",
               "author": "Supply Chain Director",
               "company": "Leading Quick Commerce Platform"
-            }
+            },
+            "slug": "cold-chain-quick-commerce-platform"
           },
           {
             "tag": "Store · Frozen Food",
@@ -172,7 +174,8 @@
               "quote": "From brief to live in 90 days — and Crystal still runs it for us. We didn't need to hire a single person for the facility.",
               "author": "CEO",
               "company": "Leading Frozen Food Manufacturer"
-            }
+            },
+            "slug": "cold-storage-90-days"
           },
           {
             "tag": "Move · FMCG",
@@ -210,7 +213,8 @@
               "author": "Supply Chain Manager",
               "company": "Major QSR & FMCG Distributor"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "qsr-fmcg-reefer-trucks"
           },
           {
             "tag": "Move · FMCG",
@@ -252,7 +256,8 @@
               "author": "Operations Representative",
               "company": "Leading Frozen Dessert Company"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "frozen-dessert-truck-solution"
           },
           {
             "tag": "Store · Pharma",
@@ -290,7 +295,8 @@
               }
             ],
             "testimonial": null,
-            "pdf": null
+            "pdf": null,
+            "slug": "laurus-labs"
           },
           {
             "tag": "Store · FMCG",
@@ -333,7 +339,8 @@
               "author": "Operations Representative",
               "company": "Vimala Feeds Pvt. Ltd."
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "vimala-feeds"
           },
           {
             "tag": "Store · Logistics",
@@ -375,7 +382,8 @@
               "author": "Operations Team",
               "company": "QWIK Supply Chain Pvt. Ltd."
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "blast-freezer-assam"
           },
           {
             "tag": "Store · Pharma",
@@ -413,7 +421,8 @@
               }
             ],
             "testimonial": null,
-            "pdf": null
+            "pdf": null,
+            "slug": "reefer-plasma-hyderabad"
           },
           {
             "tag": "Store · Pharma",
@@ -455,7 +464,8 @@
               "author": "Operations Manager",
               "company": "Leading Pharma Company"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "pharma-superstore-compliance"
           },
           {
             "tag": "Store · Chemical",
@@ -497,7 +507,8 @@
               "author": "Operations Head",
               "company": "Leading Chemical Manufacturer, Surat"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "chemical-temperature-compliance"
           },
           {
             "tag": "Store · Petrochemical",
@@ -539,7 +550,8 @@
               "author": "Operations Manager",
               "company": "Leading Petrochemical Manufacturer, Qatar"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "petrochemical-storage-qatar"
           },
           {
             "tag": "Store · Dairy",
@@ -577,7 +589,8 @@
               }
             ],
             "testimonial": null,
-            "pdf": null
+            "pdf": null,
+            "slug": "dairy-solutions"
           },
           {
             "tag": "Build · Tourism",
@@ -619,7 +632,8 @@
               "author": "Operations Team",
               "company": "Tourist Destination, Lonavala"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "dry-containers-tourism"
           },
           {
             "tag": "Store · Pharma",
@@ -661,7 +675,8 @@
               "author": "Operations Head",
               "company": "Leading Pharma Company, Karnataka"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "rapid-reefer-pharma"
           },
           {
             "tag": "Store · Logistics",
@@ -703,7 +718,8 @@
               "author": "Regional Operations Manager",
               "company": "Global Logistics Company, India"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "modular-warehouse-efficiency"
           },
           {
             "tag": "Store · Logistics",
@@ -745,7 +761,8 @@
               "author": "Ganesh Minde",
               "company": "Qwik Supply Pvt. Ltd."
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "pcm-pad-storage"
           },
           {
             "tag": "Store · Logistics",
@@ -787,7 +804,8 @@
               "author": "Operations Manager",
               "company": "Hyderabad Airport Cargo Terminal"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "1000-sqft-cold-storage"
           },
           {
             "tag": "Store · Pharma",
@@ -821,7 +839,8 @@
               }
             ],
             "testimonial": null,
-            "pdf": null
+            "pdf": null,
+            "slug": "cold-storage-telangana"
           },
           {
             "tag": "Store · Manufacturing",
@@ -855,7 +874,8 @@
               }
             ],
             "testimonial": null,
-            "pdf": null
+            "pdf": null,
+            "slug": "chemical-storage-maharashtra"
           },
           {
             "tag": "Move · Pharma",
@@ -897,7 +917,8 @@
               "author": "R&D Operations Manager",
               "company": "Leading Pharmaceutical Company"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "pharma-rd-truck"
           },
           {
             "tag": "Build · Corporate",
@@ -935,7 +956,8 @@
               "author": "Admin Lead",
               "company": "Debrique Creative Labs"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "custom-access-cabin"
           },
           {
             "tag": "Build · Public",
@@ -973,7 +995,8 @@
               "author": "Trust Representative",
               "company": "ISKCON Grant Road, Mumbai"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "temple-security-cabin"
           },
           {
             "tag": "Store · Manufacturing",
@@ -1015,7 +1038,8 @@
               "author": "Warehouse Operations Manager",
               "company": "Michelin India"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "dry-container-tyre-mfg"
           },
           {
             "tag": "Store · Quick Commerce",
@@ -1057,7 +1081,8 @@
               "author": "Head of Supply Chain",
               "company": "Leading Quick Commerce Provider"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "q-commerce-cold-storage"
           },
           {
             "tag": "Store · Quick Commerce",
@@ -1099,7 +1124,8 @@
               "author": "Logistics Head",
               "company": "Swiggy"
             },
-            "pdf": null
+            "pdf": null,
+            "slug": "food-delivery-storage"
           }
         ]
       },

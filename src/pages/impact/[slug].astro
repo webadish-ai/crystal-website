@@ -9,12 +9,9 @@ import img2 from '../../data/images/build/WhatsApp Image 2026-04-11 at 1.33.45 P
 const heroImages = [img0, img1, img2];
 
 export function getStaticPaths() {
-  function toSlug(title: string): string {
-    return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
-  }
   const section = impactData.page.sections.find((s: any) => s.type === 'case_studies') as any;
   return section.items.map((item: any, idx: number) => ({
-    params: { slug: toSlug(item.title) },
+    params: { slug: item.slug },
     props: { item, idx },
   }));
 }

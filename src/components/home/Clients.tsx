@@ -292,7 +292,7 @@ const Clients: React.FC = () => {
             viewport={{ once: true }}
           >
             <a
-              href="/contact-us"
+              href="/contact"
               className="group/cta relative inline-flex items-center gap-4 bg-secondary text-primary font-heading font-extrabold text-body-sm uppercase tracking-[0.2em] px-8 py-5 overflow-hidden transition-colors duration-300 hover:text-secondary"
             >
               <span className="relative z-10">{s5.cta}</span>

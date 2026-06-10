@@ -352,7 +352,7 @@ const CareersPage: React.FC = () => {
               <Button variant="primary" size="lg" href="mailto:marketing@crystalgroup.in">
                 {open_roles.cta_cv.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
-              <Button variant="secondary" size="lg" href="/contact-us">
+              <Button variant="secondary" size="lg" href="/contact">
                 {open_roles.cta_general.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

@@ -59,10 +59,10 @@ const StoreFreightForwarding: React.FC = () => {
               End-to-end freight forwarding — air, ocean, and multimodal — across 190+ countries. 62 years of cold-chain expertise.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Get a freight quote <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="ghost" size="lg" href="/contact">
                 Talk to a specialist
               </Button>
             </div>
@@ -198,10 +198,10 @@ const StoreFreightForwarding: React.FC = () => {
               </motion.p>
             </div>
             <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Get a freight quote <FiArrowRight className="ml-2 text-lg" />
               </Button>
-              <Button variant="secondary" size="lg" href="/transportation">
+              <Button variant="secondary" size="lg" href="/move">
                 All logistics
               </Button>
             </motion.div>

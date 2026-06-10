@@ -62,7 +62,7 @@ const StoreAccessories: React.FC = () => {
               Everything to enhance your cold storage setup.
             </motion.p>
             <motion.div variants={itemVariants}>
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Request a quote <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
             </motion.div>
@@ -140,7 +140,7 @@ const StoreAccessories: React.FC = () => {
               </motion.p>
             </div>
             <motion.div variants={itemVariants} className="shrink-0">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Request a quote <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
             </motion.div>

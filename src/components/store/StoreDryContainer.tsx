@@ -130,10 +130,10 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage }) => {
               {data.hero.tagline}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Get a Quote <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="ghost" size="lg" href="/contact">
                 Request Lease
               </Button>
             </div>
@@ -339,7 +339,7 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage }) => {
                   {/* CTA row */}
                   <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
                     <span className="font-body text-body-sm text-secondary/35 font-medium">Available to rent or buy · Pan-India delivery</span>
-                    <Button variant="primary" size="sm" href="/contact-us">
+                    <Button variant="primary" size="sm" href="/contact">
                       Get a quote <FiArrowRight className="ml-2" />
                     </Button>
                   </div>
@@ -460,7 +460,7 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage }) => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Request a quote <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>

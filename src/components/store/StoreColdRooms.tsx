@@ -78,10 +78,10 @@ const StoreColdRooms: React.FC = () => {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Get a Quote <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="ghost" size="lg" href="/contact">
                 Discuss your project
               </Button>
             </div>
@@ -320,7 +320,7 @@ const StoreColdRooms: React.FC = () => {
                   {/* CTA row */}
                   <div className="px-5 py-4 flex items-center justify-between gap-4 flex-wrap bg-primary">
                     <span className="font-body text-body-sm text-secondary/35 font-medium">Installation timelines vary by site</span>
-                    <Button variant="primary" size="sm" href="/contact-us">
+                    <Button variant="primary" size="sm" href="/contact">
                       Discuss your project <FiArrowRight className="ml-2" />
                     </Button>
                   </div>
@@ -453,7 +453,7 @@ const StoreColdRooms: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Discuss your project <FiArrowRight className="ml-2 text-lg transition-transform group-hover/btn:translate-x-1" />
                 </Button>
                 <Button variant="secondary" size="lg" href="/store">

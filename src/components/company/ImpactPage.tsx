@@ -7,10 +7,6 @@ import { useCmsData } from '../../hooks/useCmsData';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
-function toSlug(title: string): string {
-  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').substring(0, 80);
-}
-
 const ImpactPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'cases' | 'blog'>('cases');
   const liveData = useCmsData('impact', impactData);
@@ -107,7 +103,7 @@ const ImpactPage: React.FC = () => {
                   {case_studies.items.map((item: any, idx: number) => (
                     <motion.a
                       key={idx}
-                      href={`/case-studies/${toSlug(item.title)}`}
+                      href={`/impact/${item.slug}`}
                       variants={itemVariants}
                       className="group relative bg-secondary overflow-hidden rounded-sm hover:ring-1 hover:ring-accent/30 transition-all duration-300 block cursor-pointer"
                     >

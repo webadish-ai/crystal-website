@@ -76,7 +76,7 @@ const Store3PL: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: data["Hero Page"].SUBHEADLINE }}
             />
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg" />
               </Button>
             </div>
@@ -122,7 +122,7 @@ const Store3PL: React.FC = () => {
                 dangerouslySetInnerHTML={{ __html: data["S2 Why outsource to Crystal"].BODY }}
               />
               <motion.div variants={itemVariants}>
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   {data["S2 Why outsource to Crystal"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>
@@ -151,7 +151,7 @@ const Store3PL: React.FC = () => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Get in touch <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>

@@ -91,7 +91,7 @@ const ProcessFVPPage: React.FC = () => {
             <p className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium">
               {hero.subheadline}
             </p>
-            <Button variant="primary" size="lg" href="/contact-us">
+            <Button variant="primary" size="lg" href="/contact">
               {services.cta.label} <FiArrowRight className="ml-3 text-lg" />
             </Button>
           </motion.div>
@@ -127,7 +127,7 @@ const ProcessFVPPage: React.FC = () => {
               dangerouslySetInnerHTML={{ __html: cta.body }}
             />
             <motion.div variants={itemVariants}>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="ghost" size="lg" href="/contact">
                 {cta.cta.label} <FiArrowRight className="ml-3 text-lg" />
               </Button>
             </motion.div>

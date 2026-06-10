@@ -187,10 +187,10 @@ const SolvePalletGuide: React.FC<Props> = ({ productKey }) => {
               {d.temp_range}
             </span>
             <div className="flex flex-wrap gap-4">
-              <Button variant="primary" size="lg" href="/contact-us">
+              <Button variant="primary" size="lg" href="/contact">
                 Request a quote <FiArrowRight className="ml-2 text-lg" />
               </Button>
-              <Button variant="ghost" size="lg" href="/contact-us">
+              <Button variant="ghost" size="lg" href="/contact">
                 Download brochure
               </Button>
             </div>
@@ -436,7 +436,7 @@ const SolvePalletGuide: React.FC<Props> = ({ productKey }) => {
                     <span className="font-body text-body-sm text-secondary/35 font-medium">
                       Pan-India delivery · Rent or buy
                     </span>
-                    <Button variant="primary" size="sm" href="/contact-us">
+                    <Button variant="primary" size="sm" href="/contact">
                       Get a quote <FiArrowRight className="ml-2" />
                     </Button>
                   </div>
@@ -516,7 +516,7 @@ const SolvePalletGuide: React.FC<Props> = ({ productKey }) => {
                 </motion.p>
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Request a quote <FiArrowRight className="ml-2 text-lg" />
                 </Button>
                 <Button variant="secondary" size="lg" href="/solve/loading-calculator">

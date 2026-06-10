@@ -176,7 +176,7 @@ const Hero: React.FC<HeroProps> = ({ isLoaded }) => {
               {s1.subheadline}
             </p>
             <div className="flex">
-              <Button variant="secondary" href="/contact-us">{s1.cta_secondary}</Button>
+              <Button variant="secondary" href="/contact">{s1.cta_secondary}</Button>
             </div>
           </motion.div>
         </div>

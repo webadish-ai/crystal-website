@@ -229,7 +229,7 @@ const SolveLoadingCalculator: React.FC = () => {
                           <p className="font-body text-body-md text-secondary/40 leading-relaxed max-w-xs">
                             No containers match your requirements. Please adjust your inputs or contact us directly.
                           </p>
-                          <Button variant="primary" size="sm" href="/contact-us">
+                          <Button variant="primary" size="sm" href="/contact">
                             Contact us <FiArrowRight className="ml-2" />
                           </Button>
                         </div>
@@ -300,7 +300,7 @@ const SolveLoadingCalculator: React.FC = () => {
                         <p className="font-body text-body-sm text-secondary/50 leading-snug">
                           Not sure which option is right? Our team helps you choose.
                         </p>
-                        <Button variant="primary" size="sm" href="/contact-us">
+                        <Button variant="primary" size="sm" href="/contact">
                           Talk to our team <FiArrowRight className="ml-2" />
                         </Button>
                       </div>
@@ -387,7 +387,7 @@ const SolveLoadingCalculator: React.FC = () => {
                 </motion.h2>
               </div>
               <motion.div variants={itemVariants} className="shrink-0">
-                <Button variant="primary" size="lg" href="/contact-us">
+                <Button variant="primary" size="lg" href="/contact">
                   Request a quote <FiArrowRight className="ml-2 text-lg" />
                 </Button>
               </motion.div>
