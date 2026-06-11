@@ -1,0 +1,37 @@
+{
+  "meta_title": "Reefer Container Rental & Leasing in Andhra Pradesh | Crystal Group",
+  "meta_description": "Rent or lease reefer containers in Andhra Pradesh — Visakhapatnam, Vijayawada, Tirupati and more. From ₹1,300/day. FSSAI-compliant, 24/7 monitoring.",
+  "location": "Andhra Pradesh",
+  "hero_heading": "Reefer Container Rental &amp; Leasing in <span style=\"color:#FAC212\">Andhra Pradesh</span>",
+  "hero_subheading": "Temperature-controlled containers from ₹1,300/day across Andhra Pradesh. FSSAI-compliant. 24/7 remote monitoring. Flexible rental and leasing for pharma, seafood, dairy, and FMCG businesses.",
+  "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Same-Week Delivery", "Flexible Terms"],
+  "hero_pricing": [
+    { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
+    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" }
+  ],
+  "hero_disclaimer": "*Prices indicative. Final quote based on container size, duration, and delivery location. GST at 18% applicable.",
+  "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
+  "form_submit_label": "Request My Free Quote",
+  "form_disclaimer": "No spam. We'll call you within 2 business hours.",
+  "cities": ["Visakhapatnam", "Vijayawada", "Guntur", "Tirupati", "Nellore", "Kurnool", "Kakinada", "Rajahmundry", "Kadapa"],
+  "serve_items": [
+    "Pharmaceuticals & Vaccines",
+    "Seafood & Marine Exports",
+    "Dairy & Milk Products",
+    "Fresh Fruits & Vegetables",
+    "Ice Cream & Frozen Foods",
+    "Hospitality & Event Catering",
+    "Aquaculture",
+    "Chemical & Specialty Cargo",
+    "Poultry & Meat",
+    "FMCG Distribution",
+    "Quick Commerce",
+    "Confectionery & Bakery"
+  ],
+  "gallery": [
+    { "image": "/crystal_warehouse_hero.webp", "label": "Crystal Group Cold Chain Facility" },
+    { "image": "/images/build/bts-operations.webp", "label": "Reefer Container Operations" },
+    { "image": "/images/build/bts-commissioning.webp", "label": "Container Commissioning" }
+  ],
+  "footer_note": "© 2026 Crystal Logistic Cool Chain Ltd. All rights reserved. Reefer container rental & leasing across Andhra Pradesh."
+}

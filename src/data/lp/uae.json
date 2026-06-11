@@ -1,0 +1,37 @@
+{
+  "meta_title": "Reefer Container Rental & Leasing in UAE | Crystal Group",
+  "meta_description": "Rent or lease reefer containers in UAE — Dubai, Abu Dhabi, Sharjah. Temperature-controlled, HACCP-compliant, 24/7 monitoring. Get a free quote today.",
+  "location": "UAE",
+  "hero_heading": "Reefer Container Rental &amp; Leasing in the <span style=\"color:#FAC212\">UAE</span>",
+  "hero_subheading": "Temperature-controlled containers for Dubai, Abu Dhabi, and Sharjah. HACCP-compliant. 24/7 remote monitoring. Flexible rental and leasing for hospitality, pharma, and food distribution across the Emirates.",
+  "hero_pills": ["Temperature Controlled", "HACCP Compliant", "24/7 Monitoring", "Dubai Available", "Flexible Terms"],
+  "hero_pricing": [
+    { "label": "Rental from", "value": "AED 200/day", "note": "*Ex VAT" },
+    { "label": "Lease from", "value": "AED 4,500/mo", "note": "*T&C apply" }
+  ],
+  "hero_disclaimer": "*Prices indicative. Final quote based on container size, duration, and delivery emirate. VAT at 5% applicable.",
+  "form_heading": "Get a Free Quote — We Respond in 2 Hours",
+  "form_submit_label": "Request My Free Quote",
+  "form_disclaimer": "No spam. Our team will contact you within 2 business hours.",
+  "cities": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah"],
+  "serve_items": [
+    "Pharmaceuticals & Vaccines",
+    "Hospitality & Catering",
+    "Seafood & Marine Products",
+    "Dairy & Chilled Goods",
+    "Ice Cream & Frozen Foods",
+    "Event & Exhibition Catering",
+    "Fresh Fruits & Vegetables",
+    "FMCG & Retail Distribution",
+    "Chemical & Specialty Cargo",
+    "Poultry & Meat",
+    "Floriculture",
+    "Confectionery & Bakery"
+  ],
+  "gallery": [
+    { "image": "/crystal_warehouse_hero.webp", "label": "Crystal Group Cold Chain Facility" },
+    { "image": "/images/build/bts-operations.webp", "label": "Reefer Container Operations" },
+    { "image": "/images/build/bts-commissioning.webp", "label": "Container Commissioning" }
+  ],
+  "footer_note": "© 2026 Crystal Logistic Cool Chain Ltd. All rights reserved. Reefer container rental & leasing across the UAE."
+}

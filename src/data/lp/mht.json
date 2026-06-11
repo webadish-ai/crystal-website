@@ -1,0 +1,101 @@
+{
+  "_template": "landing-conversion",
+  "meta_title": "Page Title | Crystal Group",
+  "meta_description": "Short description for search engines (150–160 characters).",
+  "topbar_whatsapp": "https://wa.me/919880012345",
+  "topbar_phone": "+91 98800 12345",
+  "hero_eyebrow": "Crystal Group · Location",
+  "hero_heading": "Product / Service <strong>Name Here</strong>",
+  "hero_image": "",
+  "hero_pricing": [
+    {
+      "label": "Rental from",
+      "value": "₹X,XXX/day",
+      "note": "*GST extra"
+    },
+    {
+      "label": "Leasing from",
+      "value": "₹XX,XXX/month",
+      "note": "*T&C apply"
+    }
+  ],
+  "hero_disclaimer": "*Prices indicative. Final quote based on specification, duration and location.",
+  "form_heading": "Get a Free Quote",
+  "form_service": "General Enquiry",
+  "form_submit_label": "Request Quote",
+  "form_disclaimer": "We'll call you within 2 business hours. No spam, ever.",
+  "locations": [
+    "Bengaluru",
+    "Mysuru",
+    "Mangaluru",
+    "Hubli",
+    "Belagavi"
+  ],
+  "gallery": [
+    {
+      "image": "",
+      "label": "Gallery Image 1"
+    },
+    {
+      "image": "",
+      "label": "Gallery Image 2"
+    },
+    {
+      "image": "",
+      "label": "Gallery Image 3"
+    },
+    {
+      "image": "",
+      "label": "Gallery Image 4"
+    },
+    {
+      "image": "",
+      "label": "Gallery Image 5"
+    },
+    {
+      "image": "",
+      "label": "Gallery Image 6"
+    }
+  ],
+  "usp_heading": "Why Crystal Group?",
+  "usp_points": [
+    "<strong>Benefit one</strong> — what makes this offering stand out.",
+    "<strong>Benefit two</strong> — key operational or quality advantage.",
+    "<strong>Benefit three</strong> — compliance, monitoring or flexibility point."
+  ],
+  "usp_cta_label": "Enquire Now",
+  "usp_cta_href": "#enquire",
+  "serve_heading": "Industries We Serve",
+  "serve_items": [
+    "Industry or segment one",
+    "Industry or segment two",
+    "Industry or segment three",
+    "Industry or segment four"
+  ],
+  "testimonials_heading": "Trusted by Industry Leaders",
+  "testimonials_subheading": "Businesses across India rely on Crystal Group for dependable cold chain solutions.",
+  "testimonials": [
+    {
+      "company": "Client Company",
+      "logo": "",
+      "color": "#0F2854",
+      "text": "Paste testimonial quote here. Specific results work best."
+    },
+    {
+      "company": "Another Client",
+      "logo": "",
+      "color": "#1A5276",
+      "text": "Second testimonial quote about service quality."
+    },
+    {
+      "company": "Third Reference",
+      "logo": "",
+      "color": "#0E6655",
+      "text": "Third testimonial mentioning product name and outcome."
+    }
+  ],
+  "sticky_cta_label": "Get Quote",
+  "sticky_cta_href": "#enquire",
+  "footer_note": "© 2025 Crystal Group. All rights reserved.",
+  "footer_phone": "+91 98800 12345"
+}

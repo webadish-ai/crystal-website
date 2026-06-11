@@ -1,0 +1,37 @@
+{
+  "meta_title": "Reefer Container Rental & Leasing in Maharashtra | Crystal Group",
+  "meta_description": "Rent or lease reefer containers in Maharashtra — Mumbai, Pune, Nagpur and more. From ₹1,300/day. FSSAI-compliant, 24/7 monitoring. Get a free quote.",
+  "location": "Maharashtra",
+  "hero_heading": "Reefer Container Rental &amp; Leasing in <span style=\"color:#FAC212\">Maharashtra</span>",
+  "hero_subheading": "Temperature-controlled containers from ₹1,300/day across Maharashtra. Mumbai and Pune same-week delivery. FSSAI-compliant. 24/7 remote monitoring for pharma, food, quick commerce, and FMCG.",
+  "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Mumbai & Pune Fleet", "Flexible Terms"],
+  "hero_pricing": [
+    { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
+    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" }
+  ],
+  "hero_disclaimer": "*Prices indicative. Final quote based on container size, duration, and delivery location. GST at 18% applicable.",
+  "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
+  "form_submit_label": "Request My Free Quote",
+  "form_disclaimer": "No spam. We'll call you within 2 business hours.",
+  "cities": ["Mumbai", "Pune", "Nagpur", "Nashik", "Aurangabad", "Solapur", "Kolhapur", "Thane", "Navi Mumbai"],
+  "serve_items": [
+    "Pharmaceuticals & Vaccines",
+    "Dairy & Milk Products",
+    "Seafood & Marine Exports",
+    "Fresh Fruits & Vegetables",
+    "Ice Cream & Frozen Foods",
+    "Quick Commerce Fulfilment",
+    "Hospitality & Event Catering",
+    "Chemical & Specialty Cargo",
+    "Poultry & Meat",
+    "FMCG Distribution",
+    "Retail Chains",
+    "Confectionery & Bakery"
+  ],
+  "gallery": [
+    { "image": "/crystal_warehouse_hero.webp", "label": "Crystal Group Cold Chain Facility" },
+    { "image": "/images/build/bts-operations.webp", "label": "Reefer Container Operations" },
+    { "image": "/images/build/bts-commissioning.webp", "label": "Container Commissioning" }
+  ],
+  "footer_note": "© 2026 Crystal Logistic Cool Chain Ltd. All rights reserved. Reefer container rental & leasing across Maharashtra."
+}

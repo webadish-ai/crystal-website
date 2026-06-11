@@ -1,0 +1,94 @@
+{
+  "_template": "landing-conversion",
+  "meta_title": "Reefer Container Rental & Leasing in Karnataka | Crystal Group",
+  "meta_description": "Rent or lease reefer containers across Karnataka — Bengaluru, Mysuru, Mangaluru and more. From ₹1,300/day. 24/7 temperature monitoring. FSSAI-compliant. Get a free quote.",
+  "topbar_whatsapp": "https://wa.me/919880012345?text=Hi%2C%20I%20need%20a%20quote%20for%20reefer%20container%20rental%20in%20Karnataka.",
+  "topbar_phone": "+91 98800 12345",
+  "hero_eyebrow": "Crystal Group · Karnataka",
+  "hero_heading": "Reefer Container <strong>Rental & Leasing</strong> in Karnataka",
+  "hero_image": "",
+  "hero_pricing": [
+    { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
+    { "label": "Leasing from", "value": "₹28,000/month", "note": "*T&C apply" }
+  ],
+  "hero_disclaimer": "*Prices indicative. Final quote based on container size, duration and delivery location. GST at 18% applicable on all rentals.",
+  "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
+  "form_service": "Reefer Container Rental — Karnataka",
+  "form_submit_label": "Request My Quote",
+  "form_disclaimer": "We'll call you within 2 business hours. No spam, ever.",
+  "locations": [
+    "Bengaluru",
+    "Mysuru",
+    "Mangaluru",
+    "Hubli–Dharwad",
+    "Belagavi",
+    "Tumkur",
+    "Davangere",
+    "Shivamogga",
+    "Kalaburagi"
+  ],
+  "gallery": [
+    { "image": "", "label": "20 ft Reefer Container" },
+    { "image": "", "label": "40 ft High-Cube Reefer" },
+    { "image": "", "label": "Temperature Control Panel" },
+    { "image": "", "label": "Interior — Cold Storage View" },
+    { "image": "", "label": "Loading & Unloading Bay" },
+    { "image": "", "label": "Fleet at Bengaluru Depot" }
+  ],
+  "usp_heading": "Why Crystal Group for Reefer Containers?",
+  "usp_points": [
+    "<strong>Pan-Karnataka fleet</strong> — containers available across 9+ cities with same-week delivery.",
+    "<strong>-25°C to +15°C</strong> operating range — suitable for pharma, dairy, seafood, horticulture and frozen foods.",
+    "<strong>24/7 remote monitoring</strong> — real-time temperature tracking with SMS/email alerts on every unit.",
+    "<strong>Flexible terms</strong> — rent for a single day or lease for 12 months. No lock-in penalties, no hidden fees.",
+    "<strong>FSSAI-compliant</strong> containers, professionally maintained and sanitised between every assignment.",
+    "<strong>3,000+ successful cold chain assignments</strong> completed across South India since 2007."
+  ],
+  "usp_cta_label": "Enquire Now — It's Free",
+  "usp_cta_href": "#enquire",
+  "serve_heading": "Industries We Serve",
+  "serve_items": [
+    "Pharmaceuticals & Vaccines",
+    "Dairy & Milk Products",
+    "Seafood & Marine Exports",
+    "Fresh Fruits & Vegetables",
+    "Ice Cream & Frozen Desserts",
+    "Event & Hospitality Catering",
+    "Floriculture & Nurseries",
+    "Chemical & Specialty Cargo",
+    "Poultry & Meat Processing",
+    "Confectionery & Bakery"
+  ],
+  "testimonials_heading": "Trusted by Industry Leaders Across Karnataka",
+  "testimonials_subheading": "Businesses across Karnataka rely on Crystal Group for reliable, compliant cold chain logistics.",
+  "testimonials": [
+    {
+      "company": "Nandi Dairy Pvt. Ltd.",
+      "logo": "",
+      "color": "#0F2854",
+      "text": "Crystal Group's reefer containers have been a game-changer for our inter-city milk distribution. Temperature consistency is excellent and the team is always responsive. We've been with them for over two years now."
+    },
+    {
+      "company": "BioMed Pharma, Bengaluru",
+      "logo": "",
+      "color": "#1A5276",
+      "text": "We needed last-minute cold chain capacity for a clinical trial consignment. Crystal Group arranged two 20 ft reefers within 48 hours. Impeccable service and full documentation provided."
+    },
+    {
+      "company": "Coastal Catch Exports, Mangaluru",
+      "logo": "",
+      "color": "#0E6655",
+      "text": "Reliable, hygienic, and competitively priced. Our seafood quality during transit improved significantly since we moved to Crystal Group containers. Their monitoring system gives us real-time confidence."
+    },
+    {
+      "company": "FreshMart Retail Chain",
+      "logo": "",
+      "color": "#784212",
+      "text": "We lease three 40 ft reefers on a monthly basis for our Bengaluru distribution hub. The remote monitoring feature gives us complete peace of mind and our audit trails are always clean."
+    }
+  ],
+  "sticky_cta_label": "Get Quote",
+  "sticky_cta_href": "#enquire",
+  "footer_note": "© 2025 Crystal Group. All rights reserved. Reefer container rental & leasing across Karnataka.",
+  "footer_phone": "+91 98800 12345"
+}

@@ -1,0 +1,25 @@
+{
+  "hero_headline": "Product Name",
+  "hero_subheadline": "One-line description of what this product does.",
+  "hero_image": "",
+  "overview": "Describe the product in 2-3 sentences.",
+  "specs": [
+    {
+      "label": "Temperature Range",
+      "value": "-25°C to +15°C"
+    },
+    {
+      "label": "Capacity",
+      "value": "20 ft / 40 ft"
+    }
+  ],
+  "features": [
+    "Feature one — what makes this product stand out.",
+    "Feature two — another key advantage.",
+    "Feature three — operational or technical benefit."
+  ],
+  "cta_headline": "Interested in this product?",
+  "cta_text": "Get a Quote",
+  "cta_href": "/contact",
+  "_template": "store-product"
+}
