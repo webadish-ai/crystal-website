@@ -127,19 +127,19 @@
       "solutions_links": [
         {
           "label": "Build",
-          "href": "/built-to-suit"
+          "href": "/build/built-to-suit"
         },
         {
           "label": "Store",
-          "href": "/warehouse"
+          "href": "/store/cold-storage"
         },
         {
           "label": "Move",
-          "href": "/transportation"
+          "href": "/move"
         },
         {
           "label": "Process",
-          "href": "/food-processing"
+          "href": "/process"
         },
         {
           "label": "Solve",
@@ -150,11 +150,11 @@
       "company_links": [
         {
           "label": "About",
-          "href": "/about-us"
+          "href": "/about"
         },
         {
           "label": "Impact",
-          "href": "/case-studies"
+          "href": "/impact"
         },
         {
           "label": "Blog",
@@ -162,11 +162,11 @@
         },
         {
           "label": "Careers",
-          "href": "/career"
+          "href": "/careers"
         },
         {
           "label": "Contact",
-          "href": "/contact-us"
+          "href": "/contact"
         }
       ],
       "contact_label": "Contact",

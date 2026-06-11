@@ -21,7 +21,7 @@ const navItems = [
     href: '/#solutions',
     activePathStart: '/build',
     subLinks: [
-      { name: 'Built to Suit', desc: 'Design, Build & Operate', icon: <FiPackage className="text-xl shrink-0" />, href: '/built-to-suit' },
+      { name: 'Built to Suit', desc: 'Design, Build & Operate', icon: <FiPackage className="text-xl shrink-0" />, href: '/build/built-to-suit' },
       { name: 'Engineering & Construction', desc: 'Full EPC project delivery', icon: <FiTool className="text-xl shrink-0" />, href: '/build-epc' },
     ],
   },
@@ -30,18 +30,18 @@ const navItems = [
     href: '/#solutions',
     activePathStart: '/store',
     subLinks: [
-      { name: 'Cold Storage', desc: 'Temp-controlled warehousing', icon: <FiThermometer className="text-xl shrink-0" />, href: '/warehouse' },
+      { name: 'Cold Storage', desc: 'Temp-controlled warehousing', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store/cold-storage' },
       { name: '3PL Management', desc: 'Full supply chain outsourcing', icon: <FiTrendingUp className="text-xl shrink-0" />, href: '/store-3pl' },
       {
         name: 'Portable Cold Storage', desc: 'Containers & modular units', icon: <FiBox className="text-xl shrink-0" />, href: '/store-portable-cold-storage',
         nestedLinks: [
           { name: 'Portable Cold Storage: Overview', desc: 'View all units & solutions', icon: <FiBox className="text-xl shrink-0" />, href: '/store-portable-cold-storage' },
-          { name: 'Reefer Containers', desc: 'Portable site cold storage', icon: <FiTruck className="text-xl shrink-0" />, href: '/reefer-containers' },
-          { name: 'Blast Freezers', desc: 'Rapid industrial freezing', icon: <FiWind className="text-xl shrink-0" />, href: '/blast-freezer' },
-          { name: 'Super Store', desc: 'High-volume modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/super-store-reefer' },
-          { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/super-freezer' },
-          { name: 'ISO Tanks', desc: 'Liquid cargo transport', icon: <FiActivity className="text-xl shrink-0" />, href: '/iso-tank-container' },
-          { name: 'AMC & Spare Parts', desc: '24/7 maintenance support', icon: <FiShield className="text-xl shrink-0" />, href: '/amc-spareparts' },
+          { name: 'Reefer Containers', desc: 'Portable site cold storage', icon: <FiTruck className="text-xl shrink-0" />, href: '/store/reefer-containers' },
+          { name: 'Blast Freezers', desc: 'Rapid industrial freezing', icon: <FiWind className="text-xl shrink-0" />, href: '/store/blast-freezer' },
+          { name: 'Super Store', desc: 'High-volume modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/store/super-store' },
+          { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store/super-freezer' },
+          { name: 'ISO Tanks', desc: 'Liquid cargo transport', icon: <FiActivity className="text-xl shrink-0" />, href: '/store/iso-tanks' },
+          { name: 'AMC & Spare Parts', desc: '24/7 maintenance support', icon: <FiShield className="text-xl shrink-0" />, href: '/store/amc-spareparts' },
           { name: 'Bhubaneswar', desc: 'Cold storage facility, Odisha', icon: <FiActivity className="text-xl shrink-0" />, href: '/locations/bhubaneswar' },
         ],
       },
@@ -62,18 +62,18 @@ const navItems = [
   },
   {
     name: 'Move',
-    href: '/transportation',
+    href: '/move',
     activePathStart: '/move',
     subLinks: [
-      { name: 'Transportation', desc: 'Pan-India cold chain logistics', icon: <FiTruck className="text-xl shrink-0" />, href: '/transportation' },
+      { name: 'Transportation', desc: 'Pan-India cold chain logistics', icon: <FiTruck className="text-xl shrink-0" />, href: '/move' },
     ],
   },
   {
     name: 'Process',
-    href: '/food-processing',
+    href: '/process',
     activePathStart: '/process',
     subLinks: [
-      { name: 'Fruits & Vegetables Processing', desc: 'Pre-cooling, sorting & packing', icon: <FiActivity className="text-xl shrink-0" />, href: '/food-processing' },
+      { name: 'Fruits & Vegetables Processing', desc: 'Pre-cooling, sorting & packing', icon: <FiActivity className="text-xl shrink-0" />, href: '/process' },
       { name: 'Blast Freezing', desc: 'Rapid industrial freezing services', icon: <FiWind className="text-xl shrink-0" />, href: '/process-bfs' },
     ],
   },
@@ -90,7 +90,7 @@ const navItems = [
       { name: 'Pallet Guide — Super Store', desc: 'Modular storage pallet guide', icon: <FiBox className="text-xl shrink-0" />, href: '/solve/pallet-guide-superstore' },
     ],
   },
-  { name: 'Impact', href: '/case-studies' },
+  { name: 'Impact', href: '/impact' },
   { name: 'About', href: '/about' },
   { name: 'Careers', href: '/careers' },
 ];

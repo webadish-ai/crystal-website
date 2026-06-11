@@ -33,42 +33,42 @@ const sLabel    = (key: string) => key.replace(/^S\d+\s+/, '');
 /* Product range cards */
 const products = [
   {
-    id: '06a', name: 'Reefer Containers', href: '/reefer-containers',
+    id: '06a', name: 'Reefer Containers', href: '/store/reefer-containers',
     tags: ['+25°C to −30°C', '10ft · 20ft · 40ft'],
     icon: <FiTruck />,
     img: reeferHero,
     gridStyle: { gridColumn: '1 / 3', gridRow: '1 / 2' },
   },
   {
-    id: '06b', name: 'Blast Freezer Containers', href: '/blast-freezer',
+    id: '06b', name: 'Blast Freezer Containers', href: '/store/blast-freezer',
     tags: ['Down to −40°C', '20ft · 40ft'],
     icon: <FiWind />,
     img: blastHero,
     gridStyle: { gridColumn: '3 / 4', gridRow: '1 / 2' },
   },
   {
-    id: '06c', name: 'Super Store', href: '/super-store-reefer',
+    id: '06c', name: 'Super Store', href: '/store/super-store',
     tags: ['−30°C to +25°C', 'Modular'],
     icon: <FiLayers />,
     img: superstoreHero,
     gridStyle: { gridColumn: '4 / 5', gridRow: '1 / 2' },
   },
   {
-    id: '06d', name: 'Super Freezer', href: '/super-freezer',
+    id: '06d', name: 'Super Freezer', href: '/store/super-freezer',
     tags: ['Down to −70°C', '20ft · 40ft'],
     icon: <FiThermometer />,
     img: superfreezerHero,
     gridStyle: { gridColumn: '1 / 2', gridRow: '2 / 3' },
   },
   {
-    id: '06e', name: 'ISO Tanks', href: '/iso-tank-container',
+    id: '06e', name: 'ISO Tanks', href: '/store/iso-tanks',
     tags: ['Ambient to controlled', '20ft'],
     icon: <FiActivity />,
     img: isoHero,
     gridStyle: { gridColumn: '2 / 3', gridRow: '2 / 3' },
   },
   {
-    id: '06f', name: 'AMC & Spare Parts', href: '/amc-spareparts',
+    id: '06f', name: 'AMC & Spare Parts', href: '/store/amc-spareparts',
     tags: ['All ranges', 'Pan-India'],
     icon: <FiShield />,
     img: amcHero,

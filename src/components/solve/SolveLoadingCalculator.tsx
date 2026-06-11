@@ -9,9 +9,9 @@ import CharReveal from '@components/core/CharReveal';
    DATA
 ───────────────────────────────────────────── */
 const CONTAINERS = [
-  { id: 'reefer-10',        name: 'Reefer 10ft',          temp_min: -25, temp_max: 25,  volume: 12.15, load_mt: 8,  href: '/reefer-containers',      category: 'reefer'       },
-  { id: 'reefer-20',        name: 'Reefer 20ft',          temp_min: -25, temp_max: 25,  volume: 28.35, load_mt: 25, href: '/reefer-containers',      category: 'reefer'       },
-  { id: 'reefer-40',        name: 'Reefer 40ft',          temp_min: -25, temp_max: 25,  volume: 68.46, load_mt: 30, href: '/reefer-containers',      category: 'reefer'       },
+  { id: 'reefer-10',        name: 'Reefer 10ft',          temp_min: -25, temp_max: 25,  volume: 12.15, load_mt: 8,  href: '/store/reefer-containers',      category: 'reefer'       },
+  { id: 'reefer-20',        name: 'Reefer 20ft',          temp_min: -25, temp_max: 25,  volume: 28.35, load_mt: 25, href: '/store/reefer-containers',      category: 'reefer'       },
+  { id: 'reefer-40',        name: 'Reefer 40ft',          temp_min: -25, temp_max: 25,  volume: 68.46, load_mt: 30, href: '/store/reefer-containers',      category: 'reefer'       },
   { id: 'blast-20',         name: 'Blast Freezer 20ft',   temp_min: -40, temp_max: 0,   volume: 28.35, load_mt: 10, href: '/store/blast-freezer',    category: 'blast'        },
   { id: 'blast-40',         name: 'Blast Freezer 40ft',   temp_min: -40, temp_max: 0,   volume: 68.46, load_mt: 20, href: '/store/blast-freezer',    category: 'blast'        },
   { id: 'super-freezer-20', name: 'Super Freezer 20ft',   temp_min: -70, temp_max: -25, volume: 28.35, load_mt: 10, href: '/store/super-freezer',    category: 'super-freezer'},
