@@ -18,7 +18,7 @@ import blastHeroRaw      from '../../data/images/store/Blast-Freezer/Blast-freez
 import superstoreHeroRaw from '../../data/images/store/superstore/superstore-hero.png';
 import superfreezerHeroRaw from '../../data/images/store/superfreezer/superfreezer-hero.png';
 import isoHeroRaw        from '../../data/images/store/iso/ISO-Tank-hero.png';
-import amcHeroRaw        from '../../data/images/store/Technical Drawings  (23).jpg';
+import amcHeroRaw        from '../../data/images/store/amc.jpeg';
 
 const reeferHero      = typeof reeferHeroRaw      === 'string' ? reeferHeroRaw      : (reeferHeroRaw      as any).src;
 const blastHero       = typeof blastHeroRaw       === 'string' ? blastHeroRaw       : (blastHeroRaw       as any).src;
