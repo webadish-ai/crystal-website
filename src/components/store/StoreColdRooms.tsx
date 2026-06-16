@@ -6,6 +6,8 @@ import Button from '@components/core/Button';
 import CharReveal from '@components/core/CharReveal';
 import coldRoomsData from '@data/store-cold-rooms.json';
 import { useCmsData } from '../../hooks/useCmsData';
+import coldRoomHeroRaw from '../../data/images/store/cold-room-hero.jpeg';
+const coldRoomHero = typeof coldRoomHeroRaw === 'string' ? coldRoomHeroRaw : (coldRoomHeroRaw as any).src;
 
 interface TempOption { label: string; name: string; desc: string; industries: string[] }
 interface Feature { title: string; desc: string }
@@ -49,6 +51,7 @@ const StoreColdRooms: React.FC = () => {
 
       {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
+        <img src={coldRoomHero} alt="Cold rooms" loading="eager" decoding="async" className="absolute inset-0 z-0 w-full h-full object-cover" />
         <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(15,40,84,0.9)_0%,rgba(15,40,84,0.7)_30%,rgba(15,40,84,0.35)_55%,transparent_78%)]" />
 
         <motion.div
