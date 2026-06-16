@@ -2,6 +2,12 @@
   "redirects": [
     { "source": "/sitemap/", "destination": "/sitemap-index.xml", "permanent": true },
 
+    { "source": "/tag/:slug*", "destination": "/blog/", "permanent": true },
+    { "source": "/category/:slug*", "destination": "/blog/", "permanent": true },
+
+    { "source": "/impact/fmcg-reefer-trucks/", "destination": "/impact/qsr-fmcg-reefer-trucks/", "permanent": true },
+    { "source": "/impact/q-commerce-rapid-deployment/", "destination": "/impact/q-commerce-cold-storage/", "permanent": true },
+
     { "source": "/jobs/", "destination": "/careers/", "permanent": true },
     { "source": "/job-openings/", "destination": "/careers/", "permanent": true },
     { "source": "/career/", "destination": "/careers/", "permanent": true },
