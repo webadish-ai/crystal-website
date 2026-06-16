@@ -8,10 +8,10 @@ import { useCmsData } from '../../hooks/useCmsData';
 import CharReveal from '@components/core/CharReveal';
 
 const buildVideoRaw = '/videos/build.mp4';
-import bentoImg1Raw from '../../assets/pages/build/Warehouse site planning discussion.png';
-import bentoImg2Raw from '../../assets/pages/build/Reviewing blueprints at construction site.png';
-import bentoImg3Raw from '../../assets/pages/build/ChatGPT Image Apr 10, 2026, 02_17_40 PM.png';
-import bentoImg4Raw from '../../assets/pages/build/7a1a6198-cd52-4f2f-a746-8574fd61692c.png';
+import bentoImg1Raw from '../../assets/pages/build/site-planning.png';
+import bentoImg2Raw from '../../assets/pages/build/blueprints.png';
+import bentoImg3Raw from '../../assets/pages/build/site-overview.png';
+import bentoImg4Raw from '../../assets/pages/build/facility-model.png';
 
 const getSrc = (a: any): string => (typeof a === 'string' ? a : a.src);
 const buildVideoSrc = getSrc(buildVideoRaw);

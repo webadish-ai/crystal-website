@@ -9,7 +9,7 @@ import Button from '@components/core/Button';
 import tplData from '@data/store-3pl.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import CharReveal from '@components/core/CharReveal';
-import heroImgRaw from '../../data/images/store/3pl/Crystal Superstore Strategic Temperature-Controlled Infrastructure A Specialized Proposal for Hind Terminal ICD & CFS Operations (35).png';
+import heroImgRaw from '../../data/images/store/3pl/hero.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 
 const isDataKey = (k: string) => k !== k.toUpperCase();

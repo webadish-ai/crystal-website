@@ -4,7 +4,7 @@ import { FiArrowRight, FiThermometer, FiGrid, FiArchive, FiBox } from 'react-ico
 import processData from '../../data/process-fvp.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
-import heroImgRaw from '../../data/images/process/Gemini_Generated_Image_lxtc84lxtc84lxtc (1).png';
+import heroImgRaw from '../../data/images/process/fvp-hero.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 const heroVideo = '/videos/process-fvp.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';

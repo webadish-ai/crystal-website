@@ -14,9 +14,9 @@ const certCardVariants = {
 import homepageData from '@data/homepage.json';
 import type { S9Section } from '@types/homepage';
 
-import fssaiLogo    from '../../assets/certification/WhatsApp Image 2025-06-18 at 23.39.17_3d812793.jpg?url';
-import mpedaLogo    from '../../assets/certification/WhatsApp Image 2025-06-18 at 23.41.22_26a1f149.jpg?url';
-import eicLogo      from '../../assets/certification/WhatsApp Image 2025-06-18 at 23.42.53_c19004eb.jpg?url';
+import fssaiLogo    from '../../assets/certification/cert-fssai.jpg?url';
+import mpedaLogo    from '../../assets/certification/cert-mpeda.jpg?url';
+import eicLogo      from '../../assets/certification/cert-eic.jpg?url';
 import fsscLogo     from '../../assets/certification/fssc-220005433.logowik.com.webp?url';
 import iso22000Logo from '../../assets/certification/images.png?url';
 import iso9001Logo  from '../../assets/certification/pngtree-iso-9001-certified-vector-png-image_15374165.png?url';

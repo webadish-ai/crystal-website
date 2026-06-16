@@ -11,7 +11,7 @@ import Button from '@components/core/Button';
 import portableData from '@data/store-portablecs-all.json';
 import CharReveal from '@components/core/CharReveal';
 import ImageDialog from './ImageDialog';
-import heroImgRaw from '../../data/images/store/Blast-Freezer/Blast-freezer-hero.png';
+import heroImgRaw from '../../data/images/store/blast-freezer/hero.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 
 const parent   = portableData["06 Store: Portable Cold Storage Containers"];
@@ -72,15 +72,15 @@ const specRows = [
 
 /* ─────── SIZE IMAGES ─────── */
 const _raw10ft = import.meta.glob<string>(
-  '../../data/images/store/Blast-Freezer/10ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
+  '../../data/images/store/blast-freezer/10ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
   { eager: true, query: '?url', import: 'default' },
 );
 const _raw20ft = import.meta.glob<string>(
-  '../../data/images/store/Blast-Freezer/20ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
+  '../../data/images/store/blast-freezer/20ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
   { eager: true, query: '?url', import: 'default' },
 );
 const _raw40ft = import.meta.glob<string>(
-  '../../data/images/store/Blast-Freezer/40ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
+  '../../data/images/store/blast-freezer/40ft/*.{jpg,jpeg,png,JPG,JPEG,PNG}',
   { eager: true, query: '?url', import: 'default' },
 );
 const imgs10ft = Object.values(_raw10ft);

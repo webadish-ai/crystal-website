@@ -4,7 +4,7 @@ import { FiArrowRight, FiTruck, FiMapPin, FiPackage } from 'react-icons/fi';
 import moveData from '../../data/move.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
-import heroImgRaw from '../../data/images/move/Reefer Trucks (1).jpeg';
+import heroImgRaw from '../../data/images/move/reefer-truck-fleet.jpeg';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 const heroVideo = '/videos/move.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';

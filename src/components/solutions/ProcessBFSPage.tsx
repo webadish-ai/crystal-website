@@ -8,10 +8,10 @@ import {
 import bfsData from '../../data/process-bfs.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
-import heroImgRaw from '../../data/images/process/Gemini_Generated_Image_v9hfr5v9hfr5v9hf.png';
+import heroImgRaw from '../../data/images/process/bfs-hero.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
-import blastImg1Raw from '../../data/images/store/Blast-Freezer/facility-blast.jpeg';
-import blastImg2Raw from '../../data/images/store/Blast-Freezer/Blast-freezer-hero.png';
+import blastImg1Raw from '../../data/images/store/blast-freezer/facility.jpeg';
+import blastImg2Raw from '../../data/images/store/blast-freezer/hero.png';
 const blastImg1 = typeof blastImg1Raw === 'string' ? blastImg1Raw : (blastImg1Raw as any).src;
 const blastImg2 = typeof blastImg2Raw === 'string' ? blastImg2Raw : (blastImg2Raw as any).src;
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';

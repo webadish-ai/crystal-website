@@ -4,7 +4,7 @@ import { FiArrowRight, FiTarget, FiPenTool, FiZap, FiTrendingUp } from 'react-ic
 import solveData from '../../data/solve.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
-import heroImgRaw from '../../data/images/solve/Warehouse team discussion on logistics.png';
+import heroImgRaw from '../../data/images/solve/team-discussion.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 const heroVideo = '/videos/solve.mp4';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';

@@ -10,11 +10,11 @@ import Button from '@components/core/Button';
 import portableData from '@data/store-portablecs-all.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import CharReveal from '@components/core/CharReveal';
-import heroImgRaw from '../../data/images/store/portablecolds/Crystal Superstore Strategic Temperature-Controlled Infrastructure A Specialized Proposal for Hind Terminal ICD & CFS Operations (36).png';
+import heroImgRaw from '../../data/images/store/portablecolds/hero.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
 
 import reeferHeroRaw     from '../../data/images/store/reefer/reefer-hero.png';
-import blastHeroRaw      from '../../data/images/store/Blast-Freezer/Blast-freezer-hero.png';
+import blastHeroRaw      from '../../data/images/store/blast-freezer/hero.png';
 import superstoreHeroRaw from '../../data/images/store/superstore/superstore-hero.png';
 import superfreezerHeroRaw from '../../data/images/store/superfreezer/superfreezer-hero.png';
 import isoHeroRaw        from '../../data/images/store/iso/ISO-Tank-hero.png';
