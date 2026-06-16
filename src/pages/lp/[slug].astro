@@ -12,26 +12,26 @@ import uae from '../../data/lp/uae.json'
 import bhubaneswar from '../../data/lp/bhubaneswar.json'
 
 const LP_PAGES: Record<string, typeof telangana> = {
-  'rent-buy-reefer-containers-landing-page-telangana': telangana,
-  'rent-buy-reefer-containers-landing-page-karnataka': karnataka,
-  'rent-buy-reefer-containers-landing-page-andhra-pradesh': andhraPradesh,
-  'rent-buy-reefer-containers-landing-page-gujarat': gujarat,
-  'rent-buy-reefer-containers-landing-page-maharashtra': maharashtra,
-  'rent-buy-reefer-containers-landing-page-tamil-nadu': tamilNadu,
-  'rent-buy-reefer-containers-landing-page-uae': uae,
-  'rent-buy-reefer-containers-landing-page-bhubaneswar': bhubaneswar,
+  'telangana': telangana,
+  'karnataka': karnataka,
+  'andhra-pradesh': andhraPradesh,
+  'gujarat': gujarat,
+  'maharashtra': maharashtra,
+  'tamil-nadu': tamilNadu,
+  'uae': uae,
+  'bhubaneswar': bhubaneswar,
 }
 
 export function getStaticPaths() {
   return [
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-telangana' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-karnataka' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-andhra-pradesh' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-gujarat' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-maharashtra' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-tamil-nadu' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-uae' } },
-    { params: { slug: 'rent-buy-reefer-containers-landing-page-bhubaneswar' } },
+    { params: { slug: 'telangana' } },
+    { params: { slug: 'karnataka' } },
+    { params: { slug: 'andhra-pradesh' } },
+    { params: { slug: 'gujarat' } },
+    { params: { slug: 'maharashtra' } },
+    { params: { slug: 'tamil-nadu' } },
+    { params: { slug: 'uae' } },
+    { params: { slug: 'bhubaneswar' } },
   ]
 }
 
