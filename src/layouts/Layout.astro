@@ -38,7 +38,7 @@ const pathToSeoKey: Record<string, string> = {
 	'transportation':    'move',
 	'case-studies':      'impact',
 	'warehouse':         'store-colds',
-	'food-processing':   'process-fvp',
+	'process':           'process-fvp',
 };
 const rawSlug = Astro.url.pathname.replace(/^\//, '').replace(/\/$/, '');
 const seoKey = pathToSeoKey[rawSlug] ?? (rawSlug === '' ? 'index' : rawSlug);
