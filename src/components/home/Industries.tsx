@@ -5,7 +5,7 @@ import fmcgImg from '../../assets/fmcg.png';
 import qsrImg from '../../assets/QSR.png';
 import dairyImg from '../../assets/dairy.png';
 import agriImg from '../../assets/vege.png';
-import chocoImg from '../../assets/confectionery.png';
+import meatImg from '../../data/images/meat.jpeg';
 import {
   containerVariants,
   itemVariants,
@@ -22,7 +22,7 @@ const getSrc = (img: { src: string } | string) => typeof img === 'string' ? img 
 const s6 = homepageData.homepage.sections.find(s => s.id === 'S6')! as unknown as S6Section;
 
 // Images indexed to match JSON industries order: Pharma, FMCG, Dairy, Seafood, Meat, Q-Commerce
-const images = [pharmaImg, fmcgImg, dairyImg, agriImg, chocoImg, qsrImg];
+const images = [pharmaImg, fmcgImg, dairyImg, agriImg, meatImg, qsrImg];
 const imagePositions = ['bg-center', 'bg-center', 'bg-center', 'bg-center', 'bg-center', 'bg-center'];
 
 const industriesData = s6.industries.map((name, i) => ({
