@@ -2,9 +2,14 @@
 import Layout from '../../layouts/Layout.astro';
 import StoreDryContainer from '../../components/store/StoreDryContainer';
 import data from '../../data/store-dry-containers.json';
-import heroImg from '../../data/images/store/container-exterior.jpg';
+import img20ft from '../../data/images/store/containers/dry-20ft.png';
+import img40ft from '../../data/images/store/containers/dry-40ft.jpg';
+const heroImages = [
+  (img20ft as any).src ?? img20ft,
+  (img40ft as any).src ?? img40ft,
+];
 ---
 
 <Layout title={data.meta.title} description={data.meta.description}>
-  <StoreDryContainer client:load data={data} heroImage={(heroImg as any).src ?? heroImg} />
+  <StoreDryContainer client:load data={data} heroImages={heroImages} />
 </Layout>

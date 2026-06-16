@@ -34,6 +34,7 @@ interface DryContainerData {
 interface Props {
   data: DryContainerData;
   heroImage?: string;
+  heroImages?: string[];
 }
 
 /* ── SPEC ACCORDION CONFIG ── */
@@ -88,8 +89,9 @@ const SectionHeader = ({ eyebrow, head, align = 'left', dark = false }: {
 
 /* ── MAIN COMPONENT ── */
 
-const StoreDryContainer: React.FC<Props> = ({ data, heroImage }) => {
+const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => {
   const [activeSize, setActiveSize] = useState(() => Math.min(1, data.specs.length - 1));
+  const activeHeroImage = heroImages?.[activeSize] ?? heroImage;
   const [openSpec, setOpenSpec]     = useState<string | null>(null);
   const [openFaq, setOpenFaq]       = useState<number | null>(null);
 
@@ -102,9 +104,9 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage }) => {
 
       {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
-        {heroImage && (
+        {activeHeroImage && (
           <img
-            src={heroImage}
+            src={activeHeroImage}
             alt={data.hero.name}
             loading="eager"
             decoding="async"
@@ -162,9 +164,9 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage }) => {
                   >
                     {/* Image container */}
                     <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-secondary/10">
-                      {heroImage && (
+                      {activeHeroImage && (
                         <img
-                          src={heroImage}
+                          src={activeHeroImage}
                           alt={`${spec.size} dry container`}
                           loading="lazy"
                           decoding="async"
