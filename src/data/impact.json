@@ -1126,6 +1126,68 @@
             },
             "pdf": null,
             "slug": "food-delivery-storage"
+          },
+          {
+            "tag": "Store · Pharma",
+            "pdf": null,
+            "title": "20-ft Refurbished Reefer Container on Lease for Pharmaceutical Cold Storage",
+            "client": "Leading Pharmaceutical Manufacturer",
+            "location": "Ahmedabad & Pune",
+            "product": "20-ft Refurbished Reefer Container",
+            "challenge": [
+              "Pharma-grade cold storage needed without permanent infrastructure investment",
+              "Consistent temperature control required despite frequent daily door openings",
+              "Long-term storage requirement with operational flexibility",
+              "Safe storage of high-value pharmaceutical products in ambient Indian conditions",
+              "Preference for leased solution over capital expenditure"
+            ],
+            "solution": [
+              "20-ft refurbished reefer container on 5-year lease model",
+              "Single-inlet temperature system for stable, consistent cooling",
+              "Flameproof LED lighting for safe internal visibility",
+              "Strip curtains to minimise temperature loss during door openings",
+              "Pharma-ready refurbished interiors with reliable performance",
+              "Delivered, installed, and operational with minimal site disruption"
+            ],
+            "results": [
+              "Stable temperature integrity maintained despite daily door operations",
+              "Zero construction time and no permanent infrastructure investment",
+              "Cost-efficient 5-year lease instead of heavy CAPEX",
+              "Reduced risk of product degradation for sensitive pharma inventory",
+              "Scalable and flexible cold storage aligned with production needs"
+            ],
+            "outcomes": [
+              {
+                "kpi": "Lease Period",
+                "value": "5 Years"
+              },
+              {
+                "kpi": "Units Deployed",
+                "value": "1"
+              },
+              {
+                "kpi": "Cargo Capacity",
+                "value": "27,000 kg"
+              },
+              {
+                "kpi": "Container Model",
+                "value": "Refurbished"
+              },
+              {
+                "kpi": "Application",
+                "value": "Medicine Storage"
+              },
+              {
+                "kpi": "Lighting",
+                "value": "Flameproof LED"
+              }
+            ],
+            "testimonial": {
+              "quote": "The solution gave us the flexibility we needed without locking capital into permanent infrastructure. Temperature stability and ease of operations were exactly what our pharma workflows demanded.",
+              "author": "Operations Team",
+              "company": "Leading Pharma Manufacturer"
+            },
+            "slug": "refurbished-pharma-storage"
           }
         ]
       },
