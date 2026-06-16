@@ -10,6 +10,10 @@ import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import heroImgRaw from '../../data/images/process/Gemini_Generated_Image_v9hfr5v9hfr5v9hf.png';
 const heroImg = typeof heroImgRaw === 'string' ? heroImgRaw : (heroImgRaw as any).src;
+import blastImg1Raw from '../../data/images/store/Blast-Freezer/Blast-freezer-hero.png';
+import blastImg2Raw from '../../data/images/store/Blast-Freezer/10ft/10ft Reefer Blast -join view.jpg';
+const blastImg1 = typeof blastImg1Raw === 'string' ? blastImg1Raw : (blastImg1Raw as any).src;
+const blastImg2 = typeof blastImg2Raw === 'string' ? blastImg2Raw : (blastImg2Raw as any).src;
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
@@ -49,7 +53,7 @@ const productMeta: Record<string, { icon: React.ReactNode; accent?: boolean }> =
 /* ── OFFERING DATA ── */
 const offeringMeta = [
   {
-    img: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+    img: blastImg1,
     icon: <FiMapPin />,
     specs: [
       { label: 'Capacity',      value: '10 MT/day'         },
@@ -58,7 +62,7 @@ const offeringMeta = [
     ],
   },
   {
-    img: 'https://images.unsplash.com/photo-1494412651409-8963ce7935a7?q=80&w=1200&auto=format&fit=crop',
+    img: blastImg2,
     icon: <FiTruck />,
     specs: [
       { label: 'Temperature',  value: 'Down to −40°C' },
