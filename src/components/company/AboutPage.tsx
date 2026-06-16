@@ -132,7 +132,7 @@ const AboutPage: React.FC = () => {
       {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=75&w=1400&auto=format&fit=crop"
+          src="/images/about/about-data.jpeg"
           alt="About Crystal"
           loading="eager"
           decoding="async"
