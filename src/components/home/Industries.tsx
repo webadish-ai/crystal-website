@@ -22,7 +22,7 @@ const getSrc = (img: { src: string } | string) => typeof img === 'string' ? img 
 const s6 = homepageData.homepage.sections.find(s => s.id === 'S6')! as unknown as S6Section;
 
 // Images indexed to match JSON industries order: Pharma, FMCG, Dairy, Seafood, Meat, Q-Commerce
-const images = [pharmaImg, fmcgImg, dairyImg, agriImg, qsrImg, chocoImg];
+const images = [pharmaImg, fmcgImg, dairyImg, agriImg, chocoImg, qsrImg];
 const imagePositions = ['bg-center', 'bg-center', 'bg-center', 'bg-center', 'bg-center', 'bg-center'];
 
 const industriesData = s6.industries.map((name, i) => ({

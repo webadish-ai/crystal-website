@@ -9,19 +9,18 @@ import {
   tc,
 } from '@components/core/animations';
 import homepageData from '@data/homepage.json';
+import impactData from '@data/impact.json';
 import type { S7Section } from '@types/homepage';
 import reeferBgRaw from '../../data/images/store/reefer/reefer-hero.png';
 const reeferBg = typeof reeferBgRaw === 'string' ? reeferBgRaw : (reeferBgRaw as any).src;
 
 const s7 = homepageData.homepage.sections.find(s => s.id === 'S7')! as unknown as S7Section;
 
-// Map JSON cases to component shape (tag = industry from JSON)
-const caseStudiesData = s7.cases.map(c => ({
-  tag: c.industry,
-  title: c.title,
-  details: c.details,
-  link: c.link,
-}));
+// Pull latest 4 case studies from impact.json (last-in = most recent)
+const allCaseStudies = (impactData.page.sections.find((s: any) => s.type === 'case_studies') as any).items as Array<{
+  tag: string; title: string; product: string; location: string; slug: string;
+}>;
+const latest4 = allCaseStudies.slice(-4).reverse(); // most recent first
 
 const wipeVariants = {
   hidden: { scaleX: 1, originX: 1 },
@@ -58,11 +57,9 @@ const CaseStudies: React.FC = () => {
         {/* Custom Flexbox Bento Grid layout */}
         <div className="flex flex-col md:flex-row gap-2 md:gap-3 flex-1 min-h-0 pb-2 w-full">
 
-          {/* Card 1: BIG (Left Side, ~45% width) */}
+          {/* Card 1: BIG (Left Side, ~45% width) — most recent case study */}
           <motion.a
-            href={caseStudiesData[0].link}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/impact/${latest4[0]?.slug}/`}
             variants={itemVariants}
             className="md:w-[45%] min-h-[160px] md:h-full relative p-5 md:p-8 flex flex-col justify-between bg-secondary text-primary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl rounded-sm"
           >
@@ -70,7 +67,7 @@ const CaseStudies: React.FC = () => {
             <img src={reeferBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none" />
             <div className="relative z-10 flex justify-between items-start">
               <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mt-1">
-                {caseStudiesData[0].tag}
+                {latest4[0]?.tag}
               </span>
               <div className="w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full border border-primary/10 flex items-center justify-center font-heading font-extrabold text-body-sm group-hover:bg-accent group-hover:text-secondary group-hover:border-accent transition-all duration-500">
                 {s7.view_label.toUpperCase()}
@@ -78,10 +75,10 @@ const CaseStudies: React.FC = () => {
             </div>
             <div className="relative z-10 mt-3 md:mt-8">
               <h3 className="font-heading font-extrabold text-h4 md:text-h3 leading-tight-none tracking-tighter mb-3 md:mb-6 text-primary group-hover:text-accent transition-colors duration-500">
-                {caseStudiesData[0].title}
+                {latest4[0]?.title}
               </h3>
               <p className="font-body text-body-sm text-primary/50 uppercase tracking-widest leading-relaxed">
-                {caseStudiesData[0].details.join(' · ')}
+                {[latest4[0]?.product, latest4[0]?.location].filter(Boolean).join(' · ')}
               </p>
             </div>
           </motion.a>
@@ -92,11 +89,11 @@ const CaseStudies: React.FC = () => {
             {/* Top Row: Cards 2 & 3 (Equal split) */}
             <div className="flex flex-row gap-2 md:gap-3 md:flex-1">
               {[1, 2].map(idx => (
-                <motion.div key={idx} variants={itemVariants} className="flex-1 min-h-[100px] relative p-4 md:p-6 flex flex-col bg-secondary text-primary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl rounded-sm">
+                <motion.a key={idx} href={`/impact/${latest4[idx]?.slug}/`} variants={itemVariants} className="flex-1 min-h-[100px] relative p-4 md:p-6 flex flex-col bg-secondary text-primary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl rounded-sm">
                   <motion.div className="absolute inset-0 z-50 bg-primary pointer-events-none" variants={wipeVariants} />
                   <div className="relative z-10 flex justify-between items-start">
                     <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mt-1 line-clamp-1 mr-2">
-                      {caseStudiesData[idx].tag}
+                      {latest4[idx]?.tag}
                     </span>
                     <div className="w-5 h-5 md:w-6 md:h-6 shrink-0 rounded-full border border-primary/10 flex items-center justify-center font-heading font-extrabold text-body-sm group-hover:bg-accent group-hover:text-secondary transition-all">
                       &rarr;
@@ -104,24 +101,24 @@ const CaseStudies: React.FC = () => {
                   </div>
                   <div className="relative z-10 mt-auto pt-4">
                     <h3 className="font-heading font-extrabold text-h4 leading-[1.15] tracking-tight mb-3 text-primary group-hover:text-accent transition-colors duration-500 line-clamp-2 md:line-clamp-3">
-                      {caseStudiesData[idx].title}
+                      {latest4[idx]?.title}
                     </h3>
                     <p className="font-body text-[10px] text-primary/50 uppercase tracking-widest leading-relaxed">
-                      {caseStudiesData[idx].details.join(' · ')}
+                      {[latest4[idx]?.product, latest4[idx]?.location].filter(Boolean).join(' · ')}
                     </p>
                   </div>
-                </motion.div>
+                </motion.a>
               ))}
             </div>
 
             {/* Bottom Row: Card 4 (66%) & Link Card (33%) */}
             <div className="flex flex-row gap-2 md:gap-3 md:flex-1">
-              {/* Card 4 (Larger width) */}
-              <motion.div variants={itemVariants} className="flex-1 min-h-[100px] relative p-4 md:p-6 flex flex-col bg-secondary text-primary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl rounded-sm">
+              {/* Card 4 */}
+              <motion.a href={`/impact/${latest4[3]?.slug}/`} variants={itemVariants} className="flex-1 min-h-[100px] relative p-4 md:p-6 flex flex-col bg-secondary text-primary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-xl rounded-sm">
                 <motion.div className="absolute inset-0 z-50 bg-primary pointer-events-none" variants={wipeVariants} />
                 <div className="relative z-10 flex justify-between items-start">
                   <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent mt-1 line-clamp-1 mr-2">
-                    {caseStudiesData[3].tag}
+                    {latest4[3]?.tag}
                   </span>
                   <div className="w-5 h-5 md:w-6 md:h-6 shrink-0 rounded-full border border-primary/10 flex items-center justify-center font-heading font-extrabold text-body-sm group-hover:bg-accent group-hover:text-secondary transition-all">
                     &rarr;
@@ -129,21 +126,21 @@ const CaseStudies: React.FC = () => {
                 </div>
                 <div className="relative z-10 mt-auto pt-4">
                   <h3 className="font-heading font-extrabold text-h4 leading-[1.15] tracking-tight mb-3 text-primary group-hover:text-accent transition-colors duration-500 line-clamp-2 md:line-clamp-3">
-                    {caseStudiesData[3].title}
+                    {latest4[3]?.title}
                   </h3>
                   <p className="font-body text-[10px] text-primary/50 uppercase tracking-widest leading-relaxed">
-                    {caseStudiesData[3].details.join(' · ')}
+                    {[latest4[3]?.product, latest4[3]?.location].filter(Boolean).join(' · ')}
                   </p>
                 </div>
-              </motion.div>
+              </motion.a>
 
-              {/* Tiny Link Card (Smallest block) */}
-              <motion.div variants={itemVariants} className="w-1/4 sm:w-1/3 shrink-0 relative p-3 sm:p-4 flex items-center justify-center bg-accent text-secondary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:bg-secondary hover:text-primary rounded-sm cursor-pointer text-center min-h-[100px]">
-                 <motion.div className="absolute inset-0 z-50 bg-primary pointer-events-none" variants={wipeVariants} />
-                 <a href="#impact" className="relative z-10 font-heading font-extrabold text-body-md uppercase flex flex-col items-center justify-center gap-1 leading-tight-none tracking-tighter w-full">
-                   <span>{s7.cta.toUpperCase()} <span className="group-hover:translate-x-1 transition-transform inline-block">&rarr;</span></span>
-                 </a>
-              </motion.div>
+              {/* View All CTA card */}
+              <motion.a href="/impact/" variants={itemVariants} className="w-1/4 sm:w-1/3 shrink-0 relative p-3 sm:p-4 flex items-center justify-center bg-accent text-secondary group overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:bg-secondary hover:text-primary rounded-sm cursor-pointer text-center min-h-[100px]">
+                <motion.div className="absolute inset-0 z-50 bg-primary pointer-events-none" variants={wipeVariants} />
+                <span className="relative z-10 font-heading font-extrabold text-body-md uppercase flex flex-col items-center justify-center gap-1 leading-tight-none tracking-tighter w-full">
+                  {s7.cta.toUpperCase()} <span className="group-hover:translate-x-1 transition-transform inline-block">&rarr;</span>
+                </span>
+              </motion.a>
             </div>
 
           </div>
