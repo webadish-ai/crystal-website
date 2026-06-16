@@ -5,8 +5,7 @@ import { containerVariants, itemVariants, viewportOnce, tc } from '@components/c
 import Button from '@components/core/Button';
 import btsData from '@data/build-bts.json';
 import { useCmsData } from '../../hooks/useCmsData';
-// @ts-ignore
-import qcommBrochureUrl from '@data/brochures/Q-Comm Brochure 2026 (1).pdf?url';
+const qcommBrochureUrl = 'https://tr.ee/bUenXCXw9a';
 import CharReveal from '@components/core/CharReveal';
 
 const buildVideoRaw = '/videos/build.mp4';
@@ -348,7 +347,7 @@ const BuildBTS: React.FC = () => {
               <Button variant="primary" size="lg" href="/contact">
                 {data["Hero Page"].CTA.replace(/\s*®$/, '')} <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
-              <Button variant="ghost" size="lg" href={qcommBrochureUrl} download="Q-Comm-Brochure-2026.pdf">
+              <Button variant="ghost" size="lg" href={qcommBrochureUrl} target="_blank">
                 {data["Hero Page"].CTA_BROCHURE} <FiDownload className="text-lg transition-transform group-hover/btn:translate-y-1" />
               </Button>
             </div>

@@ -497,7 +497,7 @@ const StoreBlastFreezer: React.FC = () => {
             <div className="font-body text-body-lg text-primary/80 leading-[1.6] mb-8 font-medium" dangerouslySetInnerHTML={{ __html: d["Hero Page"].SUBHEADLINE }} />
             <div className="flex flex-wrap gap-4">
               <Button variant="primary" size="lg" href="/contact">{heroCtas[0]} <FiArrowRight className="text-lg" /></Button>
-              <Button variant="ghost" size="lg" href="/contact">{heroCtas[2] ?? heroCtas[1]} <FiDownload className="text-lg" /></Button>
+              <Button variant="ghost" size="lg" href="https://tr.ee/MXuPd4-grQ" target="_blank">{heroCtas[2] ?? heroCtas[1]} <FiDownload className="text-lg" /></Button>
             </div>
           </motion.div>
         </motion.div>
@@ -599,7 +599,7 @@ const StoreBlastFreezer: React.FC = () => {
               </div>
               <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 shrink-0">
                 <Button variant="primary" size="lg" href="/contact">Request a quote <FiArrowRight className="ml-2 text-lg" /></Button>
-                <Button variant="secondary" size="lg" href="/contact">Download brochure <FiDownload className="ml-2 text-lg" /></Button>
+                <Button variant="secondary" size="lg" href="https://tr.ee/MXuPd4-grQ" target="_blank">Download brochure <FiDownload className="ml-2 text-lg" /></Button>
               </motion.div>
             </div>
           </motion.div>

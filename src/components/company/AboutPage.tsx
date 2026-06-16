@@ -5,10 +5,8 @@ import aboutData from '../../data/about.json';
 import { useCmsData } from '../../hooks/useCmsData';
 import Button from '@components/core/Button';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
-// @ts-ignore
-import companyProfileUrl from '@data/brochures/Crystal-Group-Company-Profile-NEW-.pdf?url';
-// @ts-ignore
-import companyBriefUrl from '@data/brochures/Crystal-Group---Company-Brief-Updated.pdf?url';
+const companyProfileUrl = 'https://tr.ee/bUenXCXw9a';
+const companyBriefUrl = 'https://tr.ee/gJC9ItHGuj';
 import CharReveal from '@components/core/CharReveal';
 
 const LocalSectionHeader = ({ eyebrow, head, desc, align = "left", dark = false }: { eyebrow?: string; head: string; desc?: string; align?: "left" | "center"; dark?: boolean }) => (
@@ -156,10 +154,10 @@ const AboutPage: React.FC = () => {
               {hero.subheadline}
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button variant="ghost" size="lg" href={companyProfileUrl} download="Crystal-Group-Company-Profile.pdf">
+              <Button variant="ghost" size="lg" href={companyProfileUrl} target="_blank">
                 {hero.cta_profile} <FiDownload className="text-lg transition-transform group-hover/btn:translate-y-1" />
               </Button>
-              <Button variant="ghost" size="lg" href={companyBriefUrl} download="Crystal-Group-Company-Brief.pdf">
+              <Button variant="ghost" size="lg" href={companyBriefUrl} target="_blank">
                 {hero.cta_brief} <FiDownload className="text-lg transition-transform group-hover/btn:translate-y-1" />
               </Button>
             </div>

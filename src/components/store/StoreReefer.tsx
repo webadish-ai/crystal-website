@@ -9,8 +9,7 @@ import {
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import Button from '@components/core/Button';
 import portableData from '@data/store-portablecs-all.json';
-// @ts-ignore
-import reeferBookletUrl from '@data/brochures/Reefer-Booklet-2026.pdf?url';
+const reeferBookletUrl = 'https://tr.ee/-UMy2jB_NN';
 import CharReveal from '@components/core/CharReveal';
 import ImageDialog from './ImageDialog';
 import heroImgRaw from '../../data/images/store/reefer/reefer-hero.png';
@@ -677,7 +676,7 @@ const StoreReefer: React.FC = () => {
               <Button variant="primary" size="lg" href="/contact">
                 {heroCtas[0]} <FiArrowRight className="text-lg" />
               </Button>
-              <Button variant="ghost" size="lg" href={reeferBookletUrl} download="Reefer-Booklet-2026.pdf">
+              <Button variant="ghost" size="lg" href={reeferBookletUrl} target="_blank">
                 {heroCtas[2]} <FiDownload className="text-lg" />
               </Button>
             </div>
@@ -794,7 +793,7 @@ const StoreReefer: React.FC = () => {
                 <Button variant="primary" size="lg" href="/contact">
                   Request a quote <FiArrowRight className="ml-2 text-lg" />
                 </Button>
-                <Button variant="secondary" size="lg" href={reeferBookletUrl} download="Reefer-Booklet-2026.pdf">
+                <Button variant="secondary" size="lg" href={reeferBookletUrl} target="_blank">
                   Download brochure <FiDownload className="ml-2 text-lg" />
                 </Button>
               </motion.div>
