@@ -8,6 +8,8 @@ import { containerVariants, itemVariants, viewportOnce, tc } from '@components/c
 import Button from '@components/core/Button';
 import portableData from '@data/store-portablecs-all.json';
 import CharReveal from '@components/core/CharReveal';
+import amcHeroRaw from '../../data/images/store/amc.jpeg';
+const amcHero = typeof amcHeroRaw === 'string' ? amcHeroRaw : (amcHeroRaw as any).src;
 
 const parent    = portableData["06 Store: Portable Cold Storage Containers"];
 const d         = parent["06f Store: AMC & Spare Parts"];
@@ -51,7 +53,7 @@ const StoreAMC: React.FC = () => {
       {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=75&w=1400&auto=format&fit=crop"
+          src={amcHero}
           alt={d["Hero Page"].EYEBROW}
           loading="eager" decoding="async"
           className="absolute inset-0 z-0 w-full h-full object-cover"
