@@ -59,7 +59,7 @@ const StoreColdStorage: React.FC = () => {
           className="absolute inset-0 z-0 w-full h-full object-cover scale-105"
           autoPlay muted loop playsInline
         />
-        <div className="absolute inset-0 z-10 bg-secondary/10" />
+        <div className="absolute inset-0 z-10 bg-[linear-gradient(to_right,rgba(15,40,84,0.9)_0%,rgba(15,40,84,0.7)_30%,rgba(15,40,84,0.35)_55%,transparent_78%)]" />
         <motion.div
           className="container mx-auto max-w-[var(--max-width)] relative z-30"
           initial="hidden" animate="visible" variants={containerVariants}

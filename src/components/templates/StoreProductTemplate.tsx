@@ -29,7 +29,7 @@ export default function StoreProductTemplate(props: Props) {
         {p.hero_image && (
           <img src={p.hero_image} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
         )}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,40,84,0.85)_0%,rgba(15,40,84,0.5)_60%,transparent_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(15,40,84,0.9)_0%,rgba(15,40,84,0.7)_30%,rgba(15,40,84,0.35)_55%,transparent_78%)]" />
         <div className="relative z-10 max-w-2xl">
           <p className="font-body text-[11px] font-semibold uppercase tracking-[0.2em] text-accent mb-4">Crystal Group</p>
           <h1 className="font-heading font-extrabold text-[32px] sm:text-[44px] md:text-[64px] leading-none text-white mb-4 sm:mb-5">
