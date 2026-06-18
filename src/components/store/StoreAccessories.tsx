@@ -1,42 +1,139 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiCheckCircle } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import Button from '@components/core/Button';
 import CharReveal from '@components/core/CharReveal';
 
-const categories = [
+import wheelRaw from '../../data/images/store/accessories/wheel.png';
+import userPanelRaw from '../../data/images/store/accessories/user-panel.png';
+import smartIotRaw from '../../data/images/store/accessories/smart-iot.png';
+import doorLockRaw from '../../data/images/store/accessories/door-lock.png';
+import lightSwitchRaw from '../../data/images/store/accessories/light-switch.png';
+import flameLightRaw from '../../data/images/store/accessories/flame-proof-light.png';
+import ledSquareRaw from '../../data/images/store/accessories/led-light-square.png';
+import ledRoundRaw from '../../data/images/store/accessories/led-light-round.png';
+import mantrapRaw from '../../data/images/store/accessories/mantrap-alarm.png';
+import tBarRaw from '../../data/images/store/accessories/t-bar-flooring.png';
+import stripCurtainsRaw from '../../data/images/store/accessories/strip-curtains.jpg';
+import confootRaw from '../../data/images/store/accessories/confoot.png';
+import checkeredRaw from '../../data/images/store/accessories/checkered-plate.png';
+import acPaintRaw from '../../data/images/store/accessories/ac-paint.png';
+import isoMaleRaw from '../../data/images/store/accessories/iso-power-plug-male.png';
+import isoFemaleRaw from '../../data/images/store/accessories/iso-power-plug-female.png';
+import rackRaw from '../../data/images/store/accessories/rack.png';
+import rampRaw from '../../data/images/store/accessories/ramp.png';
+import heaterRaw from '../../data/images/store/accessories/heater.png';
+import dehumidifierRaw from '../../data/images/store/accessories/dehumidifier.png';
+import customLogoRaw from '../../data/images/store/accessories/customized-logo.png';
+
+const s = (r: unknown) => typeof r === 'string' ? r : (r as any).src;
+
+const products = [
   {
-    label: 'Environmental Control',
-    items: ['Heater', 'Dehumidifier'],
+    name: 'High-Quality Wheel',
+    desc: 'Provides mobility for containers or storage units, enabling easy repositioning or transport.',
+    img: s(wheelRaw),
   },
   {
-    label: 'Lighting',
-    items: ['LED Light (Square)', 'LED Light (Round)', 'Flame Proof Light', 'Light Switch'],
+    name: 'User Panel',
+    desc: 'A simple, intuitive control panel that lets operators monitor and manage refrigeration units with ease.',
+    img: s(userPanelRaw),
   },
   {
-    label: 'Safety & Security',
-    items: ['Mantrap Alarm', 'Door Lock'],
+    name: 'Smart IoT',
+    desc: 'An intelligent monitoring system that tracks your cold-chain assets in real time for precise, uninterrupted temperature control.',
+    img: s(smartIotRaw),
   },
   {
-    label: 'Structural & Flooring',
-    items: ['T-Bar Flooring', 'Checkered Plate', 'Rack', 'Ramp'],
+    name: 'Door Lock',
+    desc: 'A sturdy, auto-lock plate designed for smooth, secure opening and closing of container doors.',
+    img: s(doorLockRaw),
   },
   {
-    label: 'Containment & Insulation',
-    items: ['Strip Curtains (PVC)', 'Confoot (Container Support)'],
+    name: 'Light Switch',
+    desc: 'A simple, durable switch that powers interior lighting for clear visibility inside the container.',
+    img: s(lightSwitchRaw),
   },
   {
-    label: 'Power & Connectivity',
-    items: ['ISO Power Plug Male', 'ISO Power Plug Female', 'User Panel', 'Wheel'],
+    name: 'Flame Proof Light',
+    desc: 'A safety-rated lighting unit built to operate reliably in hazardous environments where ignition risks must be minimized.',
+    img: s(flameLightRaw),
   },
   {
-    label: 'Smart Technology',
-    items: ['Smart IoT Device (Real-time cold-chain tracking)'],
+    name: 'LED Light — Square',
+    desc: 'A bright, energy-efficient square LED light that enhances visibility inside containers.',
+    img: s(ledSquareRaw),
   },
   {
-    label: 'Finishing & Branding',
-    items: ['AC Paint (Corrosion-resistant)', 'Customized Logo'],
+    name: 'LED Light — Round',
+    desc: 'A compact round LED light offering clear, uniform illumination for safer operations.',
+    img: s(ledRoundRaw),
+  },
+  {
+    name: 'Mantrap Alarm',
+    desc: 'A safety alert device that lets a trapped person trigger an immediate alarm for quick rescue.',
+    img: s(mantrapRaw),
+  },
+  {
+    name: 'T-Bar Flooring',
+    desc: 'A reinforced flooring solution that improves load-bearing strength and durability.',
+    img: s(tBarRaw),
+  },
+  {
+    name: 'Strip Curtains',
+    desc: 'Flexible PVC curtains that help maintain temperature and reduce energy loss during frequent door openings.',
+    img: s(stripCurtainsRaw),
+  },
+  {
+    name: 'Confoot',
+    desc: 'A lightweight, portable container support system that lets you safely load and unload containers without heavy equipment.',
+    img: s(confootRaw),
+  },
+  {
+    name: 'Checkered Plate',
+    desc: 'A textured metal plating accessory used for anti-slip flooring and structural mobility.',
+    img: s(checkeredRaw),
+  },
+  {
+    name: 'AC Paint',
+    desc: 'A high-quality coating that shields your containers with a clean, corrosion-resistant finish built to withstand tough conditions.',
+    img: s(acPaintRaw),
+  },
+  {
+    name: 'ISO Power Plug Male',
+    desc: 'An ISO-standardized plug accessory for standardized connectivity and safety.',
+    img: s(isoMaleRaw),
+  },
+  {
+    name: 'ISO Power Plug Female',
+    desc: 'An ISO-standardized female plug accessory for electrical and connection compliance.',
+    img: s(isoFemaleRaw),
+  },
+  {
+    name: 'Rack',
+    desc: 'A durable storage rack designed to organize and secure goods efficiently inside the container.',
+    img: s(rackRaw),
+  },
+  {
+    name: 'Ramp',
+    desc: 'Durable rubber-wheel parts designed to improve stability, safety, and long-lasting performance for your equipment.',
+    img: s(rampRaw),
+  },
+  {
+    name: 'Heater',
+    desc: 'A dependable heating unit that maintains optimal temperatures to protect sensitive cargo in cold conditions.',
+    img: s(heaterRaw),
+  },
+  {
+    name: 'Dehumidifier',
+    desc: 'A moisture-control unit that keeps containers dry and protects cargo from humidity damage.',
+    img: s(dehumidifierRaw),
+  },
+  {
+    name: 'Customized Logo',
+    desc: 'A custom branding option where you can feature your brand on containers through paint or durable stickers.',
+    img: s(customLogoRaw),
   },
 ];
 
@@ -59,11 +156,11 @@ const StoreAccessories: React.FC = () => {
               <CharReveal text={tc('Cold Storage Accessories')} />
             </h1>
             <motion.p variants={itemVariants} className="font-body text-body-lg text-primary/65 font-medium max-w-xl mb-8 leading-relaxed">
-              Everything to enhance your cold storage setup.
+              Designed for reliability and high performance, our accessories perfectly support your operational and logistics needs.
             </motion.p>
             <motion.div variants={itemVariants}>
               <Button variant="primary" size="lg" href="/contact">
-                Request a quote <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
+                Order your accessories <FiArrowRight className="text-lg transition-transform group-hover/btn:translate-x-1" />
               </Button>
             </motion.div>
           </div>
@@ -86,34 +183,36 @@ const StoreAccessories: React.FC = () => {
         </motion.div>
       </section>
 
-      {/* ── PRODUCT CATEGORIES ── */}
+      {/* ── PRODUCT GRID ── */}
       <section className="bg-secondary py-20 px-6 md:px-12">
         <motion.div
           className="container mx-auto max-w-[var(--max-width)]"
           initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}
         >
-          <motion.div variants={itemVariants} className="mb-6">
+          <motion.div variants={itemVariants} className="mb-10">
             <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent block mb-1">All products</span>
             <h2 className="font-heading font-extrabold text-h2 leading-tight-none tracking-tighter text-primary border-b border-primary/10 pb-1.5 w-full">
               <CharReveal text="Accessories" />
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
-            {categories.map((cat) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {products.map((p) => (
               <motion.div
-                key={cat.label}
+                key={p.name}
                 variants={itemVariants}
-                className="group bg-primary/[0.06] border border-primary/10 p-6 flex flex-col gap-4 hover:border-accent/40 transition-all duration-300"
+                className="group bg-primary border border-primary/10 flex flex-col overflow-hidden hover:border-accent/40 transition-all duration-300"
               >
-                <span className="font-body font-bold text-eyebrow uppercase tracking-[0.15em] text-accent text-[10px] mb-1">{cat.label}</span>
-                <div className="flex flex-col gap-2">
-                  {cat.items.map((item) => (
-                    <div key={item} className="flex items-start gap-2.5">
-                      <FiCheckCircle className="text-accent text-sm shrink-0 mt-0.5" />
-                      <span className="font-body font-medium text-body-sm text-primary/80 leading-snug">{item}</span>
-                    </div>
-                  ))}
+                <div className="aspect-square bg-primary/5 overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4 flex flex-col gap-1.5 flex-1">
+                  <span className="font-heading font-extrabold text-[11px] uppercase tracking-[0.12em] text-secondary leading-tight">{p.name}</span>
+                  <p className="font-body text-[11px] text-secondary/55 leading-snug">{p.desc}</p>
                 </div>
               </motion.div>
             ))}
