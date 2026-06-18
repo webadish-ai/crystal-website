@@ -42,7 +42,6 @@ const navItems = [
           { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store/super-freezer' },
           { name: 'ISO Tanks', desc: 'Liquid cargo transport', icon: <FiActivity className="text-xl shrink-0" />, href: '/store/iso-tanks' },
           { name: 'AMC & Spare Parts', desc: '24/7 maintenance support', icon: <FiShield className="text-xl shrink-0" />, href: '/store/amc-spareparts' },
-          { name: 'Bhubaneswar', desc: 'Cold storage facility, Odisha', icon: <FiActivity className="text-xl shrink-0" />, href: '/locations/bhubaneswar' },
         ],
       },
       {
