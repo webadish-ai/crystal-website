@@ -220,7 +220,7 @@ const Nav: React.FC = () => {
   useLayoutEffect(() => {
     if (!navRef.current) return;
     if (galleryOpen) {
-      // Instant — no bounce delay, nav must vanish before dialog appears
+      gsap.killTweensOf(navRef.current);
       gsap.set(navRef.current, { yPercent: -100 });
     } else {
       gsap.to(navRef.current, {
