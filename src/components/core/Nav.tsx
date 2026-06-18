@@ -492,7 +492,7 @@ const Nav: React.FC = () => {
 
         {/* Floating CTA — mirrors breadcrumb, appears on scroll */}
         <AnimatePresence>
-          {ctaVisible && !menuOpen && (
+          {ctaVisible && !menuOpen && !galleryOpen && (
             <motion.div
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
