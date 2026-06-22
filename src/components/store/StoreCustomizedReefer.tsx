@@ -49,9 +49,9 @@ const configurations = [
     img: s(img3Raw),
   },
   {
-    name: 'Mobile Cold Warehouse',
-    desc: 'Full-size 40ft unit with racks, ramp, and dual machines — a complete portable warehouse deployable anywhere in 48 hours.',
-    img: s(img1Raw),
+    name: 'Multi Temperature Zone',
+    desc: 'Internal partition walls create separate chilled and frozen zones in a single unit — ideal for mixed-cargo operations.',
+    img: s(img3Raw),
   },
 ];
 
