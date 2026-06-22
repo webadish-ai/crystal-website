@@ -25,7 +25,9 @@ interface DryContainerData {
   meta: { title: string; description: string };
   hero: { eyebrow: string; name: string; tagline: string; badge: string; sizes: string[] };
   overview: string;
-  features: Feature[];
+  features?: Feature[];
+  cabins?: Feature[];
+  advantages?: Feature[];
   specs: Spec[];
   industries: string[];
   faq: FaqItem[];
@@ -354,28 +356,53 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => 
         </div>
       </section>
 
-      {/* ── KEY FEATURES ── */}
-      <section className="bg-secondary py-20 px-6 md:px-12">
-        <div className="container mx-auto max-w-[var(--max-width)]">
-          <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
-            <SectionHeader dark eyebrow="What's included" head="Key Features" />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-primary/5 mt-2">
-              {data.features.map((f, i) => (
-                <motion.div key={i} variants={itemVariants}
-                  className="group bg-secondary flex flex-col gap-4 p-6 md:p-8 border border-primary/10 hover:bg-primary/[0.03] transition-colors duration-300">
-                  <div className="w-10 h-10 flex items-center justify-center bg-primary/[0.06] group-hover:bg-accent/20 rounded-sm transition-colors duration-300">
-                    <span className="font-heading font-extrabold text-[13px] text-accent">
+      {/* ── CABIN TYPES ── */}
+      {data.cabins && data.cabins.length > 0 && (
+        <section className="bg-secondary py-20 px-6 md:px-12">
+          <div className="container mx-auto max-w-[var(--max-width)]">
+            <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
+              <SectionHeader dark eyebrow="What we build" head="Cabin Types" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-primary/5 mt-2">
+                {data.cabins.map((c, i) => (
+                  <motion.div key={i} variants={itemVariants}
+                    className="group bg-secondary flex flex-col gap-4 p-6 md:p-8 border border-primary/10 hover:bg-primary/[0.03] transition-colors duration-300">
+                    <div className="w-10 h-10 flex items-center justify-center bg-primary/[0.06] group-hover:bg-accent/20 rounded-sm transition-colors duration-300">
+                      <span className="font-heading font-extrabold text-[13px] text-accent">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                    </div>
+                    <h3 className="font-heading font-extrabold text-h4 text-primary tracking-tight leading-tight">{c.title}</h3>
+                    <p className="font-body text-body-md text-primary/55 leading-relaxed font-medium">{c.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* ── ADVANTAGES ── */}
+      {data.advantages && data.advantages.length > 0 && (
+        <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
+          <div className="container mx-auto max-w-[var(--max-width)]">
+            <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
+              <SectionHeader eyebrow="Why choose us" head="Advantages of Container Cabins" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+                {data.advantages.map((a, i) => (
+                  <motion.div key={i} variants={itemVariants}
+                    className="group flex flex-col gap-3 p-6 border border-secondary/10 rounded-sm hover:border-accent hover:bg-accent/[0.03] transition-all duration-300">
+                    <span className="font-heading font-extrabold text-[11px] uppercase tracking-[0.15em] text-accent/60">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                  </div>
-                  <h3 className="font-heading font-extrabold text-h4 text-primary tracking-tight leading-tight">{f.title}</h3>
-                  <p className="font-body text-body-md text-primary/55 leading-relaxed font-medium">{f.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+                    <h3 className="font-heading font-extrabold text-h4 text-secondary tracking-tight leading-tight">{a.title}</h3>
+                    <p className="font-body text-body-md text-secondary/55 leading-relaxed font-medium">{a.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* ── INDUSTRIES ── */}
       <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">

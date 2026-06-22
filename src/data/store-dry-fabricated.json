@@ -11,13 +11,27 @@
     "sizes": ["20 ft", "40 ft"]
   },
   "overview": "Crystal Group's dry fabricated units are custom-built from repurposed shipping containers — portable, durable spaces with insulation, ventilation, electrical fittings, and optional plumbing. Save up to 40% versus conventional construction. Available as site offices, dormitories, container cafes, security cabins, medical rooms, and more. Move via forklift or crane — no permanent foundation required.",
-  "features": [
-    { "title": "Site Office", "desc": "Fully furnished portable offices for construction sites, project HQs, and remote operations. Pre-fitted with electrics, AC, and lighting." },
-    { "title": "Dormitory", "desc": "Multi-bunk accommodation units for site workers. Insulated, ventilated, and fitted with electrical points and lighting." },
-    { "title": "Security Cabin", "desc": "Compact security booths for entry points and checkposts. Weatherproof, with window panel, lock, and electrical fitting." },
-    { "title": "Container Cafe", "desc": "Pop-up cafe and food kiosk conversions. 20 ft G+1 configuration available. Custom branding and interior fit-out." },
-    { "title": "Medical Room", "desc": "Hygienic medical-grade container rooms for site healthcare facilities. Easy to clean, ventilated, and compliant layouts." },
-    { "title": "Custom Cabin", "desc": "Baby creche, smoking rooms, toilet blocks, or any bespoke requirement. Tell us your use case and we design it." }
+  "cabins": [
+    { "title": "Bus Stop Cabin", "desc": "Custom bus stop cabins built for public and private use. Covered seating for protection from sun and rain." },
+    { "title": "Toilet Cabin", "desc": "Compact, portable toilet cabins for quick setup. Include plumbing, ventilation, and waste management systems." },
+    { "title": "Container Cafe", "desc": "Portable, cost-effective container cafes for modern coffee setups. 20 ft G+1 design with cement sheet finish for a stylish look." },
+    { "title": "Container Home", "desc": "Affordable, durable, and eco-friendly container homes. Quick to build, customizable, and modular for easy relocation." },
+    { "title": "Dormitory Cabin", "desc": "Durable, cost-effective dormitory containers for short or long stays. Customizable interiors with beds, storage, and amenities." },
+    { "title": "Site Office Cabin", "desc": "Modern, flexible site office cabins made from containers. Easy to relocate and quick to set up as projects move." },
+    { "title": "Security Cabin", "desc": "Compact security booths for entry points and checkposts. Include secure doors, windows, insulation, and optional CCTV." },
+    { "title": "Medical Room", "desc": "Convert containers into mobile hospitals and clinics. Deliver instant, reliable medical infrastructure anywhere." },
+    { "title": "Smoking Room", "desc": "Portable smoking units made from dry shipping containers. Features powerful ventilation for fast smoke removal." },
+    { "title": "Baby Creche", "desc": "Secure baby creche rooms made from shipping containers. Provide a safe, nurturing space close to the workplace." }
+  ],
+  "advantages": [
+    { "title": "Quick Installation", "desc": "Ready-to-use in days, eliminating long construction delays." },
+    { "title": "Cost-Effective", "desc": "Save up to 40% compared to conventional construction." },
+    { "title": "Portable & Reusable", "desc": "Move and reinstall your modular cabin easily at new locations." },
+    { "title": "Eco-Friendly", "desc": "Built from repurposed shipping containers, reducing environmental impact." },
+    { "title": "Durable & Weatherproof", "desc": "Built to withstand extreme temperatures, rain, and wind." },
+    { "title": "Custom-Built Designs", "desc": "Flexible layouts for offices, homes, cafes, toilets, and dormitories." },
+    { "title": "Low Maintenance", "desc": "Steel structure with rust-proof coating for long life." },
+    { "title": "Safe & Secure", "desc": "Heavy-duty steel ensures protection and privacy." }
   ],
   "specs": [
     {
@@ -43,10 +57,11 @@
   ],
   "industries": ["Construction", "Events & Hospitality", "Healthcare", "Education", "Government & Defence", "Retail & Pop-Up", "Logistics Yards"],
   "faq": [
-    { "q": "How long does fabrication and delivery take?", "a": "Most units are ready in 7–15 days from order confirmation, depending on customisation complexity." },
-    { "q": "Does it need a permanent foundation?", "a": "No permanent foundation is required. A level concrete or RCC surface is sufficient. Units can be relocated via forklift or crane." },
-    { "q": "Can the exterior and interior be branded?", "a": "Yes. Custom paint colours, vinyl wraps, signage, and interior branding are all available." },
-    { "q": "Is electricity and plumbing included?", "a": "All units come with electrical wiring and LED lighting. Plumbing can be added as an optional fitment." },
-    { "q": "Are multi-storey configurations possible?", "a": "Yes. G+1 (two-storey) configurations are available for container cafes and offices where height permits." }
+    { "q": "What sizes are available for container cabins?", "a": "We offer 20 ft and 40 ft cabins, with the option for fully customised sizes depending on project needs." },
+    { "q": "Are container cabins weatherproof and durable?", "a": "Yes. Our cabins are built using strong, rust-resistant steel and insulated panels for long-term performance in all weather conditions." },
+    { "q": "Can container cabins be relocated?", "a": "Yes. Our portable container cabins are designed for easy relocation using forklifts or cranes." },
+    { "q": "Can the interiors be customised?", "a": "Yes. Clients can personalise interiors with layouts, branding, furniture, lighting, and finishes." },
+    { "q": "How long does it take to install a container cabin?", "a": "Most units are ready within 7–15 days, depending on design complexity and customisation." },
+    { "q": "What foundation is required for installation?", "a": "A level concrete or RCC surface is sufficient for installation. Our team provides full site setup guidance." }
   ]
 }
