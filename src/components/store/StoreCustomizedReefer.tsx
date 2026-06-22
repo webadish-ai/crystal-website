@@ -257,19 +257,21 @@ const StoreCustomizedReefer: React.FC = () => {
               <CharReveal text="From Requirement To Deployment" />
             </h2>
           </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {process.map((p, i) => (
-              <motion.div key={p.step} variants={itemVariants} className="flex flex-col gap-4 relative">
-                {i < process.length - 1 && (
-                  <div className="hidden lg:block absolute top-5 left-[calc(100%+12px)] w-[calc(100%-24px)] h-px bg-secondary/15" />
-                )}
-                <span className="font-heading font-extrabold text-[32px] leading-none text-accent/30">{p.step}</span>
-                <div className="flex flex-col gap-1.5">
-                  <span className="font-heading font-extrabold text-[12px] uppercase tracking-[0.1em] text-secondary leading-tight">{p.title}</span>
-                  <p className="font-body text-[12px] text-secondary/50 leading-snug">{p.desc}</p>
-                </div>
-              </motion.div>
-            ))}
+          {/* Full-width rail line, hidden on mobile */}
+          <div className="relative">
+            <div className="hidden lg:block absolute top-[18px] left-0 right-0 h-px bg-secondary/15 z-0" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-x-6 gap-y-10">
+              {process.map((p) => (
+                <motion.div key={p.step} variants={itemVariants} className="flex flex-col gap-4">
+                  {/* Number sits on top of the rail, bg matches section so it "cuts" the line */}
+                  <span className="relative z-10 font-heading font-extrabold text-[32px] leading-none text-accent/40 bg-primary pr-3 w-fit">{p.step}</span>
+                  <div className="flex flex-col gap-1.5">
+                    <span className="font-heading font-extrabold text-[12px] uppercase tracking-[0.1em] text-secondary leading-tight">{p.title}</span>
+                    <p className="font-body text-[12px] text-secondary/50 leading-snug">{p.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </section>
