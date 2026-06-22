@@ -5,6 +5,12 @@
     { "source": "/tag/:slug*", "destination": "/blog/", "permanent": true },
     { "source": "/category/:slug*", "destination": "/blog/", "permanent": true },
 
+    { "source": "/blog/fmcg-qsr-cost-reduction/", "destination": "/blog/cold-chain-fmcg-qsr-savings/", "permanent": true },
+    { "source": "/blog/agriculture-cold-chain-backbone/", "destination": "/blog/cold-chain-agriculture-india/", "permanent": true },
+    { "source": "/blog/pharma-cold-chain-challenges/", "destination": "/blog/cold-chain-pharma-india/", "permanent": true },
+
+    { "source": "/impact/iso-tank-geothermal/", "destination": "/impact/", "permanent": true },
+
     { "source": "/impact/fmcg-reefer-trucks/", "destination": "/impact/qsr-fmcg-reefer-trucks/", "permanent": true },
     { "source": "/impact/q-commerce-rapid-deployment/", "destination": "/impact/q-commerce-cold-storage/", "permanent": true },
 
