@@ -33,28 +33,7 @@
     { "title": "Low Maintenance", "desc": "Steel structure with rust-proof coating for long life." },
     { "title": "Safe & Secure", "desc": "Heavy-duty steel ensures protection and privacy." }
   ],
-  "specs": [
-    {
-      "size": "20 ft",
-      "tare_weight": "Approx. 2,350 kg",
-      "max_gross": "30,480 kg rated",
-      "max_payload": "Custom fitted",
-      "ext_dimensions": "6.06 × 2.44 × 2.59 m",
-      "int_dimensions": "5.90 × 2.35 × 2.39 m",
-      "door_opening": "2.34 m W × 2.28 m H",
-      "volume": "32.5 m³"
-    },
-    {
-      "size": "40 ft",
-      "tare_weight": "Approx. 3,850 kg",
-      "max_gross": "32,500 kg rated",
-      "max_payload": "Custom fitted",
-      "ext_dimensions": "12.19 × 2.44 × 2.59 m",
-      "int_dimensions": "12.03 × 2.35 × 2.39 m",
-      "door_opening": "2.34 m W × 2.28 m H",
-      "volume": "66.5 m³"
-    }
-  ],
+  "specs": [],
   "industries": ["Construction", "Events & Hospitality", "Healthcare", "Education", "Government & Defence", "Retail & Pop-Up", "Logistics Yards"],
   "faq": [
     { "q": "What sizes are available for container cabins?", "a": "We offer 20 ft and 40 ft cabins, with the option for fully customised sizes depending on project needs." },

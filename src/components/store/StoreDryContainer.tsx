@@ -110,7 +110,8 @@ const SectionHeader = ({ eyebrow, head, align = 'left', dark = false }: {
 /* ── MAIN COMPONENT ── */
 
 const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => {
-  const [activeSize, setActiveSize] = useState(() => Math.min(1, data.specs.length - 1));
+  const hasSpecs = data.specs.length > 0;
+  const [activeSize, setActiveSize] = useState(() => Math.min(1, Math.max(0, data.specs.length - 1)));
   const activeHeroImage = heroImages?.[activeSize] ?? heroImage;
   const [openSpec, setOpenSpec]     = useState<string | null>(null);
   const [openFaq, setOpenFaq]       = useState<number | null>(null);
@@ -164,7 +165,7 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => 
       </section>
 
       {/* ── SPECIFICATIONS ── */}
-      <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
+      {hasSpecs && <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
         <div className="container mx-auto max-w-[var(--max-width)]">
           <motion.div
             initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}
@@ -372,7 +373,7 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => 
             </div>
           </motion.div>
         </div>
-      </section>
+      </section>}
 
       {/* ── CABIN TYPES ── */}
       {data.cabins && data.cabins.length > 0 && (
