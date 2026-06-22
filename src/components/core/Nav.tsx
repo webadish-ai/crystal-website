@@ -37,6 +37,7 @@ const navItems = [
         nestedLinks: [
           { name: 'Portable Cold Storage: Overview', desc: 'View all units & solutions', icon: <FiBox className="text-xl shrink-0" />, href: '/store-portable-cold-storage' },
           { name: 'Reefer Containers', desc: 'Portable site cold storage', icon: <FiTruck className="text-xl shrink-0" />, href: '/store/reefer-containers' },
+          { name: 'Customized Reefer', desc: 'Purpose-built configurations', icon: <FiTool className="text-xl shrink-0" />, href: '/store/customized-reefer' },
           { name: 'Blast Freezers', desc: 'Rapid industrial freezing', icon: <FiWind className="text-xl shrink-0" />, href: '/store/blast-freezer' },
           { name: 'Super Store', desc: 'High-volume modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/store/super-store' },
           { name: 'Super Freezer', desc: 'Ultra-low -70°C storage', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store/super-freezer' },
