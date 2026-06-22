@@ -53,7 +53,7 @@ const ContactPage: React.FC = () => {
       {/* ── HERO ── */}
       <section className="relative h-[60svh] min-h-[500px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
-          src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=75&w=1400&auto=format&fit=crop"
+          src="/images/contact/let-us-know.png"
           alt="Contact Crystal"
           loading="eager"
           decoding="async"

@@ -130,7 +130,7 @@ const AboutPage: React.FC = () => {
       {/* ── HERO ── */}
       <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
-          src="/images/about/about-data.jpeg"
+          src="/images/about/about-data-1.jpeg"
           alt="About Crystal"
           loading="eager"
           decoding="async"
