@@ -5,6 +5,24 @@ import { containerVariants, itemVariants, viewportOnce, tc } from '@components/c
 import Button from '@components/core/Button';
 import CharReveal from '@components/core/CharReveal';
 
+import cabinBusstopRaw    from '../../data/images/store/cabin-busstop.webp';
+import cabinToiletRaw     from '../../data/images/store/cabin-toilet.webp';
+import cabinCafeRaw       from '../../data/images/store/cabin-cafe.webp';
+import cabinHomeRaw       from '../../data/images/store/cabin-home.webp';
+import cabinDormRaw       from '../../data/images/store/cabin-dominatory.webp';
+import cabinOfficeRaw     from '../../data/images/store/cabin-siteoffice.webp';
+import cabinSecurityRaw   from '../../data/images/store/cabin-security.webp';
+import cabinMedicalRaw    from '../../data/images/store/cabin-medical.webp';
+import cabinSmokingRaw    from '../../data/images/store/cabin-smoking.webp';
+import cabinBabyRaw       from '../../data/images/store/medical-baby.webp';
+
+const s = (r: unknown) => typeof r === 'string' ? r : (r as any).src;
+const CABIN_IMAGES = [
+  s(cabinBusstopRaw), s(cabinToiletRaw), s(cabinCafeRaw), s(cabinHomeRaw),
+  s(cabinDormRaw), s(cabinOfficeRaw), s(cabinSecurityRaw),
+  s(cabinMedicalRaw), s(cabinSmokingRaw), s(cabinBabyRaw),
+];
+
 /* ── INTERFACES ── */
 
 interface Spec {
@@ -362,17 +380,24 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => 
           <div className="container mx-auto max-w-[var(--max-width)]">
             <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
               <SectionHeader dark eyebrow="What we build" head="Cabin Types" />
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-px bg-primary/5 mt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mt-8">
                 {data.cabins.map((c, i) => (
                   <motion.div key={i} variants={itemVariants}
-                    className="group bg-secondary flex flex-col gap-4 p-6 md:p-8 border border-primary/10 hover:bg-primary/[0.03] transition-colors duration-300">
-                    <div className="w-10 h-10 flex items-center justify-center bg-primary/[0.06] group-hover:bg-accent/20 rounded-sm transition-colors duration-300">
-                      <span className="font-heading font-extrabold text-[13px] text-accent">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
+                    className="group flex flex-col overflow-hidden rounded-sm border border-primary/10 hover:border-accent/40 transition-all duration-300">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-primary/10">
+                      {CABIN_IMAGES[i] && (
+                        <img
+                          src={CABIN_IMAGES[i]}
+                          alt={c.title}
+                          loading="lazy"
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                      )}
                     </div>
-                    <h3 className="font-heading font-extrabold text-h4 text-primary tracking-tight leading-tight">{c.title}</h3>
-                    <p className="font-body text-body-md text-primary/55 leading-relaxed font-medium">{c.desc}</p>
+                    <div className="flex flex-col gap-2 p-4 bg-secondary">
+                      <h3 className="font-heading font-extrabold text-h4 text-primary tracking-tight leading-tight">{c.title}</h3>
+                      <p className="font-body text-body-sm text-primary/55 leading-relaxed font-medium">{c.desc}</p>
+                    </div>
                   </motion.div>
                 ))}
               </div>
