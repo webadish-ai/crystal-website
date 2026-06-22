@@ -9,6 +9,7 @@ import heroImgRaw from '../../data/images/store/customized-reefer/hero.jpg';
 import img1Raw from '../../data/images/store/customized-reefer/q-comm.png';
 import img2Raw from '../../data/images/store/customized-reefer/ante-room.png';
 import img3Raw from '../../data/images/store/customized-reefer/dual-machine.png';
+import img4Raw from '../../data/images/store/customized-reefer/multi-temp.png';
 
 const s = (r: unknown) => typeof r === 'string' ? r : (r as any).src;
 
@@ -51,7 +52,7 @@ const configurations = [
   {
     name: 'Multi Temperature Zone',
     desc: 'Internal partition walls create separate chilled and frozen zones in a single unit — ideal for mixed-cargo operations.',
-    img: s(img3Raw),
+    img: s(img4Raw),
   },
 
 ];
