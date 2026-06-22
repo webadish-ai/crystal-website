@@ -51,7 +51,7 @@ const ContactPage: React.FC = () => {
   return (
     <div className="w-full bg-primary overflow-x-hidden font-body">
       {/* ── HERO ── */}
-      <section className="relative h-[60svh] min-h-[500px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
+      <section className="relative h-[100vh] min-h-[600px] bg-secondary text-primary flex flex-col justify-center overflow-hidden px-6 md:px-12 pt-20">
         <img
           src="/images/contact/let-us-know.png"
           alt="Contact Crystal"
