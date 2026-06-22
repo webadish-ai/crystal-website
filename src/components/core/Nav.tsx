@@ -53,7 +53,6 @@ const navItems = [
           { name: 'Hard Top Containers', desc: 'Removable steel roof panels', icon: <FiLayers className="text-xl shrink-0" />, href: '/store/hard-top-containers' },
           { name: 'Cold Rooms', desc: 'Modular walk-in refrigeration', icon: <FiThermometer className="text-xl shrink-0" />, href: '/store/cold-rooms' },
           { name: 'Dry Containers', desc: 'Standard 20ft & 40ft dry boxes', icon: <FiPackage className="text-xl shrink-0" />, href: '/store/dry-containers' },
-          { name: 'Office Containers', desc: 'Portable site office solutions', icon: <FiTool className="text-xl shrink-0" />, href: '/store/office-containers' },
           { name: 'Dry Fabricated', desc: 'Prefab cabins & modular rooms', icon: <FiLayers className="text-xl shrink-0" />, href: '/store/dry-fabricated' },
           { name: 'Accessories', desc: 'Container parts & fittings', icon: <FiShield className="text-xl shrink-0" />, href: '/store/accessories' },
         ],
