@@ -5,10 +5,10 @@ import { containerVariants, itemVariants, viewportOnce, tc } from '@components/c
 import Button from '@components/core/Button';
 import CharReveal from '@components/core/CharReveal';
 
-import heroImgRaw from '../../data/images/store/reefer/reefer-hero.png';
-import img1Raw from '../../data/images/store/reefer/20ft/20ft Reefer(1).png';
-import img2Raw from '../../data/images/store/reefer/20ft/Reefer inside view.JPG';
-import img3Raw from '../../data/images/store/reefer/40ft/outside.jpg';
+import heroImgRaw from '../../data/images/store/customized-reefer/hero.jpg';
+import img1Raw from '../../data/images/store/customized-reefer/q-comm.png';
+import img2Raw from '../../data/images/store/customized-reefer/ante-room.png';
+import img3Raw from '../../data/images/store/customized-reefer/dual-machine.png';
 
 const s = (r: unknown) => typeof r === 'string' ? r : (r as any).src;
 
@@ -53,6 +53,7 @@ const configurations = [
     desc: 'Internal partition walls create separate chilled and frozen zones in a single unit — ideal for mixed-cargo operations.',
     img: s(img3Raw),
   },
+
 ];
 
 const industries = [
