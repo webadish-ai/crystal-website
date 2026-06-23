@@ -1188,6 +1188,42 @@
               "company": "Leading Pharma Manufacturer"
             },
             "slug": "refurbished-pharma-storage"
+          },
+          {
+            "tag": "Store · Chemical",
+            "pdf": null,
+            "title": "Rapid & Secure Chemical Transport with Crystal Group's ISO Tank",
+            "client": "Leading Chemical Manufacturer",
+            "location": "South India",
+            "product": "T11 – 26KL ISO Tank",
+            "challenge": [
+              "Hazardous chemical materials required transportation within a strict 2-day window",
+              "Transport had to meet stringent safety and compliance standards for sensitive materials",
+              "Process required flawless coordination across logistics and handling stages",
+              "Zero tolerance for delays or safety lapses given the nature of the cargo"
+            ],
+            "solution": [
+              "T11 – 26KL ISO Tank deployed and prepared with comprehensive safety measures",
+              "End-to-end coordination across loading, transit, and dispatch stages",
+              "Strict compliance protocols maintained throughout the transport lifecycle",
+              "100% precision execution from preparation through final deployment"
+            ],
+            "results": [
+              "Hazardous materials transported safely and on schedule within 2 days",
+              "Zero safety incidents across the entire logistics chain",
+              "Client experienced a smooth, hassle-free transport experience",
+              "Demonstrated Crystal's reliability for time-critical chemical logistics"
+            ],
+            "outcomes": [
+              { "kpi": "Turnaround", "value": "2 Days" },
+              { "kpi": "Execution", "value": "100% Precision" },
+              { "kpi": "Tank Capacity", "value": "26 KL" },
+              { "kpi": "Tank Type", "value": "T11 ISO" },
+              { "kpi": "Safety Incidents", "value": "Zero" },
+              { "kpi": "Cargo Type", "value": "Hazardous Chemical" }
+            ],
+            "testimonial": null,
+            "slug": "chemical-transport-iso-tank"
           }
         ]
       },

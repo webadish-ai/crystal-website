@@ -13,6 +13,9 @@
 
     { "source": "/impact/fmcg-reefer-trucks/", "destination": "/impact/qsr-fmcg-reefer-trucks/", "permanent": true },
     { "source": "/impact/q-commerce-rapid-deployment/", "destination": "/impact/q-commerce-cold-storage/", "permanent": true },
+    { "source": "/impact/frozen-dessert-trucks/", "destination": "/impact/frozen-dessert-truck-solution/", "permanent": true },
+
+    { "source": "/blog/reefer-container-ultimate-guide/", "destination": "/blog/reefer-container-guide/", "permanent": true },
 
     { "source": "/jobs/", "destination": "/careers/", "permanent": true },
     { "source": "/job-openings/", "destination": "/careers/", "permanent": true },
@@ -28,7 +31,7 @@
 
     { "source": "/case-studies/", "destination": "/impact/", "permanent": true },
     { "source": "/gallery/", "destination": "/impact/", "permanent": true },
-    { "source": "/pharmaceutical-2/", "destination": "/impact/", "permanent": true },
+    { "source": "/pharmaceutical-2/", "destination": "/impact/pharma-overview/", "permanent": true },
 
     { "source": "/blast-freezer-/", "destination": "/store/blast-freezer/", "permanent": true },
     { "source": "/blast-freezer/", "destination": "/store/blast-freezer/", "permanent": true },
