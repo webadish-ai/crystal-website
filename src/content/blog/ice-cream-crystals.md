@@ -6,8 +6,8 @@ date: "2026-08-19"
 ---
 
 <img
-src="https://crystalgroup.in/wp-content/uploads/2026/08/crystalgroup-blog-icecreamtest-banner.webp"
-srcset="https://crystalgroup.in/wp-content/uploads/2026/08/crystalgroup-blog-icecreamtest-banner.webp 1672w, https://crystalgroup.in/wp-content/uploads/2026/08/crystalgroup-blog-icecreamtest-banner-300x169.webp 300w, https://crystalgroup.in/wp-content/uploads/2026/08/crystalgroup-blog-icecreamtest-banner-1024x576.webp 1024w, https://crystalgroup.in/wp-content/uploads/2026/08/crystalgroup-blog-icecreamtest-banner-768x432.webp 768w, https://crystalgroup.in/wp-content/uploads/2026/08/crystalgroup-blog-icecreamtest-banner-1536x864.webp 1536w"
+src="/images/blog-import/crystalgroup-blog-icecreamtest-banner.webp"
+srcset="/images/blog-import/crystalgroup-blog-icecreamtest-banner.webp 1672w, /images/blog-import/crystalgroup-blog-icecreamtest-banner-300x169.webp 300w, /images/blog-import/crystalgroup-blog-icecreamtest-banner-1024x576.webp 1024w, /images/blog-import/crystalgroup-blog-icecreamtest-banner-768x432.webp 768w, /images/blog-import/crystalgroup-blog-icecreamtest-banner-1536x864.webp 1536w"
 sizes="(max-width: 1672px) 100vw, 1672px" width="1672" height="941"
 alt="The Ice Cream Test: What Those Crystals on Your Kulfi Are Actually Telling You" />
 

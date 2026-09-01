@@ -6,8 +6,8 @@ date: "2026-06-30"
 ---
 
 <img
-src="https://crystalgroup.in/wp-content/uploads/2026/06/blog_coldchain-blindspot.webp"
-srcset="https://crystalgroup.in/wp-content/uploads/2026/06/blog_coldchain-blindspot.webp 2000w, https://crystalgroup.in/wp-content/uploads/2026/06/blog_coldchain-blindspot-300x153.webp 300w, https://crystalgroup.in/wp-content/uploads/2026/06/blog_coldchain-blindspot-1024x522.webp 1024w, https://crystalgroup.in/wp-content/uploads/2026/06/blog_coldchain-blindspot-768x392.webp 768w, https://crystalgroup.in/wp-content/uploads/2026/06/blog_coldchain-blindspot-1536x783.webp 1536w"
+src="/images/blog-import/blog_coldchain-blindspot.webp"
+srcset="/images/blog-import/blog_coldchain-blindspot.webp 2000w, /images/blog-import/blog_coldchain-blindspot-300x153.webp 300w, /images/blog-import/blog_coldchain-blindspot-1024x522.webp 1024w, /images/blog-import/blog_coldchain-blindspot-768x392.webp 768w, /images/blog-import/blog_coldchain-blindspot-1536x783.webp 1536w"
 sizes="(max-width: 2000px) 100vw, 2000px" width="2000" height="1020"
 alt="The Cold Chain Blind Spot Nobody Talks About" />
 

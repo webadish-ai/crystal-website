@@ -6,8 +6,8 @@ date: "2026-06-15"
 ---
 
 <img
-src="https://crystalgroup.in/wp-content/uploads/2026/06/blog-tempurature-banner-v2.webp"
-srcset="https://crystalgroup.in/wp-content/uploads/2026/06/blog-tempurature-banner-v2.webp 1672w, https://crystalgroup.in/wp-content/uploads/2026/06/blog-tempurature-banner-v2-300x169.webp 300w, https://crystalgroup.in/wp-content/uploads/2026/06/blog-tempurature-banner-v2-1024x576.webp 1024w, https://crystalgroup.in/wp-content/uploads/2026/06/blog-tempurature-banner-v2-768x432.webp 768w, https://crystalgroup.in/wp-content/uploads/2026/06/blog-tempurature-banner-v2-1536x864.webp 1536w"
+src="/images/blog-import/blog-tempurature-banner-v2.webp"
+srcset="/images/blog-import/blog-tempurature-banner-v2.webp 1672w, /images/blog-import/blog-tempurature-banner-v2-300x169.webp 300w, /images/blog-import/blog-tempurature-banner-v2-1024x576.webp 1024w, /images/blog-import/blog-tempurature-banner-v2-768x432.webp 768w, /images/blog-import/blog-tempurature-banner-v2-1536x864.webp 1536w"
 sizes="(max-width: 1672px) 100vw, 1672px" width="1672" height="941"
 alt="India&#39;s ₹72,000 Crore Seafood Export Industry runs on One Invisible Ingredient: Temperature" />
 
