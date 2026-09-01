@@ -107,6 +107,7 @@
     { "source": "/why-your-milk-goes-bad-two-days-before-the-date-on-the-packet/", "destination": "/blog/milk-goes-bad/", "permanent": true },
     { "source": "/the-ice-cream-test-what-those-crystals-on-your-kulfi-are-actually-telling-you/", "destination": "/blog/ice-cream-crystals/", "permanent": true },
     { "source": "/indias-%E2%82%B972000-crore-seafood-export-industry-runs-on-one-invisible-ingredient-temperature/", "destination": "/blog/seafood-export-industry/", "permanent": true },
+    { "source": "/indias-%e2%82%b972000-crore-seafood-export-industry-runs-on-one-invisible-ingredient-temperature/", "destination": "/blog/seafood-export-industry/", "permanent": true },
 
     { "source": "/delivered-specialized-reefer-trucks-for-frozen-food-transport-in-qsr-fmcg-industry/", "destination": "/impact/qsr-fmcg-reefer-trucks/", "permanent": true },
     { "source": "/custom-reefer-truck-solution-for-the-frozen-dessert-industry/", "destination": "/impact/frozen-dessert-truck-solution/", "permanent": true },
