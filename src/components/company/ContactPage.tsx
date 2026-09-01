@@ -60,6 +60,11 @@ const ContactPage: React.FC = () => {
       });
       const body = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(body.error || 'Unable to submit your requirement.');
+      (window as Window & { dataLayer?: Record<string, unknown>[] }).dataLayer?.push({
+        event: 'generate_lead',
+        lead_source: 'contact_page',
+        lead_service: form.get('service'),
+      });
       setLoading(false);
       setSubmitted(true);
     } catch (err) {

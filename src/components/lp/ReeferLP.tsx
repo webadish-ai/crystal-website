@@ -205,8 +205,9 @@ function HeroCarousel() {
 // ── Lead Form ─────────────────────────────────────────────────────────────────
 
 function LeadForm({ data, location }: { data: LPData; location: string }) {
-  const [form, setForm] = useState({ name: '', phone: '', city: '', requirement: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [form, setForm] = useState({ name: '', phone: '', email: '', city: '', requirement: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }));
@@ -214,8 +215,33 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    await new Promise(r => setTimeout(r, 1200));
-    setStatus('success');
+    setError('');
+    try {
+      const apiBase = import.meta.env.PUBLIC_API_URL || 'https://admin.crystalgroup.in';
+      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: '',
+          service: `${location} reefer quote`,
+          message: form.requirement || 'Request for a reefer container quote.',
+        }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || 'Unable to submit your requirement.');
+      (window as Window & { dataLayer?: Record<string, unknown>[] }).dataLayer?.push({
+        event: 'generate_lead',
+        lead_source: 'reefer_landing_page',
+        lead_location: location,
+      });
+      setStatus('success');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unable to submit your requirement.');
+      setStatus('error');
+    }
   };
 
   if (status === 'success') {
@@ -252,6 +278,8 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
         <input required value={form.phone} onChange={set('phone')} placeholder="Mobile Number *" type="tel" className={inputCls} />
       </div>
 
+      <input required value={form.email} onChange={set('email')} placeholder="Email Address *" type="email" className={inputCls} />
+
       {cities.length > 0 && (
         <div className="relative">
           <select value={form.city} onChange={set('city')}
@@ -278,6 +306,7 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
       </button>
 
       <p className="text-[11px] text-gray-400 text-center">{data.form_disclaimer || "No spam. We'll call you within 2 business hours."}</p>
+      {status === 'error' && <p role="alert" className="text-sm text-red-600">{error}</p>}
     </form>
   );
 }

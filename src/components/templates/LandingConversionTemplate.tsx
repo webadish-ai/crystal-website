@@ -209,6 +209,11 @@ export default function LandingConversionTemplate(rawProps: Props) {
         const json = await res.json().catch(() => ({}))
         throw new Error((json as { error?: string }).error || 'Something went wrong. Please try again.')
       }
+      ;(window as Window & { dataLayer?: Record<string, unknown>[] }).dataLayer?.push({
+        event: 'generate_lead',
+        lead_source: 'landing_conversion_page',
+        lead_service: p.form_service,
+      })
       setFormState('success')
     } catch (err) {
       setFormError(err instanceof Error ? err.message : 'Something went wrong. Please try again.')
