@@ -5,6 +5,9 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 # ── RETIRE: dead / duplicate pages ───────────────────────────────────────────
+# WordPress taxonomy archives — keep their accumulated links out of 404s.
+/tag/*                                                         /blog/                                      301
+/category/*                                                    /blog/                                      301
 /jobs/                                                          /career/                                    301
 /job-openings/                                                  /career/                                    301
 /gallery/                                                       /case-studies/                              301
