@@ -192,7 +192,7 @@ export default function LandingConversionTemplate(rawProps: Props) {
     setFormState('submitting')
     setFormError('')
     try {
-      const apiBase = import.meta.env.PUBLIC_API_URL ?? ''
+      const apiBase = import.meta.env.PUBLIC_API_URL || 'https://admin.crystalgroup.in'
       const res = await fetch(`${apiBase}/api/enquiries/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
