@@ -217,8 +217,7 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
     setStatus('loading');
     setError('');
     try {
-      const apiBase = import.meta.env.PUBLIC_API_URL || 'https://admin.crystalgroup.in';
-      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
+    const res = await fetch('/api/send-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

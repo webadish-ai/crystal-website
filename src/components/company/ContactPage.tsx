@@ -44,9 +44,8 @@ const ContactPage: React.FC = () => {
     setLoading(true);
     setFormError('');
     const form = new FormData(e.currentTarget);
-    const apiBase = import.meta.env.PUBLIC_API_URL || 'https://admin.crystalgroup.in';
     try {
-      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
+      const res = await fetch('/api/send-enquiry', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
