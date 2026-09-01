@@ -4,6 +4,8 @@
 
     { "source": "/tag/:slug*", "destination": "/blog/", "permanent": true },
     { "source": "/category/:slug*", "destination": "/blog/", "permanent": true },
+    { "source": "/tag/cold-chain/", "destination": "/blog/", "permanent": true },
+    { "source": "/category/chemical-industry/", "destination": "/impact/", "permanent": true },
 
     { "source": "/blog/fmcg-qsr-cost-reduction/", "destination": "/blog/cold-chain-fmcg-qsr-savings/", "permanent": true },
     { "source": "/blog/agriculture-cold-chain-backbone/", "destination": "/blog/cold-chain-agriculture-india/", "permanent": true },
@@ -32,6 +34,7 @@
     { "source": "/case-studies/", "destination": "/impact/", "permanent": true },
     { "source": "/gallery/", "destination": "/impact/", "permanent": true },
     { "source": "/pharmaceutical-2/", "destination": "/impact/pharma-overview/", "permanent": true },
+    { "source": "/pharmaceutical/", "destination": "/impact/pharma-overview/", "permanent": true },
 
     { "source": "/blast-freezer-/", "destination": "/store/blast-freezer/", "permanent": true },
     { "source": "/blast-freezer/", "destination": "/store/blast-freezer/", "permanent": true },
@@ -53,6 +56,7 @@
 
     { "source": "/freight-forwarding/", "destination": "/move/freight-forwarding/", "permanent": true },
     { "source": "/freight-forwarding-landing-page/", "destination": "/move/freight-forwarding/", "permanent": true },
+    { "source": "/lp/freight-forwarding/", "destination": "/move/freight-forwarding/", "permanent": true },
 
     { "source": "/container-loading-calculator/", "destination": "/solve/loading-calculator/", "permanent": true },
     { "source": "/pallet-footprints-guide/", "destination": "/solve/pallet-guide/", "permanent": true },
@@ -99,6 +103,10 @@
     { "source": "/reefer-containers-uncovered-the-ultimate-guide-to-temperature-controlled-shipping-solutions/", "destination": "/blog/reefer-container-guide/", "permanent": true },
     { "source": "/how-cold-warehouses-are-quietly-saving-the-planet-one-fresh-product-at-a-time/", "destination": "/blog/sustainable-cold-warehousing/", "permanent": true },
     { "source": "/the-ultimate-guide-to-reefer-containers-revolutionizing-perishable-goods-transportation/", "destination": "/blog/reefer-transportation-guide/", "permanent": true },
+    { "source": "/the-cold-chain-blind-spot-nobody-talks-about/", "destination": "/blog/cold-chain-blind-spot/", "permanent": true },
+    { "source": "/why-your-milk-goes-bad-two-days-before-the-date-on-the-packet/", "destination": "/blog/milk-goes-bad/", "permanent": true },
+    { "source": "/the-ice-cream-test-what-those-crystals-on-your-kulfi-are-actually-telling-you/", "destination": "/blog/ice-cream-crystals/", "permanent": true },
+    { "source": "/indias-%E2%82%B972000-crore-seafood-export-industry-runs-on-one-invisible-ingredient-temperature/", "destination": "/blog/seafood-export-industry/", "permanent": true },
 
     { "source": "/delivered-specialized-reefer-trucks-for-frozen-food-transport-in-qsr-fmcg-industry/", "destination": "/impact/qsr-fmcg-reefer-trucks/", "permanent": true },
     { "source": "/custom-reefer-truck-solution-for-the-frozen-dessert-industry/", "destination": "/impact/frozen-dessert-truck-solution/", "permanent": true },
@@ -122,6 +130,12 @@
     { "source": "/transformed-iskcon-temples-entrance-with-a-custom-security-cabin/", "destination": "/impact/temple-security-cabin/", "permanent": true },
     { "source": "/customized-dry-container-innovation-for-a-global-tyre-manufacturer/", "destination": "/impact/dry-container-tyre-mfg/", "permanent": true },
     { "source": "/enhanced-cold-storage-solutions-for-a-leading-quick-commerce-provider/", "destination": "/impact/q-commerce-cold-storage/", "permanent": true },
-    { "source": "/scalable-frozen-chiller-storage-for-leading-food-delivery-platform/", "destination": "/impact/food-delivery-storage/", "permanent": true }
+    { "source": "/scalable-frozen-chiller-storage-for-leading-food-delivery-platform/", "destination": "/impact/food-delivery-storage/", "permanent": true },
+    { "source": "/20-ft-refurbished-reefer-container-on-lease-for-pharmaceutical-cold-storage/", "destination": "/impact/refurbished-pharma-storage/", "permanent": true },
+    { "source": "/delivered-a-40-ft-reefer-with-anteroom-in-just-7-days-for-a-large-quick-commerce-players-biggest-festive-sale/", "destination": "/impact/cold-chain-quick-commerce-platform/", "permanent": true },
+    { "source": "/iso-tanks-empower-geothermal-energy-for-a-leading-energy-innovator-in-barmer-rajasthan/", "destination": "/impact/", "permanent": true },
+    { "source": "/rapid-secure-chemical-transport-with-crystal-groups-iso-tank/", "destination": "/impact/chemical-transport-iso-tank/", "permanent": true },
+    { "source": "/40ft-20ft-reefer-container-deployment-for-butter-storage-in-mumbai/", "destination": "/impact/", "permanent": true },
+    { "source": "/40ft-blast-freezer-deployment-for-raw-chicken-processing-in-telangana/", "destination": "/impact/", "permanent": true }
   ]
 }

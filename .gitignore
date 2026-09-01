@@ -58,3 +58,4 @@ public/uploads/misc/1777701353189.jpg
 
 # backend data — never commit the database or generated files
 # src/data/lp/ — LP JSONs needed at build time, committed
+.vercel
