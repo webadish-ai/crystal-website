@@ -15,6 +15,10 @@ function escapeHtml(value) {
     .replace(/'/g, '&#039;')
 }
 
+const attempts = globalThis.__crystalEnquiryAttempts || (globalThis.__crystalEnquiryAttempts = new Map())
+const RATE_LIMIT = 10
+const RATE_WINDOW_MS = 60 * 60 * 1000
+
 export default async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     return res.status(204).end()
@@ -24,18 +28,36 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {})
-  const enquiry = {
-    name: String(body.name || '').trim(),
-    email: String(body.email || '').trim(),
-    phone: String(body.phone || '').trim(),
-    company: String(body.company || '').trim(),
-    service: String(body.service || '').trim(),
-    message: String(body.message || '').trim(),
-    source: String(body.source || 'website').trim(),
+  let body
+  try {
+    body = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {})
+  } catch {
+    return res.status(400).json({ error: 'Invalid request.' })
   }
 
-  if (!enquiry.name || !enquiry.email || !enquiry.phone || !enquiry.company || !enquiry.message) {
+  const forwardedFor = req.headers['x-forwarded-for']
+  const ip = String(forwardedFor || req.socket?.remoteAddress || 'unknown').split(',')[0].trim()
+  const now = Date.now()
+  const record = attempts.get(ip)
+  if (!record || record.resetAt <= now) {
+    attempts.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS })
+  } else if (record.count >= RATE_LIMIT) {
+    return res.status(429).json({ error: 'Too many submissions. Please try again later.' })
+  } else {
+    record.count += 1
+  }
+
+  const enquiry = {
+    name: String(body.name || '').trim().slice(0, 200),
+    email: String(body.email || '').trim().slice(0, 200),
+    phone: String(body.phone || '').trim().slice(0, 50),
+    company: String(body.company || '').trim().slice(0, 200),
+    service: String(body.service || '').trim().slice(0, 120),
+    message: String(body.message || '').trim().slice(0, 5000),
+    source: String(body.source || 'website').trim().slice(0, 120),
+  }
+
+  if (!enquiry.name || !enquiry.email || !enquiry.phone || !enquiry.message) {
     return res.status(400).json({ error: 'Please complete all required fields.' })
   }
 
