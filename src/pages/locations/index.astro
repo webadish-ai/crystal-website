@@ -6,6 +6,18 @@ import LocationsHub from '../../components/locations/LocationsHub';
 <Layout
   title="Our Locations | Crystal Group"
   description="Crystal Group operates across India from Mumbai, Navi Mumbai, Kolkata, and Bhubaneswar. Serving 300+ clients with cold chain and container solutions pan-India."
+  breadcrumbLabels={["Locations"]}
+  structuredData={{
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Crystal Group locations",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "item": { "@type": "Place", "name": "Crystal Group Mumbai Head Office", "address": { "@type": "PostalAddress", "streetAddress": "501, Synergy Business Park, Sahakar Road, Off Aarey Road, Goregaon East", "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400063", "addressCountry": "IN" } } },
+      { "@type": "ListItem", "position": 2, "item": { "@type": "Place", "name": "Crystal Group Navi Mumbai Logistics Facility", "address": { "@type": "PostalAddress", "addressLocality": "Navi Mumbai", "addressRegion": "Maharashtra", "addressCountry": "IN" } } },
+      { "@type": "ListItem", "position": 3, "item": { "@type": "Place", "name": "Crystal Group Kolkata Gateway Facility", "address": { "@type": "PostalAddress", "streetAddress": "88 Bidhan Street, Kashanrpur, Park Street", "addressLocality": "Kolkata", "addressRegion": "West Bengal", "postalCode": "700171", "addressCountry": "IN" } } },
+      { "@type": "ListItem", "position": 4, "item": { "@type": "Place", "name": "Crystal Group Bhubaneswar Eastern Hub", "address": { "@type": "PostalAddress", "addressLocality": "Bhubaneswar", "addressRegion": "Odisha", "addressCountry": "IN" } } }
+    ]
+  }}
 >
   <LocationsHub client:load />
 </Layout>

@@ -1,11 +1,30 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import StoreFreightForwarding from '../../components/store/StoreFreightForwarding';
+
+const freightFaq = [
+  { q: 'What types of cargo do you handle?', a: 'We handle general cargo, hazardous goods, oversized freight, and temperature-sensitive cargo across air, ocean, and multimodal routes.' },
+  { q: 'Do you provide cargo insurance?', a: 'Yes. Optional cargo insurance is available for all shipments. We guide you through coverage options based on cargo type and value.' },
+  { q: 'Can you handle pharmaceutical and cold-chain cargo?', a: 'Yes. We have dedicated reefer container services and GDP-compliant handling for pharmaceutical and perishable cargo.' },
+  { q: 'What is your customs clearance capability?', a: 'Our customs team manages complete documentation, duty drawback claims, GST credit processing, and compliance for all import/export shipments.' },
+  { q: 'Do you offer door-to-door delivery?', a: 'Yes. Our integrated logistics service covers pickup, freight, customs, and last-mile delivery to your destination.' }
+];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": freightFaq.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
 ---
 
 <Layout
   title="Cold Chain Freight Forwarding | Crystal Group"
   description="End-to-end freight forwarding across 190+ countries. Air, ocean, multimodal, customs clearance, and reefer container services. 62 years of cold-chain expertise."
+  breadcrumbLabels={["Move", "Freight Forwarding"]}
+  structuredData={faqSchema}
 >
   <StoreFreightForwarding client:load />
 </Layout>

@@ -2,8 +2,18 @@
 import Layout from '../../layouts/Layout.astro';
 import StoreColdRooms from '../../components/store/StoreColdRooms';
 import data from '../../data/store-cold-rooms.json';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.faq.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
 ---
 
-<Layout title={data.meta.title} description={data.meta.description}>
+<Layout title={data.meta.title} description={data.meta.description} structuredData={faqSchema}>
   <StoreColdRooms client:load />
 </Layout>

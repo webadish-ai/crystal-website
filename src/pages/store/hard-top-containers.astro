@@ -3,8 +3,18 @@ import Layout from '../../layouts/Layout.astro';
 import StoreDryContainer from '../../components/store/StoreDryContainer';
 import data from '../../data/store-hard-top-containers.json';
 import heroImg from '../../data/images/store/containers/hard-top-hero.png';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": data.faq.map((item) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": { "@type": "Answer", "text": item.a }
+  }))
+};
 ---
 
-<Layout title={data.meta.title} description={data.meta.description}>
+<Layout title={data.meta.title} description={data.meta.description} structuredData={faqSchema}>
   <StoreDryContainer client:load data={data} heroImage={(heroImg as any).src ?? heroImg} />
 </Layout>
