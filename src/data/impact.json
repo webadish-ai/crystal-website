@@ -1215,15 +1215,134 @@
               "Demonstrated Crystal's reliability for time-critical chemical logistics"
             ],
             "outcomes": [
-              { "kpi": "Turnaround", "value": "2 Days" },
-              { "kpi": "Execution", "value": "100% Precision" },
-              { "kpi": "Tank Capacity", "value": "26 KL" },
-              { "kpi": "Tank Type", "value": "T11 ISO" },
-              { "kpi": "Safety Incidents", "value": "Zero" },
-              { "kpi": "Cargo Type", "value": "Hazardous Chemical" }
+              {
+                "kpi": "Turnaround",
+                "value": "2 Days"
+              },
+              {
+                "kpi": "Execution",
+                "value": "100% Precision"
+              },
+              {
+                "kpi": "Tank Capacity",
+                "value": "26 KL"
+              },
+              {
+                "kpi": "Tank Type",
+                "value": "T11 ISO"
+              },
+              {
+                "kpi": "Safety Incidents",
+                "value": "Zero"
+              },
+              {
+                "kpi": "Cargo Type",
+                "value": "Hazardous Chemical"
+              }
             ],
             "testimonial": null,
             "slug": "chemical-transport-iso-tank"
+          },
+          {
+            "tag": "Store · Dairy",
+            "pdf": null,
+            "title": "40ft & 20ft Reefer Container Deployment for Butter Storage in Mumbai",
+            "client": "Dairy & Food Processing Company",
+            "location": "Goregaon, Mumbai",
+            "product": "2x 40ft Reefer Containers + 1x 20ft Reefer Container (Rental)",
+            "challenge": [
+              "Reliable frozen storage solution required for butter inventory",
+              "Consistent -18°C temperature needed to preserve product quality",
+              "Additional cold storage capacity required outside existing warehouse",
+              "Fast deployment needed to support uninterrupted dairy operations",
+              "Solution required to be operational immediately with minimal site preparation"
+            ],
+            "solution": [
+              "3 reefer containers supplied on rental basis",
+              "Configured to consistently maintain -18°C",
+              "Delivered and positioned at client facility as a plug-and-play cold storage solution",
+              "Rapid deployment with minimal civil work"
+            ],
+            "results": [
+              "Maintained stable -18°C throughout storage",
+              "Expanded cold storage capacity without warehouse expansion",
+              "Quick deployment minimised operational disruption",
+              "Flexible rental solution reduced capital investment",
+              "Reliable performance ensured product quality and operational continuity"
+            ],
+            "outcomes": [
+              {
+                "kpi": "Units Deployed",
+                "value": "3"
+              },
+              {
+                "kpi": "Temperature",
+                "value": "-18°C"
+              },
+              {
+                "kpi": "Contract Type",
+                "value": "Rental"
+              },
+              {
+                "kpi": "Location",
+                "value": "Goregaon, Mumbai"
+              }
+            ],
+            "testimonial": {
+              "quote": "The reefer containers delivered consistent -18°C storage and were deployed quickly, helping us expand our cold storage capacity without disrupting operations.",
+              "author": "Operations Head",
+              "company": "Dairy & Food Processing Company"
+            },
+            "slug": "butter-storage-mumbai"
+          },
+          {
+            "tag": "Store · FMCG",
+            "pdf": null,
+            "title": "40ft Blast Freezer Deployment for Raw Chicken Processing in Telangana",
+            "client": "Vimla Feeds Pvt Ltd",
+            "location": "Medak District, Telangana",
+            "product": "40ft Five-Machine Blast Freezer (Lease)",
+            "challenge": [
+              "Rapid blast freezing solution required for raw chicken processing",
+              "Ultra-low -35°C temperature needed for efficient product preservation",
+              "High daily processing volume of approximately 700 crates per cycle",
+              "Uninterrupted operations required across twice-daily blast freezing cycles",
+              "Fast deployment required under a lease model"
+            ],
+            "solution": [
+              "1 unit of 40ft Five-Machine Blast Freezer supplied",
+              "System configured to achieve stable -35°C blast freezing performance",
+              "LED lighting and strip curtains integrated for efficient workflow and temperature retention",
+              "Complete PTI inspection and operational testing conducted before dispatch",
+              "Operational readiness ensured with minimal setup time at client facility"
+            ],
+            "results": [
+              "Maintained consistent -35°C temperature performance during operations",
+              "Quick deployment reduced operational delays and enabled faster production readiness",
+              "Improved product quality preservation and cold chain reliability",
+              "Flexible lease model helped optimise operational investment",
+              "Smooth coordination between operations, logistics, and deployment teams ensured successful project execution"
+            ],
+            "outcomes": [
+              {
+                "kpi": "Units Deployed",
+                "value": "1"
+              },
+              {
+                "kpi": "Temperature",
+                "value": "-35°C"
+              },
+              {
+                "kpi": "Daily Volume",
+                "value": "~700 crates/cycle"
+              },
+              {
+                "kpi": "Contract Type",
+                "value": "Lease"
+              }
+            ],
+            "testimonial": null,
+            "slug": "chicken-processing-blast-freezer-telangana"
           }
         ]
       },
