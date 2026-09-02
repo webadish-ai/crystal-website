@@ -10,6 +10,7 @@ import maharashtra from '../../data/lp/maharashtra.json'
 import tamilNadu from '../../data/lp/tamil-nadu.json'
 import uae from '../../data/lp/uae.json'
 import bhubaneswar from '../../data/lp/bhubaneswar.json'
+import punjab from '../../data/lp/punjab.json'
 
 const LP_PAGES: Record<string, typeof telangana> = {
   'telangana': telangana,
@@ -20,6 +21,7 @@ const LP_PAGES: Record<string, typeof telangana> = {
   'tamil-nadu': tamilNadu,
   'uae': uae,
   'bhubaneswar': bhubaneswar,
+  'punjab': punjab,
 }
 
 export function getStaticPaths() {
@@ -32,6 +34,7 @@ export function getStaticPaths() {
     { params: { slug: 'tamil-nadu' } },
     { params: { slug: 'uae' } },
     { params: { slug: 'bhubaneswar' } },
+    { params: { slug: 'punjab' } },
   ]
 }
 
