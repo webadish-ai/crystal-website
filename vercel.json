@@ -68,6 +68,7 @@
     { "source": "/rent-buy-reefer-containers-landing-page-maharashtra/", "destination": "/lp/maharashtra/", "permanent": true },
     { "source": "/rent-buy-reefer-containers-landing-page-tamil-nadu/", "destination": "/lp/tamil-nadu/", "permanent": true },
     { "source": "/rent-buy-reefer-containers-landing-page-telangana/", "destination": "/lp/telangana/", "permanent": true },
+    { "source": "/rent-buy-reefer-containers-landing-page-punjab/", "destination": "/lp/punjab/", "permanent": true },
     { "source": "/rent-buy-container-landingpage-uae/", "destination": "/lp/uae/", "permanent": true },
     { "source": "/warehouse-bhubaneshwar-landing-page/", "destination": "/lp/bhubaneswar/", "permanent": true },
 
