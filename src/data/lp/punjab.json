@@ -1,101 +1,37 @@
 {
-  "_template": "landing-conversion",
-  "meta_title": "Page Title | Crystal Group",
-  "meta_description": "Short description for search engines (150–160 characters).",
-  "topbar_whatsapp": "https://wa.me/919880012345",
-  "topbar_phone": "+91 98800 12345",
-  "hero_eyebrow": "Crystal Group · Location",
-  "hero_heading": "Product / Service <strong>Name Here</strong>",
-  "hero_image": "",
+  "meta_title": "Reefer Container Rental & Leasing in Punjab | Crystal Group",
+  "meta_description": "Rent or lease reefer containers in Punjab — Ludhiana, Amritsar, Jalandhar and more. From ₹1,300/day. FSSAI-compliant, 24/7 monitoring. Get a free quote.",
+  "location": "Punjab",
+  "hero_heading": "Reefer Container Rental &amp; Leasing in <span style=\"color:#FAC212\">Punjab</span>",
+  "hero_subheading": "Temperature-controlled containers from ₹1,300/day across Punjab. Ludhiana and Amritsar same-week delivery. FSSAI-compliant. 24/7 remote monitoring for pharma, food processing, and FMCG.",
+  "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Same-Week Delivery", "Flexible Terms"],
   "hero_pricing": [
-    {
-      "label": "Rental from",
-      "value": "₹X,XXX/day",
-      "note": "*GST extra"
-    },
-    {
-      "label": "Leasing from",
-      "value": "₹XX,XXX/month",
-      "note": "*T&C apply"
-    }
+    { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
+    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" }
   ],
-  "hero_disclaimer": "*Prices indicative. Final quote based on specification, duration and location.",
-  "form_heading": "Get a Free Quote",
-  "form_service": "General Enquiry",
-  "form_submit_label": "Request Quote",
-  "form_disclaimer": "We'll call you within 2 business hours. No spam, ever.",
-  "locations": [
-    "Bengaluru",
-    "Mysuru",
-    "Mangaluru",
-    "Hubli",
-    "Belagavi"
+  "hero_disclaimer": "*Prices indicative. Final quote based on container size, duration, and delivery location. GST at 18% applicable.",
+  "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
+  "form_submit_label": "Request My Free Quote",
+  "form_disclaimer": "No spam. We'll call you within 2 business hours.",
+  "cities": ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Mohali", "Bathinda", "Hoshiarpur", "Pathankot", "Moga"],
+  "serve_items": [
+    "Pharmaceuticals & Vaccines",
+    "Dairy & Milk Products",
+    "Fresh Fruits & Vegetables",
+    "Ice Cream & Frozen Foods",
+    "Poultry & Meat",
+    "Agro & Food Processing",
+    "Hospitality & Event Catering",
+    "Chemical & Specialty Cargo",
+    "FMCG Distribution",
+    "Quick Commerce",
+    "Confectionery & Bakery",
+    "Cold Storage for Warehousing"
   ],
   "gallery": [
-    {
-      "image": "",
-      "label": "Gallery Image 1"
-    },
-    {
-      "image": "",
-      "label": "Gallery Image 2"
-    },
-    {
-      "image": "",
-      "label": "Gallery Image 3"
-    },
-    {
-      "image": "",
-      "label": "Gallery Image 4"
-    },
-    {
-      "image": "",
-      "label": "Gallery Image 5"
-    },
-    {
-      "image": "",
-      "label": "Gallery Image 6"
-    }
+    { "image": "/crystal_warehouse_hero.webp", "label": "Crystal Group Cold Chain Facility" },
+    { "image": "/images/build/bts-operations.webp", "label": "Reefer Container Operations" },
+    { "image": "/images/build/bts-commissioning.webp", "label": "Container Commissioning" }
   ],
-  "usp_heading": "Why Crystal Group?",
-  "usp_points": [
-    "<strong>Benefit one</strong> — what makes this offering stand out.",
-    "<strong>Benefit two</strong> — key operational or quality advantage.",
-    "<strong>Benefit three</strong> — compliance, monitoring or flexibility point."
-  ],
-  "usp_cta_label": "Enquire Now",
-  "usp_cta_href": "#enquire",
-  "serve_heading": "Industries We Serve",
-  "serve_items": [
-    "Industry or segment one",
-    "Industry or segment two",
-    "Industry or segment three",
-    "Industry or segment four"
-  ],
-  "testimonials_heading": "Trusted by Industry Leaders",
-  "testimonials_subheading": "Businesses across India rely on Crystal Group for dependable cold chain solutions.",
-  "testimonials": [
-    {
-      "company": "Client Company",
-      "logo": "",
-      "color": "#0F2854",
-      "text": "Paste testimonial quote here. Specific results work best."
-    },
-    {
-      "company": "Another Client",
-      "logo": "",
-      "color": "#1A5276",
-      "text": "Second testimonial quote about service quality."
-    },
-    {
-      "company": "Third Reference",
-      "logo": "",
-      "color": "#0E6655",
-      "text": "Third testimonial mentioning product name and outcome."
-    }
-  ],
-  "sticky_cta_label": "Get Quote",
-  "sticky_cta_href": "#enquire",
-  "footer_note": "© 2025 Crystal Group. All rights reserved.",
-  "footer_phone": "+91 98800 12345"
+  "footer_note": "© 2026 Crystal Logistic Cool Chain Ltd. All rights reserved. Reefer container rental & leasing across Punjab."
 }
