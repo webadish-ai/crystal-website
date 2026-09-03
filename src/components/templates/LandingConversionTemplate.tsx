@@ -192,7 +192,8 @@ export default function LandingConversionTemplate(rawProps: Props) {
     setFormState('submitting')
     setFormError('')
     try {
-      const res = await fetch('/api/enquiries/submit', {
+      const apiBase = import.meta.env.PUBLIC_API_URL ?? ''
+      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
