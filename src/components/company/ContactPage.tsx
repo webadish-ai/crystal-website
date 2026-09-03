@@ -37,15 +37,35 @@ const ContactPage: React.FC = () => {
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [formError, setFormError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate API call
-    setTimeout(() => {
+    setFormError('');
+    const form = new FormData(e.currentTarget);
+    const apiBase = import.meta.env.PUBLIC_API_URL ?? '';
+    try {
+      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.get('name'),
+          email: form.get('email'),
+          phone: form.get('phone'),
+          company: form.get('company'),
+          service: form.get('service'),
+          message: form.get('message'),
+        }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || 'Unable to submit your requirement.');
       setLoading(false);
       setSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      setLoading(false);
+      setFormError(err instanceof Error ? err.message : 'Unable to submit your requirement.');
+    }
   };
 
   return (
@@ -102,28 +122,28 @@ const ContactPage: React.FC = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label htmlFor="cf-name" className="font-heading font-extrabold text-eyebrow uppercase tracking-widest text-secondary/70">Full Name</label>
-                        <input id="cf-name" required type="text" className={inputClass} placeholder="e.g. Rahul Sharma" />
+                        <input id="cf-name" name="name" required type="text" className={inputClass} placeholder="e.g. Rahul Sharma" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label htmlFor="cf-company" className="font-heading font-extrabold text-eyebrow uppercase tracking-widest text-secondary/70">Company</label>
-                        <input id="cf-company" required type="text" className={inputClass} placeholder="e.g. Crystal Group" />
+                        <input id="cf-company" name="company" required type="text" className={inputClass} placeholder="e.g. Crystal Group" />
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div className="flex flex-col gap-2">
                         <label htmlFor="cf-email" className="font-heading font-extrabold text-eyebrow uppercase tracking-widest text-secondary/70">Email Address</label>
-                        <input id="cf-email" required type="email" className={inputClass} placeholder="rahul@example.com" />
+                        <input id="cf-email" name="email" required type="email" className={inputClass} placeholder="rahul@example.com" />
                       </div>
                       <div className="flex flex-col gap-2">
                         <label htmlFor="cf-phone" className="font-heading font-extrabold text-eyebrow uppercase tracking-widest text-secondary/70">Phone Number</label>
-                        <input id="cf-phone" required type="tel" className={inputClass} placeholder="+91 98XXX XXXXX" />
+                        <input id="cf-phone" name="phone" required type="tel" className={inputClass} placeholder="+91 98XXX XXXXX" />
                       </div>
                     </div>
 
                     <div className="flex flex-col gap-2">
                       <label htmlFor="cf-service" className="font-heading font-extrabold text-eyebrow uppercase tracking-widest text-secondary/70">I need help with</label>
-                      <select id="cf-service" className={`${inputClass} appearance-none cursor-pointer`}>
+                      <select id="cf-service" name="service" className={`${inputClass} appearance-none cursor-pointer`}>
                         <option>Reefer Container Solutions</option>
                         <option>Cold Storage & Warehousing</option>
                         <option>Refrigerated Transportation</option>
@@ -135,7 +155,7 @@ const ContactPage: React.FC = () => {
 
                     <div className="flex flex-col gap-2">
                       <label htmlFor="cf-message" className="font-heading font-extrabold text-eyebrow uppercase tracking-widest text-secondary/70">Message / Requirement</label>
-                      <textarea id="cf-message" required rows={4} className={`${inputClass} resize-none`} placeholder="Tell us about your cold chain requirement..." />
+                      <textarea id="cf-message" name="message" required rows={4} className={`${inputClass} resize-none`} placeholder="Tell us about your cold chain requirement..." />
                     </div>
 
                     <button
@@ -152,6 +172,7 @@ const ContactPage: React.FC = () => {
                         </div>
                       )}
                     </button>
+                    {formError && <p role="alert" className="text-red-700 font-body text-body-sm">{formError}</p>}
                   </motion.form>
                 ) : (
                   <motion.div
