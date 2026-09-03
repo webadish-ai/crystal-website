@@ -205,8 +205,9 @@ function HeroCarousel() {
 // ── Lead Form ─────────────────────────────────────────────────────────────────
 
 function LeadForm({ data, location }: { data: LPData; location: string }) {
-  const [form, setForm] = useState({ name: '', phone: '', city: '', requirement: '' });
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [form, setForm] = useState({ name: '', email: '', phone: '', city: '', requirement: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }));
@@ -214,8 +215,28 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    await new Promise(r => setTimeout(r, 1200));
-    setStatus('success');
+    setError('');
+    const apiBase = import.meta.env.PUBLIC_API_URL ?? '';
+    try {
+      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.city,
+          service: `Reefer Container — ${location}`,
+          message: form.requirement,
+        }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || 'Something went wrong. Please try again.');
+      setStatus('success');
+    } catch (err) {
+      setStatus('error');
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
   };
 
   if (status === 'success') {
@@ -252,6 +273,8 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
         <input required value={form.phone} onChange={set('phone')} placeholder="Mobile Number *" type="tel" className={inputCls} />
       </div>
 
+      <input required value={form.email} onChange={set('email')} placeholder="Email Address *" type="email" className={inputCls} />
+
       {cities.length > 0 && (
         <div className="relative">
           <select value={form.city} onChange={set('city')}
@@ -267,6 +290,10 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
       <textarea value={form.requirement} onChange={set('requirement')}
         placeholder="Requirement — container size, product type, duration"
         rows={3} className={`${inputCls} resize-none`} />
+
+      {status === 'error' && (
+        <p className="text-red-600 text-sm text-center">{error}</p>
+      )}
 
       <button type="submit" disabled={status === 'loading'}
         className="w-full bg-[#0F2854] hover:bg-[#0d2248] text-white font-bold py-3.5 text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2 disabled:opacity-60">
