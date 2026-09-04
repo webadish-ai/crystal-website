@@ -63,6 +63,21 @@ const WHY = [
   { icon: FiAward,       title: '15+ Years, 500+ Enterprise Clients' },
 ];
 
+const TESTIMONIALS = [
+  {
+    quote: "Crystal Group's reefer containers have been vital for maintaining the quality of Dr. Reddy's pharma products, offering precise temperature control and dependable service.",
+    client: "Dr. Reddy's",
+  },
+  {
+    quote: "Crystal Group's reefer containers have been crucial for Lupin Labs, ensuring precise temperature control for our medicines and reliable service throughout.",
+    client: 'Lupin Labs',
+  },
+  {
+    quote: "Crystal Group's reefer containers have been excellent for storing ITC's dairy products, ensuring optimal freshness and reliable temperature control!",
+    client: 'ITC',
+  },
+];
+
 const CAROUSEL_IMGS = [
   '/crystal_warehouse_hero.webp',
   '/images/build/bts-site-selection.webp',
@@ -366,6 +381,26 @@ function Gallery({ items }: { items: { image: string; label: string }[] }) {
         )}
       </AnimatePresence>
     </>
+  );
+}
+
+// ── Testimonials ──────────────────────────────────────────────────────────────
+
+function Testimonials() {
+  return (
+    <div className="grid md:grid-cols-3 gap-4">
+      {TESTIMONIALS.map((t, i) => (
+        <motion.div key={i}
+          initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+          className="bg-white border border-gray-100 p-6 flex flex-col gap-4">
+          <div className="flex gap-0.5 text-[#FAC212]">
+            {Array.from({ length: 5 }).map((_, s) => <span key={s}>★</span>)}
+          </div>
+          <p className="text-sm text-gray-600 leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
+          <p className="text-[#0F2854] font-bold text-sm">{t.client}</p>
+        </motion.div>
+      ))}
+    </div>
   );
 }
 
@@ -696,6 +731,17 @@ export default function ReeferLP({ data }: { data: LPData }) {
 
       {/* ── MARQUEE ── */}
       <Marquee items={serveItems} />
+
+      {/* ── TESTIMONIALS ── */}
+      <section className="bg-white py-10 md:py-14 px-5 md:px-10">
+        <div className="max-w-6xl mx-auto">
+          <SectionLabel text="Trusted By Industry Leaders" />
+          <h2 className="font-heading font-extrabold text-[#0F2854] text-2xl md:text-3xl mb-8">
+            Hear what our clients have to say
+          </h2>
+          <Testimonials />
+        </div>
+      </section>
 
       {/* ── GALLERY ── */}
       {gallery.filter(g => g.image).length > 0 && (

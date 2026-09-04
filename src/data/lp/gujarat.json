@@ -7,7 +7,8 @@
   "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Export-Ready", "Flexible Terms"],
   "hero_pricing": [
     { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
-    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" }
+    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" },
+    { "label": "Purchase from", "value": "₹7,50,000", "note": "*Indicative" }
   ],
   "hero_disclaimer": "*Prices indicative. Final quote based on container size, duration, and delivery location. GST at 18% applicable.",
   "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
