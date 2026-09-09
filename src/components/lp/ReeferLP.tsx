@@ -432,17 +432,17 @@ export default function ReeferLP({ data }: { data: LPData }) {
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: 'repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 48px)' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 pt-8 pb-6 md:pt-16 md:pb-8 grid md:grid-cols-2 gap-6 md:gap-14 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 pt-6 pb-4 md:pt-16 md:pb-8 grid md:grid-cols-2 gap-6 md:gap-14 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-3 md:mb-4">
               <FiMapPin size={12} className="text-[#FAC212]" />
               <span className="text-[#FAC212] text-xs font-bold uppercase tracking-widest">{location}</span>
             </div>
-            <h1 className="font-heading font-extrabold text-white text-2xl md:text-4xl leading-tight tracking-tight mb-4"
+            <h1 className="font-heading font-extrabold text-white text-2xl md:text-4xl leading-tight tracking-tight mb-3 md:mb-4"
               dangerouslySetInnerHTML={{ __html: heading }} />
-            <p className="text-white/65 text-sm leading-relaxed mb-5">{subheading}</p>
+            <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5">{subheading}</p>
 
-            <div className="flex flex-wrap gap-2 mb-5">
+            <div className="flex flex-wrap gap-2 mb-3 md:mb-5">
               {pricing.map((p, i) => (
                 <div key={i} className="bg-white/10 border border-white/10 px-3 py-2.5 flex flex-col min-w-[110px]">
                   <span className="text-white/50 text-[10px] uppercase tracking-wider">{p.label}</span>
@@ -456,10 +456,11 @@ export default function ReeferLP({ data }: { data: LPData }) {
               className="inline-flex items-center gap-2 bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-6 py-3 text-sm uppercase tracking-wide transition-colors">
               Get Free Quote <FiArrowRight size={15} />
             </a>
-            {data.hero_disclaimer && <p className="text-white/30 text-[10px] mt-4 leading-relaxed">{data.hero_disclaimer}</p>}
+            {data.hero_disclaimer && <p className="text-white/30 text-[10px] mt-3 md:mt-4 leading-relaxed hidden md:block">{data.hero_disclaimer}</p>}
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
+            className="hidden md:block">
             <HeroCarousel />
           </motion.div>
         </div>
@@ -474,7 +475,7 @@ export default function ReeferLP({ data }: { data: LPData }) {
       </section>
 
       {/* ── FORM ── */}
-      <section id="enquire" className="bg-[#F7F8FA] flex justify-center px-5 md:px-10 pb-14" style={{ scrollMarginTop: '56px' }}>
+      <section id="enquire" className="bg-[#F7F8FA] flex justify-center px-5 md:px-10 pt-3 pb-14 md:pt-0" style={{ scrollMarginTop: '56px' }}>
         <div className="w-full max-w-2xl bg-white shadow-2xl px-7 py-7 border-t border-gray-100">
           <LeadForm data={data} location={location} />
         </div>
