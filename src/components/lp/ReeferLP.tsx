@@ -427,84 +427,147 @@ export default function ReeferLP({ data }: { data: LPData }) {
       <TopBar location={location} cities={data.cities || []} />
       <div className="h-[46px]" />
 
-      {/* ── HERO ── */}
-      <section className="relative bg-[#0F2854] overflow-hidden pb-4 md:pb-16">
-        <div className="absolute inset-0 opacity-[0.04]"
-          style={{ backgroundImage: 'repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 48px)' }} />
+      {location === 'Punjab' ? (
+        <>
+          {/* ── HERO + FORM (side by side, matches live page exactly) ── */}
+          <section className="relative bg-[#0F2854] overflow-hidden py-6 md:py-16">
+            <div className="absolute inset-0 opacity-[0.04]"
+              style={{ backgroundImage: 'repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 48px)' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 pt-5 pb-2 md:pt-16 md:pb-8 grid md:grid-cols-2 gap-6 md:gap-14 items-center">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <div className="flex items-center gap-2 mb-2 md:mb-4">
-              <FiMapPin size={12} className="text-[#FAC212]" />
-              <span className="text-[#FAC212] text-xs font-bold uppercase tracking-widest">{location}</span>
-            </div>
-            <h1 className="font-heading font-extrabold text-white text-xl md:text-4xl leading-tight tracking-tight mb-2 md:mb-4"
-              dangerouslySetInnerHTML={{ __html: heading }} />
-            <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5 hidden md:block">{subheading}</p>
-
-            <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2.5 md:mb-5">
-              {pricing.map((p, i) => (
-                <div key={i} className="bg-white/10 border border-white/10 px-2.5 py-1.5 md:px-3 md:py-2.5 flex flex-col min-w-[92px] md:min-w-[110px]">
-                  <span className="text-white/50 text-[9px] md:text-[10px] uppercase tracking-wider">{p.label}</span>
-                  <span className="text-[#FAC212] font-black text-base md:text-xl leading-tight">{p.value}</span>
-                  {p.note && <span className="text-white/30 text-[9px] mt-0.5 hidden md:block">{p.note}</span>}
+            <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 grid md:grid-cols-2 gap-6 md:gap-14 items-start">
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+                <div className="flex items-center gap-2 mb-2 md:mb-4">
+                  <FiMapPin size={12} className="text-[#FAC212]" />
+                  <span className="text-[#FAC212] text-xs font-bold uppercase tracking-widest">{location}</span>
                 </div>
+                <h1 className="font-heading font-extrabold text-white text-xl md:text-4xl leading-tight tracking-tight mb-2 md:mb-4"
+                  dangerouslySetInnerHTML={{ __html: heading }} />
+                <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5">{subheading}</p>
+
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2.5 md:mb-5">
+                  {pricing.map((p, i) => (
+                    <div key={i} className="bg-white/10 border border-white/10 px-2.5 py-1.5 md:px-3 md:py-2.5 flex flex-col min-w-[92px] md:min-w-[110px]">
+                      <span className="text-white/50 text-[9px] md:text-[10px] uppercase tracking-wider">{p.label}</span>
+                      <span className="text-[#FAC212] font-black text-base md:text-xl leading-tight">{p.value}</span>
+                      {p.note && <span className="text-white/30 text-[9px] mt-0.5">{p.note}</span>}
+                    </div>
+                  ))}
+                </div>
+
+                {data.hero_disclaimer && <p className="text-white/30 text-[10px] leading-relaxed">{data.hero_disclaimer}</p>}
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
+                <div id="enquire" className="bg-white shadow-2xl px-7 py-7" style={{ scrollMarginTop: '56px' }}>
+                  <LeadForm data={data} location={location} />
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* ── SUBHEADING + CITY PINS + PRODUCT GALLERY ── */}
+          <section className="bg-white py-10 md:py-14 px-5 md:px-10">
+            <div className="max-w-6xl mx-auto flex flex-col gap-6">
+              <div>
+                <h2 className="font-heading font-extrabold text-[#0F2854] text-xl md:text-2xl mb-2">
+                  Buy or Rent 20ft &amp; 40ft Refrigerated Containers with fast delivery across Punjab.
+                </h2>
+                <p className="text-gray-500 text-sm mb-2">Ideal for Cold Storage, Pharma, Food &amp; Logistics</p>
+                <p className="text-[#0F2854] text-sm font-semibold">📍 Ludhiana • Amritsar • Jalandhar • Patiala</p>
+              </div>
+              <ProductGallery />
+            </div>
+          </section>
+
+          {/* ── WHY CHOOSE / WE SERVE ── */}
+          <section className="bg-white pb-10 md:pb-14 px-5 md:px-10">
+            <div className="max-w-6xl mx-auto">
+              <WhyChooseServe serveItems={serveItems} />
+            </div>
+          </section>
+        </>
+      ) : (
+        <>
+          {/* ── HERO ── */}
+          <section className="relative bg-[#0F2854] overflow-hidden pb-4 md:pb-16">
+            <div className="absolute inset-0 opacity-[0.04]"
+              style={{ backgroundImage: 'repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 48px)' }} />
+
+            <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 pt-5 pb-2 md:pt-16 md:pb-8 grid md:grid-cols-2 gap-6 md:gap-14 items-center">
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
+                <div className="flex items-center gap-2 mb-2 md:mb-4">
+                  <FiMapPin size={12} className="text-[#FAC212]" />
+                  <span className="text-[#FAC212] text-xs font-bold uppercase tracking-widest">{location}</span>
+                </div>
+                <h1 className="font-heading font-extrabold text-white text-xl md:text-4xl leading-tight tracking-tight mb-2 md:mb-4"
+                  dangerouslySetInnerHTML={{ __html: heading }} />
+                <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5 hidden md:block">{subheading}</p>
+
+                <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2.5 md:mb-5">
+                  {pricing.map((p, i) => (
+                    <div key={i} className="bg-white/10 border border-white/10 px-2.5 py-1.5 md:px-3 md:py-2.5 flex flex-col min-w-[92px] md:min-w-[110px]">
+                      <span className="text-white/50 text-[9px] md:text-[10px] uppercase tracking-wider">{p.label}</span>
+                      <span className="text-[#FAC212] font-black text-base md:text-xl leading-tight">{p.value}</span>
+                      {p.note && <span className="text-white/30 text-[9px] mt-0.5 hidden md:block">{p.note}</span>}
+                    </div>
+                  ))}
+                </div>
+
+                <a href="#enquire"
+                  className="inline-flex items-center gap-2 bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-5 py-2.5 md:px-6 md:py-3 text-sm uppercase tracking-wide transition-colors">
+                  Get Free Quote <FiArrowRight size={15} />
+                </a>
+                {data.hero_disclaimer && <p className="text-white/30 text-[10px] mt-3 md:mt-4 leading-relaxed hidden md:block">{data.hero_disclaimer}</p>}
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
+                className="hidden md:block">
+                <HeroCarousel />
+              </motion.div>
+            </div>
+
+            {/* Peek card */}
+            <div className="hidden md:flex absolute bottom-0 left-0 right-0 justify-center px-5 md:px-10">
+              <div className="w-full max-w-2xl bg-white px-7 pt-5 pb-0 shadow-2xl">
+                <p className="text-[10px] uppercase tracking-[0.3em] text-[#0F2854]/40 font-black mb-1">Free Quote</p>
+                <p className="text-[#0F2854] font-bold text-base">Get a reefer container quote in 2 hours</p>
+              </div>
+            </div>
+          </section>
+
+          {/* ── FORM ── */}
+          <section id="enquire" className="bg-[#F7F8FA] flex justify-center px-5 md:px-10 pt-5 pb-14 md:pt-0" style={{ scrollMarginTop: '56px' }}>
+            <div className="w-full max-w-2xl bg-white shadow-2xl px-7 py-7 border-t border-gray-100">
+              <LeadForm data={data} location={location} />
+            </div>
+          </section>
+
+          {/* ── STATS ── */}
+          <section className="bg-white border-y border-gray-100">
+            <div className="max-w-6xl mx-auto px-5 md:px-10 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
+              {STATS.map((s, i) => (
+                <motion.div key={i}
+                  initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
+                  className="flex flex-col items-center text-center">
+                  <span className="font-black text-3xl md:text-4xl text-[#0F2854] leading-none">{s.value}</span>
+                  <span className="text-xs text-gray-500 mt-1.5 font-medium uppercase tracking-wider">{s.label}</span>
+                </motion.div>
               ))}
             </div>
+          </section>
 
-            <a href="#enquire"
-              className="inline-flex items-center gap-2 bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-5 py-2.5 md:px-6 md:py-3 text-sm uppercase tracking-wide transition-colors">
-              Get Free Quote <FiArrowRight size={15} />
-            </a>
-            {data.hero_disclaimer && <p className="text-white/30 text-[10px] mt-3 md:mt-4 leading-relaxed hidden md:block">{data.hero_disclaimer}</p>}
-          </motion.div>
+          {/* ── MARQUEE ── */}
+          <Marquee items={serveItems} />
 
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.1 }}
-            className="hidden md:block">
-            <HeroCarousel />
-          </motion.div>
-        </div>
-
-        {/* Peek card */}
-        <div className="hidden md:flex absolute bottom-0 left-0 right-0 justify-center px-5 md:px-10">
-          <div className="w-full max-w-2xl bg-white px-7 pt-5 pb-0 shadow-2xl">
-            <p className="text-[10px] uppercase tracking-[0.3em] text-[#0F2854]/40 font-black mb-1">Free Quote</p>
-            <p className="text-[#0F2854] font-bold text-base">Get a reefer container quote in 2 hours</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── FORM ── */}
-      <section id="enquire" className="bg-[#F7F8FA] flex justify-center px-5 md:px-10 pt-5 pb-14 md:pt-0" style={{ scrollMarginTop: '56px' }}>
-        <div className="w-full max-w-2xl bg-white shadow-2xl px-7 py-7 border-t border-gray-100">
-          <LeadForm data={data} location={location} />
-        </div>
-      </section>
-
-      {/* ── STATS ── */}
-      <section className="bg-white border-y border-gray-100">
-        <div className="max-w-6xl mx-auto px-5 md:px-10 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {STATS.map((s, i) => (
-            <motion.div key={i}
-              initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.07 }}
-              className="flex flex-col items-center text-center">
-              <span className="font-black text-3xl md:text-4xl text-[#0F2854] leading-none">{s.value}</span>
-              <span className="text-xs text-gray-500 mt-1.5 font-medium uppercase tracking-wider">{s.label}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── MARQUEE ── */}
-      <Marquee items={serveItems} />
-
-      {/* ── PRODUCT GALLERY + WHY CHOOSE / WE SERVE ── */}
-      <section className="bg-white py-10 md:py-14 px-5 md:px-10">
-        <div className="max-w-6xl mx-auto flex flex-col gap-10">
-          <ProductGallery />
-          <WhyChooseServe serveItems={serveItems} />
-        </div>
-      </section>
+          {/* ── PRODUCT GALLERY + WHY CHOOSE / WE SERVE ── */}
+          <section className="bg-white py-10 md:py-14 px-5 md:px-10">
+            <div className="max-w-6xl mx-auto flex flex-col gap-10">
+              <ProductGallery />
+              <WhyChooseServe serveItems={serveItems} />
+            </div>
+          </section>
+        </>
+      )}
 
       {/* ── TESTIMONIALS ── */}
       <section className="bg-white py-10 md:py-14 px-5 md:px-10">
