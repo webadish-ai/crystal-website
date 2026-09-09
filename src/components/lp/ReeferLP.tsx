@@ -4,12 +4,11 @@ import Lenis from 'lenis';
 import {
   FiPhone, FiChevronDown, FiCheck, FiArrowRight,
   FiThermometer, FiShield, FiClock, FiMapPin, FiTruck, FiAward,
-  FiX, FiChevronLeft, FiChevronRight, FiSend,
+  FiX, FiChevronLeft, FiChevronRight,
 } from 'react-icons/fi';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const PHONE = '+91 98925 12900';
 const PHONE_RAW = '919892512900';
 const WA_BASE = `https://wa.me/${PHONE_RAW}`;
 
@@ -161,10 +160,10 @@ function TopBar({ location, cities }: { location: string; cities: string[] }) {
             <WAIcon className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">WhatsApp</span>
           </a>
-          <a href="#enquire"
+          <a href={`tel:${PHONE_RAW}`}
             className="flex items-center gap-1.5 bg-[#0F2854] hover:bg-[#0d2248] text-white font-bold text-xs px-4 py-2 transition-colors uppercase tracking-wide">
-            <FiSend size={11} />
-            Get a Quote
+            <FiPhone size={11} />
+            Call Us
           </a>
         </div>
       </div>
@@ -603,35 +602,6 @@ function MiniFooter() {
   );
 }
 
-// ── Floating Call Button ──────────────────────────────────────────────────────
-
-function FloatingButtons() {
-  return (
-    <>
-      <style>{`
-        @keyframes call-pulse {
-          0%   { box-shadow: 0 0 0 0 rgba(250,194,18,0.45); }
-          70%  { box-shadow: 0 0 0 14px rgba(250,194,18,0); }
-          100% { box-shadow: 0 0 0 0 rgba(250,194,18,0); }
-        }
-        .call-btn { animation: call-pulse 2.2s ease-out infinite; }
-      `}</style>
-      <motion.a href={`tel:${PHONE.replace(/\s/g, '')}`}
-        initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1, type: 'spring' }}
-        whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}
-        className="call-btn fixed bottom-6 left-5 z-50 w-14 h-14 bg-[#0F2854] shadow-xl flex items-center justify-center border-2 border-[#FAC212]/50"
-        style={{ borderRadius: '50%' }}
-        aria-label="Call us">
-        <motion.span
-          animate={{ rotate: [0, -14, 14, -8, 8, 0] }}
-          transition={{ duration: 0.55, repeat: Infinity, repeatDelay: 3.5 }}>
-          <FiPhone size={22} className="text-[#FAC212]" />
-        </motion.span>
-      </motion.a>
-    </>
-  );
-}
-
 // ── Main Component ────────────────────────────────────────────────────────────
 
 export default function ReeferLP({ data }: { data: LPData }) {
@@ -802,9 +772,6 @@ export default function ReeferLP({ data }: { data: LPData }) {
 
       {/* ── FOOTER ── */}
       <MiniFooter />
-
-      {/* ── FLOATING CALL ── */}
-      <FloatingButtons />
     </div>
   );
 }
