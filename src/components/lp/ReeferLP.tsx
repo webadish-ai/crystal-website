@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lenis from 'lenis';
 import {
-  FiPhone, FiChevronDown, FiCheck, FiArrowRight,
-  FiThermometer, FiShield, FiClock, FiMapPin, FiTruck, FiAward,
-  FiX, FiChevronLeft, FiChevronRight,
+  FiPhone, FiChevronDown, FiCheck, FiArrowRight, FiMapPin,
+  FiChevronLeft, FiChevronRight,
 } from 'react-icons/fi';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
@@ -17,49 +16,6 @@ const STATS = [
   { value: '99%',  label: 'Temperature Uptime' },
   { value: '120+', label: 'Cities Served' },
   { value: '24h',  label: 'Response Time' },
-];
-
-const CONTAINERS = [
-  {
-    size: '10 ft Reefer', tag: 'Small Batch',
-    temp: '−25°C to +25°C', capacity: '12 CBM', dimensions: '10 × 8 × 8.5 ft', priceFrom: '₹1,300/day',
-    useCases: ['Pharma samples', 'Event catering', 'Small batches', 'Lab reagents'],
-    desc: 'Compact and highly mobile. Ideal for last-mile cold chain, pop-up storage, and pharmaceutical sample transport.',
-  },
-  {
-    size: '20 ft Reefer', tag: 'Most Popular',
-    temp: '−25°C to +25°C', capacity: '26 CBM', dimensions: '20 × 8 × 8.5 ft', priceFrom: '₹2,200/day',
-    useCases: ['Dairy & milk', 'Seafood', 'Horticulture', 'Frozen foods'],
-    desc: 'The most widely rented size. Balances capacity with flexibility — fits most commercial loading docks and warehouses.',
-  },
-  {
-    size: '40 ft Reefer', tag: 'High Volume',
-    temp: '−25°C to +25°C', capacity: '60 CBM', dimensions: '40 × 8 × 8.5 ft', priceFrom: '₹3,800/day',
-    useCases: ['FMCG distribution', 'Bulk frozen', 'Pharma bulk', 'Export cargo'],
-    desc: 'Built for high-throughput operations. Used by FMCG brands, 3PL operators, and pharma companies for large-volume cold storage.',
-  },
-  {
-    size: '40 ft High-Cube', tag: 'Maximum Space',
-    temp: '−25°C to +25°C', capacity: '68 CBM', dimensions: '40 × 8 × 9.5 ft', priceFrom: '₹4,200/day',
-    useCases: ['Retail distribution', 'Quick commerce', 'Large-volume frozen', 'Floral'],
-    desc: 'Extra height means 13% more volume. Preferred by retail chains, quick-commerce fulfilment centres, and floriculture exporters.',
-  },
-];
-
-const STEPS = [
-  { num: '01', title: 'Submit Your Requirement', desc: 'Fill the form or call us. Share your location, product type, temperature range, and duration.' },
-  { num: '02', title: 'Get a Quote in 2 Hours', desc: 'Our team sends a detailed quote with the right container size, pricing, and availability confirmation.' },
-  { num: '03', title: 'Container Delivered to Site', desc: 'We handle delivery, positioning, and commissioning at your location. No technical expertise needed.' },
-  { num: '04', title: '24/7 Monitoring Begins', desc: 'Real-time temperature tracking, SMS/email alerts, and a dedicated support line activate immediately.' },
-];
-
-const WHY = [
-  { icon: FiThermometer, title: '−25°C to +25°C Range' },
-  { icon: FiShield,      title: 'FSSAI & ISO Certified' },
-  { icon: FiClock,       title: '24/7 Remote Monitoring' },
-  { icon: FiMapPin,      title: 'Pan-India Fleet — 120+ Cities' },
-  { icon: FiTruck,       title: 'Flexible Rental & Lease Terms' },
-  { icon: FiAward,       title: '15+ Years, 500+ Enterprise Clients' },
 ];
 
 const TESTIMONIALS = [
@@ -78,11 +34,10 @@ const TESTIMONIALS = [
 ];
 
 const CAROUSEL_IMGS = [
-  '/crystal_warehouse_hero.webp',
-  '/images/build/bts-site-selection.webp',
-  '/images/build/bts-engineering.webp',
-  '/images/build/bts-operations.webp',
-  '/images/build/bts-commissioning.webp',
+  '/images/lp/landing-slider-img1.webp',
+  '/images/lp/landing-slider-img2.webp',
+  '/images/lp/landing-slider-img3.webp',
+  '/images/lp/landing-slider-img4.webp',
 ];
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -331,7 +286,7 @@ function Marquee({ items }: { items: string[] }) {
     <div className="overflow-hidden py-3.5 bg-[#0F2854]">
       <style>{`
         @keyframes marquee-lp { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .marquee-lp { animation: marquee-lp 28s linear infinite; }
+        .marquee-lp { animation: marquee-lp 14s linear infinite; }
         .marquee-lp:hover { animation-play-state: paused; }
       `}</style>
       <div className="flex gap-0 marquee-lp whitespace-nowrap">
@@ -343,43 +298,6 @@ function Marquee({ items }: { items: string[] }) {
         ))}
       </div>
     </div>
-  );
-}
-
-// ── Gallery (bento) ───────────────────────────────────────────────────────────
-
-function Gallery({ items }: { items: { image: string; label: string }[] }) {
-  const [open, setOpen] = useState<number | null>(null);
-  const imgs = items.filter(i => i.image);
-  if (imgs.length === 0) return null;
-
-  return (
-    <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3" style={{ gridAutoRows: '150px' }}>
-        {imgs.map((item, i) => {
-          const cls = i === 0 ? 'md:col-span-2 md:row-span-2' : '';
-          return (
-            <motion.button key={i} onClick={() => setOpen(i)}
-              className={`relative overflow-hidden group cursor-zoom-in ${cls}`}
-              whileHover={{ opacity: 0.92 }} transition={{ duration: 0.2 }}>
-              <img src={item.image} alt={item.label} loading="lazy"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="absolute bottom-2 left-2 right-2 text-white text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">{item.label}</span>
-            </motion.button>
-          );
-        })}
-      </div>
-      <AnimatePresence>
-        {open !== null && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" onClick={() => setOpen(null)}>
-            <button className="absolute top-4 right-4 text-white/60 hover:text-white"><FiX size={24} /></button>
-            <img src={imgs[open].image} alt={imgs[open].label} className="max-w-full max-h-[85vh] object-contain" />
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
   );
 }
 
@@ -399,194 +317,6 @@ function Testimonials() {
           <p className="text-[#0F2854] font-bold text-sm">{t.client}</p>
         </motion.div>
       ))}
-    </div>
-  );
-}
-
-// ── Container Accordion ───────────────────────────────────────────────────────
-
-function ContainerAccordion() {
-  const [open, setOpen] = useState<number>(1);
-  return (
-    <div className="flex flex-col gap-2">
-      {CONTAINERS.map((c, i) => (
-        <div key={i} className={`border overflow-hidden transition-colors ${open === i ? 'border-[#0F2854]' : 'border-gray-200'}`}>
-          <button onClick={() => setOpen(open === i ? -1 : i)}
-            className={`w-full flex items-center justify-between px-5 py-4 text-left transition-colors ${open === i ? 'bg-[#0F2854]' : 'bg-white hover:bg-gray-50'}`}>
-            <div className="flex items-center gap-3">
-              <span className={`text-[10px] font-black uppercase tracking-wider px-2 py-0.5 ${open === i ? 'bg-[#FAC212] text-[#0F2854]' : 'bg-gray-100 text-gray-500'}`}>{c.tag}</span>
-              <span className={`font-bold text-base ${open === i ? 'text-white' : 'text-[#0F2854]'}`}>{c.size}</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <span className={`font-bold text-sm hidden sm:block ${open === i ? 'text-[#FAC212]' : 'text-[#0F2854]'}`}>{c.priceFrom}</span>
-              <motion.span animate={{ rotate: open === i ? 180 : 0 }} transition={{ duration: 0.25 }}>
-                <FiChevronDown size={18} className={open === i ? 'text-white' : 'text-gray-400'} />
-              </motion.span>
-            </div>
-          </button>
-          <AnimatePresence initial={false}>
-            {open === i && (
-              <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} transition={{ duration: 0.25 }} className="overflow-hidden">
-                <div className="px-5 py-5 bg-[#f8f9ff] grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div><p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Temperature</p><p className="font-bold text-[#0F2854] text-sm">{c.temp}</p></div>
-                  <div><p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Capacity</p><p className="font-bold text-[#0F2854] text-sm">{c.capacity}</p></div>
-                  <div><p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Dimensions</p><p className="font-bold text-[#0F2854] text-sm">{c.dimensions}</p></div>
-                  <div><p className="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Rental from</p><p className="font-bold text-[#FAC212] text-sm">{c.priceFrom}</p></div>
-                  <div className="col-span-2 md:col-span-4">
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">{c.desc}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {c.useCases.map(u => <span key={u} className="text-[11px] bg-white border border-[#0F2854]/10 text-[#0F2854] px-3 py-1 font-medium">{u}</span>)}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ── Why List ──────────────────────────────────────────────────────────────────
-
-function WhyList() {
-  return (
-    <div className="flex flex-col">
-      {WHY.map((w, i) => (
-        <motion.div key={i}
-          initial={{ opacity: 0, x: 10 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-          className="flex items-center gap-3 py-3 border-b border-gray-100 last:border-0 group">
-          <div className="w-7 h-7 bg-[#0F2854]/6 flex items-center justify-center shrink-0 group-hover:bg-[#0F2854] transition-colors duration-200">
-            <w.icon size={13} className="text-[#0F2854] group-hover:text-[#FAC212] transition-colors duration-200" />
-          </div>
-          <span className="text-sm font-semibold text-[#0F2854]">{w.title}</span>
-        </motion.div>
-      ))}
-    </div>
-  );
-}
-
-// ── Container SVG ─────────────────────────────────────────────────────────────
-
-function ReeferContainerIcon() {
-  return (
-    <div className="flex flex-col items-center gap-0.5 drop-shadow-lg">
-      <div className="w-16 h-8 bg-[#0F2854] relative overflow-hidden border border-[#FAC212]/40">
-        {[20, 40, 60, 80].map(p => (
-          <div key={p} className="absolute top-0 bottom-0 w-px bg-white/10" style={{ left: `${p}%` }} />
-        ))}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-[#FAC212]/30" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-[#FAC212] text-[6px] font-black tracking-[0.2em] leading-none">CRYSTAL</span>
-        </div>
-        <div className="absolute right-1.5 top-1 bottom-1 border-l border-white/20" />
-      </div>
-      <div className="flex gap-5 -mt-0.5">
-        <div className="w-2.5 h-2.5 bg-gray-700 border border-gray-500 shadow-sm" style={{ borderRadius: '50%' }} />
-        <div className="w-2.5 h-2.5 bg-gray-700 border border-gray-500 shadow-sm" style={{ borderRadius: '50%' }} />
-      </div>
-    </div>
-  );
-}
-
-// ── Steps ─────────────────────────────────────────────────────────────────────
-
-function Steps() {
-  const [active, setActive] = useState(0);
-  const [done, setDone] = useState<number[]>([]);
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = sectionRef.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.25 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!inView) return;
-    const id = setInterval(() => {
-      setActive(prev => {
-        const next = (prev + 1) % STEPS.length;
-        if (next === 0) { setDone([]); }
-        else { setDone(d => (d.includes(prev) ? d : [...d, prev])); }
-        return next;
-      });
-    }, 2200);
-    return () => clearInterval(id);
-  }, [inView]);
-
-  const PCT = [6.5, 35.5, 64.5, 93.5];
-  const PROGRESS = ['0%', '33.3%', '66.6%', '100%'];
-
-  return (
-    <div className="relative" ref={sectionRef}>
-      {/* Desktop track */}
-      <div className="hidden md:block relative mb-8" style={{ height: 60 }}>
-        <div className="absolute top-[20px] h-1 bg-gray-200"
-          style={{ left: `${PCT[0]}%`, right: `${100 - PCT[3]}%` }}>
-          <motion.div className="absolute left-0 top-0 h-full bg-[#FAC212]"
-            animate={{ width: PROGRESS[active] }} transition={{ duration: 0.55, ease: 'easeInOut' }} />
-        </div>
-
-        {PCT.map((p, i) => (
-          <div key={i} className="absolute top-[14px] -translate-x-1/2 w-4 h-4 border-2 transition-all duration-300"
-            style={{
-              left: `${p}%`,
-              background: done.includes(i) || active === i ? '#0F2854' : 'white',
-              borderColor: done.includes(i) || active === i ? '#FAC212' : '#d1d5db',
-            }} />
-        ))}
-
-        <motion.div className="absolute top-0 -translate-x-1/2"
-          animate={{ left: `${PCT[active]}%` }}
-          transition={active === 0 && done.length === 0 ? { duration: 0.3 } : { type: 'spring', stiffness: 70, damping: 16 }}>
-          <ReeferContainerIcon />
-        </motion.div>
-      </div>
-
-      {/* Steps grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-4">
-        {STEPS.map((s, i) => (
-          <motion.div key={i}
-            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
-            className="flex flex-col items-center text-center gap-3">
-            <motion.div
-              animate={active === i ? { scale: [1, 1.1, 1] } : { scale: 1 }}
-              transition={{ duration: 0.35 }}
-              className={`w-14 h-14 flex items-center justify-center border-4 transition-all duration-300 ${
-                done.includes(i) ? 'bg-[#0F2854] border-[#FAC212]/50'
-                : active === i ? 'bg-[#0F2854] border-[#FAC212]/60'
-                : 'bg-gray-50 border-gray-200'
-              }`}>
-              <AnimatePresence mode="wait">
-                {done.includes(i) ? (
-                  <motion.span key="tick"
-                    initial={{ scale: 0, rotate: -90 }} animate={{ scale: 1, rotate: 0 }} exit={{ scale: 0 }}
-                    transition={{ type: 'spring', stiffness: 260, damping: 20 }}>
-                    <FiCheck size={20} className="text-[#FAC212]" />
-                  </motion.span>
-                ) : (
-                  <motion.span key="num" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-                    className={`font-black text-base ${active === i ? 'text-[#FAC212]' : 'text-gray-400'}`}>
-                    {s.num}
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.div>
-            <h4 className={`font-bold text-sm leading-snug transition-colors duration-300 ${
-              done.includes(i) || active === i ? 'text-[#0F2854]' : 'text-gray-400'
-            }`}>{s.title}</h4>
-            <p className="text-xs text-gray-500 leading-relaxed">{s.desc}</p>
-          </motion.div>
-        ))}
-      </div>
     </div>
   );
 }
@@ -617,8 +347,6 @@ export default function ReeferLP({ data }: { data: LPData }) {
     'Ice Cream & Frozen', 'Hospitality & Events', 'Floriculture', 'Chemicals',
     'Poultry & Meat', 'FMCG Distribution', 'Quick Commerce', 'Confectionery',
   ];
-  const gallery = data.gallery || [];
-
   // Lenis smooth scroll
   useEffect(() => {
     const lenis = new Lenis();
@@ -710,63 +438,6 @@ export default function ReeferLP({ data }: { data: LPData }) {
             Hear what our clients have to say
           </h2>
           <Testimonials />
-        </div>
-      </section>
-
-      {/* ── GALLERY ── */}
-      {gallery.filter(g => g.image).length > 0 && (
-        <section className="max-w-6xl mx-auto px-5 md:px-10 py-10 md:py-14">
-          <SectionLabel text="Our Fleet" />
-          <h2 className="font-heading font-extrabold text-[#0F2854] text-2xl md:text-3xl mb-8">
-            Reefer containers deployed across {location}
-          </h2>
-          <Gallery items={gallery} />
-        </section>
-      )}
-
-      {/* ── CONTAINER SIZES + WHY CHOOSE ── */}
-      <section className="bg-white py-10 md:py-14 px-5 md:px-10">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-[1fr_280px] gap-0 items-start">
-
-            {/* Left — accordion */}
-            <div className="md:pr-12 md:border-r md:border-gray-200">
-              <SectionLabel text="Container Sizes" />
-              <h2 className="font-heading font-extrabold text-[#0F2854] text-2xl md:text-3xl mb-2">Find the right reefer</h2>
-              <p className="text-gray-500 text-sm mb-7">−25°C to +25°C. Final pricing based on location and duration.</p>
-              <ContainerAccordion />
-            </div>
-
-            {/* Right — why list */}
-            <div className="md:pl-12 md:sticky md:top-20 mt-12 md:mt-0">
-              <SectionLabel text="Why Crystal Group" />
-              <h2 className="font-heading font-extrabold text-[#0F2854] text-xl md:text-2xl mb-6 leading-snug">
-                Cold chain that never lets you down
-              </h2>
-              <WhyList />
-              <a href="#enquire"
-                className="mt-8 flex items-center justify-center gap-2 bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-5 py-3 text-sm uppercase tracking-wide transition-colors">
-                Get Free Quote <FiArrowRight size={14} />
-              </a>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── 4 STEPS ── */}
-      <section className="bg-[#F7F8FA] py-10 md:py-14 px-5 md:px-10 border-t border-gray-100">
-        <div className="max-w-4xl mx-auto">
-          <SectionLabel text="How It Works" />
-          <h2 className="font-heading font-extrabold text-[#0F2854] text-2xl md:text-3xl mb-2 text-center">Get your reefer in 4 steps</h2>
-          <p className="text-gray-500 text-sm text-center mb-12">From requirement to deployment — faster than you expect.</p>
-          <Steps />
-          <div className="flex justify-center mt-12">
-            <a href="#enquire"
-              className="bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-8 py-3.5 text-sm uppercase tracking-wide transition-colors flex items-center gap-2">
-              Get a Free Quote <FiArrowRight />
-            </a>
-          </div>
         </div>
       </section>
 
