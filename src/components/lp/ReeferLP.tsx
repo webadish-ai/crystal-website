@@ -326,7 +326,7 @@ function Testimonials() {
 function MiniFooter() {
   return (
     <footer className="bg-[#0F2854] py-6 px-5 flex flex-col items-center gap-2">
-      <img src="/crystal-logo-black.webp" alt="Crystal Group" className="h-7 brightness-0 invert" />
+      <img src="/crystal-logo-black.webp" alt="Crystal Group" className="h-12 brightness-0 invert" />
       <p className="text-white/40 text-xs">© 2026 Crystal Logistic Cool Chain Ltd.</p>
     </footer>
   );
