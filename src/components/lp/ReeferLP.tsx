@@ -18,6 +18,23 @@ const STATS = [
   { value: '24h',  label: 'Response Time' },
 ];
 
+const PRODUCT_GALLERY = [
+  { image: '/images/lp/products/meat-seafood.webp', label: 'Meat & Seafood' },
+  { image: '/images/lp/products/dairy.webp', label: 'Dairy' },
+  { image: '/images/lp/products/pharma.webp', label: 'Pharma' },
+  { image: '/images/lp/products/chemical.webp', label: 'Chemical' },
+  { image: '/images/lp/products/fmcg.webp', label: 'FMCG' },
+  { image: '/images/lp/products/fruits-vegetables.webp', label: 'Fruits & Vegetables' },
+];
+
+const WHY_CHOOSE = [
+  { pre: '', bold: 'Temperature:', post: ' −25°C to +25°C.' },
+  { pre: '', bold: 'Sizes:', post: ' 10FT, 20FT, & 40FT.' },
+  { pre: '', bold: 'Customizable', post: ' to suit your needs.' },
+  { pre: '', bold: '', post: 'Hassle-free installation.' },
+  { pre: 'Available for ', bold: 'short and long-term rental.', post: '' },
+];
+
 const TESTIMONIALS = [
   {
     quote: "Crystal Group's reefer containers have been vital for maintaining the quality of Dr. Reddy's pharma products, offering precise temperature control and dependable service.",
@@ -301,6 +318,56 @@ function Marquee({ items }: { items: string[] }) {
   );
 }
 
+// ── Product Gallery ───────────────────────────────────────────────────────────
+
+function ProductGallery() {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {PRODUCT_GALLERY.map((item, i) => (
+        <img key={i} src={item.image} alt={item.label} loading="lazy"
+          className="w-full aspect-video object-cover" />
+      ))}
+    </div>
+  );
+}
+
+// ── Why Choose + We Serve ─────────────────────────────────────────────────────
+
+function WhyChooseServe({ serveItems }: { serveItems: string[] }) {
+  return (
+    <div className="grid md:grid-cols-2 gap-8 md:gap-10">
+      <div>
+        <h2 className="font-heading font-extrabold text-[#0F2854] text-2xl md:text-3xl mb-5">
+          Why Choose Our Reefer Containers?
+        </h2>
+        <ul className="flex flex-col gap-2.5 mb-6">
+          {WHY_CHOOSE.map((w, i) => (
+            <li key={i} className="flex items-start gap-2.5 text-sm text-gray-600">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#0F2854] mt-1.5 shrink-0" />
+              <span>{w.pre}<strong className="text-[#0F2854]">{w.bold}</strong>{w.post}</span>
+            </li>
+          ))}
+        </ul>
+        <a href="#enquire"
+          className="inline-flex items-center gap-2 bg-[#0F2854] hover:bg-[#0d2248] text-white font-bold px-6 py-3 text-sm transition-colors">
+          Talk To Our Expert Now!
+        </a>
+      </div>
+      <div className="bg-[#F7F8FA] p-6 md:p-8">
+        <h2 className="font-heading font-extrabold text-[#0F2854] text-2xl md:text-3xl mb-5">We Serve</h2>
+        <ul className="flex flex-col gap-2.5">
+          {serveItems.map((item) => (
+            <li key={item} className="flex items-start gap-2.5 text-sm text-gray-600">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#FAC212] mt-1.5 shrink-0" />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 // ── Testimonials ──────────────────────────────────────────────────────────────
 
 function Testimonials() {
@@ -429,6 +496,16 @@ export default function ReeferLP({ data }: { data: LPData }) {
 
       {/* ── MARQUEE ── */}
       <Marquee items={serveItems} />
+
+      {/* ── PRODUCT GALLERY + WHY CHOOSE / WE SERVE (Punjab only, for now) ── */}
+      {location === 'Punjab' && (
+        <section className="bg-white py-10 md:py-14 px-5 md:px-10">
+          <div className="max-w-6xl mx-auto flex flex-col gap-10">
+            <ProductGallery />
+            <WhyChooseServe serveItems={serveItems} />
+          </div>
+        </section>
+      )}
 
       {/* ── TESTIMONIALS ── */}
       <section className="bg-white py-10 md:py-14 px-5 md:px-10">
