@@ -428,32 +428,32 @@ export default function ReeferLP({ data }: { data: LPData }) {
       <div className="h-[46px]" />
 
       {/* ── HERO ── */}
-      <section className="relative bg-[#0F2854] overflow-hidden pb-14 md:pb-16">
+      <section className="relative bg-[#0F2854] overflow-hidden pb-4 md:pb-16">
         <div className="absolute inset-0 opacity-[0.04]"
           style={{ backgroundImage: 'repeating-linear-gradient(0deg,#fff 0,#fff 1px,transparent 1px,transparent 48px),repeating-linear-gradient(90deg,#fff 0,#fff 1px,transparent 1px,transparent 48px)' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 pt-6 pb-4 md:pt-16 md:pb-8 grid md:grid-cols-2 gap-6 md:gap-14 items-center">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 md:px-10 pt-5 pb-2 md:pt-16 md:pb-8 grid md:grid-cols-2 gap-6 md:gap-14 items-center">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <div className="flex items-center gap-2 mb-3 md:mb-4">
+            <div className="flex items-center gap-2 mb-2 md:mb-4">
               <FiMapPin size={12} className="text-[#FAC212]" />
               <span className="text-[#FAC212] text-xs font-bold uppercase tracking-widest">{location}</span>
             </div>
-            <h1 className="font-heading font-extrabold text-white text-2xl md:text-4xl leading-tight tracking-tight mb-3 md:mb-4"
+            <h1 className="font-heading font-extrabold text-white text-xl md:text-4xl leading-tight tracking-tight mb-2 md:mb-4"
               dangerouslySetInnerHTML={{ __html: heading }} />
-            <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5">{subheading}</p>
+            <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5 hidden md:block">{subheading}</p>
 
-            <div className="flex flex-wrap gap-2 mb-3 md:mb-5">
+            <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2.5 md:mb-5">
               {pricing.map((p, i) => (
-                <div key={i} className="bg-white/10 border border-white/10 px-3 py-2.5 flex flex-col min-w-[110px]">
-                  <span className="text-white/50 text-[10px] uppercase tracking-wider">{p.label}</span>
-                  <span className="text-[#FAC212] font-black text-xl leading-tight">{p.value}</span>
-                  {p.note && <span className="text-white/30 text-[9px] mt-0.5">{p.note}</span>}
+                <div key={i} className="bg-white/10 border border-white/10 px-2.5 py-1.5 md:px-3 md:py-2.5 flex flex-col min-w-[92px] md:min-w-[110px]">
+                  <span className="text-white/50 text-[9px] md:text-[10px] uppercase tracking-wider">{p.label}</span>
+                  <span className="text-[#FAC212] font-black text-base md:text-xl leading-tight">{p.value}</span>
+                  {p.note && <span className="text-white/30 text-[9px] mt-0.5 hidden md:block">{p.note}</span>}
                 </div>
               ))}
             </div>
 
             <a href="#enquire"
-              className="inline-flex items-center gap-2 bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-6 py-3 text-sm uppercase tracking-wide transition-colors">
+              className="inline-flex items-center gap-2 bg-[#FAC212] hover:bg-[#e6b010] text-[#0F2854] font-bold px-5 py-2.5 md:px-6 md:py-3 text-sm uppercase tracking-wide transition-colors">
               Get Free Quote <FiArrowRight size={15} />
             </a>
             {data.hero_disclaimer && <p className="text-white/30 text-[10px] mt-3 md:mt-4 leading-relaxed hidden md:block">{data.hero_disclaimer}</p>}
@@ -466,7 +466,7 @@ export default function ReeferLP({ data }: { data: LPData }) {
         </div>
 
         {/* Peek card */}
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center px-5 md:px-10">
+        <div className="hidden md:flex absolute bottom-0 left-0 right-0 justify-center px-5 md:px-10">
           <div className="w-full max-w-2xl bg-white px-7 pt-5 pb-0 shadow-2xl">
             <p className="text-[10px] uppercase tracking-[0.3em] text-[#0F2854]/40 font-black mb-1">Free Quote</p>
             <p className="text-[#0F2854] font-bold text-base">Get a reefer container quote in 2 hours</p>
@@ -475,7 +475,7 @@ export default function ReeferLP({ data }: { data: LPData }) {
       </section>
 
       {/* ── FORM ── */}
-      <section id="enquire" className="bg-[#F7F8FA] flex justify-center px-5 md:px-10 pt-3 pb-14 md:pt-0" style={{ scrollMarginTop: '56px' }}>
+      <section id="enquire" className="bg-[#F7F8FA] flex justify-center px-5 md:px-10 pt-5 pb-14 md:pt-0" style={{ scrollMarginTop: '56px' }}>
         <div className="w-full max-w-2xl bg-white shadow-2xl px-7 py-7 border-t border-gray-100">
           <LeadForm data={data} location={location} />
         </div>
