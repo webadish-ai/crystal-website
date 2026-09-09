@@ -111,12 +111,12 @@ function TopBar({ location, cities }: { location: string; cities: string[] }) {
 
         <div className="flex items-center gap-2 shrink-0">
           <a href={`${WA_BASE}?text=${waMsg}`} target="_blank" rel="noopener noreferrer"
-            className="flex items-center gap-1.5 bg-[#0F2854] hover:bg-[#0d2248] text-white font-bold text-xs px-3.5 py-2 transition-colors">
+            className="flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold text-xs px-3.5 py-2 transition-colors">
             <WAIcon className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">WhatsApp</span>
           </a>
           <a href={`tel:${PHONE_RAW}`}
-            className="flex items-center gap-1.5 bg-[#0F2854] hover:bg-[#0d2248] text-white font-bold text-xs px-4 py-2 transition-colors uppercase tracking-wide">
+            className="flex items-center gap-1.5 bg-[#25D366] hover:bg-[#1ebe57] text-white font-bold text-xs px-4 py-2 transition-colors uppercase tracking-wide">
             <FiPhone size={11} />
             Call Us
           </a>
