@@ -498,15 +498,13 @@ export default function ReeferLP({ data }: { data: LPData }) {
       {/* ── MARQUEE ── */}
       <Marquee items={serveItems} />
 
-      {/* ── PRODUCT GALLERY + WHY CHOOSE / WE SERVE (Punjab only, for now) ── */}
-      {location === 'Punjab' && (
-        <section className="bg-white py-10 md:py-14 px-5 md:px-10">
-          <div className="max-w-6xl mx-auto flex flex-col gap-10">
-            <ProductGallery />
-            <WhyChooseServe serveItems={serveItems} />
-          </div>
-        </section>
-      )}
+      {/* ── PRODUCT GALLERY + WHY CHOOSE / WE SERVE ── */}
+      <section className="bg-white py-10 md:py-14 px-5 md:px-10">
+        <div className="max-w-6xl mx-auto flex flex-col gap-10">
+          <ProductGallery />
+          <WhyChooseServe serveItems={serveItems} />
+        </div>
+      </section>
 
       {/* ── TESTIMONIALS ── */}
       <section className="bg-white py-10 md:py-14 px-5 md:px-10">
