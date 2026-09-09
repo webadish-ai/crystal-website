@@ -4,17 +4,40 @@
   "location": "Tamil Nadu",
   "hero_heading": "Reefer Containers on Rent & Sale across <span style=\"color:#FAC212\">Tamil Nadu</span>",
   "hero_subheading": "20ft & 40ft refrigerated containers on sale across Tamil Nadu — for pharma, ice cream, FMCG & food storage. FSSAI-compliant with 24/7 monitoring.",
-  "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Same-Week Delivery", "Flexible Terms"],
+  "hero_pills": [
+    "Temperature Controlled",
+    "FSSAI Compliant",
+    "24/7 Monitoring",
+    "Same-Week Delivery",
+    "Flexible Terms"
+  ],
   "hero_pricing": [
-    { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
-    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" },
-    { "label": "Purchase from", "value": "₹7,50,000", "note": "*Indicative" }
+    {
+      "label": "Rental Starts at",
+      "value": "₹1,300/day",
+      "note": "*Indicative"
+    },
+    {
+      "label": "Purchase Starts at",
+      "value": "₹7,50,000",
+      "note": "*Indicative"
+    }
   ],
   "hero_disclaimer": "Prices depend on size, temperature, range & availability.",
   "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
   "form_submit_label": "Request My Free Quote",
   "form_disclaimer": "No spam. We'll call you within 2 business hours.",
-  "cities": ["Chennai", "Coimbatore", "Madurai", "Salem", "Tiruchirappalli", "Tirunelveli", "Vellore", "Erode", "Hosur"],
+  "cities": [
+    "Chennai",
+    "Coimbatore",
+    "Madurai",
+    "Salem",
+    "Tiruchirappalli",
+    "Tirunelveli",
+    "Vellore",
+    "Erode",
+    "Hosur"
+  ],
   "serve_items": [
     "Pharma & Biotech",
     "Dairy & Ice-cream",
@@ -24,9 +47,18 @@
     "Hospitality & Hotels"
   ],
   "gallery": [
-    { "image": "/crystal_warehouse_hero.webp", "label": "Crystal Group Cold Chain Facility" },
-    { "image": "/images/build/bts-operations.webp", "label": "Reefer Container Operations" },
-    { "image": "/images/build/bts-commissioning.webp", "label": "Container Commissioning" }
+    {
+      "image": "/crystal_warehouse_hero.webp",
+      "label": "Crystal Group Cold Chain Facility"
+    },
+    {
+      "image": "/images/build/bts-operations.webp",
+      "label": "Reefer Container Operations"
+    },
+    {
+      "image": "/images/build/bts-commissioning.webp",
+      "label": "Container Commissioning"
+    }
   ],
   "footer_note": "© 2026 Crystal Logistic Cool Chain Ltd. All rights reserved. Reefer container rental & leasing across Tamil Nadu."
 }

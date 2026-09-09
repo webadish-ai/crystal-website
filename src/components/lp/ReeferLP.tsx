@@ -9,6 +9,14 @@ import {
 // ── Constants ─────────────────────────────────────────────────────────────────
 
 const PHONE_RAW = '919892512900';
+
+// States whose live crystalgroup.in page uses the "hero+form side by side,
+// no carousel/stats/marquee" layout. Bhubaneswar has no live page of its own
+// (its old URL now redirects to Gujarat's) and UAE's live page is an
+// entirely different template — both keep the original layout below.
+const LIVE_LAYOUT_STATES = new Set([
+  'Punjab', 'Telangana', 'Karnataka', 'Andhra Pradesh', 'Gujarat', 'Maharashtra', 'Tamil Nadu',
+]);
 const WA_BASE = `https://wa.me/${PHONE_RAW}`;
 
 const STATS = [
@@ -427,7 +435,7 @@ export default function ReeferLP({ data }: { data: LPData }) {
       <TopBar location={location} cities={data.cities || []} />
       <div className="h-[46px]" />
 
-      {location === 'Punjab' ? (
+      {LIVE_LAYOUT_STATES.has(location) ? (
         <>
           {/* ── HERO + FORM (side by side, matches live page exactly) ── */}
           <section className="relative bg-[#0F2854] overflow-hidden py-6 md:py-16">
@@ -470,10 +478,14 @@ export default function ReeferLP({ data }: { data: LPData }) {
             <div className="max-w-6xl mx-auto flex flex-col gap-6">
               <div>
                 <h2 className="font-heading font-extrabold text-[#0F2854] text-xl md:text-2xl mb-2">
-                  Buy or Rent 20ft &amp; 40ft Refrigerated Containers with fast delivery across Punjab.
+                  Buy or Rent 20ft &amp; 40ft Refrigerated Containers with fast delivery across {location}.
                 </h2>
                 <p className="text-gray-500 text-sm mb-2">Ideal for Cold Storage, Pharma, Food &amp; Logistics</p>
-                <p className="text-[#0F2854] text-sm font-semibold">📍 Ludhiana • Amritsar • Jalandhar • Patiala</p>
+                {(data.cities || []).length > 0 && (
+                  <p className="text-[#0F2854] text-sm font-semibold">
+                    📍 {(data.cities || []).slice(0, 4).join(' • ')}
+                  </p>
+                )}
               </div>
               <ProductGallery />
             </div>

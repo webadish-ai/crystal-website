@@ -4,17 +4,40 @@
   "location": "Gujarat",
   "hero_heading": "Refrigerated Containers on Rent & Sale across <span style=\"color:#FAC212\">Gujarat</span>",
   "hero_subheading": "Fast delivery across Ahmedabad, Surat, Vadodara & Rajkot. FSSAI-compliant with 24/7 monitoring — trusted by pharma, food processing & export companies.",
-  "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Export-Ready", "Flexible Terms"],
+  "hero_pills": [
+    "Temperature Controlled",
+    "FSSAI Compliant",
+    "24/7 Monitoring",
+    "Export-Ready",
+    "Flexible Terms"
+  ],
   "hero_pricing": [
-    { "label": "Rental from", "value": "₹1,300/day", "note": "*GST extra" },
-    { "label": "Lease from", "value": "₹28,000/mo", "note": "*T&C apply" },
-    { "label": "Purchase from", "value": "₹7,50,000", "note": "*Indicative" }
+    {
+      "label": "Rental Starts at",
+      "value": "₹1,300/day",
+      "note": "*Indicative"
+    },
+    {
+      "label": "Purchase Starts at",
+      "value": "₹7,50,000",
+      "note": "*Indicative"
+    }
   ],
   "hero_disclaimer": "Price depends on size, temperature, range & availability.",
   "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
   "form_submit_label": "Request My Free Quote",
   "form_disclaimer": "No spam. We'll call you within 2 business hours.",
-  "cities": ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Gandhinagar", "Bhavnagar", "Jamnagar", "Junagadh", "Anand"],
+  "cities": [
+    "Ahmedabad",
+    "Surat",
+    "Vadodara",
+    "Rajkot",
+    "Gandhinagar",
+    "Bhavnagar",
+    "Jamnagar",
+    "Junagadh",
+    "Anand"
+  ],
   "serve_items": [
     "Pharma & Biotech",
     "Dairy & Ice-cream",
@@ -24,9 +47,18 @@
     "Hospitality & Hotels"
   ],
   "gallery": [
-    { "image": "/crystal_warehouse_hero.webp", "label": "Crystal Group Cold Chain Facility" },
-    { "image": "/images/build/bts-operations.webp", "label": "Reefer Container Operations" },
-    { "image": "/images/build/bts-commissioning.webp", "label": "Container Commissioning" }
+    {
+      "image": "/crystal_warehouse_hero.webp",
+      "label": "Crystal Group Cold Chain Facility"
+    },
+    {
+      "image": "/images/build/bts-operations.webp",
+      "label": "Reefer Container Operations"
+    },
+    {
+      "image": "/images/build/bts-commissioning.webp",
+      "label": "Container Commissioning"
+    }
   ],
   "footer_note": "© 2026 Crystal Logistic Cool Chain Ltd. All rights reserved. Reefer container rental & leasing across Gujarat."
 }
