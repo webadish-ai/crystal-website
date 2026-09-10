@@ -640,7 +640,7 @@ export default function ReeferLP({ data }: { data: LPData }) {
           {/* ── PRODUCT GALLERY + WHY CHOOSE / WE SERVE ── */}
           <section className="bg-white py-10 md:py-14 px-5 md:px-10">
             <div className="max-w-6xl mx-auto flex flex-col gap-10">
-              <ProductGallery />
+              <ProductSlider items={data.gallery} />
               <WhyChooseServe serveItems={serveItems} />
             </div>
           </section>
