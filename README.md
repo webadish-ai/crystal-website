@@ -58,7 +58,8 @@ Dev server runs at `http://localhost:4321`.
 │   │   ├── company/     # About, Careers, Contact, Impact pages
 │   │   ├── build/       # Built-to-Suit pages
 │   │   ├── solutions/   # Move, Solve, Food Processing pages
-│   │   └── store/       # Store pages (Cold Storage, Reefer, etc.)
+│   │   ├── store/       # Store pages (Cold Storage, Reefer, etc.)
+│   │   └── lp/          # Google Ads landing pages — see src/components/lp/README.md
 │   ├── content/
 │   │   └── blog/        # Blog posts as Markdown files
 │   ├── data/            # JSON content files + local media
