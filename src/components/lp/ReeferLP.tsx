@@ -334,15 +334,73 @@ function Marquee({ items }: { items: string[] }) {
   );
 }
 
-// ── Product Gallery ───────────────────────────────────────────────────────────
+// ── Product Slider ────────────────────────────────────────────────────────────
 
-function ProductGallery() {
+function ProductSlider({ items }: { items?: { image: string; label: string }[] }) {
+  const list = items && items.length > 0 ? items : PRODUCT_GALLERY;
+  const [idx, setIdx] = useState(0);
+
+  const prev = () => setIdx(i => (i - 1 + list.length) % list.length);
+  const next = () => setIdx(i => (i + 1) % list.length);
+
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-      {PRODUCT_GALLERY.map((item, i) => (
-        <img key={i} src={item.image} alt={item.label} loading="lazy"
-          className="w-full aspect-video object-cover" />
-      ))}
+    <div className="flex flex-col gap-4">
+      {/* Main Slider Box */}
+      <div className="relative w-full rounded-lg overflow-hidden shadow-lg border border-gray-100 bg-[#0F2854]" style={{ height: 'clamp(240px, 42vh, 420px)' }}>
+        <img
+          key={idx}
+          src={list[idx % list.length].image}
+          alt={list[idx % list.length].label}
+          className="w-full h-full object-cover transition-opacity duration-300"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+
+        {/* Label Badge */}
+        <span className="absolute bottom-4 left-4 bg-black/60 text-white text-xs sm:text-sm font-semibold px-3 py-1.5 rounded backdrop-blur-sm">
+          {list[idx % list.length].label}
+        </span>
+
+        {/* Navigation Arrows */}
+        {list.length > 1 && (
+          <>
+            <button
+              type="button"
+              onClick={prev}
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-sm transition-colors z-10"
+              aria-label="Previous Slide"
+            >
+              <FiChevronLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={next}
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/75 text-white flex items-center justify-center backdrop-blur-sm transition-colors z-10"
+              aria-label="Next Slide"
+            >
+              <FiChevronRight size={18} />
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Thumbnail Bar */}
+      <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+        {list.map((item, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setIdx(i)}
+            className={`relative rounded-md overflow-hidden border-2 aspect-video transition-all ${
+              i === idx ? 'border-[#0F2854] scale-105 shadow-md' : 'border-transparent opacity-60 hover:opacity-100'
+            }`}
+          >
+            <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
+            <span className="absolute bottom-0 inset-x-0 bg-[#0F2854]/80 text-[10px] text-white text-center py-0.5 truncate px-1 font-medium">
+              {item.label}
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
@@ -460,9 +518,6 @@ export default function ReeferLP({ data }: { data: LPData }) {
                   dangerouslySetInnerHTML={{ __html: heading }} />
                 <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5">{subheading}</p>
 
-                {/* Hero Image Slider */}
-                <HeroCarousel images={data.hero_images || data.gallery?.map(g => g.image)} />
-
                 <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2.5 md:mb-5">
                   {pricing.map((p, i) => (
                     <div key={i} className="bg-white/10 border border-white/10 px-2.5 py-1.5 md:px-3 md:py-2.5 flex flex-col min-w-[92px] md:min-w-[110px]">
@@ -498,7 +553,7 @@ export default function ReeferLP({ data }: { data: LPData }) {
                   </p>
                 )}
               </div>
-              <ProductGallery />
+              <ProductSlider items={data.gallery} />
             </div>
           </section>
 
