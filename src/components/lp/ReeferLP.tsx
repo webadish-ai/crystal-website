@@ -153,45 +153,52 @@ function TopBar({ location, cities }: { location: string; cities: string[] }) {
 
 // ── Hero Carousel ─────────────────────────────────────────────────────────────
 
-function HeroCarousel() {
+function HeroCarousel({ images }: { images?: string[] }) {
+  const carouselImgs = images && images.length > 0 ? images : CAROUSEL_IMGS;
   const [idx, setIdx] = useState(0);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const goTo = (i: number) => {
     setIdx(i);
     if (timer.current) clearInterval(timer.current);
-    timer.current = setInterval(() => setIdx(p => (p + 1) % CAROUSEL_IMGS.length), 4500);
+    timer.current = setInterval(() => setIdx(p => (p + 1) % carouselImgs.length), 4500);
   };
 
   useEffect(() => {
-    timer.current = setInterval(() => setIdx(p => (p + 1) % CAROUSEL_IMGS.length), 4500);
+    timer.current = setInterval(() => setIdx(p => (p + 1) % carouselImgs.length), 4500);
     return () => { if (timer.current) clearInterval(timer.current); };
-  }, []);
+  }, [carouselImgs.length]);
 
   return (
-    <div className="relative w-full overflow-hidden shadow-2xl" style={{ height: 'clamp(220px,40vh,420px)' }}>
+    <div className="relative w-full overflow-hidden shadow-2xl rounded-lg my-4" style={{ height: 'clamp(200px, 34vh, 320px)' }}>
       <AnimatePresence mode="wait">
-        <motion.img key={idx} src={CAROUSEL_IMGS[idx]} alt="Crystal Group cold storage"
+        <motion.img key={idx} src={carouselImgs[idx % carouselImgs.length]} alt="Crystal Group cold storage"
           initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
           transition={{ duration: 0.55 }} className="absolute inset-0 w-full h-full object-cover" />
       </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/25 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
 
-      <button onClick={() => goTo((idx - 1 + CAROUSEL_IMGS.length) % CAROUSEL_IMGS.length)}
-        className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/25 hover:bg-black/45 backdrop-blur-sm flex items-center justify-center transition-colors">
-        <FiChevronLeft size={15} className="text-white" />
-      </button>
-      <button onClick={() => goTo((idx + 1) % CAROUSEL_IMGS.length)}
-        className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/25 hover:bg-black/45 backdrop-blur-sm flex items-center justify-center transition-colors">
-        <FiChevronRight size={15} className="text-white" />
-      </button>
+      {carouselImgs.length > 1 && (
+        <>
+          <button type="button" onClick={() => goTo((idx - 1 + carouselImgs.length) % carouselImgs.length)}
+            className="absolute left-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm flex items-center justify-center transition-colors text-white z-10"
+            aria-label="Previous Slide">
+            <FiChevronLeft size={16} />
+          </button>
+          <button type="button" onClick={() => goTo((idx + 1) % carouselImgs.length)}
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/40 hover:bg-black/60 backdrop-blur-sm flex items-center justify-center transition-colors text-white z-10"
+            aria-label="Next Slide">
+            <FiChevronRight size={16} />
+          </button>
 
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-        {CAROUSEL_IMGS.map((_, i) => (
-          <button key={i} onClick={() => goTo(i)}
-            className={`h-1 transition-all duration-300 ${i === idx ? 'w-6 bg-[#FAC212]' : 'w-1.5 bg-white/50'}`} />
-        ))}
-      </div>
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+            {carouselImgs.map((_, i) => (
+              <button key={i} type="button" onClick={() => goTo(i)}
+                className={`h-1.5 transition-all duration-300 rounded-full ${i === idx ? 'w-6 bg-[#FAC212]' : 'w-2 bg-white/60'}`} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
@@ -451,6 +458,9 @@ export default function ReeferLP({ data }: { data: LPData }) {
                 <h1 className="font-heading font-extrabold text-white text-xl md:text-4xl leading-tight tracking-tight mb-2 md:mb-4"
                   dangerouslySetInnerHTML={{ __html: heading }} />
                 <p className="text-white/65 text-sm leading-relaxed mb-3 md:mb-5">{subheading}</p>
+
+                {/* Hero Image Slider */}
+                <HeroCarousel images={data.hero_images || data.gallery?.map(g => g.image)} />
 
                 <div className="flex flex-wrap gap-1.5 md:gap-2 mb-2.5 md:mb-5">
                   {pricing.map((p, i) => (
