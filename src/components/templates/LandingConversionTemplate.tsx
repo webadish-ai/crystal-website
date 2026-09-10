@@ -17,6 +17,7 @@ interface Props {
   hero_eyebrow?: string
   hero_heading?: string
   hero_image?: string
+  hero_images?: string[]
   hero_pricing?: PricingLine[]
   hero_disclaimer?: string
   form_heading?: string
@@ -84,9 +85,15 @@ const D: Required<Props> = {
   meta_description: '',
   topbar_whatsapp: 'https://wa.me/919876543210',
   topbar_phone: '+91 98765 43210',
-  hero_eyebrow: 'Crystal Group · Karnataka',
+  hero_eyebrow: 'Crystal Group · Punjab',
   hero_heading: 'Reefer Container <strong>Rental & Leasing</strong>',
   hero_image: '',
+  hero_images: [
+    'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=800&q=80'
+  ],
   hero_pricing: [
     { label: 'Rental from', value: '₹1,300/day', note: '*GST extra' },
     { label: 'Leasing from', value: '₹28,000/month', note: '*T&C apply' },
@@ -178,7 +185,9 @@ export default function LandingConversionTemplate(rawProps: Props) {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [formError, setFormError] = useState('')
   const [testimonialIdx, setTestimonialIdx] = useState(0)
+  const [heroImgIdx, setHeroImgIdx] = useState(0)
 
+  const heroImages = p.hero_images && p.hero_images.length > 0 ? p.hero_images : (p.hero_image ? [p.hero_image] : D.hero_images)
   const testimonials = p.testimonials ?? []
   const gallery = p.gallery ?? []
   const locations = p.locations ?? []
@@ -322,23 +331,63 @@ export default function LandingConversionTemplate(rawProps: Props) {
               </div>
             </div>
 
-            {/* Right: image */}
+            {/* Right: Hero Image Slider */}
             <div className="w-full md:w-[480px] shrink-0">
-              {p.hero_image ? (
-                <img
-                  src={p.hero_image}
-                  alt={p.hero_eyebrow || 'Product image'}
-                  className="w-full rounded-lg border border-secondary/10 object-cover"
-                  style={{ aspectRatio: '4/3' }}
-                />
-              ) : (
-                <div
-                  className="w-full rounded-lg border-2 border-dashed border-secondary/20 bg-secondary/5 flex items-center justify-center text-secondary/30 text-[13px]"
-                  style={{ aspectRatio: '4/3' }}
-                >
-                  Product image
+              <div className="relative group rounded-lg overflow-hidden border border-secondary/10 bg-secondary/5 shadow-md">
+                {/* Main Active Image */}
+                <div className="relative w-full overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                  <img
+                    src={heroImages[heroImgIdx % heroImages.length]}
+                    alt={`${p.hero_eyebrow || 'Reefer Container'} Image ${heroImgIdx + 1}`}
+                    className="w-full h-full object-cover transition-all duration-300"
+                  />
+
+                  {/* Prev / Next Chevrons */}
+                  {heroImages.length > 1 && (
+                    <>
+                      <button
+                        type="button"
+                        onClick={() => setHeroImgIdx(i => (i - 1 + heroImages.length) % heroImages.length)}
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/75 transition-colors z-10"
+                        aria-label="Previous Image"
+                      >
+                        <ChevronLeftIcon />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setHeroImgIdx(i => (i + 1) % heroImages.length)}
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/75 transition-colors z-10"
+                        aria-label="Next Image"
+                      >
+                        <ChevronRightIcon />
+                      </button>
+
+                      {/* Image Count Badge */}
+                      <span className="absolute bottom-2 right-2 bg-black/60 text-white text-[11px] px-2 py-0.5 rounded backdrop-blur-sm font-semibold">
+                        {heroImgIdx + 1} / {heroImages.length}
+                      </span>
+                    </>
+                  )}
                 </div>
-              )}
+
+                {/* Thumbnails Row */}
+                {heroImages.length > 1 && (
+                  <div className="flex items-center gap-2 p-2 bg-white border-t border-secondary/10 overflow-x-auto">
+                    {heroImages.map((img, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        onClick={() => setHeroImgIdx(idx)}
+                        className={`relative w-16 h-12 rounded overflow-hidden shrink-0 border-2 transition-all ${
+                          idx === heroImgIdx ? 'border-secondary scale-105 shadow-sm' : 'border-transparent opacity-60 hover:opacity-100'
+                        }`}
+                      >
+                        <img src={img} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover" />
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

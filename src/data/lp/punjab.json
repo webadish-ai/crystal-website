@@ -5,6 +5,11 @@
   "hero_heading": "Reefer Containers Price in <span style=\"color:#FAC212\">Punjab</span>",
   "hero_subheading": "20ft & 40ft Available | −25°C to +25°C · Used for Pharma, Ice Cream & Food Storage",
   "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Same-Week Delivery", "Flexible Terms"],
+  "hero_images": [
+    "/crystal_warehouse_hero.webp",
+    "/images/build/bts-operations.webp",
+    "/images/build/bts-commissioning.webp"
+  ],
   "hero_pricing": [
     { "label": "Rental Starts at", "value": "₹1,300/day", "note": "*Indicative" },
     { "label": "Purchase Starts at", "value": "₹7,50,000", "note": "*Indicative" }
