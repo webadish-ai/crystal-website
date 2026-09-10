@@ -18,6 +18,32 @@ const LIVE_LAYOUT_STATES = new Set([
   'Punjab', 'Telangana', 'Karnataka', 'Andhra Pradesh', 'Gujarat', 'Maharashtra', 'Tamil Nadu',
 ]);
 const WA_BASE = `https://wa.me/${PHONE_RAW}`;
+const PUNJAB_PHONE_RAW = '919324975060';
+const PUNJAB_WA_BASE = `https://wa.me/${PUNJAB_PHONE_RAW}`;
+
+const PUNJAB_LIVE_GALLERY = [
+  'https://crystalgroup.in/wp-content/uploads/2026/02/landingpage-gallery-img5.webp',
+  'https://crystalgroup.in/wp-content/uploads/2026/02/landingpage-gallery-img6.webp',
+  'https://crystalgroup.in/wp-content/uploads/2026/02/12-landingpage-gallery-img3.webp',
+  'https://crystalgroup.in/wp-content/uploads/2026/02/12-landingpage-gallery-img2.webp',
+  'https://crystalgroup.in/wp-content/uploads/2026/02/landingpage-gallery-img4.webp',
+  'https://crystalgroup.in/wp-content/uploads/2026/02/landingpage-gallery-img1.webp',
+];
+
+const PUNJAB_LIVE_TESTIMONIALS = [
+  {
+    brand: 'LAURUS Labs',
+    quote: "Crystal Group’s reefer solutions have significantly improved our efficiency, with proactive upgrades and quick support. Their two-bay reefer plan reflects a strong vision for our growth.",
+  },
+  {
+    brand: 'zepto',
+    quote: "Crystal Group’s reefer containers have ensured our perishable goods stay fresh, with excellent temperature control and reliable support!",
+  },
+  {
+    brand: "Dr.Reddy's",
+    quote: "Crystal Group’s reefer containers have been vital for maintaining the quality of Dr. Reddy's pharma products, offering precise temperature control and dependable service.",
+  },
+];
 
 const STATS = [
   { value: '15k+', label: 'Assignments Delivered' },
@@ -473,9 +499,251 @@ function MiniFooter() {
   );
 }
 
+// ── Punjab live-page exact variant ───────────────────────────────────────────
+
+function PunjabLiveTopBar() {
+  return (
+    <div className="fixed inset-x-0 top-0 z-50 h-[50px] bg-[#E3E7FF]">
+      <div className="mx-auto flex h-[50px] max-w-[1140px] items-center justify-between">
+        <a
+          href={`${PUNJAB_WA_BASE}?text=Hi%2C%20I%20need%20a%20reefer%20container%20quote%20for%20Punjab.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#25D366] bg-[#25D366] px-[10px] font-heading text-[18px] font-medium leading-[18px] text-white"
+        >
+          <WAIcon className="h-4 w-4" />
+          WhatsApp
+        </a>
+        <a
+          href={`tel:+${PUNJAB_PHONE_RAW}`}
+          className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#0550BF] bg-[#152D61] px-[10px] font-heading text-[18px] font-medium leading-[18px] text-white"
+        >
+          Call Us
+          <FiPhone size={16} />
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function PunjabLiveQuoteForm({ location }: { location: string }) {
+  const [form, setForm] = useState({ company: '', name: '', phone: '', email: '', comment: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
+
+  const set = (key: keyof typeof form) =>
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+      setForm(current => ({ ...current, [key]: event.target.value }));
+
+  async function submit(event: React.FormEvent) {
+    event.preventDefault();
+    setStatus('loading');
+    setError('');
+    try {
+      const apiBase = import.meta.env.PUBLIC_API_URL ?? '';
+      const response = await fetch(`${apiBase}/api/enquiries/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          service: `Reefer Container — ${location}`,
+          message: form.comment,
+        }),
+      });
+      const body = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(body.error || 'Something went wrong. Please try again.');
+      setStatus('success');
+    } catch (submissionError) {
+      setError(submissionError instanceof Error ? submissionError.message : 'Something went wrong. Please try again.');
+      setStatus('error');
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className="flex h-full min-h-[540px] flex-col items-center justify-center gap-4 text-center">
+        <div className="flex h-16 w-16 items-center justify-center bg-[#0F2854]"><FiCheck size={28} className="text-[#FAC212]" /></div>
+        <h3 className="font-heading text-xl font-bold text-[#0F2854]">We'll call you in 2 hours</h3>
+        <p className="text-sm text-gray-500">Our team is reviewing your requirement and will reach out shortly.</p>
+        <a href={`${PUNJAB_WA_BASE}?text=Hi%2C%20I%20just%20submitted%20a%20reefer%20quote%20for%20${location}.`} target="_blank" rel="noopener noreferrer" className="bg-[#0F2854] px-5 py-2.5 text-sm font-semibold text-white">
+          Chat on WhatsApp
+        </a>
+      </div>
+    );
+  }
+
+  const inputClass = 'h-[43px] w-full rounded-[5px] border border-black/25 bg-white px-[14px] text-[16px] leading-[21px] text-black/70 placeholder:text-black/25 focus:border-[#0F2854] focus:outline-none';
+
+  return (
+    <form onSubmit={submit} className="flex flex-col">
+      <h2 className="mb-[39px] text-center font-heading text-[25px] font-semibold leading-[25px] text-black">Enquire Now</h2>
+      <div className="grid grid-cols-1 gap-[20px] sm:grid-cols-3">
+        <input aria-label="Company Name" value={form.company} onChange={set('company')} placeholder="Company Name" className={inputClass} />
+        <input aria-label="Your Name" required value={form.name} onChange={set('name')} placeholder="Your Name" className={inputClass} />
+        <div className="relative">
+          <span className="pointer-events-none absolute inset-y-0 left-2 flex items-center text-[15px]">🇮🇳</span>
+          <input aria-label="Phone" required value={form.phone} onChange={set('phone')} placeholder="081234 56789" type="tel" className={`${inputClass} pl-[52px]`} />
+        </div>
+      </div>
+      <div className="mt-[30px]">
+        <label htmlFor="punjab-live-email" className="mb-[15px] block font-heading text-[16px] font-bold leading-[19px] text-white">Email <span className="text-red-600">*</span></label>
+        <input id="punjab-live-email" aria-label="Email" required value={form.email} onChange={set('email')} placeholder="Email" type="email" className={`${inputClass} sm:w-[170px]`} />
+      </div>
+      <div className="mt-[30px]">
+        <label htmlFor="punjab-live-comment" className="mb-[15px] block font-heading text-[16px] font-bold leading-[19px] text-white">Comment</label>
+        <textarea id="punjab-live-comment" aria-label="Comment" value={form.comment} onChange={set('comment')} placeholder="Comment" rows={4} className="block min-h-[120px] w-full resize-none rounded-[5px] border border-black/25 bg-white px-[14px] py-[14px] text-[16px] leading-[21px] text-black/70 placeholder:text-black/25 focus:border-[#0F2854] focus:outline-none" />
+      </div>
+      {status === 'error' && <p className="text-sm text-red-600">{error}</p>}
+      <button type="submit" disabled={status === 'loading'} className="mt-[25px] w-fit bg-white px-[15px] py-[10px] text-[16px] font-medium leading-[21px] text-black disabled:opacity-60">
+        {status === 'loading' ? 'Submitting…' : 'Submit'}
+      </button>
+      <p className="mt-[24px] text-[9px] leading-[13.5px] text-black/70">By submitting, you agree to be contacted regarding our services.</p>
+    </form>
+  );
+}
+
+function PunjabLiveImageCarousel() {
+  const [index, setIndex] = useState(0);
+  useEffect(() => {
+    const timer = window.setInterval(() => setIndex(current => (current + 1) % CAROUSEL_IMGS.length), 4500);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative h-[322px] w-full overflow-hidden rounded-[7px]" role="region" aria-label="Image Carousel">
+      <img src={CAROUSEL_IMGS[index]} alt="Crystal Group Cold Chain Solutions" className="h-full w-full object-cover" />
+    </div>
+  );
+}
+
+function PunjabLiveGallery() {
+  return (
+    <div className="mt-7 grid grid-cols-1 gap-[10px] sm:grid-cols-2 md:grid-cols-3">
+      {PUNJAB_LIVE_GALLERY.map((image) => (
+        <a key={image} href={image} target="_blank" rel="noopener noreferrer" className="block aspect-[3/2] overflow-hidden rounded-[4px]">
+          <img src={image} alt="Crystal Group Cold Chain Solutions" loading="lazy" className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.03]" />
+        </a>
+      ))}
+    </div>
+  );
+}
+
+function PunjabLiveWhyChooseServe({ items }: { items: string[] }) {
+  return (
+    <section className="mt-7 px-[10px]">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-[550px_550px] md:gap-[18px]">
+        <div>
+          <h2 className="font-heading text-[25px] font-semibold leading-[25px] text-black">Why Choose Our Reefer Containers?</h2>
+          <ul className="mt-5 space-y-[7px] text-[16px] leading-[24px] text-black">
+            <li className="list-disc pl-1"><strong>Temperature:</strong> -25°C to +25°C.</li>
+            <li className="list-disc pl-1"><strong>Sizes:</strong> 10FT, 20FT, &amp; 40FT</li>
+            <li className="list-disc pl-1"><strong>Customizable</strong> to suit your needs.</li>
+            <li className="list-disc pl-1">Hassle-free installation.</li>
+            <li className="list-disc pl-1">Available for <strong>short and long-term rental.</strong></li>
+          </ul>
+          <a href="#enquire" className="mt-5 inline-flex rounded-[4px] bg-[#0F2854] px-[10px] py-[10px] font-heading text-[16px] font-medium leading-[20px] tracking-[0.06em] text-white">Talk To Our Expert Now!</a>
+        </div>
+        <div className="-mt-2 bg-[#F7F8FA] px-3 py-[22px]">
+          <h2 className="font-heading text-[25px] font-semibold leading-[25px] text-black">We Serve</h2>
+          <ul className="mt-5 space-y-[7px] text-[16px] leading-[24px] text-black">
+            {items.map(item => <li key={item} className="list-disc pl-1">{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PunjabLiveTestimonials() {
+  return (
+    <section className="mt-[56px] px-[10px]">
+      <h2 className="text-center font-heading text-[30px] font-semibold leading-[30px] text-black">Trusted by Industry Leaders</h2>
+      <h2 className="mt-[10px] text-center font-heading text-[20px] font-normal leading-[20px] text-[#5C5C5C]">Hear what our clients have to say</h2>
+      <div className="mx-auto mt-[10px] grid max-w-[1083px] grid-cols-1 gap-[10px] md:grid-cols-3" role="region" aria-label="Slides">
+        {PUNJAB_LIVE_TESTIMONIALS.map((testimonial) => (
+          <div key={testimonial.brand} className="flex h-[237px] flex-col rounded-[9px] border border-black bg-white p-[10px]">
+            <div className={`flex h-[90px] w-[90px] items-center justify-center text-center font-heading font-bold ${testimonial.brand === 'zepto' ? 'text-[22px] text-[#7B1FA2]' : testimonial.brand.startsWith('Dr.') ? 'rounded-full bg-[#5B2ABF] px-2 text-[11px] text-white' : 'text-[11px] text-[#5E9D4D]'}`}>
+              {testimonial.brand}
+            </div>
+            <p className="mt-[18px] flex-1 font-heading text-[16px] italic leading-[24px] text-black">{testimonial.quote}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function PunjabLiveFooter() {
+  return (
+    <footer className="mt-[70px] flex items-center justify-center gap-4 pb-[48px] text-center font-heading text-[14px] leading-[21px] text-black">
+      <span>* T&amp;C apply</span>
+      <a href={`tel:+${PUNJAB_PHONE_RAW}`}>+91 9324975060</a>
+    </footer>
+  );
+}
+
+function PunjabLiveExact({ data }: { data: LPData }) {
+  const location = data.location || 'Punjab';
+  const pricing = data.hero_pricing || [
+    { label: 'Rental Starts at', value: '₹1,300 / day*' },
+    { label: 'Purchase Starts at', value: '₹7,50,000*' },
+  ];
+  const cities = data.cities || [];
+  const serveItems = data.serve_items || [];
+  const heading = 'Reefer Containers Price in Punjab';
+
+  return (
+    <div className="min-h-screen bg-white font-body text-black">
+      <PunjabLiveTopBar />
+      <div className="h-[50px]" />
+
+      <section className="relative h-auto min-h-[630px] bg-[rgba(2,30,73,0.97)]">
+        <div className="mx-auto grid min-h-[630px] max-w-[1140px] grid-cols-1 gap-8 px-5 py-[30px] md:grid-cols-[547px_570px] md:gap-[23px] md:px-0">
+          <div className="self-center md:h-[340px]">
+            <h1 className="font-heading text-[35px] font-medium leading-[42px] text-white">{heading}</h1>
+            <h5 className="mt-10 font-heading text-[20px] font-semibold leading-[20px] text-white/95">20ft &amp; 40ft Available | –25°C to +25°C Used for Pharma, Ice Cream &amp; Food Storage</h5>
+            <div className="mt-[30px] space-y-[10px] font-heading text-[20px] font-semibold leading-[20px] text-white/95">
+              {pricing.slice(0, 2).map((price) => <div key={price.label}>{price.label} - {price.value}</div>)}
+            </div>
+            <p className="mt-[30px] text-[14px] leading-[21px] text-white/75">{data.hero_disclaimer || 'Prices are indicative and subject to change based on availability and market conditions.'}</p>
+          </div>
+          <div id="enquire" className="rounded-[10px] bg-[#F4F4F6] p-[10px] shadow-2xl" style={{ scrollMarginTop: '56px' }}>
+            <PunjabLiveQuoteForm location={location} />
+          </div>
+        </div>
+      </section>
+
+      <main className="mx-auto max-w-[1140px] px-5 py-[30px] md:px-0">
+        <section>
+          <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[570px_547px] md:gap-[23px]">
+            <PunjabLiveImageCarousel />
+            <div className="-translate-y-[5px]">
+              <h2 className="font-heading text-[25px] font-medium leading-[30px] text-black">Buy or Rent 20ft &amp; 40ft Refrigerated Containers with fast delivery across {location}.</h2>
+              <p className="mt-8 font-heading text-[16px] leading-[24px] text-black">Ideal for Cold Storage, Pharma, Food &amp; Logistics</p>
+            </div>
+          </div>
+          <div className="mt-[50px] flex h-[34px] items-center justify-center rounded-[8px] border border-black font-heading text-[20px] leading-[20px] text-black">
+            📍{cities.slice(0, 4).join(' • ')}
+          </div>
+          <PunjabLiveGallery />
+        </section>
+
+        <PunjabLiveWhyChooseServe items={serveItems} />
+        <PunjabLiveTestimonials />
+        <PunjabLiveFooter />
+      </main>
+    </div>
+  );
+}
+
 // ── Main Component ────────────────────────────────────────────────────────────
 
 export default function ReeferLP({ data }: { data: LPData }) {
+  if (data.location === 'Punjab') return <PunjabLiveExact data={data} />;
+
   const location = data.location || 'India';
   const heading = data.hero_heading || `Reefer Container Rental &amp; Leasing in ${location}`;
   const subheading = data.hero_subheading || `Temperature-controlled containers from ₹1,300/day. FSSAI-compliant. 24/7 remote monitoring. Flexible rental and leasing for pharma, food, and FMCG.`;

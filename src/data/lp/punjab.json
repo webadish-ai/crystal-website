@@ -2,7 +2,7 @@
   "meta_title": "Reefer Container Rental & Leasing in Punjab | Crystal Group",
   "meta_description": "Rent or lease reefer containers in Punjab — Ludhiana, Amritsar, Jalandhar and more. From ₹1,300/day. FSSAI-compliant, 24/7 monitoring. Get a free quote.",
   "location": "Punjab",
-  "hero_heading": "Reefer Containers Price in <span style=\"color:#FAC212\">Punjab</span>",
+  "hero_heading": "Reefer Containers Price in Punjab",
   "hero_subheading": "20ft & 40ft Available | −25°C to +25°C · Used for Pharma, Ice Cream & Food Storage",
   "hero_pills": ["Temperature Controlled", "FSSAI Compliant", "24/7 Monitoring", "Same-Week Delivery", "Flexible Terms"],
   "hero_images": [
@@ -11,8 +11,8 @@
     "/images/build/bts-commissioning.webp"
   ],
   "hero_pricing": [
-    { "label": "Rental Starts at", "value": "₹1,300/day", "note": "*Indicative" },
-    { "label": "Purchase Starts at", "value": "₹7,50,000", "note": "*Indicative" }
+    { "label": "Rental Starts at", "value": "₹ 1,300 / day*" },
+    { "label": "Purchase Starts at", "value": "₹ 7,50,000*" }
   ],
   "hero_disclaimer": "Prices are indicative and subject to change based on availability and market conditions.",
   "form_heading": "Get a Free Quote — We Call Back in 2 Hours",
