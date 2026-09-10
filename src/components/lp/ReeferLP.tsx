@@ -170,13 +170,14 @@ function HeroCarousel({ images }: { images?: string[] }) {
   }, [carouselImgs.length]);
 
   return (
-    <div className="relative w-full overflow-hidden shadow-2xl rounded-lg my-4" style={{ height: 'clamp(200px, 34vh, 320px)' }}>
-      <AnimatePresence mode="wait">
-        <motion.img key={idx} src={carouselImgs[idx % carouselImgs.length]} alt="Crystal Group cold storage"
-          initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
-          transition={{ duration: 0.55 }} className="absolute inset-0 w-full h-full object-cover" />
-      </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none" />
+    <div className="relative w-full overflow-hidden shadow-2xl rounded-lg my-4 bg-[#0F2854]" style={{ height: 'clamp(200px, 34vh, 320px)' }}>
+      <img
+        key={idx}
+        src={carouselImgs[idx % carouselImgs.length]}
+        alt="Crystal Group cold storage"
+        className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
       {carouselImgs.length > 1 && (
         <>
