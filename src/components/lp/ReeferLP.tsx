@@ -504,19 +504,19 @@ function MiniFooter() {
 function PunjabLiveTopBar() {
   return (
     <div className="fixed inset-x-0 top-0 z-50 h-[50px] bg-[#E3E7FF]">
-      <div className="mx-auto flex h-[50px] max-w-[1140px] items-center justify-between">
+      <div className="mx-auto flex h-[50px] max-w-[1140px] items-center justify-center gap-3 px-4 sm:px-5 md:justify-between md:gap-0 md:px-0">
         <a
           href={`${PUNJAB_WA_BASE}?text=Hi%2C%20I%20need%20a%20reefer%20container%20quote%20for%20Punjab.`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#25D366] bg-[#25D366] px-[10px] font-heading text-[18px] font-medium leading-[18px] text-white"
+          className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#25D366] bg-[#25D366] px-2.5 font-heading text-[16px] font-medium leading-[18px] text-white sm:text-[18px]"
         >
           <WAIcon className="h-4 w-4" />
           WhatsApp
         </a>
         <a
           href={`tel:+${PUNJAB_PHONE_RAW}`}
-          className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#0550BF] bg-[#152D61] px-[10px] font-heading text-[18px] font-medium leading-[18px] text-white"
+          className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#0550BF] bg-[#152D61] px-2.5 font-heading text-[16px] font-medium leading-[18px] text-white sm:text-[18px]"
         >
           Call Us
           <FiPhone size={16} />
@@ -589,11 +589,9 @@ function PunjabLiveQuoteForm({ location }: { location: string }) {
         </div>
       </div>
       <div className="mt-[30px]">
-        <label htmlFor="punjab-live-email" className="mb-[15px] block font-heading text-[16px] font-bold leading-[19px] text-white">Email <span className="text-red-600">*</span></label>
         <input id="punjab-live-email" aria-label="Email" required value={form.email} onChange={set('email')} placeholder="Email" type="email" className={`${inputClass} sm:w-[170px]`} />
       </div>
       <div className="mt-[30px]">
-        <label htmlFor="punjab-live-comment" className="mb-[15px] block font-heading text-[16px] font-bold leading-[19px] text-white">Comment</label>
         <textarea id="punjab-live-comment" aria-label="Comment" value={form.comment} onChange={set('comment')} placeholder="Comment" rows={4} className="block min-h-[120px] w-full resize-none rounded-[5px] border border-black/25 bg-white px-[14px] py-[14px] text-[16px] leading-[21px] text-black/70 placeholder:text-black/25 focus:border-[#0F2854] focus:outline-none" />
       </div>
       {status === 'error' && <p className="text-sm text-red-600">{error}</p>}
@@ -613,7 +611,7 @@ function PunjabLiveImageCarousel() {
   }, []);
 
   return (
-    <div className="relative h-[322px] w-full overflow-hidden rounded-[7px]" role="region" aria-label="Image Carousel">
+    <div className="relative aspect-[9/5] h-auto w-full overflow-hidden rounded-[7px] md:h-[322px] md:aspect-auto" role="region" aria-label="Image Carousel">
       <img src={CAROUSEL_IMGS[index]} alt="Crystal Group Cold Chain Solutions" className="h-full w-full object-cover" />
     </div>
   );
@@ -621,7 +619,7 @@ function PunjabLiveImageCarousel() {
 
 function PunjabLiveGallery() {
   return (
-    <div className="mt-7 grid grid-cols-1 gap-[10px] sm:grid-cols-2 md:grid-cols-3">
+    <div className="mt-7 grid grid-cols-3 gap-[10px]">
       {PUNJAB_LIVE_GALLERY.map((image) => (
         <a key={image} href={image} target="_blank" rel="noopener noreferrer" className="block aspect-[3/2] overflow-hidden rounded-[4px]">
           <img src={image} alt="Crystal Group Cold Chain Solutions" loading="lazy" className="h-full w-full object-cover transition-transform duration-300 hover:scale-[1.03]" />
@@ -664,8 +662,8 @@ function PunjabLiveTestimonials() {
       <h2 className="mt-[10px] text-center font-heading text-[20px] font-normal leading-[20px] text-[#5C5C5C]">Hear what our clients have to say</h2>
       <div className="mx-auto mt-[10px] grid max-w-[1083px] grid-cols-1 gap-[10px] md:grid-cols-3" role="region" aria-label="Slides">
         {PUNJAB_LIVE_TESTIMONIALS.map((testimonial) => (
-          <div key={testimonial.brand} className="flex h-[237px] flex-col rounded-[9px] border border-black bg-white p-[10px]">
-            <div className={`flex h-[90px] w-[90px] items-center justify-center text-center font-heading font-bold ${testimonial.brand === 'zepto' ? 'text-[22px] text-[#7B1FA2]' : testimonial.brand.startsWith('Dr.') ? 'rounded-full bg-[#5B2ABF] px-2 text-[11px] text-white' : 'text-[11px] text-[#5E9D4D]'}`}>
+          <div key={testimonial.brand} className="flex h-auto min-h-[237px] flex-col rounded-[9px] border border-black bg-white p-[10px] md:h-[237px]">
+            <div className={`flex h-[90px] w-[90px] shrink-0 items-center justify-center text-center font-heading font-bold ${testimonial.brand === 'zepto' ? 'text-[22px] text-[#7B1FA2]' : testimonial.brand.startsWith('Dr.') ? 'rounded-full bg-[#5B2ABF] px-2 text-[11px] text-white' : 'text-[11px] text-[#5E9D4D]'}`}>
               {testimonial.brand}
             </div>
             <p className="mt-[18px] flex-1 font-heading text-[16px] italic leading-[24px] text-black">{testimonial.quote}</p>
@@ -678,9 +676,12 @@ function PunjabLiveTestimonials() {
 
 function PunjabLiveFooter() {
   return (
-    <footer className="mt-[70px] flex items-center justify-center gap-4 pb-[48px] text-center font-heading text-[14px] leading-[21px] text-black">
+    <footer className="relative mt-[70px] flex items-center justify-center gap-4 pb-[92px] text-center font-heading text-[14px] leading-[21px] text-black md:pb-[48px]">
       <span>* T&amp;C apply</span>
       <a href={`tel:+${PUNJAB_PHONE_RAW}`}>+91 9324975060</a>
+      <a href="#enquire" className="fixed inset-x-4 bottom-4 z-40 inline-flex h-12 items-center justify-center rounded-[6px] bg-[#0F2854] px-5 font-heading text-[16px] font-semibold leading-[20px] text-white shadow-lg md:hidden">
+        Get a Quote
+      </a>
     </footer>
   );
 }
@@ -701,14 +702,14 @@ function PunjabLiveExact({ data }: { data: LPData }) {
       <div className="h-[50px]" />
 
       <section className="relative h-auto min-h-[630px] bg-[rgba(2,30,73,0.97)]">
-        <div className="mx-auto grid min-h-[630px] max-w-[1140px] grid-cols-1 gap-8 px-5 py-[30px] md:grid-cols-[547px_570px] md:gap-[23px] md:px-0">
+        <div className="mx-auto grid min-h-[630px] max-w-[1140px] grid-cols-1 gap-3 px-6 py-[16px] sm:gap-8 sm:px-8 sm:py-[30px] md:grid-cols-[547px_570px] md:gap-[23px] md:px-0">
           <div className="self-center md:h-[340px]">
-            <h1 className="font-heading text-[35px] font-medium leading-[42px] text-white">{heading}</h1>
-            <h5 className="mt-10 font-heading text-[20px] font-semibold leading-[20px] text-white/95">20ft &amp; 40ft Available | –25°C to +25°C Used for Pharma, Ice Cream &amp; Food Storage</h5>
-            <div className="mt-[30px] space-y-[10px] font-heading text-[20px] font-semibold leading-[20px] text-white/95">
+            <h1 className="px-1 font-heading text-[24px] font-medium leading-[29px] text-white sm:px-0 sm:text-[35px] sm:leading-[42px]">{heading}</h1>
+            <h5 className="mt-5 font-heading text-[16px] font-semibold leading-[21px] text-white/95 sm:mt-10 sm:text-[20px] sm:leading-[20px]">20ft &amp; 40ft Available | –25°C to +25°C Used for Pharma, Ice Cream &amp; Food Storage</h5>
+            <div className="mt-5 space-y-[6px] font-heading text-[16px] font-semibold leading-[21px] text-white/95 sm:mt-[30px] sm:space-y-[10px] sm:text-[20px] sm:leading-[20px]">
               {pricing.slice(0, 2).map((price) => <div key={price.label}>{price.label} - {price.value}</div>)}
             </div>
-            <p className="mt-[30px] text-[14px] leading-[21px] text-white/75">{data.hero_disclaimer || 'Prices are indicative and subject to change based on availability and market conditions.'}</p>
+            <p className="mt-5 text-[11px] leading-[16px] text-white/75 sm:mt-[30px] sm:text-[14px] sm:leading-[21px]">{data.hero_disclaimer || 'Prices are indicative and subject to change based on availability and market conditions.'}</p>
           </div>
           <div id="enquire" className="rounded-[10px] bg-[#F4F4F6] p-[10px] shadow-2xl" style={{ scrollMarginTop: '56px' }}>
             <PunjabLiveQuoteForm location={location} />
@@ -725,7 +726,7 @@ function PunjabLiveExact({ data }: { data: LPData }) {
               <p className="mt-8 font-heading text-[16px] leading-[24px] text-black">Ideal for Cold Storage, Pharma, Food &amp; Logistics</p>
             </div>
           </div>
-          <div className="mt-[50px] flex h-[34px] items-center justify-center rounded-[8px] border border-black font-heading text-[20px] leading-[20px] text-black">
+          <div className="mt-[50px] flex min-h-[34px] h-auto items-center justify-center rounded-[8px] border border-black px-3 py-1 text-center font-heading text-[16px] leading-[20px] text-black sm:h-[34px] sm:px-0 sm:py-0 sm:text-[20px]">
             📍{cities.slice(0, 4).join(' • ')}
           </div>
           <PunjabLiveGallery />
