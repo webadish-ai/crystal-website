@@ -19,7 +19,7 @@ const LIVE_LAYOUT_STATES = new Set([
 ]);
 const WA_BASE = `https://wa.me/${PHONE_RAW}`;
 const PUNJAB_PHONE_RAW = '919324975060';
-const PUNJAB_WA_BASE = `https://wa.me/${PUNJAB_PHONE_RAW}`;
+const getWhatsAppBase = (phoneRaw: string) => `https://wa.me/${phoneRaw}`;
 
 const PUNJAB_LIVE_GALLERY = [
   'https://crystalgroup.in/wp-content/uploads/2026/02/landingpage-gallery-img5.webp',
@@ -108,6 +108,10 @@ interface LPData {
   serve_items?: string[];
   gallery?: { image: string; label: string }[];
   footer_note?: string;
+}
+
+function plainLandingText(value?: string) {
+  return value?.replace(/<[^>]*>/g, '').replace(/&amp;/g, '&').replace(/&nbsp;/g, ' ').trim() || '';
 }
 
 // ── WhatsApp SVG ──────────────────────────────────────────────────────────────
@@ -501,12 +505,14 @@ function MiniFooter() {
 
 // ── Punjab live-page exact variant ───────────────────────────────────────────
 
-function PunjabLiveTopBar() {
+function LiveTopBar({ location, phoneRaw }: { location: string; phoneRaw: string }) {
+  const waBase = getWhatsAppBase(phoneRaw);
+
   return (
     <div className="fixed inset-x-0 top-0 z-50 h-[50px] bg-[#E3E7FF]">
       <div className="mx-auto flex h-[50px] max-w-[1140px] items-center justify-center gap-3 px-4 sm:px-5 md:justify-between md:gap-0 md:px-0">
         <a
-          href={`${PUNJAB_WA_BASE}?text=Hi%2C%20I%20need%20a%20reefer%20container%20quote%20for%20Punjab.`}
+          href={`${waBase}?text=${encodeURIComponent(`Hi, I need a reefer container quote for ${location}.`)}`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#25D366] bg-[#25D366] px-2.5 font-heading text-[16px] font-medium leading-[18px] text-white sm:text-[18px]"
@@ -515,7 +521,7 @@ function PunjabLiveTopBar() {
           WhatsApp
         </a>
         <a
-          href={`tel:+${PUNJAB_PHONE_RAW}`}
+          href={`tel:+${phoneRaw}`}
           className="inline-flex h-10 items-center gap-1.5 rounded-[10px] border border-[#0550BF] bg-[#152D61] px-2.5 font-heading text-[16px] font-medium leading-[18px] text-white sm:text-[18px]"
         >
           Call Us
@@ -526,7 +532,8 @@ function PunjabLiveTopBar() {
   );
 }
 
-function PunjabLiveQuoteForm({ location }: { location: string }) {
+function LiveQuoteForm({ location, phoneRaw }: { location: string; phoneRaw: string }) {
+  const waBase = getWhatsAppBase(phoneRaw);
   const [form, setForm] = useState({ company: '', name: '', phone: '', email: '', comment: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
@@ -568,7 +575,7 @@ function PunjabLiveQuoteForm({ location }: { location: string }) {
         <div className="flex h-16 w-16 items-center justify-center bg-[#0F2854]"><FiCheck size={28} className="text-[#FAC212]" /></div>
         <h3 className="font-heading text-xl font-bold text-[#0F2854]">We'll call you in 2 hours</h3>
         <p className="text-sm text-gray-500">Our team is reviewing your requirement and will reach out shortly.</p>
-        <a href={`${PUNJAB_WA_BASE}?text=Hi%2C%20I%20just%20submitted%20a%20reefer%20quote%20for%20${location}.`} target="_blank" rel="noopener noreferrer" className="bg-[#0F2854] px-5 py-2.5 text-sm font-semibold text-white">
+        <a href={`${waBase}?text=${encodeURIComponent(`Hi, I just submitted a reefer quote for ${location}.`)}`} target="_blank" rel="noopener noreferrer" className="bg-[#0F2854] px-5 py-2.5 text-sm font-semibold text-white">
           Chat on WhatsApp
         </a>
       </div>
@@ -603,7 +610,7 @@ function PunjabLiveQuoteForm({ location }: { location: string }) {
   );
 }
 
-function PunjabLiveImageCarousel() {
+function LiveImageCarousel() {
   const [index, setIndex] = useState(0);
   useEffect(() => {
     const timer = window.setInterval(() => setIndex(current => (current + 1) % CAROUSEL_IMGS.length), 4500);
@@ -617,7 +624,7 @@ function PunjabLiveImageCarousel() {
   );
 }
 
-function PunjabLiveGallery() {
+function LiveGallery() {
   return (
     <div className="mt-7 grid grid-cols-3 gap-[10px]">
       {PUNJAB_LIVE_GALLERY.map((image) => (
@@ -629,7 +636,7 @@ function PunjabLiveGallery() {
   );
 }
 
-function PunjabLiveWhyChooseServe({ items }: { items: string[] }) {
+function LiveWhyChooseServe({ items }: { items: string[] }) {
   return (
     <section className="mt-7 px-[10px]">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-[550px_550px] md:gap-[18px]">
@@ -655,7 +662,7 @@ function PunjabLiveWhyChooseServe({ items }: { items: string[] }) {
   );
 }
 
-function PunjabLiveTestimonials() {
+function LiveTestimonials() {
   return (
     <section className="mt-[56px] px-[10px]">
       <h2 className="text-center font-heading text-[30px] font-semibold leading-[30px] text-black">Trusted by Industry Leaders</h2>
@@ -674,11 +681,13 @@ function PunjabLiveTestimonials() {
   );
 }
 
-function PunjabLiveFooter() {
+function LiveFooter({ phoneRaw }: { phoneRaw: string }) {
+  const phoneLabel = phoneRaw === PUNJAB_PHONE_RAW ? '+91 9324975060' : `+${phoneRaw.slice(0, 2)} ${phoneRaw.slice(2, 6)} ${phoneRaw.slice(6)}`;
+
   return (
     <footer className="relative mt-[70px] flex items-center justify-center gap-4 pb-[92px] text-center font-heading text-[14px] leading-[21px] text-black md:pb-[48px]">
       <span>* T&amp;C apply</span>
-      <a href={`tel:+${PUNJAB_PHONE_RAW}`}>+91 9324975060</a>
+      <a href={`tel:+${phoneRaw}`}>{phoneLabel}</a>
       <a href="#enquire" className="fixed inset-x-4 bottom-4 z-40 inline-flex h-12 items-center justify-center rounded-[6px] bg-[#0F2854] px-5 font-heading text-[16px] font-semibold leading-[20px] text-white shadow-lg md:hidden">
         Get a Quote
       </a>
@@ -686,33 +695,37 @@ function PunjabLiveFooter() {
   );
 }
 
-function PunjabLiveExact({ data }: { data: LPData }) {
+function LiveLandingExact({ data }: { data: LPData }) {
   const location = data.location || 'Punjab';
+  const phoneRaw = location === 'Punjab' ? PUNJAB_PHONE_RAW : PHONE_RAW;
   const pricing = data.hero_pricing || [
     { label: 'Rental Starts at', value: '₹1,300 / day*' },
     { label: 'Purchase Starts at', value: '₹7,50,000*' },
   ];
   const cities = data.cities || [];
   const serveItems = data.serve_items || [];
-  const heading = 'Reefer Containers Price in Punjab';
+  const heading = plainLandingText(data.hero_heading) || `Reefer Containers Price in ${location}`;
+  const subheading = location === 'Punjab'
+    ? '20ft & 40ft Available | –25°C to +25°C Used for Pharma, Ice Cream & Food Storage'
+    : plainLandingText(data.hero_subheading) || '20ft & 40ft Available | –25°C to +25°C Used for Pharma, Ice Cream & Food Storage';
 
   return (
     <div className="min-h-screen bg-white font-body text-black">
-      <PunjabLiveTopBar />
+      <LiveTopBar location={location} phoneRaw={phoneRaw} />
       <div className="h-[50px]" />
 
       <section className="relative h-auto min-h-[630px] bg-[rgba(2,30,73,0.97)]">
         <div className="mx-auto grid min-h-[630px] max-w-[1140px] grid-cols-1 gap-3 px-6 py-[16px] sm:gap-8 sm:px-8 sm:py-[30px] md:grid-cols-[547px_570px] md:gap-[23px] md:px-0">
           <div className="self-center md:h-[340px]">
             <h1 className="px-1 font-heading text-[24px] font-medium leading-[29px] text-white sm:px-0 sm:text-[35px] sm:leading-[42px]">{heading}</h1>
-            <h5 className="mt-5 font-heading text-[16px] font-semibold leading-[21px] text-white/95 sm:mt-10 sm:text-[20px] sm:leading-[20px]">20ft &amp; 40ft Available | –25°C to +25°C Used for Pharma, Ice Cream &amp; Food Storage</h5>
+            <h5 className="mt-5 font-heading text-[16px] font-semibold leading-[21px] text-white/95 sm:mt-10 sm:text-[20px] sm:leading-[20px]">{subheading}</h5>
             <div className="mt-5 space-y-[6px] font-heading text-[16px] font-semibold leading-[21px] text-white/95 sm:mt-[30px] sm:space-y-[10px] sm:text-[20px] sm:leading-[20px]">
               {pricing.slice(0, 2).map((price) => <div key={price.label}>{price.label} - {price.value}</div>)}
             </div>
             <p className="mt-5 text-[11px] leading-[16px] text-white/75 sm:mt-[30px] sm:text-[14px] sm:leading-[21px]">{data.hero_disclaimer || 'Prices are indicative and subject to change based on availability and market conditions.'}</p>
           </div>
           <div id="enquire" className="rounded-[10px] bg-[#F4F4F6] p-[10px] shadow-2xl" style={{ scrollMarginTop: '56px' }}>
-            <PunjabLiveQuoteForm location={location} />
+            <LiveQuoteForm location={location} phoneRaw={phoneRaw} />
           </div>
         </div>
       </section>
@@ -720,7 +733,7 @@ function PunjabLiveExact({ data }: { data: LPData }) {
       <main className="mx-auto max-w-[1140px] px-5 py-[30px] md:px-0">
         <section>
           <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[570px_547px] md:gap-[23px]">
-            <PunjabLiveImageCarousel />
+            <LiveImageCarousel />
             <div className="-translate-y-[5px]">
               <h2 className="font-heading text-[25px] font-medium leading-[30px] text-black">Buy or Rent 20ft &amp; 40ft Refrigerated Containers with fast delivery across {location}.</h2>
               <p className="mt-8 font-heading text-[16px] leading-[24px] text-black">Ideal for Cold Storage, Pharma, Food &amp; Logistics</p>
@@ -729,12 +742,12 @@ function PunjabLiveExact({ data }: { data: LPData }) {
           <div className="mt-[50px] flex min-h-[34px] h-auto items-center justify-center rounded-[8px] border border-black px-3 py-1 text-center font-heading text-[16px] leading-[20px] text-black sm:h-[34px] sm:px-0 sm:py-0 sm:text-[20px]">
             📍{cities.slice(0, 4).join(' • ')}
           </div>
-          <PunjabLiveGallery />
+          <LiveGallery />
         </section>
 
-        <PunjabLiveWhyChooseServe items={serveItems} />
-        <PunjabLiveTestimonials />
-        <PunjabLiveFooter />
+        <LiveWhyChooseServe items={serveItems} />
+        <LiveTestimonials />
+        <LiveFooter phoneRaw={phoneRaw} />
       </main>
     </div>
   );
@@ -743,7 +756,7 @@ function PunjabLiveExact({ data }: { data: LPData }) {
 // ── Main Component ────────────────────────────────────────────────────────────
 
 export default function ReeferLP({ data }: { data: LPData }) {
-  if (data.location === 'Punjab') return <PunjabLiveExact data={data} />;
+  if (data.location) return <LiveLandingExact data={data} />;
 
   const location = data.location || 'India';
   const heading = data.hero_heading || `Reefer Container Rental &amp; Leasing in ${location}`;
