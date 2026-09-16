@@ -19,7 +19,6 @@ const LIVE_LAYOUT_STATES = new Set([
   'Punjab', 'Telangana', 'Karnataka', 'Andhra Pradesh', 'Gujarat', 'Maharashtra', 'Tamil Nadu',
 ]);
 const WA_BASE = `https://wa.me/${PHONE_RAW}`;
-const PUNJAB_PHONE_RAW = '919324975060';
 const getWhatsAppBase = (phoneRaw: string) => `https://wa.me/${phoneRaw}`;
 
 const PUNJAB_LIVE_GALLERY = [
@@ -685,7 +684,7 @@ function LiveTestimonials() {
 }
 
 function LiveFooter({ phoneRaw }: { phoneRaw: string }) {
-  const phoneLabel = phoneRaw === PUNJAB_PHONE_RAW ? '+91 9324975060' : `+${phoneRaw.slice(0, 2)} ${phoneRaw.slice(2, 6)} ${phoneRaw.slice(6)}`;
+  const phoneLabel = '+91 9324975060';
 
   return (
     <footer className="relative mt-[70px] flex items-center justify-center gap-4 pb-[92px] text-center font-heading text-[14px] leading-[21px] text-black md:pb-[48px]">
@@ -700,7 +699,7 @@ function LiveFooter({ phoneRaw }: { phoneRaw: string }) {
 
 function LiveLandingExact({ data }: { data: LPData }) {
   const location = data.location || 'Punjab';
-  const phoneRaw = location === 'Punjab' ? PUNJAB_PHONE_RAW : PHONE_RAW;
+  const phoneRaw = PHONE_RAW;
   const pricing = data.hero_pricing || [
     { label: 'Rental Starts at', value: '₹1,300 / day*' },
     { label: 'Purchase Starts at', value: '₹7,50,000*' },
