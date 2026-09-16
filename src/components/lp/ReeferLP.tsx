@@ -9,7 +9,7 @@ import { useLeadTracking } from '../../hooks/useLeadTracking';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const PHONE_RAW = '919892512900';
+const PHONE_RAW = '919324975060';
 
 // States whose live crystalgroup.in page uses the "hero+form side by side,
 // no carousel/stats/marquee" layout. Bhubaneswar has no live page of its own
