@@ -16,12 +16,12 @@
       "permanent": true
     },
     {
-      "source": "/rajasthans(.*)",
+      "source": "/:path(rajasthans.*)",
       "destination": "/blog/rajasthan-logistics-corridor/",
       "permanent": true
     },
     {
-      "source": "/indias(.*)seafood(.*)",
+      "source": "/:path(indias.*)",
       "destination": "/blog/seafood-export-cold-chain/",
       "permanent": true
     },
