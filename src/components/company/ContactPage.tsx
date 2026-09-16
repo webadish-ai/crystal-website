@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiCheckCircle, FiSend, FiPhone, FiMail, FiMapPin } from 'react-icons/fi';
 import contactData from '../../data/contact.json';
 import { useCmsData } from '../../hooks/useCmsData';
+import { useLeadTracking } from '../../hooks/useLeadTracking';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import CharReveal from '@components/core/CharReveal';
 
@@ -38,6 +39,7 @@ const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formError, setFormError] = useState('');
+  const tracking = useLeadTracking();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,6 +58,7 @@ const ContactPage: React.FC = () => {
           company: form.get('company'),
           service: form.get('service'),
           message: form.get('message'),
+          ...tracking,
         }),
       });
       const body = await res.json().catch(() => ({}));

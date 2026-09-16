@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useCmsData } from '../../hooks/useCmsData'
+import { useLeadTracking } from '../../hooks/useLeadTracking'
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -184,6 +185,7 @@ export default function LandingConversionTemplate(rawProps: Props) {
   })
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [formError, setFormError] = useState('')
+  const tracking = useLeadTracking()
   const [testimonialIdx, setTestimonialIdx] = useState(0)
   const [heroImgIdx, setHeroImgIdx] = useState(0)
 
@@ -212,6 +214,7 @@ export default function LandingConversionTemplate(rawProps: Props) {
           company: formData.company,
           message: formData.message,
           service: p.form_service,
+          ...tracking,
         }),
       })
       if (!res.ok) {

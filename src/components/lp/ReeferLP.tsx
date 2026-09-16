@@ -5,6 +5,7 @@ import {
   FiPhone, FiChevronDown, FiCheck, FiArrowRight, FiMapPin,
   FiChevronLeft, FiChevronRight,
 } from 'react-icons/fi';
+import { useLeadTracking } from '../../hooks/useLeadTracking';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -240,6 +241,7 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
   const [form, setForm] = useState({ name: '', email: '', phone: '', city: '', requirement: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [error, setError] = useState('');
+  const tracking = useLeadTracking();
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }));
@@ -260,6 +262,7 @@ function LeadForm({ data, location }: { data: LPData; location: string }) {
           company: form.city,
           service: `Reefer Container — ${location}`,
           message: form.requirement,
+          ...tracking,
         }),
       });
       const body = await res.json().catch(() => ({}));
