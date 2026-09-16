@@ -17,6 +17,34 @@
     { "title": "Fully Mobile", "desc": "Relocate via forklift or crane as the project moves. No civil foundations or permanent work required." },
     { "title": "Secure & Weatherproof", "desc": "Weatherproof Corten steel construction with high-quality locks and reinforced walls for site security." }
   ],
+  "form": {
+    "service": "Portable Office Containers",
+    "type_label": "Container Type",
+    "type_options": [
+      "Portable Office Container/ Cabin",
+      "Portable Toilet Container/ Cabin",
+      "Canteen Container",
+      "Restaurant Container",
+      "Security Cabin",
+      "Café Container",
+      "Dormitory Container",
+      "Customized Container/ Cabin",
+      "Other"
+    ],
+    "size_options": ["10 FT", "20 FT", "40 FT", "Other"]
+  },
+  "cabins": [
+    { "title": "Bus Stop Cabin", "desc": "Custom bus stop cabins built for public and private use. Covered seating for protection from sun and rain." },
+    { "title": "Toilet Cabin", "desc": "Compact, portable toilet cabins for quick setup. Include plumbing, ventilation, and waste management systems." },
+    { "title": "Container Cafe", "desc": "Portable, cost-effective container cafes for modern coffee setups. 20 ft G+1 design with cement sheet finish for a stylish look." },
+    { "title": "Container Home", "desc": "Affordable, durable, and eco-friendly container homes. Quick to build, customizable, and modular for easy relocation." },
+    { "title": "Dormitory Cabin", "desc": "Durable, cost-effective dormitory containers for short or long stays. Customizable interiors with beds, storage, and amenities." },
+    { "title": "Site Office Cabin", "desc": "Modern, flexible site office cabins made from containers. Easy to relocate and quick to set up as projects move." },
+    { "title": "Security Cabin", "desc": "Compact security booths for entry points and checkposts. Include secure doors, windows, insulation, and optional CCTV." },
+    { "title": "Medical Room", "desc": "Convert containers into mobile hospitals and clinics. Deliver instant, reliable medical infrastructure anywhere." },
+    { "title": "Smoking Room", "desc": "Portable smoking units made from dry shipping containers. Features powerful ventilation for fast smoke removal." },
+    { "title": "Baby Creche", "desc": "Secure baby creche rooms made from shipping containers. Provide a safe, nurturing space close to the workplace." }
+  ],
   "specs": [
     {
       "size": "20 ft",

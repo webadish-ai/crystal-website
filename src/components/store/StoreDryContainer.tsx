@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiPlus, FiMinus, FiCheckCircle } from 'react-icons/fi';
+import { FiArrowRight, FiPlus, FiMinus, FiCheckCircle, FiChevronDown } from 'react-icons/fi';
 import { containerVariants, itemVariants, viewportOnce, tc } from '@components/core/animations';
 import Button from '@components/core/Button';
 import CharReveal from '@components/core/CharReveal';
+import { useLeadTracking } from '../../hooks/useLeadTracking';
 
 import cabinBusstopRaw    from '../../data/images/store/cabin-busstop.webp';
 import cabinToiletRaw     from '../../data/images/store/cabin-toilet.webp';
@@ -39,6 +40,13 @@ interface Spec {
 interface Feature { title: string; desc: string; }
 interface FaqItem { q: string; a: string; }
 
+interface LeadFormConfig {
+  service: string;
+  type_label: string;
+  type_options: string[];
+  size_options: string[];
+}
+
 interface DryContainerData {
   meta: { title: string; description: string };
   hero: { eyebrow: string; name: string; tagline: string; badge: string; sizes: string[] };
@@ -49,6 +57,7 @@ interface DryContainerData {
   specs: Spec[];
   industries: string[];
   faq: FaqItem[];
+  form?: LeadFormConfig;
 }
 
 interface Props {
@@ -107,6 +116,114 @@ const SectionHeader = ({ eyebrow, head, align = 'left', dark = false }: {
   </div>
 );
 
+/* ── PRODUCT LEAD FORM ── */
+
+const inputClass = "bg-primary border border-secondary/20 focus:border-secondary rounded-sm px-4 py-3 text-body-md text-secondary placeholder:text-secondary/40 outline-none transition-colors duration-300 font-body w-full";
+
+const ProductLeadForm = ({ config }: { config: LeadFormConfig }) => {
+  const [form, setForm] = useState({ name: '', email: '', phone: '', type: '', size: '', intent: '', location: '', remarks: '' });
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [error, setError] = useState('');
+  const tracking = useLeadTracking();
+
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setForm(f => ({ ...f, [k]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    setError('');
+    const apiBase = import.meta.env.PUBLIC_API_URL ?? '';
+    const details = [
+      form.type && `${config.type_label}: ${form.type}`,
+      form.size && `Size: ${form.size}`,
+      form.intent && `Buy or Rent: ${form.intent}`,
+      form.location && `Location: ${form.location}`,
+    ].filter(Boolean).join('\n');
+    try {
+      const res = await fetch(`${apiBase}/api/enquiries/submit`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.location,
+          service: config.service,
+          message: [details, form.remarks].filter(Boolean).join('\n\n'),
+          ...tracking,
+        }),
+      });
+      const body = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(body.error || 'Something went wrong. Please try again.');
+      setStatus('success');
+    } catch (err) {
+      setStatus('error');
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
+  };
+
+  if (status === 'success') {
+    return (
+      <div className="flex flex-col items-center text-center py-12">
+        <div className="w-16 h-16 bg-accent/10 text-accent rounded-full flex items-center justify-center mb-6">
+          <FiCheckCircle className="text-3xl" />
+        </div>
+        <h3 className="font-heading font-extrabold text-h3 text-secondary tracking-tight mb-3">Request Received</h3>
+        <p className="font-body text-body-md text-secondary/60 leading-relaxed max-w-sm">
+          Thank you — our team will reach out within 24 hours with pricing and availability.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <input required value={form.name} onChange={set('name')} type="text" placeholder="Full Name *" className={inputClass} />
+        <input required value={form.email} onChange={set('email')} type="email" placeholder="Email Address *" className={inputClass} />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <input required value={form.phone} onChange={set('phone')} type="tel" placeholder="Phone Number *" className={inputClass} />
+        <input value={form.location} onChange={set('location')} type="text" placeholder="Delivery Location" className={inputClass} />
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="relative">
+          <select value={form.type} onChange={set('type')} className={`${inputClass} appearance-none cursor-pointer pr-10`}>
+            <option value="">{config.type_label}</option>
+            {config.type_options.map(o => <option key={o} value={o}>{o}</option>)}
+          </select>
+          <FiChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary/40 pointer-events-none" />
+        </div>
+        <div className="relative">
+          <select value={form.size} onChange={set('size')} className={`${inputClass} appearance-none cursor-pointer pr-10`}>
+            <option value="">Container Size</option>
+            {config.size_options.map(o => <option key={o} value={o}>{o}</option>)}
+          </select>
+          <FiChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary/40 pointer-events-none" />
+        </div>
+      </div>
+      <div className="relative">
+        <select value={form.intent} onChange={set('intent')} className={`${inputClass} appearance-none cursor-pointer pr-10`}>
+          <option value="">Buy or Rent?</option>
+          <option value="Buy">Buy a Container/Cabin</option>
+          <option value="Rent">Rent a Container/Cabin</option>
+          <option value="Not Sure">Not Sure — Quote Me for Both</option>
+        </select>
+        <FiChevronDown className="absolute right-3.5 top-1/2 -translate-y-1/2 text-secondary/40 pointer-events-none" />
+      </div>
+      <textarea value={form.remarks} onChange={set('remarks')} rows={3} placeholder="Remarks / additional requirements" className={`${inputClass} resize-none`} />
+
+      {status === 'error' && <p role="alert" className="text-red-700 font-body text-body-sm">{error}</p>}
+
+      <button disabled={status === 'loading'} type="submit"
+        className="mt-2 bg-accent text-secondary font-heading font-extrabold text-eyebrow uppercase tracking-[0.2em] py-4 rounded-sm hover:bg-secondary hover:text-primary transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed">
+        {status === 'loading' ? 'Submitting…' : 'Submit'}
+      </button>
+    </form>
+  );
+};
+
 /* ── MAIN COMPONENT ── */
 
 const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => {
@@ -163,6 +280,60 @@ const StoreDryContainer: React.FC<Props> = ({ data, heroImage, heroImages }) => 
           </motion.div>
         </motion.div>
       </section>
+
+      {/* ── LEAD FORM ── */}
+      {data.form && (
+        <section id="form" className="bg-secondary py-20 px-6 md:px-12" style={{ scrollMarginTop: '80px' }}>
+          <div className="container mx-auto max-w-[var(--max-width)]">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-10 lg:gap-16 items-start">
+              <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
+                <SectionHeader dark eyebrow="Get a Quote" head="Save Time. Get the Best Deal." />
+                <motion.p variants={itemVariants} className="font-body text-body-md text-primary/60 leading-relaxed">
+                  Tell us the container type, size, and whether you're buying or renting — our team will follow up with pricing within 24 hours.
+                </motion.p>
+              </motion.div>
+              <div className="bg-primary border border-primary/10 rounded-sm p-6 sm:p-8">
+                <ProductLeadForm config={data.form} />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── OVERVIEW ── */}
+      {data.overview && (
+        <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
+          <div className="container mx-auto max-w-[var(--max-width)]">
+            <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
+              <SectionHeader eyebrow="Overview" head={`Why Choose ${data.hero.name}?`} />
+              <motion.p variants={itemVariants} className="font-body text-body-lg text-secondary/60 leading-relaxed max-w-3xl">
+                {data.overview}
+              </motion.p>
+            </motion.div>
+          </div>
+        </section>
+      )}
+
+      {/* ── KEY FEATURES ── */}
+      {data.features && data.features.length > 0 && (
+        <section className="bg-primary pb-20 px-6 md:px-12 border-b border-secondary/10">
+          <div className="container mx-auto max-w-[var(--max-width)]">
+            <motion.div initial="hidden" whileInView="visible" viewport={viewportOnce} variants={containerVariants}>
+              <SectionHeader eyebrow="Built for the job" head="Key Features" />
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {data.features.map((f, i) => (
+                  <motion.div key={i} variants={itemVariants}
+                    className="flex flex-col gap-3 p-6 border border-secondary/10 rounded-sm">
+                    <FiCheckCircle className="text-accent text-xl" />
+                    <h3 className="font-heading font-extrabold text-h4 text-secondary tracking-tight leading-tight">{f.title}</h3>
+                    <p className="font-body text-body-sm text-secondary/55 leading-relaxed font-medium">{f.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* ── SPECIFICATIONS ── */}
       {hasSpecs && <section className="bg-primary py-20 px-6 md:px-12 border-b border-secondary/10">
