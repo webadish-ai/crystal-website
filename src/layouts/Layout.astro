@@ -131,10 +131,16 @@ const jsonLd = {
 
 		<ClientRouter />
 
-		{/* Hide page content immediately on first-ever load — removed by Preloader on exit */}
+		{/* Hide page content immediately on first-ever load — removed by Preloader on exit.
+		    Only the homepage gets the full intro; a direct/ad/SEO entry to any other page
+		    skips it so paid and organic landing traffic isn't delayed by a brand animation. */}
 		<script is:inline>
 			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('crystal-preloader-done')) {
-				document.documentElement.setAttribute('data-preloading', '');
+				if (window.location.pathname === '/') {
+					document.documentElement.setAttribute('data-preloading', '');
+				} else {
+					sessionStorage.setItem('crystal-preloader-done', '1');
+				}
 			}
 		</script>
 	</head>
@@ -142,7 +148,7 @@ const jsonLd = {
 		{/* Static navy shell — painted before React mounts, prevents white flash */}
 		<div id="preloader-shell" style="display:none;position:fixed;inset:0;z-index:9998;background:#0F2854"></div>
 		<script is:inline>
-			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('crystal-preloader-done')) {
+			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem('crystal-preloader-done') && window.location.pathname === '/') {
 				document.getElementById('preloader-shell').style.display = 'block';
 			}
 		</script>

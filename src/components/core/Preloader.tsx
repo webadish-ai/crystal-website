@@ -80,7 +80,9 @@ function CharLine({ line }: { line: LineData }) {
 
 /* ── Preloader ───────────────────────────────────────────────────────────*/
 const Preloader: React.FC = () => {
-  const [visible] = useState(() => !sessionStorage.getItem('crystal-preloader-done'));
+  const [visible] = useState(() =>
+    window.location.pathname === '/' && !sessionStorage.getItem('crystal-preloader-done')
+  );
   const [exiting, setExiting] = useState(false);
 
   const counterRef = useRef<HTMLSpanElement>(null);
