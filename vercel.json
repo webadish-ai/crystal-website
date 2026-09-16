@@ -86,6 +86,26 @@
       "permanent": true
     },
     {
+      "source": "/cold-storage/",
+      "destination": "/store/cold-storage/",
+      "permanent": true
+    },
+    {
+      "source": "/dry-containers/",
+      "destination": "/store/dry-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/portable-cold-storage/",
+      "destination": "/store-portable-cold-storage/",
+      "permanent": true
+    },
+    {
+      "source": "/3pl-logistics/",
+      "destination": "/store-3pl/",
+      "permanent": true
+    },
+    {
       "source": "/transportation/",
       "destination": "/move/",
       "permanent": true
@@ -292,6 +312,11 @@
     },
     {
       "source": "/rent-buy-container-landingpage-uae/",
+      "destination": "/lp/uae/",
+      "permanent": true
+    },
+    {
+      "source": "/uae/",
       "destination": "/lp/uae/",
       "permanent": true
     },
