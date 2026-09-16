@@ -16,6 +16,26 @@
       "permanent": true
     },
     {
+      "source": "/rajasthans-₹10000-crore-logistics-corridor-a-new-advantage-for-cold-chain-and-freight/",
+      "destination": "/blog/rajasthan-logistics-corridor/",
+      "permanent": true
+    },
+    {
+      "source": "/rajasthans-%E2%82%B910000-crore-logistics-corridor-a-new-advantage-for-cold-chain-and-freight/",
+      "destination": "/blog/rajasthan-logistics-corridor/",
+      "permanent": true
+    },
+    {
+      "source": "/indias-₹72000-crore-seafood-export-industry-runs-on-one-invisible-ingredient-temperature/",
+      "destination": "/blog/seafood-export-cold-chain/",
+      "permanent": true
+    },
+    {
+      "source": "/indias-%E2%82%B972000-crore-seafood-export-industry-runs-on-one-invisible-ingredient-temperature/",
+      "destination": "/blog/seafood-export-cold-chain/",
+      "permanent": true
+    },
+    {
       "source": "/blog/fmcg-qsr-cost-reduction/",
       "destination": "/blog/cold-chain-fmcg-qsr-savings/",
       "permanent": true
