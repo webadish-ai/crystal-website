@@ -108,7 +108,12 @@ const Footer: React.FC = () => {
               </div>
               <div className="font-heading font-extrabold">
                 <div className="text-body-sm text-primary/50 uppercase tracking-widest mb-2">{footer.contact_inquiries_label}</div>
-                <div className="text-body-md opacity-80">{footer.contact_email}</div>
+                <a
+                  href={`mailto:${footer.contact_email}`}
+                  className="text-body-md opacity-80 hover:opacity-100 hover:text-accent transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  {footer.contact_email}
+                </a>
               </div>
             </div>
           </div>
