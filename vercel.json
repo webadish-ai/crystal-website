@@ -111,6 +111,21 @@
       "permanent": true
     },
     {
+      "source": "/build-bts",
+      "destination": "/build/built-to-suit/",
+      "permanent": true
+    },
+    {
+      "source": "/store-cold-storage",
+      "destination": "/store/cold-storage/",
+      "permanent": true
+    },
+    {
+      "source": "/Cold-Chain-Solutions-The-need-for-today-supply-chain-management.html",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
       "source": "/case-studies/",
       "destination": "/impact/",
       "permanent": true
@@ -277,6 +292,46 @@
     },
     {
       "source": "/rent-buy-container-landingpage-uae/",
+      "destination": "/lp/uae/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-karnataka/",
+      "destination": "/lp/karnataka/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-andhra-pradesh/",
+      "destination": "/lp/andhra-pradesh/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-gujarat/",
+      "destination": "/lp/gujarat/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-maharashtra/",
+      "destination": "/lp/maharashtra/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-tamil-nadu/",
+      "destination": "/lp/tamil-nadu/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-telangana/",
+      "destination": "/lp/telangana/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-reefer-containers-landing-page-punjab/",
+      "destination": "/lp/punjab/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/rent-buy-container-landingpage-uae/",
       "destination": "/lp/uae/",
       "permanent": true
     },
