@@ -11,6 +11,8 @@
 /blast-freezer-/                                                /store/blast-freezer/                       301
 /pharmaceutical-2/                                              /case-studies/                              301
 /sitemap/                                                       /sitemap-index.xml                          301
+/category/*                                                     /impact/                                    301
+/tag/*                                                          /blog/                                      301
 
 # ── PRODUCTS: old slugs → /store/ ────────────────────────────────────────────
 /blast-freezer/                                                 /store/blast-freezer/                       301
