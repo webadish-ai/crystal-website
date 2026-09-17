@@ -161,6 +161,11 @@
       "permanent": true
     },
     {
+      "source": "/case-studies",
+      "destination": "/impact/",
+      "permanent": true
+    },
+    {
       "source": "/gallery/",
       "destination": "/impact/",
       "permanent": true
@@ -213,6 +218,86 @@
     {
       "source": "/all-containers/",
       "destination": "/store/",
+      "permanent": true
+    },
+    {
+      "source": "/container/",
+      "destination": "/store/",
+      "permanent": true
+    },
+    {
+      "source": "/container/superstore/",
+      "destination": "/store/super-store/",
+      "permanent": true
+    },
+    {
+      "source": "/container/iso-tank/",
+      "destination": "/store/iso-tanks/",
+      "permanent": true
+    },
+    {
+      "source": "/container/cold-rooms/",
+      "destination": "/store/cold-rooms/",
+      "permanent": true
+    },
+    {
+      "source": "/container/dnv-reefer-container/",
+      "destination": "/store/reefer-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/container/dnv-reefer-container-2/",
+      "destination": "/store/reefer-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/container/high-cube/",
+      "destination": "/store/dry-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/container/flatrack/",
+      "destination": "/store/open-top-containers/",
+      "permanent": true
+    },
+    {
+      "source": "/blast-reefer/",
+      "destination": "/store/blast-freezer/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-rent-buy-reefer-containers-landing-page-gujarat/",
+      "destination": "/lp/gujarat/",
+      "permanent": true
+    },
+    {
+      "source": "/rent-buy-reefer-containers-and-pradesh",
+      "destination": "/lp/andhra-pradesh/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2024/06/Crystal-Logistics-Company-Profile.pdf",
+      "destination": "https://old.crystalgroup.in/wp-content/uploads/2024/06/Crystal-Logistics-Company-Profile.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/02/dry-products.pdf",
+      "destination": "https://old.crystalgroup.in/wp-content/uploads/2025/02/dry-products.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/02/reefer-container2023.pdf",
+      "destination": "https://old.crystalgroup.in/wp-content/uploads/2025/02/reefer-container2023.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2025/02/blast2023.pdf",
+      "destination": "https://old.crystalgroup.in/wp-content/uploads/2025/02/blast2023.pdf",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/uploads/2026/03/plasma-storage-casestudy.pdf",
+      "destination": "https://old.crystalgroup.in/wp-content/uploads/2026/03/plasma-storage-casestudy.pdf",
       "permanent": true
     },
     {
