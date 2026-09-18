@@ -178,7 +178,7 @@
             "title": "Sales Coordinator",
             "function": "Sales & Business Development",
             "location": "Goregaon, Mumbai – Pan India Travel",
-            "salary": "Competitive, based on experience",
+            "salary": "₹2.40 LPA – ₹3.60 LPA (Based on experience and interview performance)",
             "working_hours": "9 Hours",
             "timing": "Monday – Saturday",
             "company_overview": "Crystal Logistics is India's trusted cold chain and warehousing partner, delivering reliable temperature-controlled logistics solutions across the country. With over 60 years of industry excellence, we specialize in cold storage, reefer transportation, portable cold storage containers, and end-to-end supply chain solutions. We foster a collaborative, performance-driven, and growth-oriented work culture where employees are empowered to learn, innovate, and build rewarding careers.",
@@ -211,18 +211,17 @@
               "Active listening and problem-solving skills",
               "Time management and multitasking",
               "Target-oriented and self-motivated",
-              "Team collaboration and coordination",
-              "Salary & Benefits:",
-              "Salary Range: ₹2.40 LPA – ₹3.60 LPA (Based on experience and interview performance)",
-              "Benefits:",
+              "Team collaboration and coordination"
+            ],
+            "before_apply": "",
+            "apply_url": "https://hr.crystalgrp.xyz/apply/FORM-MRF135-6ECBDE?source=website",
+            "benefits": [
               "Performance-based incentives",
               "Career growth opportunities",
               "Professional learning and development",
               "Supportive and collaborative work environment",
               "Paid Leave and Statutory Benefits as per company policy"
-            ],
-            "before_apply": "",
-            "apply_url": "https://hr.crystalgrp.xyz/apply/FORM-MRF135-6ECBDE?source=website"
+            ]
           },
           {
             "title": "Purchase Executive",
@@ -864,7 +863,23 @@
               "Strong Ownership & Accountability"
             ],
             "before_apply": "",
-            "apply_url": "https://hr.crystalgrp.xyz/apply/FORM-MRF134-128BEC?source=website"
+            "apply_url": "https://hr.crystalgrp.xyz/apply/FORM-MRF134-128BEC?source=website",
+            "kpis": [
+              "Achieve On-Time Delivery (OTD) above 95%.",
+              "Reduce Order-to-Installation cycle time.",
+              "Minimize customer complaints during delivery and installation.",
+              "Ensure timely customer handover and billing readiness.",
+              "Improve cross-functional coordination and execution efficiency.",
+              "Maintain accurate project tracking and reporting."
+            ],
+            "ideal_candidate_profile": [
+              "Has independently managed customer orders from PO receipt through installation, commissioning, and customer handover.",
+              "Experienced in coordinating Operations, Procurement, Service, Logistics, Vendors, Transporters, and Customers.",
+              "Comfortable managing multiple customer projects simultaneously while meeting strict deadlines.",
+              "Proactively identifies and resolves execution challenges rather than relying solely on escalations.",
+              "Possesses a strong execution mindset with a focus on operational excellence and customer satisfaction.",
+              "Demonstrates excellent ownership, communication, and stakeholder management skills."
+            ]
           },
           {
             "title": "Sales Executive (CLCCL)",
@@ -1130,7 +1145,17 @@
               "Good coordination skills with internal departments."
             ],
             "before_apply": "",
-            "apply_url": "https://hr.crystalgrp.xyz/apply/FORM-MRF140-6596BF?source=website"
+            "apply_url": "https://hr.crystalgrp.xyz/apply/FORM-MRF140-6596BF?source=website",
+            "kpis": [
+              "Timely invoice generation.",
+              "Billing accuracy.",
+              "Collection of outstanding payments within credit terms.",
+              "Reduction in overdue receivables.",
+              "Accuracy of customer account reconciliation.",
+              "Resolution of billing disputes within the defined timeline.",
+              "Timely submission of billing and collection reports.",
+              "Customer satisfaction in billing and payment coordination."
+            ]
           },
           {
             "title": "Sales & Operations Manager (CLCCL)",

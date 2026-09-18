@@ -1,5 +1,5 @@
 ﻿import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { FiArrowRight, FiUsers, FiTrendingUp, FiSettings, FiMapPin, FiBriefcase, FiClock } from 'react-icons/fi';
 import careersData from '../../data/careers.json';
 import { useCmsData } from '../../hooks/useCmsData';
@@ -124,6 +124,48 @@ const RolePane = ({ role }: { role: any }) => (
               <li key={i} className="flex items-start gap-3 font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[6px]" />
                 {q}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {role.ideal_candidate_profile && role.ideal_candidate_profile.length > 0 && (
+        <div>
+          <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">Ideal Candidate Profile</span>
+          <ul className="flex flex-col gap-2.5">
+            {role.ideal_candidate_profile.map((c: string, i: number) => (
+              <li key={i} className="flex items-start gap-3 font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[6px]" />
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {role.kpis && role.kpis.length > 0 && (
+        <div>
+          <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">Key Performance Indicators</span>
+          <ul className="flex flex-col gap-2.5">
+            {role.kpis.map((k: string, i: number) => (
+              <li key={i} className="flex items-start gap-3 font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[6px]" />
+                {k}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {role.benefits && role.benefits.length > 0 && (
+        <div>
+          <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">Benefits</span>
+          <ul className="flex flex-col gap-2.5">
+            {role.benefits.map((b: string, i: number) => (
+              <li key={i} className="flex items-start gap-3 font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[6px]" />
+                {b}
               </li>
             ))}
           </ul>
@@ -383,9 +425,7 @@ const CareersPage: React.FC = () => {
               {/* ── Right: role detail pane ── */}
               <div className="flex-1 min-w-0 overflow-hidden">
                 {filteredRoles.length > 0 ? (
-                  <AnimatePresence mode="wait">
-                    <RolePane key={`${activeFilter}-${selectedIdx}`} role={filteredRoles[selectedIdx] ?? filteredRoles[0]} />
-                  </AnimatePresence>
+                  <RolePane key={`${activeFilter}-${selectedIdx}`} role={filteredRoles[selectedIdx] ?? filteredRoles[0]} />
                 ) : (
                   <div className="h-full flex items-center justify-center p-10">
                     <p className="font-body text-[13px] text-secondary/35 leading-relaxed text-center max-w-xs">
