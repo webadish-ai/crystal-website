@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight, FiUsers, FiTrendingUp, FiSettings, FiMapPin, FiBriefcase, FiClock } from 'react-icons/fi';
 import careersData from '../../data/careers.json';
@@ -153,26 +153,32 @@ const CareersPage: React.FC = () => {
 
   const whyIcons = [<FiSettings />, <FiUsers />, <FiTrendingUp />, <FiBriefcase />];
 
-  /* ── Open roles state ── */
+  /* ── Open roles state ──
+     No department selected by default — the roles panel stays empty until
+     the client picks a department, either from the "Areas We Hire For"
+     cards above or the pills inside the panel itself. */
   const allRoles: any[] = open_roles.roles;
-  const [activeFilter, setActiveFilter] = useState<string>('All');
+  const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [selectedIdx, setSelectedIdx] = useState<number>(0);
 
-  /* Unique function domains */
-  const domains = ['All', ...Array.from(new Set(allRoles.map((r: any) => r.function))) as string[]];
+  /* Unique function domains, in the order they first appear in the data */
+  const domains = Array.from(new Set(allRoles.map((r: any) => r.function))) as string[];
 
   /* Short display label for domain pills */
-  const shortLabel = (f: string) => {
-    if (f === 'All') return 'All';
-    return f.split(' & ')[0].split(' ').slice(0, 2).join(' ');
-  };
+  const shortLabel = (f: string) => f.split(' & ')[0].split(' ').slice(0, 2).join(' ');
 
-  /* Filtered list */
-  const filteredRoles = activeFilter === 'All' ? allRoles : allRoles.filter((r: any) => r.function === activeFilter);
+  /* Filtered list — empty until a department is picked */
+  const filteredRoles = activeFilter ? allRoles.filter((r: any) => r.function === activeFilter) : [];
 
   const handleFilter = (f: string) => {
-    setActiveFilter(f);
+    setActiveFilter(prev => (prev === f ? null : f));
     setSelectedIdx(0);
+  };
+
+  const rolesRef = useRef<HTMLDivElement>(null);
+  const selectDepartment = (f: string) => {
+    handleFilter(f);
+    rolesRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -241,22 +247,37 @@ const CareersPage: React.FC = () => {
               />
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-primary/5">
-              {areas_hire.functions.map((func: string, idx: number) => (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  className="group relative bg-secondary flex flex-col justify-between gap-6 p-6 md:p-8 border border-primary/10 hover:bg-primary/[0.04] transition-colors duration-300 cursor-default"
-                >
-                  <span className="font-heading font-extrabold text-[11px] text-primary/25 tracking-[0.2em] uppercase">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <h3 className="font-heading font-extrabold text-h3 text-primary leading-tight-none tracking-tight">
-                    {func}
-                  </h3>
-                  <div className="w-8 h-[2px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-px bg-primary/5">
+              {areas_hire.functions.map((func: string, idx: number) => {
+                const count = allRoles.filter((r: any) => r.function === func).length;
+                const active = activeFilter === func;
+                return (
+                  <motion.button
+                    key={idx}
+                    variants={itemVariants}
+                    onClick={() => selectDepartment(func)}
+                    aria-pressed={active}
+                    className={`group relative flex flex-col justify-between gap-3 p-4 md:p-5 border border-primary/10 text-left transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent ${
+                      active ? 'bg-primary/[0.08]' : 'bg-secondary hover:bg-primary/[0.04]'
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <span className="font-heading font-extrabold text-[10px] text-primary/25 tracking-[0.2em] uppercase">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      {count > 0 && (
+                        <span className={`font-body font-bold text-[10px] tracking-[0.08em] ${active ? 'text-accent' : 'text-primary/30'}`}>
+                          {count}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="font-heading font-extrabold text-body-lg text-primary leading-tight tracking-tight">
+                      {func}
+                    </h3>
+                    <div className={`w-8 h-[2px] bg-accent transition-opacity duration-300 ${active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} />
+                  </motion.button>
+                );
+              })}
             </div>
           </motion.div>
         </div>
@@ -276,7 +297,7 @@ const CareersPage: React.FC = () => {
             </div>
 
             {/* Split panel */}
-            <motion.div variants={itemVariants} className="flex flex-col lg:flex-row border border-secondary/10 rounded-sm overflow-hidden" style={{ minHeight: '540px' }}>
+            <motion.div ref={rolesRef} variants={itemVariants} className="flex flex-col lg:flex-row border border-secondary/10 rounded-sm overflow-hidden scroll-mt-24" style={{ minHeight: '540px' }}>
 
               {/* ── Left: filter + role list ── */}
               <div className="lg:w-[38%] shrink-0 border-b lg:border-b-0 lg:border-r border-secondary/10 flex flex-col">
@@ -294,26 +315,23 @@ const CareersPage: React.FC = () => {
                       }`}
                     >
                       {shortLabel(d)}
-                      {d !== 'All' && (
-                        <span className={`ml-1 ${activeFilter === d ? 'text-secondary/70' : 'text-secondary/30'}`}>
-                          {allRoles.filter((r: any) => r.function === d).length}
-                        </span>
-                      )}
+                      <span className={`ml-1 ${activeFilter === d ? 'text-secondary/70' : 'text-secondary/30'}`}>
+                        {allRoles.filter((r: any) => r.function === d).length}
+                      </span>
                     </button>
                   ))}
                 </div>
 
                 {/* Role list */}
                 <div className="flex flex-col divide-y divide-secondary/[0.07] flex-1">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeFilter}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.15 }}
-                      className="flex flex-col divide-y divide-secondary/[0.07]"
-                    >
+                  <div className="flex flex-col divide-y divide-secondary/[0.07]">
+                      {!activeFilter && (
+                        <div className="px-5 py-10 text-center">
+                          <p className="font-body text-[12.5px] text-secondary/40 leading-relaxed">
+                            Pick a department above to see its open roles.
+                          </p>
+                        </div>
+                      )}
                       {filteredRoles.map((role: any, idx: number) => (
                         <button
                           key={role.title}
@@ -348,8 +366,7 @@ const CareersPage: React.FC = () => {
                           </div>
                         </button>
                       ))}
-                    </motion.div>
-                  </AnimatePresence>
+                  </div>
                 </div>
 
                 {/* Navigator footer */}
@@ -365,9 +382,17 @@ const CareersPage: React.FC = () => {
 
               {/* ── Right: role detail pane ── */}
               <div className="flex-1 min-w-0 overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <RolePane key={`${activeFilter}-${selectedIdx}`} role={filteredRoles[selectedIdx] ?? filteredRoles[0]} />
-                </AnimatePresence>
+                {filteredRoles.length > 0 ? (
+                  <AnimatePresence mode="wait">
+                    <RolePane key={`${activeFilter}-${selectedIdx}`} role={filteredRoles[selectedIdx] ?? filteredRoles[0]} />
+                  </AnimatePresence>
+                ) : (
+                  <div className="h-full flex items-center justify-center p-10">
+                    <p className="font-body text-[13px] text-secondary/35 leading-relaxed text-center max-w-xs">
+                      Select a department to browse its open roles here.
+                    </p>
+                  </div>
+                )}
               </div>
 
             </motion.div>
