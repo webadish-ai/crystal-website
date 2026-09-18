@@ -47,7 +47,9 @@ const RolePane = ({ role }: { role: any }) => (
           {role.title}
         </h3>
         <a
-          href="mailto:marketing@crystalgroup.in"
+          href={role.apply_url || 'mailto:marketing@crystalgroup.in'}
+          target={role.apply_url ? '_blank' : undefined}
+          rel={role.apply_url ? 'noopener noreferrer' : undefined}
           className="shrink-0 flex items-center gap-1.5 font-heading font-extrabold text-[11px] uppercase tracking-[0.13em] px-4 py-2.5 bg-accent text-secondary hover:bg-secondary hover:text-primary transition-all duration-200 rounded-sm"
         >
           Apply <FiArrowRight className="text-xs" />
@@ -69,19 +71,19 @@ const RolePane = ({ role }: { role: any }) => (
     {/* Scrollable body */}
     <div className="flex-1 overflow-y-auto px-7 py-6 flex flex-col gap-6">
 
-      {/* Summary — 2 sentences */}
+      {/* Summary — full text, unmodified from source */}
       <div>
         <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-2">About the Role</span>
         <p className="font-body text-body-md text-secondary/75 leading-relaxed font-medium">
-          {role.role_summary.split('. ').slice(0, 2).join('. ').trimEnd().replace(/\.?$/, '.')}
+          {role.role_summary}
         </p>
       </div>
 
-      {/* Responsibilities — 3 bullets */}
+      {/* Responsibilities — full list, unmodified from source */}
       <div>
         <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">What You'll Do</span>
         <ul className="flex flex-col gap-2.5">
-          {role.responsibilities.slice(0, 3).map((r: string, i: number) => (
+          {role.responsibilities.map((r: string, i: number) => (
             <li key={i} className="flex items-start gap-3 font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
               <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[6px]" />
               {r}
@@ -94,7 +96,7 @@ const RolePane = ({ role }: { role: any }) => (
       <div className="grid grid-cols-2 gap-4 bg-secondary/[0.03] rounded-sm p-4">
         <div>
           <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-1.5">Experience</span>
-          <p className="font-body text-body-sm text-secondary/70 leading-snug font-medium">{role.experience.split('.')[0]}</p>
+          <p className="font-body text-body-sm text-secondary/70 leading-snug font-medium">{role.experience}</p>
         </div>
         <div>
           <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-1.5">Salary</span>
@@ -102,17 +104,40 @@ const RolePane = ({ role }: { role: any }) => (
         </div>
       </div>
 
-      {/* Skills */}
+      {/* Skills — full list, unmodified from source */}
       <div>
         <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">Key Skills</span>
         <div className="flex flex-wrap gap-1.5">
-          {role.skills.slice(0, 5).map((s: string, i: number) => (
+          {role.skills.map((s: string, i: number) => (
             <span key={i} className="font-body font-bold text-[10px] uppercase tracking-[0.08em] px-2.5 py-1.5 bg-secondary/[0.07] text-secondary/60 rounded-sm">
               {s}
             </span>
           ))}
         </div>
       </div>
+
+      {role.qualifications && role.qualifications.length > 0 && (
+        <div>
+          <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-3">Qualifications</span>
+          <ul className="flex flex-col gap-2.5">
+            {role.qualifications.map((q: string, i: number) => (
+              <li key={i} className="flex items-start gap-3 font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
+                <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-[6px]" />
+                {q}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {role.before_apply && (
+        <div>
+          <span className="font-body font-bold text-[10px] uppercase tracking-[0.2em] text-secondary/40 block mb-2">Before You Apply</span>
+          <p className="font-body text-body-sm text-secondary/70 leading-relaxed font-medium">
+            {role.before_apply}
+          </p>
+        </div>
+      )}
 
     </div>
 
